@@ -1,0 +1,118 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-size: 14px;
+	font-family: 'Microsoft Yahei';
+	color: #333;
+
+}
+body{
+	min-width: 1280px;
+	box-sizing: border-box;
+}
+
+
+/********推荐列表****************/
+.get-more-show{
+	width: 1080px;
+	height: 14px;
+	text-align: right;
+	line-height: 14px;
+	margin:auto;
+}
+.get-more-show>span{
+	cursor: pointer;
+}
+.get-more-show>span:hover{
+	color: #c9302c;
+}
+.list-title{
+	margin:25px auto 0px;
+	width: 1080px;
+	height: 70px;
+	position: relative;
+	
+}
+.list-title>i{
+	display: inline-block;
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	background-image:url("../image/titlebg.png");
+}
+
+.list-title>span:nth-child(2){
+	display: inline-block;
+	position: relative;
+	z-index: 20;
+	padding: 0 20px;
+    font-size: 26px;
+	text-align: center;
+	box-sizing: border-box;
+	line-height: 40px;
+	height: 40px;
+	background: #fff;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50% , -50%);
+}
+
+.list-item-contianer{
+	width: 1080px;
+	box-sizing: border-box;
+	margin:auto;
+	padding-bottom:25px;
+	font-size: 0;
+}
+.list-item-contianer>a{
+	width: 200px;
+	position: relative;
+	display: inline-block;
+	box-sizing: border-box;
+	border: 1px solid #c1c1c1;
+	margin-top: 25px;
+	padding-bottom: 25px;
+	border-radius: 5px;
+}
+
+.list-item-contianer>a:hover{
+	text-decoration: none !important;
+	box-shadow: 3px 3px 3px #d6d5d5;
+}
+.list-item-contianer>a:not(:nth-child(5n+1)){
+	margin-left: 20px;
+
+}
+.list-item-contianer>a>span{
+	width: 100%;
+	height: 45px;
+	line-height: 45px;
+	text-align: center;
+	border-bottom: 2px solid #C9302C;
+	font-size: 14px;
+	font-weight: bold;
+	display: block;
+	overflow: hidden; 
+}
+.list-item-contianer>a i{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+	text-align: center;
+	box-sizing: border-box;
+	padding:0 7%; 
+	overflow: hidden;
+	font-size: 13px;
+}
+.list-item-contianer>a i>span{
+	font-style: normal;
+}
+.list-item-contianer>a>img{
+	display: block;
+	margin: auto;
+	width: 86%;
+}

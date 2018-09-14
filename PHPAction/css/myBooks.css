@@ -1,0 +1,71 @@
+.myBooks-container{
+	margin: auto;
+    width: 1080px;
+    box-sizing: border-box;
+    padding-top: 25px;
+    min-height: 728px;
+    padding-bottom: 9px;
+    position: relative;
+}
+.table{
+	width: 100%;
+}
+th,td{
+	text-align: center;
+}
+.table th:nth-child(1){
+    width: 10%;
+}
+.table th:nth-child(2){
+    width: 20%;
+}
+.table th:nth-child(3){
+    width: 20%;
+}
+.table th:nth-child(4){
+    width: 20%;
+}
+.table th:nth-child(5){
+    width: 20%;
+}
+.table th:nth-child(6){
+    width: 10%;
+}
+tbody>tr>td>img{
+	width: 70px;
+    height: 70px;
+}
+.table td{
+	height: 70px !important;
+	line-height: 70px !important;
+}
+.table>thead>tr>th{
+	background: #f1f1f1;
+}
+.table>tfoot>tr>th:first-child{
+	text-align: left;
+	box-sizing: border-box;
+	padding-left: 25px;
+}
+.table>tfoot>tr>th:last-child{
+	text-align: right;
+	box-sizing: border-box;
+	padding-right:25px;
+}
+.table>tfoot>tr>th{
+	background: #f1f1f1;
+	height: 50px !important;
+	line-height: 50px;
+}
+.borrwoChosed{
+	background: #E40001;
+	outline: none !important;
+	color: #e1e1e1;
+}
+.borrwoChosed:hover{
+	background: #ac2925;
+	color: #e1e1e1;
+}
+.fa-check-square-o{
+	color:#e1e1e1;
+}

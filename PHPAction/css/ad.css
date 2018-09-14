@@ -1,0 +1,103 @@
+.ad-wrapper{
+	user-select: none;
+    position:relative;
+    overflow: hidden;
+    width: 1080px;
+    margin:20px auto 0;
+}
+
+.image-wrapper>img{
+    display: block;
+    width:100%;
+}
+.image-wrapper>img:not(:first-child){
+    position:absolute;
+    left:0;
+    top:0;
+    transform: translateX(100%);
+}
+
+.outLeft{
+    animation:outLeft 1s  linear both;
+}
+
+.inLeft{
+    animation:inLeft 1s  linear both;
+}
+
+.inRight{
+    animation:inRight 1s  linear both;
+}
+
+.outRight{
+    animation:outRight 1s  linear both;
+}
+
+@keyframes outLeft {
+    from{transform:translate(0 , 0);}
+    to{transform:translate(-100% , 0)}
+}
+
+@keyframes inRight {
+    from{transform:translate(100% , 0);}
+    to{transform:translate(0 , 0);}
+}
+
+@keyframes outRight {
+    from{transform:translate(0 , 0);}
+    to{transform:translate(100% , 0);}
+}
+
+@keyframes inLeft {
+    from{transform:translate(-100% , 0);}
+    to{transform:translate(0 , 0)}
+}
+.arrow-left,.arrow-right{
+    position: absolute;
+    top: 50%;
+    margin-top: -32px;
+    width: 32px;
+    height: 64px;
+    line-height: 64px;
+    text-align: center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+}
+.arrow-left{
+   
+   left: 40px;
+}
+.arrow-right{
+    right:40px;
+}
+.wrapper{
+    position:absolute;
+    left:0;
+    right:0;
+    bottom:0;
+    height:46px;
+    text-align: center;
+    z-index: 20;
+    font-size: 0;
+}
+.wrapper button{
+	width: 10px;
+	height: 10px;
+	border-radius: 50%;
+	background: transparent;
+	border: 1px solid #fff;
+	transition: background 0.7s linear;
+	outline: none;
+	cursor: pointer;
+}
+.wrapper button:not(:first-child){
+	margin-left: 4px;
+}
+.wrapper button:first-child{
+     background: #fff;
+}
+.firstbtn{
+	background: #fff !important;
+}

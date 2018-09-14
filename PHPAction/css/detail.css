@@ -1,0 +1,149 @@
+.detail-container{
+	width: 1080px;
+	background: #F8F8F8;
+	margin:20px auto;
+}
+.bookDataDetail-container{
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    min-width: 897px;
+}
+.bookDataDetail-title{
+    width: 100%;
+    height: 48px;
+    line-height: 48px;
+    background-color: #ececec;
+    font-size: 15px;
+    font-weight: bold;
+    box-sizing: border-box;
+    padding: 0 15px;
+    position: relative;
+}
+.bookDataDetail-little{
+    width: 100%;
+    height: 225px;/*待删 150=2 450=6*/
+    padding: 25px 25px 0 25px;
+    box-sizing: border-box;
+    position: relative;
+}
+.bookDataChange-little{
+    width: 100%;
+    height: 300px;/*待删 150=2 450=6*/
+    padding: 15px 25px 0 25px;
+    box-sizing: border-box;
+    position: relative;
+}
+.bookDataDetail-little>div{
+    width: 100%;
+    padding-left: 30%;
+    margin: auto;
+    height: 50px;
+    box-sizing: border-box;
+    line-height: 50px;
+}
+.bookDataDetail-little>div:first-child{
+    margin-top: 10px;
+}
+.bookDataChange-little>div:first-child{
+    margin-top: 50px;
+}
+.bookDataDetail-little>div>i{
+    color: #000;
+    width: 100px;
+    box-sizing: border-box;
+    padding-right: 20px;
+    font-style: normal;
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 400;
+}
+.returnback{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	right:20px;
+	outline: none !important;
+}
+.bookDataDetail-little>div>span{
+    color: #999;
+    font-size: 14px;
+    display: inline-block;
+    width: 30%;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+.bookDataDetail-little>div>span>nobr{
+	 color: #999;
+}
+.bookDataDetail-little>img{
+    position: absolute;
+    display: inline-block;
+    left: 25px;
+    top: 12px;
+    width: 200px;
+    height: 200px;
+    border-radius: 4px;
+}
+.bookDataChange-little>img{
+    top: 40px;
+}
+.bookDataChange-btn{
+    position: absolute;
+    display: inline-block;
+    left: 25px;
+    width: 200px;
+    outline: none !important;
+    top: 250px;
+
+}
+.bookDataDetail-introduce{
+    width: 100%;
+    color: #888;
+    font-size: 14px;
+    text-indent: 40px;
+    line-height: 30px;
+    letter-spacing: 1px;
+    padding: 25px 25px;
+    box-sizing: border-box;
+}
+.hr{
+	width: 100%;
+	height: 1px;
+	border-top:1px solid #e1e1e1;
+
+}
+.operator-container{
+	font-size: 0;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	width: 100%;
+	height:55px;
+	line-height: 55px;
+	border-top:1px solid #e1e1e1;
+	border-bottom:1px solid #e1e1e1;
+	text-align: center;
+}
+.operator-container>button:first-child{
+	background: #E40001;
+	color: #fff;
+    outline:none;
+}
+.operator-container>a , .operator-container>button{
+	padding: 6px 25px
+}
+.operator-container>a:last-child{
+	margin-left: 20px;
+}
+.operator-container>button:first-child:hover{
+	background: #D9534F;
+}
+.operator-container>a>i , .operator-container>button>i{
+	color: #fff;
+}
+#detail-btn-disabled{
+    background: #e1e1e1;
+    color: #999;
+    border: 1px solid #e1e1e1;
+}

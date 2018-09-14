@@ -1,0 +1,16 @@
+.foot{
+	height: 180px;
+	width: 100%;
+	min-width: 1280px;
+	background: url("../image/2.jpg") left;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	padding-top: 40px;
+	padding-bottom: 50px;
+	box-sizing: border-box;
+	text-align: center;
+}
+.foot>span{
+	color: #e1e1e1;
+}

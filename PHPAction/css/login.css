@@ -1,0 +1,158 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Microsoft Yahei;
+    font-size: 14px;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    min-width: 1280px;
+    background-image: url('../image/1.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    transition: background-image 0.7s linear;
+    position: relative;
+}
+body>div{
+    position: relative;
+    width: 1080px;
+    height: 500px;
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    background: transparent;
+}
+.adShow{
+    position: absolute;
+    width: 720px;
+    height: 380px;
+    background: url("../image/4.jpg") center bottom;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    box-shadow: 3px 3px 3px #333;
+     border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+.container{
+    background: radial-gradient(circle,#CCC1B6,#B8ABA4,#685D59);
+    padding: 40px 40px;
+    width: 360px;
+    height: 380px;
+    box-shadow: 3px 3px 3px #333;
+    position: absolute;
+    top: 50%;
+    right: 0px;
+    transform: translateY(-50%);
+    /*background: red;*/
+    box-sizing: border-box;
+    /*border: 1px solid #f1f1f1;*/
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    user-select: none;
+    box-sizing: border-box;
+}
+.load-title{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.load-secTitle{
+    color: #f1f1f1;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.load-body{
+    height: 270px;
+    box-sizing: border-box;
+    width: 100%;
+    /*background: #963;*/
+}
+.load-body input[type=text] , .load-body input[type=password]{
+    padding: 0 20px;
+    height: 42px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(45,45,45,.08);
+    color: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.15);
+    margin-top: 25px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.inputNotActive::placeholder{
+    color: #fff;
+}
+.load-body input[type=text]:focus , .load-body input[type=password]:focus{
+    outline: none;
+    box-shadow: -2px 4px 6px 0px rgba(0,0,0,.2) inset;
+}
+.inputActive::placeholder{
+    color: #E10601;
+}
+.btnLoad , .btnLoadA{
+    display: inline-block;
+    line-height: 44px;
+    text-decoration: none;
+    box-sizing: border-box;
+    width: 48%;
+    height: 44px;
+    background: #ef4300;
+    margin-top: 25px;
+    border-radius: 6px;
+    border: 1px solid #ff730e;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+
+}
+.btnLoadA{
+    margin-left: 4%;
+    background:#A1948D;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    border: 1px solid #A1948D;
+}
+.btnLoad:hover{
+    box-shadow: 0 15px 30px 0 rgba(255,255,255,.15) inset, 0 2px 7px 0 rgba(0,0,0,.2);
+}
+.btnLoad:active{
+    box-shadow: 2px 15px 30px 0 rgba(255,255,255,.45) inset, 0 2px 7px 0 rgba(0,0,0,.5);
+}
+.btnLoadA:hover{
+    box-shadow: 0 15px 30px 0 rgba(255,255,255,.15) inset, 0 2px 7px 0 rgba(0,0,0,.2);
+}
+.btnLoadA:active{
+    box-shadow: 2px 15px 30px 0 rgba(255,255,255,.45) inset, 0 2px 7px 0 rgba(0,0,0,.5);
+}
+.errorInfor{
+    color: #E10601;
+    margin-top: 10px;
+    width: 100%;
+    padding:0 20px;
+    text-align: left;
+    box-sizing: border-box;
+}
+.logoShow{
+    width: 1080px;
+    height: 60px;
+    background: red;
+    line-height: 50px;
+}
+

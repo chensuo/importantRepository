@@ -1,0 +1,230 @@
+.choseContainer{
+	width: 1080px;
+	margin: auto;
+	transition: height 0.4s;
+	overflow: hidden;
+	height: 245px;/*随时改*/
+}
+.choseContainer>div{
+	width: 100%;
+	line-height: 40px;
+}
+.choseContainer>div:not(:last-child){
+	border-bottom:1px dashed #c1c1c1;
+}
+.isShowChoseDv , .isShowChoseDvSec{
+	display: block;
+	float: right;
+	height: 100%;
+	width: 72px;
+	line-height: 40px;
+	cursor: pointer;
+	user-select: none;
+}
+.isShowChoseDv:hover , .isShowChoseDvSec:hover{
+	color: #c9302c;
+}
+.isShowChoseDvSec{
+	display: none;
+}
+.choseContainer i{
+	font-style: normal;
+	display: inline-block;
+	width: 60px;
+	text-align: left;
+	height: 100%;
+	line-height: 40px;
+	color: #a1a1a1;
+}
+.choseContainer>div:not(:first-child)>a{
+	display: inline-block;
+	padding:0 10px;
+	height: 40px;
+	line-height: 40px;
+	text-align: center;
+	cursor: pointer;
+	color: #333;
+}
+.choseContainer>div:not(:first-child)>a:hover{
+	text-decoration: none;
+	color: #c9302c;
+}
+.choseContainer>div:not(:first-child)>a.active{
+	color: #c9302c;
+}
+
+/***********筛选条件以下************/
+.booksTitle{
+	width: 1080px;
+	height: 44px;
+	margin: auto;
+	border-bottom: 1px solid #c1c1c1;
+	border-top: 1px solid #c1c1c1;
+	box-sizing: border-box;
+	padding: 0px 10px;
+	line-height: 44px;
+	overflow: hidden;
+}
+.booksTitle>div{
+	display: inline-block;
+	float: right;
+	height: 100%;
+	width: 150px;
+}
+.booksTitle>div>span{
+	display: inline-block;
+	width: 50%;
+	height: 100%;
+	text-align: center;
+	cursor: pointer;
+}
+.booksTitle>div>span.active{
+	color: #c9302c;
+}
+/************书项目***********/
+.booksItemContainer{
+	margin:auto;
+	width: 1080px;
+    box-sizing: border-box;
+    padding-bottom: 80px;
+    font-size: 0;
+    position: relative;
+    min-height: 259px;
+}
+
+.bookItem{
+	width: 200px;
+	height: 388px;
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box;
+    border: 1px solid #c1c1c1;
+    margin-top: 25px;
+    padding-bottom: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.bookItem:not(:nth-child(5n+1)) {
+    margin-left: 20px;
+}
+.bookItem>span{
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    text-align: center;
+    border-bottom: 2px solid #C9302C;
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    overflow: hidden;
+}
+.bookItem i{
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    display: block;
+    text-align: left;
+    box-sizing: border-box;
+    padding: 0 7%;
+    overflow: hidden;
+    font-size: 12px;
+}
+.bookItem i>span{
+	font-style: normal;
+}
+.bookItem>img{
+    display: block;
+    margin:10px auto 0px;
+    width: 86%;
+}
+.bookItem:hover{
+	text-decoration: none;
+	box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+
+}
+.bookItem:hover .logo-message{
+	transform: translateY(100%);
+}
+.bookItem:hover .show-car{
+	transform: translateY(0);
+}
+
+.bookItem>div{
+	width: 100%;
+	box-sizing: border-box;
+	height: 30px;
+	font-size: 0;
+	position: absolute;
+	overflow: hidden;
+}
+
+.show-car{
+	transform: translateY(-100%);
+	transition: transform 0.4s;
+	width: 86%;
+	height: 30px;
+	margin:auto;
+	line-height: 30px;
+	font-size: 0;
+}
+.logo-message{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 0 7%;
+	height: 30px;
+	font-size: 0;
+	transform: translateY(-100%);
+	transition: transform 0.4s;
+}
+.logo-message i{
+	font-size: 14px !important;
+}
+/*.booksItemContainer>a>div:last-child{
+	display: none;
+}*/
+.show-car>a , .show-car>button{
+	text-decoration: none;
+	user-select: none;
+	display: inline-block;
+	height:100%;
+	width: 48%;
+	line-height: 30px;
+	text-align: center;
+	color: #fff;
+	background: #E40001;
+	border-radius: 3px;
+	font-size: 13px;
+}
+.show-car>button{
+	outline: none;
+	border: none;
+}
+.show-car>button:first-child:hover{
+	background: #D9534F;
+	font-style: italic;
+}
+.show-car>a:last-child:hover{
+	background: #398439;
+	font-style: italic;
+}
+.show-car>a:last-child{
+	margin-left: 4%;
+	background: #5CB85C;
+}
+.logo-message>i{
+	display: block;
+	width: 100%;
+	height: 100%;
+	line-height: 30px;
+	font-style: normal;
+	font-size: 16px;
+	font-family: "LiSu";
+}
+.logo-message>i>img{
+	height: 70%;
+	border-radius: 3px;
+}
+#btn-disabled{
+	background: #e1e1e1;
+	color: #fff;
+}
