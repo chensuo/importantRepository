@@ -1,0 +1,169 @@
+.header{
+	width: 100%;
+	height: 48px;
+	background: #F8F8F8;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 10;
+}
+.header>div{
+	width: 1080px;
+	min-width: 1080px;
+	height: 100%;
+	margin: auto;
+	line-height: 48px;
+	overflow: hidden;
+}
+.header>div>span{
+	font-size: 16px;
+	font-weight: 400;
+}
+.header>div>i{
+	font-style: normal;
+	float: right;
+}
+.header>div>i>a{
+	color: #515D7A;
+}
+.header>div>i>a:hover{
+	color:#3FB7FD;
+	text-decoration: none;
+}
+/*************第二层******************/
+#lblCount{
+	z-index: 10;
+	display: inline-block;
+	color: #fff;
+	height: 16px;
+	border-radius: 9px;
+	background: #c9302c;
+	width: 16px;
+	font-weight: 500;
+	position: absolute;
+	top: 47%;
+	left: 56%;
+	box-sizing: border-box;
+	text-indent: -3px;
+	font-size:12px;
+	line-height: 16px;
+	text-align: center;
+	transform: translateX(-50%);
+}
+.logoContainer{
+	width: 1080px;
+	height: 110px;
+	margin: auto;
+	display: flex;
+}
+.logoContainer>div{
+	flex:1;
+	height: 100%;
+	text-align: center;
+	overflow: hidden;
+	box-sizing: border-box;
+	padding: 10px 0;
+}
+.logo{
+	height: 100%;
+	border-radius: 10px;
+	float: left;
+}
+.form-control{
+	width: 250px;
+}
+.input-group{
+	position: relative;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50% , -50%);
+}
+.btn-search{
+	border-radius: 0 4px 4px 0 !important;
+}
+.input-group>div{
+	position: absolute;
+	bottom: -50px;
+	left: 0;
+	right: 0;
+	height: 40px;
+	text-align: left;
+	box-sizing: border-box;
+	text-indent: 15px;
+	font-size: 13px;
+}
+.input-group>div a{
+	text-decoration: none;
+	color: #333;
+}
+.input-group>div a:hover{
+	color: #3FB7FD;
+}
+.iconContainer{
+	height: 100%;
+	padding: 0 50%;
+	box-sizing: border-box;
+	text-align: right !important;
+	position: relative;
+}
+.iconContainer>a{
+	display: inline-block;
+	box-sizing: border-box;
+	line-height: 90px;
+	width: 25%;
+}
+
+.iconContainer>a:hover{
+	text-decoration: none;
+	
+}
+.iconContainer>a:hover .link-mybooks{
+	color: #3FB7FD;
+}
+.iconContainer>a:hover .fa-user-circle{
+	color: #3FB7FD;
+}
+.iconContainer>a:hover .fa-sticky-note{
+	color: #3FB7FD;
+}
+
+.iconContainer>a:hover .link-myOrders{
+	color:#3FB7FD;
+}
+.iconContainer>a>span:first-child{
+	font-size:20px;
+}
+#active{
+	color: #3FB7FD;
+}
+/*****第三层*********/
+.header>.nav{
+    height: 46px;
+    width: 100%;
+    font-size: 14px;
+}
+.nav>div{
+	margin:auto;
+	width: 1080px;
+	height: 46px;
+	font-size: 0;
+}
+.nav>div>a{
+	text-decoration: none;
+	color: #fff;
+	font-size: 16px;
+	display: inline-block;
+	width: 160px;
+	line-height: 46px;
+	height: 46px;
+	text-align: center;
+	font-weight: 400;
+}
+.nav>div>a:hover{
+	background: #F8F8F8;
+	color: #0461AC;
+	transition: all 0.5s;
+}
+.nav>div>a.active{
+	background: #F8F8F8;
+	color: #0461AC;
+}

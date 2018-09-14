@@ -1,0 +1,11 @@
+悬浮字体 #0461AC #3FB7FD（主要）
+边框颜色 #d5d5d5
+padding:15px;
+margin-top:20px;
+社区 大边框 #CFCFCF
+导航延迟 0.5s
+帖子区域 padding 10px 30px；
+全文字体颜色：#515D7A
+帖子标题颜色 #232A3C
+    box-shadow: 3px 2px 2px #d6d5d5;
+	border: 1px solid #dfdfdf;

@@ -1,0 +1,144 @@
+.main-container{
+	width: 1080px;
+    box-sizing: border-box;
+    border-left: 1px solid #CFCFCF;
+    border-right: 1px solid #CFCFCF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+    margin: 20px auto 0px;
+    background: #fff;
+    position: relative;
+}
+.main-container>div:first-child{
+	padding: 0 40px;
+}
+.main-header{
+	width: 100%;
+	height: 110px;
+	background: #F6F8FA;
+	position: relative; 
+}
+.header-container{
+	width:75px;
+	height: 75px;
+	border-radius: 50%;
+	box-sizing: border-box;
+	padding: 1px;
+	position: absolute;
+	transform: translateY(-50%);
+	top: 50%;
+	overflow: hidden;
+}
+.header-container>img{
+	width: 75px;
+	height: 75px;
+	border-radius: 50%;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+.name-container{
+	font-size: 18px;
+	font-weight: bold;
+	color: #232A3C;
+	position: absolute;
+	transform: translateY(-50%);
+	top:38%;
+	height: 25px;
+	line-height: 25px;
+	left: 140px;
+}
+.sign-container{
+	height: 25px;
+	line-height: 25px;
+	position: absolute;
+	top: 68%;
+	transform: translateY(-50%);
+	left: 140px;
+	color: #999;
+	font-size: 13px;
+}
+.main-nav{
+	width: 100%;
+	height: 60px;
+	background: #fff;
+	font-size: 16px;
+	font-weight: normal;
+	box-sizing: border-box;
+	padding: 15px 40px 10px;
+}
+.main-content-container{
+	min-height: 500px;/*待删*/
+	padding: 0 40px;
+}
+.nav-tabs>li>a{
+	color:#666;
+}
+.nav-tabs>li.active>a{
+	color: #333 !important;
+	font-weight: bold;
+}
+.userinfo-dv{
+	width: 100%;
+	box-sizing: border-box;
+	padding: 10px 20px;
+}
+.table{
+	width: 100%;
+	margin-bottom:0;
+}
+.table>thead>tr>th{
+	border-bottom: none;
+	height: 40px;
+	background: #F6F8FA;
+	font-weight: normal;
+	color: #333;
+	font-size: 15px;
+}
+.table a{
+	color: #515D7A;
+}
+.table>thead>tr>th:nth-child(1){
+	width: 55%;
+}
+.table>thead>tr>th:nth-child(2){
+	width: 15%;
+}
+.table>thead>tr>th:nth-child(3){
+	width: 15%;
+}
+.table>thead>tr>th:nth-child(4){
+	width: 15%;
+}
+.table>tbody>tr>td{
+	border-top: none;
+	border-bottom: 1px solid #ddd;
+	padding: 15px 10px;
+	overflow: hidden;
+	position: relative;
+}
+.table span{
+	display: inline-block;
+	position: absolute;
+	top: 20%;
+	left: 10px;
+}
+.table>tbody a{
+	font-size: 13px;
+}
+.table span>a{
+	font-size: 12px;
+}
+.table>tbody img{
+	position: absolute;
+	top:50%;
+	transform: translateY(-50%);
+}
+.table em{
+	color: #aaa;
+	font-size: 12px;
+	font-style: normal;
+	display: inline-block;
+	position: absolute;
+	top: 55%;
+	left: 10px;
+}

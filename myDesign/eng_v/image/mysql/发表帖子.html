@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://127.0.0.1:9091/myDesign/writeNote.php?sectionId= -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<title>发表帖子</title>
+	<link rel="stylesheet" type="text/css" href="./发表帖子_files/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="./发表帖子_files/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="./发表帖子_files/global.css">
+	<link rel="stylesheet" type="text/css" href="./发表帖子_files/header.css">
+	<link rel="stylesheet" type="text/css" href="./发表帖子_files/foot_sec.css">
+	<link rel="stylesheet" type="text/css" href="./发表帖子_files/writeNote.css">
+	<!-- <link rel="stylesheet" type="text/css" href="lib/editor/wangEditor.min.css"> -->
+<style type="text/css">.w-e-toolbar,.w-e-text-container,.w-e-menu-panel {  padding: 0;  margin: 0;  box-sizing: border-box;}.w-e-toolbar *,.w-e-text-container *,.w-e-menu-panel * {  padding: 0;  margin: 0;  box-sizing: border-box;}.w-e-clear-fix:after {  content: "";  display: table;  clear: both;}.w-e-toolbar .w-e-droplist {  position: absolute;  left: 0;  top: 0;  background-color: #fff;  border: 1px solid #f1f1f1;  border-right-color: #ccc;  border-bottom-color: #ccc;}.w-e-toolbar .w-e-droplist .w-e-dp-title {  text-align: center;  color: #999;  line-height: 2;  border-bottom: 1px solid #f1f1f1;  font-size: 13px;}.w-e-toolbar .w-e-droplist ul.w-e-list {  list-style: none;  line-height: 1;}.w-e-toolbar .w-e-droplist ul.w-e-list li.w-e-item {  color: #333;  padding: 5px 0;}.w-e-toolbar .w-e-droplist ul.w-e-list li.w-e-item:hover {  background-color: #f1f1f1;}.w-e-toolbar .w-e-droplist ul.w-e-block {  list-style: none;  text-align: left;  padding: 5px;}.w-e-toolbar .w-e-droplist ul.w-e-block li.w-e-item {  display: inline-block;  *display: inline;  *zoom: 1;  padding: 3px 5px;}.w-e-toolbar .w-e-droplist ul.w-e-block li.w-e-item:hover {  background-color: #f1f1f1;}@font-face {  font-family: 'w-e-icon';  src: url(data:application/x-font-woff;charset=utf-8;base64,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) format('truetype');  font-weight: normal;  font-style: normal;}[class^="w-e-icon-"],[class*=" w-e-icon-"] {  /* use !important to prevent issues with browser extensions that change fonts */  font-family: 'w-e-icon' !important;  speak: none;  font-style: normal;  font-weight: normal;  font-variant: normal;  text-transform: none;  line-height: 1;  /* Better Font Rendering =========== */  -webkit-font-smoothing: antialiased;  -moz-osx-font-smoothing: grayscale;}.w-e-icon-close:before {  content: "\f00d";}.w-e-icon-upload2:before {  content: "\e9c6";}.w-e-icon-trash-o:before {  content: "\f014";}.w-e-icon-header:before {  content: "\f1dc";}.w-e-icon-pencil2:before {  content: "\e906";}.w-e-icon-paint-brush:before {  content: "\f1fc";}.w-e-icon-image:before {  content: "\e90d";}.w-e-icon-play:before {  content: "\e912";}.w-e-icon-location:before {  content: "\e947";}.w-e-icon-undo:before {  content: "\e965";}.w-e-icon-redo:before {  content: "\e966";}.w-e-icon-quotes-left:before {  content: "\e977";}.w-e-icon-list-numbered:before {  content: "\e9b9";}.w-e-icon-list2:before {  content: "\e9bb";}.w-e-icon-link:before {  content: "\e9cb";}.w-e-icon-happy:before {  content: "\e9df";}.w-e-icon-bold:before {  content: "\ea62";}.w-e-icon-underline:before {  content: "\ea63";}.w-e-icon-italic:before {  content: "\ea64";}.w-e-icon-strikethrough:before {  content: "\ea65";}.w-e-icon-table2:before {  content: "\ea71";}.w-e-icon-paragraph-left:before {  content: "\ea77";}.w-e-icon-paragraph-center:before {  content: "\ea78";}.w-e-icon-paragraph-right:before {  content: "\ea79";}.w-e-icon-terminal:before {  content: "\f120";}.w-e-icon-page-break:before {  content: "\ea68";}.w-e-icon-cancel-circle:before {  content: "\ea0d";}.w-e-icon-font:before {  content: "\ea5c";}.w-e-icon-text-heigh:before {  content: "\ea5f";}.w-e-toolbar {  display: -webkit-box;  display: -ms-flexbox;  display: flex;  padding: 0 5px;  /* flex-wrap: wrap; */  /* 单个菜单 */}.w-e-toolbar .w-e-menu {  position: relative;  text-align: center;  padding: 5px 10px;  cursor: pointer;}.w-e-toolbar .w-e-menu i {  color: #999;}.w-e-toolbar .w-e-menu:hover i {  color: #333;}.w-e-toolbar .w-e-active i {  color: #1e88e5;}.w-e-toolbar .w-e-active:hover i {  color: #1e88e5;}.w-e-text-container .w-e-panel-container {  position: absolute;  top: 0;  left: 50%;  border: 1px solid #ccc;  border-top: 0;  box-shadow: 1px 1px 2px #ccc;  color: #333;  background-color: #fff;  /* 为 emotion panel 定制的样式 */  /* 上传图片的 panel 定制样式 */}.w-e-text-container .w-e-panel-container .w-e-panel-close {  position: absolute;  right: 0;  top: 0;  padding: 5px;  margin: 2px 5px 0 0;  cursor: pointer;  color: #999;}.w-e-text-container .w-e-panel-container .w-e-panel-close:hover {  color: #333;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-title {  list-style: none;  display: -webkit-box;  display: -ms-flexbox;  display: flex;  font-size: 14px;  margin: 2px 10px 0 10px;  border-bottom: 1px solid #f1f1f1;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-title .w-e-item {  padding: 3px 5px;  color: #999;  cursor: pointer;  margin: 0 3px;  position: relative;  top: 1px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-title .w-e-active {  color: #333;  border-bottom: 1px solid #333;  cursor: default;  font-weight: 700;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content {  padding: 10px 15px 10px 15px;  font-size: 16px;  /* 输入框的样式 */  /* 按钮的样式 */}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input:focus,.w-e-text-container .w-e-panel-container .w-e-panel-tab-content textarea:focus,.w-e-text-container .w-e-panel-container .w-e-panel-tab-content button:focus {  outline: none;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content textarea {  width: 100%;  border: 1px solid #ccc;  padding: 5px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content textarea:focus {  border-color: #1e88e5;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text] {  border: none;  border-bottom: 1px solid #ccc;  font-size: 14px;  height: 20px;  color: #333;  text-align: left;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text].small {  width: 30px;  text-align: center;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text].block {  display: block;  width: 100%;  margin: 10px 0;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content input[type=text]:focus {  border-bottom: 2px solid #1e88e5;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button {  font-size: 14px;  color: #1e88e5;  border: none;  padding: 5px 10px;  background-color: #fff;  cursor: pointer;  border-radius: 3px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.left {  float: left;  margin-right: 10px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.right {  float: right;  margin-left: 10px;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.gray {  color: #999;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button.red {  color: #c24f4a;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container button:hover {  background-color: #f1f1f1;}.w-e-text-container .w-e-panel-container .w-e-panel-tab-content .w-e-button-container:after {  content: "";  display: table;  clear: both;}.w-e-text-container .w-e-panel-container .w-e-emoticon-container .w-e-item {  cursor: pointer;  font-size: 18px;  padding: 0 3px;  display: inline-block;  *display: inline;  *zoom: 1;}.w-e-text-container .w-e-panel-container .w-e-up-img-container {  text-align: center;}.w-e-text-container .w-e-panel-container .w-e-up-img-container .w-e-up-btn {  display: inline-block;  *display: inline;  *zoom: 1;  color: #999;  cursor: pointer;  font-size: 60px;  line-height: 1;}.w-e-text-container .w-e-panel-container .w-e-up-img-container .w-e-up-btn:hover {  color: #333;}.w-e-text-container {  position: relative;}.w-e-text-container .w-e-progress {  position: absolute;  background-color: #1e88e5;  bottom: 0;  left: 0;  height: 1px;}.w-e-text {  padding: 0 10px;  overflow-y: scroll;}.w-e-text p,.w-e-text h1,.w-e-text h2,.w-e-text h3,.w-e-text h4,.w-e-text h5,.w-e-text table,.w-e-text pre {  margin: 10px 0;  line-height: 1.5;}.w-e-text ul,.w-e-text ol {  margin: 10px 0 10px 20px;}.w-e-text blockquote {  display: block;  border-left: 8px solid #d0e5f2;  padding: 5px 10px;  margin: 10px 0;  line-height: 1.4;  font-size: 100%;  background-color: #f1f1f1;}.w-e-text code {  display: inline-block;  *display: inline;  *zoom: 1;  background-color: #f1f1f1;  border-radius: 3px;  padding: 3px 5px;  margin: 0 3px;}.w-e-text pre code {  display: block;}.w-e-text table {  border-top: 1px solid #ccc;  border-left: 1px solid #ccc;}.w-e-text table td,.w-e-text table th {  border-bottom: 1px solid #ccc;  border-right: 1px solid #ccc;  padding: 3px 5px;}.w-e-text table th {  border-bottom: 2px solid #ccc;  text-align: center;}.w-e-text:focus {  outline: none;}.w-e-text img {  cursor: pointer;}.w-e-text img:hover {  box-shadow: 0 0 5px #333;}</style></head><body>
+	<!-- 头部 -->
+	<div class="header">
+		<div><span>欢迎来到frontier ，哒哒哒 <a href="http://127.0.0.1:9091/myDesign/layout.php" class="logoutShow">注销</a></span>
+		<i>
+			<a href="http://127.0.0.1:9091/myDesign/community.php">用户社区</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://127.0.0.1:9091/myDesign/downloadApp.php">手机APP</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://127.0.0.1:9091/myDesign/index.php">加入我们</a>&nbsp;&nbsp;|&nbsp;&nbsp;<a href="http://127.0.0.1:9091/myDesign/index_eng.php">中英切换</a>
+		</i></div>
+	</div>
+	<div class="logoContainer">
+		<div><a href="http://127.0.0.1:9091/myDesign/index.php"><img src="./发表帖子_files/logo.jpg" class="logo"></a></div>
+		<div>
+			<div class="input-group">
+                <input type="text" class="form-control" placeholder="请输入关键字" id="search-input">
+                <span class="input-group-btn" id="btnSearch">
+                   <a href="http://127.0.0.1:9091/myDesign/books.php" class="btn btn-primary btn-search ">查找</a>
+                </span>
+				<div>热门搜索：&nbsp;&nbsp;<span><a href="http://127.0.0.1:9091/myDesign/newsSection.php?Id=186e391d-204b-11e8-9c83-14dda97c5664">风力发电</a></span>&nbsp;&nbsp;<span><a href="http://127.0.0.1:9091/myDesign/community.php?sectionId=e8afad21-2050-11e8-9c83-14dda97c5664">航空航天</a></span>&nbsp;&nbsp;<span><a href="http://127.0.0.1:9091/myDesign/newsSection.php?Id=87c8a518-204a-11e8-9c83-14dda97c5664">太阳能</a></span></div>
+            </div>
+		</div>
+	
+	<div class="iconContainer">
+			<a href="http://127.0.0.1:9091/myDesign/user.php">
+				<span class="fa fa-user-circle"></span>
+				<span class="link-mybooks">&nbsp;用户中心</span>
+			</a>
+			&nbsp;|
+			<a href="http://127.0.0.1:9091/myDesign/aboutMe.php">
+				<span class="fa fa-sticky-note"></span>
+				<span class="link-mybooks">我的帖子</span>
+			</a>
+		</div>
+	</div>
+	<div class="nav" style=" background: url(image/2.jpg) center top;">
+		<div>
+			<a href="http://127.0.0.1:9091/myDesign/index.php" class="notScroll ">首页</a>
+			<a href="http://127.0.0.1:9091/myDesign/community.php" class="notScroll active">用户社区</a>
+			<a href="http://127.0.0.1:9091/myDesign/userGuide.php" class="notScroll ">用户导读</a>
+			<a href="http://127.0.0.1:9091/myDesign/downloadApp.php" class="notScroll ">下载APP</a>
+			<!-- <a href="">这里是什么</a>
+			<a href="">就不告诉你</a> -->
+		</div>
+</div>		<!-- 主体 -->
+	<div class="main-container">
+		<div class="note-nav">
+			<div class="nav-left">
+				<a href="http://127.0.0.1:9091/myDesign/index.php">首页</a><em>›</em>
+				<a href="http://127.0.0.1:9091/myDesign/community.php">用户社区</a><em>›</em>
+				<a href="http://127.0.0.1:9091/myDesign/community.php?sectionId=93650318-2050-11e8-9c83-14dda97c5664">能源制造</a><em>›</em>
+				<a href="http://127.0.0.1:9091/myDesign/writeNote.php?sectionId=">发表帖子</a>
+			</div>
+			<div class="nav-right"></div>
+		</div>
+
+		<form method="post">
+			<div class="main-nav">
+				<ul class="nav nav-tabs">
+									  <li role="presentation" title="选择该模块" class="active"><a href="http://127.0.0.1:9091/myDesign/writeNote.php?sectionId=93650318-2050-11e8-9c83-14dda97c5664" class="sectionId-a">能源制造</a></li>
+						
+				  					  <li role="presentation" title="选择该模块" class=""><a href="http://127.0.0.1:9091/myDesign/writeNote.php?sectionId=e8afad21-2050-11e8-9c83-14dda97c5664" class="sectionId-a">航空航天制造</a></li>
+						
+				  					  <li role="presentation" title="选择该模块" class=""><a href="http://127.0.0.1:9091/myDesign/writeNote.php?sectionId=e8bb1efe-2050-11e8-9c83-14dda97c5664" class="sectionId-a">科技科学</a></li>
+						
+				  					  <li role="presentation" title="选择该模块" class=""><a href="http://127.0.0.1:9091/myDesign/writeNote.php?sectionId=e8c13ff0-2050-11e8-9c83-14dda97c5664" class="sectionId-a">模型技术</a></li>
+						
+				  						<input type="hidden" class="sectionId-input-sec" name="sectionIdInputSec">
+				</ul>
+			</div>
+			<div class="main-content-container">
+				<div class="write-title"><span>标题：</span><input id="txtTitle" name="titleShow" type="text" class="form-control" placeholder="请输入标题，不超过40个字" maxlength="50"></div>
+
+				<!-- 富文本框 -->
+				<div id="editor"><div style="background-color:#f1f1f1; border:1px solid #ccc;" class="w-e-toolbar" id="toolbar-elem7649853049571"><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-header"><i></i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-bold"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-text-heigh"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-font"><i></i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-italic"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-underline"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-strikethrough"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-pencil2"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-paint-brush"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-link"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-list2"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-paragraph-left"><i></i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-quotes-left"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-happy"><i>
+        </i></i></div><div class="w-e-menu" id="w-e-img27780108538807013" style="z-index:10001;"><i class="w-e-icon-image"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-table2"><i></i></i></div><div class="w-e-menu" style="z-index:10001;"><i class="w-e-icon-play"><i></i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-terminal"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-undo"><i>
+        </i></i></div><div class="w-e-menu" style="z-index:10001;">
+            <i class="w-e-icon-redo"><i>
+        </i></i></div></div><div style="border:1px solid #ccc; border-top:none; height:300px; z-index:10000;" class="w-e-text-container"><div contenteditable="true" style="width:100%; height:100%;" class="w-e-text" id="text-elem6099705320404629"><p>这个图片是关于用<a href="http://www.tech-domain.com/forum-25-1.html" target="_blank">太阳能</a>制取蒸馏水的，不用说明相信大家都能看懂的&nbsp;。&nbsp;<br></p></div></div></div>
+				<textarea id="txtContent" name="articleContent" style="display: none;">&lt;p&gt;这个图片是关于用&lt;a href="http://www.tech-domain.com/forum-25-1.html" target="_blank"&gt;太阳能&lt;/a&gt;制取蒸馏水的，不用说明相信大家都能看懂的&nbsp;。&nbsp;&lt;br&gt;&lt;/p&gt;</textarea>
+				<div class="btn-container-dv">
+					<button class="btn btn-info " id="btnSave">请求审核</button>
+					<a href="http://127.0.0.1:9091/myDesign/community.php" class="btn btn-default">返回社区</a>
+				</div>
+
+
+			</div>
+		</form>
+
+
+
+
+
+		<!-- 脚注 -->
+		<!-- 帖子页面脚注 -->
+<div class="note-foot">
+	<a href="http://127.0.0.1:9091/myDesign/community.php">用户社区</a>
+	<a href="http://127.0.0.1:9091/myDesign/userGuide.php">用户导读</a>
+	<a href="http://127.0.0.1:9091/myDesign/downloadApp.php">手机APP</a>
+	<a href="http://127.0.0.1:9091/myDesign/index.php">用户服务协议</a>
+	<a href="http://127.0.0.1:9091/myDesign/index.php">加入我们</a>
+	<span>©2017-2023扬州frontier科技有限公司 &nbsp;苏ICP备1409200124号</span>
+</div>		
+		</div>
+
+		<div class="dialog" style="display:none;color:"></div>
+
+	<script type="text/javascript" src="./发表帖子_files/jquery.js.下载"></script>
+	<script type="text/javascript" src="./发表帖子_files/wangEditor.min.js.下载"></script>
+	<script type="text/javascript">
+		window.onload = function(){
+			//初始化富文本框
+			initEditor();
+
+			// 保存
+			var txtTitle = document.querySelector('#txtTitle');
+			var txtContent = document.querySelector('#txtContent');
+
+			var btnSave = document.querySelector('#btnSave');
+			// btnSave.onclick = function(){
+			// 	// 检查数据有效性
+
+			// 	var title = txtTitle.value;
+			// 	var content = txtContent.value;
+
+			// 	// 保存
+			// 	saveEditor(title , content);
+			// }
+
+
+			/*
+				功能描述：初始化富文本框
+			*/ 
+			function initEditor(){
+				var editor = new wangEditor('#editor');
+				// 设置本地上传参数
+				editor.customConfig.uploadImgServer = 'ajax/uploadImage.php';
+				editor.customConfig.uploadImgMaxSize = 3 * 1024 * 1024;
+				editor.customConfig.uploadFileName = "editImage";
+
+				// 设置内容区
+				// 监控变化，同步更新到 textarea
+				editor.customConfig.onchange = function (html) {
+		            txtContent.innerHTML = html;
+		        }
+				//
+				editor.create();
+			}
+
+
+			/*自动关闭模态框*/
+			var dialog = document.querySelector(".dialog");
+			if(dialog.style.display != "none"){
+				setInterval(function(){
+					dialog.style.display = 'none';
+				} , 1500);
+			}
+
+
+			
+		}
+
+		/*****************************************************/
+		// $(function(e){
+
+		// 	var $sectionId = $('.nav-tabs>li.active>input').val();
+		// 	/*获取sectionId*/
+		// 	$('.sectionId-input-sec').val($sectionId);
+
+		// 	$('.sectionId-a').bind('click' , function(){
+		// 		console.log($('.sectionId-input-sec').val());
+		// 	});
+
+
+		// });
+	</script>
+
+
+
+</body></html>
