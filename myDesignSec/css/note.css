@@ -1,0 +1,82 @@
+.note-tb{
+    min-width: 897px;
+}
+.note-tb>thead th:nth-child(1){
+	width: 10%;
+}
+.note-tb>thead th:nth-child(2){
+	width: 25%;
+}
+.note-tb>thead th:nth-child(3){
+	width: 15%;
+}
+.note-tb>thead th:nth-child(4){
+	width: 15%;
+}
+.note-tb>thead th:nth-child(5){
+	width: 10%;
+}
+.note-tb>thead th:nth-child(6){
+	width: 13%;
+}
+.note-tb>thead th:nth-child(7){
+	width: 12%;
+}
+.note-tb th{
+	text-align: center;
+}
+.note-tb td{
+	text-align: center;
+}
+tbody>tr>td:last-child{
+	display: flex;
+	justify-content: space-between;
+	text-align: center;
+	flex-wrap: nowrap;
+}
+tbody>tr>td:last-child>button{
+	flex: 1;
+}
+.note-tb button:not(:first-child){
+	margin-left:5px;
+}
+
+.note-tb td:nth-child(2)>a{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	height: 40px;
+}
+.note-tb td:nth-child(3)>span , .note-tb td:nth-child(4)>span , .note-tb td:nth-child(5)>span{
+	position: absolute;
+	top: 50%;
+	left: 0;
+	right: 0;
+	transform: translateY(-50%);
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.select-section{
+	width: 210px;
+	display: inline-block;
+}
+.select-sectionSec{
+	margin-left:10px;
+	width: 210px;
+	display: inline-block;
+}
+.table>tbody>tr>td {
+    line-height: 40px !important;
+    text-align: center;
+    color: #888888;
+    overflow:hidden;
+    position: relative;
+}

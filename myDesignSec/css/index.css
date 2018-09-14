@@ -1,0 +1,86 @@
+.index-tb{
+	 min-width: 897px;
+}
+.table>tbody>tr>td {
+   height: 50px !important;
+   line-height: 50px !important;
+   text-align: center;
+   color: #888888;
+}
+.index-tb img{
+	width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}
+.btnContainer>button{
+	width: 25%!important;
+}
+.btnContainer>button:not(:first-child){
+	margin-left:5px;
+}
+.table>thead>tr>th{
+	text-align: center;
+}
+.table>thead>tr>th:nth-child(1){
+	width: 15%;
+}
+.table>thead>tr>th:nth-child(2){
+	width: 20%;
+}
+.table>thead>tr>th:nth-child(3){
+	width: 20%;
+}
+.table>thead>tr>th:nth-child(4){
+	width: 20%;
+}
+.table>thead>tr>th:nth-child(5){
+	width: 25%;
+}
+.dialog-icon {
+    width: 170px;
+    height: 170px;
+    position: absolute;
+    right: 15px;
+    top: 48%;
+    border-radius: 4px;
+    transform: translateY(-50%);
+}
+.bookCategory-dialog>p {
+    position: relative;
+    height: 30px;
+}
+.bookCategory-dialog>p>span{
+	display: inline-block;
+	width: 80px;
+}
+.bookCategory-dialog>p:not(:first-child) {
+    margin-top: 40px;
+}
+.bookCategory-dialog input[type=text] {
+    width: 260px !important;
+}
+.add-newSort, .add-newSort1 {
+    width: 250px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    padding: 4px 10px;
+    outline: none;
+    color: #333;
+}
+.btn-cancel:hover {
+    color: #333;
+    background-color: #e6e6e6;
+    border-color: #adadad;
+}
+.btn-chose{
+    width: 260px !important;
+	display: inline-block ;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    padding: 4px 157px 4px  99px!important;
+    color: #333;
+    outline: none !important;
+    margin-left: 0px; 
+}

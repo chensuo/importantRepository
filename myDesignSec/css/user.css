@@ -1,0 +1,37 @@
+.user-form-container{
+	width:380px;
+}
+.error-show-dv{
+	width: 100%;
+	height: 30px;
+	color: #E10601; /*错误*/
+	display: none;
+}
+.right-show-dv{
+	width: 100%;
+	height: 30px;
+	color: #36C601;/*正确*/
+	display: none;
+}
+.error-show-dv>i{
+	color: #E10601;
+}
+.right-show-dv>i{
+	color: #36C601;
+}
+.btn-default{
+	margin-left: 10px;
+}
+.isError{
+	display: block;
+}
+
+.modal-footer{
+	padding:2px 15px;
+}
+.modal-content{
+	width: 400px;
+}
+.modal-title{
+	font-size: 15px;
+}
