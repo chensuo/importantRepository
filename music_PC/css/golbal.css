@@ -1,0 +1,164 @@
+		
+		*{
+			padding: 0;
+			margin: 0;
+			font-size: 14px;
+			font-family: 'Microsoft Yahei';
+
+
+		}
+		/*-------------top----------------*/
+		body{
+			overflow-y: scroll;
+			margin: 0;
+		}
+		.top{
+			position: relative;
+			width: 100%;
+			min-width: 1280px;
+			height: 40px;
+			background: #181818;
+			color:#fff;
+			font-size: 20px;
+			line-height: 40px;
+			font-size: 0;
+			overflow: hidden;
+			
+		}
+		.top>div{
+			width: 1248px;
+			margin: auto;
+			min-width: 1248px;
+		}
+		.top>div>span{
+			font-size: 22px;
+			display: inline-block;
+			width: 15%;
+			float: left;
+			text-align: left;
+		}
+		.top ul:nth-child(2){
+			font-size: 0;
+			width: 33%;
+			height: 100%;
+			display: inline-block;
+		}
+		
+		.top ul:nth-child(2) li{
+			margin-left: 8px;
+			display: inline-block;
+			width: 23%;
+			text-align: center;
+			font-size: 16px;
+			cursor: pointer;
+			user-select: none;
+		}
+		.top ul:nth-child(4){
+			font-size: 0;
+			width: 6%;
+			display: inline-block;
+			display: flex;
+			justify-content: space-between;
+			float: right;
+
+		}
+		.top ul:nth-child(4) li{
+			display: inline-block;
+			width: 50%;
+			cursor: pointer;
+			text-align: right;
+			font-size: 13px;
+		}
+		.top ul:nth-child(4) li:first-child{		
+			text-align: left;
+		}
+		
+		.searchContainer{
+			position: absolute;
+			width: 200px;
+			height: 40px;
+			overflow: hidden;
+			font-size: 0;
+			line-height: 40px;
+			top: 0px;
+			left: 56%;
+		}
+		.search{
+			position: relative;
+			top: 9px;
+			display: inline-block;
+			background: #fff;
+			width: 200px;
+			height: 22px;
+			border-radius: 11px;
+			border: none;
+			line-height: 22px;
+			overflow: hidden;
+			float:right;
+			font-size: 0;
+
+		}
+		.search>input:first-child{
+			width: 80%;
+			height: 25px;
+			font-size: 12px;
+			border: none;
+			text-indent: 10px;
+			line-height: 25px;
+			outline: none;
+
+		}
+		.search>div:last-child{
+			float: right;
+			width: 20%;
+			height: 90%;
+			background: url('../images/search.png') no-repeat center;
+			cursor: pointer;
+		}
+		#home{
+			color: #FECA24;
+		}
+		.loadShow{
+			font-size: 0;
+			width: 13%;
+			display: inline-block;
+			display: flex;
+			justify-content: space-between;
+			float: right;
+
+		}
+		.loadShow li{
+			display: inline-block;
+			cursor: pointer;
+			text-align: right;
+			font-size: 13px;
+		}
+		.loadShow li:first-child{
+			text-align: left;
+			width: 75%;
+		}
+		.loadShow li:last-child{
+			width: 25%;
+		
+		}
+		.loadShow li:first-child i{
+			font-size: 5px;
+			color: #FECA24;
+		}
+
+		/*------------foot----------------*/
+		.foot{
+			margin-top: 5px;
+			height: 210px;
+			width: 100%;
+			min-width: 1280px;
+			background: #181818;
+			display: flex;
+			justify-content: space-between;
+			flex-direction: column;
+			color: #999999;
+			padding-top: 40px;
+			padding-bottom: 100px;
+			box-sizing: border-box;
+			text-align: center;
+		}

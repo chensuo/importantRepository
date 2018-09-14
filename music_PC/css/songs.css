@@ -1,0 +1,192 @@
+.songs{
+	width: 1248px;
+	margin: 20px auto;
+	user-select: none;
+	min-height: 894px;
+}
+.songs::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+.songs-left{
+	width: 20%;
+	border: 1px solid #e2e2e2;
+	box-sizing: border-box;
+	float: left;
+}
+.songs-right{
+	width: 77%;
+	margin-left: 3%;
+	box-sizing: border-box;
+	float: left;
+}
+.allsort{
+	width: 80%;
+	height: 65px;
+	border-bottom: 1px solid #e2e2e2;
+	text-align: left;
+	line-height: 65px;
+	margin: auto;
+	font-size: 16px;
+	font-weight: 600;
+	user-select: none;
+}
+/*左边菜单*/
+.sort{
+	width: 100%;
+	text-align: center;
+	height: 50px;
+	line-height: 50px;
+	margin: 10px auto;
+	transition: background 0.3s linear;
+	cursor: pointer;
+	position: relative;
+	user-select: none;
+}
+.chosedSort{
+	background: #F0BC0F;
+
+}
+.sort span{
+	display: block;
+	width: 3px;
+	height: 18px;
+	position: absolute;
+	top: 50%;
+	margin-top: -9px;
+	transition: background 0.3s linear;
+}
+.allsortContainer{
+	width: 100%;
+}
+.sort:hover{
+	background: #f2f2f2;
+}
+.downPic{
+	width: 80%;
+	margin: 10px auto;
+	border-top: 1px solid #e2e2e2;
+	box-sizing: border-box;
+	padding-top: 10px;
+	font-size: 0;
+
+}
+.downPic>img{
+	width: 100%;
+}
+.downPic>span:first-child{
+	user-select: none;
+	text-align: left;
+	width: 80%;
+	height: 30px;
+	line-height: 30px;
+	display: block;
+}
+.downPic>span:last-child{
+	user-select: none;
+	text-align: center;
+	width: 80%;
+	height: 15px;
+	line-height: 15px;
+	display: block;
+	margin: auto;
+	font-size: 10px;
+}
+.songstitle{
+	width: 100%;
+	min-height: 140px;
+	background: url(../images/bang_xgb.png) no-repeat center top;
+}
+.songsShow{
+	width: 100%;
+	height: 675px;
+}
+.tbSongs{
+	width: 100%;
+
+}
+.tdWorkChild1{
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	background:url('../images/play1.png') no-repeat center;
+	background-size:14px;
+	cursor: pointer;
+}
+.tdWorkChild2{
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	background:url('../images/add.png') no-repeat center;
+	background-size:14px;
+	cursor: pointer;
+}
+.tdWorkChild3{
+	display: inline-block;
+	width: 20%;
+	height: 100%;
+	background: url('../images/download.png') no-repeat center;
+	background-size:14px;
+	cursor: pointer;
+}
+thead{
+	background: #e2e2e2;
+	color: #a1a1a1;
+}
+thead tr{
+	height: 50px;
+}
+#tbMain{
+	text-align: center;
+	font-size: 0px;
+
+}
+#tbMain td{
+	height: 38px;
+}
+#tbMain tr:nth-child(2n){
+	background: #e2e2e2;
+}
+#tbMain td:first-child{
+	width: 12%;
+}
+#tbMain td:nth-child(2){
+	width: 28%;
+}
+#tbMain td:nth-child(3){
+	width: 22%;
+}
+#tbMain td:nth-child(4){
+	width: 15%;
+}
+#tbMain td:nth-child(5){
+	width: 23%;
+}
+#divFooterSong{
+	width: 100%;
+	height: 30px;
+	margin:auto;
+	text-align: center;
+}
+#divFooterSong a{
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 50%;
+	text-decoration: none;
+	border: 1px solid #e2e2e2;
+	color: #000;
+}
+#divFooterSong a:first-child{
+	color: #fff;
+	background-color: #f88000;
+}
+#divFooterSong a:not(:first-child){
+	margin-left: 5px;
+}
+.actived{
+	background-color: #f88000;
+}

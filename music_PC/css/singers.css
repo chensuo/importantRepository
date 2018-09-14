@@ -1,0 +1,162 @@
+.singers{
+	width: 1248px;
+	margin: 20px auto;
+	user-select: none;
+	min-height: 940px;
+	
+}
+.singers::after{
+	content: '';
+	clear: both;
+	display: block;
+}
+.singers-left{
+	width: 20%;
+	border: 1px solid #e2e2e2;
+	box-sizing: border-box;
+	float: left;
+}
+.singers-right{
+	width: 77%;
+	margin-left: 3%;
+	box-sizing: border-box;
+	float: left;
+
+}
+.allSingersContainer{
+	width: 100%;
+}
+.allSingers{
+	width: 80%;
+	height: 65px;
+	border-bottom: 1px solid #e2e2e2;
+	text-align: left;
+	line-height: 65px;
+	margin: auto;
+	font-size: 16px;
+	font-weight: 600;
+	user-select: none;
+}
+.allSingersContainer{
+	width: 100%;
+}
+.singersTitle{
+	width: 100%;
+	height: 30px;
+	line-height: 30px;
+	display: flex;
+	justify-content: space-between;
+}
+.singersTitle>div{
+	cursor: pointer;
+}
+
+.singersTitle>div:first-child{
+	height: 100%;
+	width: 45px;
+	border-radius: 15px;
+	text-align: center;
+	font-weight: 600;
+}
+.singersTitle>div:not(:first-child){
+	height: 100%;
+	width: 30px;
+	border-radius: 30px;
+	background: transparent;
+	text-align: center;
+	color: #000;
+	font-weight: 600;
+}
+#singersTitleChosed{
+	color: #fff;
+	background: #F0BC0F;
+}
+.singersHeader{
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	border: 1px solid #e2e2e2;
+	display: block;
+	
+}
+.singersBody>div:hover .singersHeader{
+	transform: rotateY(360deg); 
+	transition: transform 0.7s linear;
+	
+
+}
+
+.header-Songs{
+	width: 80px;
+	height: 202px;
+	position: absolute;
+	top: 0;
+	left: 202px;
+}
+.singersBody span{
+	width: 200px;
+	height: 50px;
+	text-align: center;
+	line-height: 50px;
+	display: block;
+	cursor: pointer;
+}
+.singersBody{
+	height: 850px;
+}
+.singersBody>div{
+	margin-top: 30px;
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	width: 296px;
+}
+.singersBody>div:not(:nth-child(3n+1)){
+	margin-left: 32px;
+}
+.header-Songs>div:first-child{
+	color: #F0941A;
+	font-style: italic;
+}
+.header-Songs>div{
+	width: 90%;
+	height: 30px;
+	line-height: 30px;
+	text-align: left;
+	margin-left: 8px;
+	overflow: hidden;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+
+}
+.header-Songs>div:not(:first-child){
+	font-size: 11px;
+}
+
+#actived{
+	background-color: #f88000;
+}
+.divPageFooter{
+	width: 100%;
+	height: 30px;
+	margin:auto;
+	text-align: center;
+}
+.divPageFooter a{
+	width: 28px;
+	height: 28px;
+	display: inline-block;
+	text-align: center;
+	line-height: 28px;
+	border-radius: 50%;
+	text-decoration: none;
+	border: 1px solid #e2e2e2;
+	color: #000;
+}
+.divPageFooter a:first-child{
+	color: #fff;
+	background-color: #f88000;
+}
+.divPageFooter a:not(:first-child){
+	margin-left: 5px;
+}
