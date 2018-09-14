@@ -1,0 +1,36 @@
+<div>
+    <div class="page-header">
+        <a ng-click="returnBack();" class="fa fa-mail-reply"></a>
+        <span>我的书架</span>
+        <i ng-click="startOperator();" ng-hide="operatorCode == 1">编辑</i>
+        <i ng-click="startDel();" ng-hide="operatorCode == 0">全部删除</i>
+    </div>
+    <div class="page-no-nav-body">
+        <div class="page-myBookRoom">
+
+             <!--书项目-->
+            <div class="book-item" ng-repeat="item in myBookData" ng-class="{'book-item' : operatorCode == 0 , 'book-item-sec' : operatorCode == 1}">
+                <i ng-click="chkBook();" ng-class="{'fa fa-square-o' : chkCode == true ,'fa fa-check-square-o' : chkCode == false}"></i>
+                <img ng-src="{{item.Book.Image}}" alt="" ng-click="goDetail(item);"/>
+                <div>
+                    <div>《{{item.Book.Name}}》</div>
+                    <div>{{item.Book.Author.Name}}</div>
+                    <div>{{item.Book.PublishDate}}</div>
+                    <div>{{item.Book.Publisher.Name}}</div>
+                </div>
+                <div class="isShowDv" ng-bind="returnIsShow(item);"></div>
+                <a class="fa fa-trash-o" style="color: #7E5335" ng-click="delThisBook(item.Book.Id)"></a>
+            </div>
+
+            <div  ng-show="isShow || delAllCode == 1" class="showDv">
+                抱歉! 您还尚未收藏任何图书!
+            </div>
+
+        </div>
+
+    </div>
+    <div class="car-action myBookRoom-footer">
+        <div ng-click="chkAll();"><i class="fa fa-check-circle-o"></i>全部选中</div>
+        <div ng-click="submitMyOrder();" ng-class="{'submit-order' : orderCode == 1 }"><i class="fa fa-hand-paper-o"></i>{{orderInfo}}</div>
+    </div>
+</div>

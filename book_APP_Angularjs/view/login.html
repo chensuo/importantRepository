@@ -1,0 +1,44 @@
+<div>
+    <div class="page-header login-header">
+        <a href="#/mine" class="fa fa-mail-reply login-back"></a>
+        <span>用户登录</span>
+    </div>
+    <div class="page-no-nav-body">
+        <form name="frm" novalidate>
+        <div class="loadList">
+
+            <div class="form-item">
+                <label class="item-title">账号<span>*</span></label>
+                <input type="text" name="phone" id="phone" class="item-textbox" ng-model="form.phone" required pattern="^1[8357]\d{9}$" placeholder="请输入手机号码" autocomplete="off" maxlength="11"/>
+            </div>
+            <span id="txtPhone" ng-show="frm.phone.$dirty && frm.phone.$error.pattern"><i class="fa fa-times-circle"></i>请输入正确格式的电话号码!</span>
+            <span id="txtPhone2" ng-show="frm.phone.$dirty && frm.phone.$error.required"><i class="fa fa-times-circle"></i>电话号码不能为空!</span>
+            <span id="txtPhone1" ng-hide="frm.phone.$dirty && frm.phone.$error.pattern || frm.phone.$dirty && frm.phone.$error.required"></span>
+            <div class="dv-hr"></div>
+            <div class="form-item">
+                <label class="item-title">密码<span>*</span></label>
+                <input type="password" name="password" id="password" class="item-textbox" ng-model="form.password" required pattern="^\d{4}$" placeholder="请输入密码" autocomplete="off"  />
+            </div>
+            <span id="txtPassword" ng-show="frm.password.$dirty && frm.password.$error.pattern"><i class="fa fa-times-circle"></i>密码为4位的非空白字符!</span>
+            <span id="txtPassword2" ng-show="frm.password.$dirty && frm.password.$error.required"><i class="fa fa-times-circle"></i>密码不能为空!</span>
+            <span id="txtPassword1" ng-hide="frm.password.$dirty && frm.password.$error.pattern || frm.password.$dirty && frm.password.$error.required"></span>
+            <div class="dv-hr"></div>
+
+            <div class="show-data">
+            <span class="error-info" ng-show="infoShow"><i class="fa fa-times-circle"></i>账号密码不匹配!</span>
+                <span class="success-info" ng-show="infoShowSuccess"><i class="fa fa-check-circle"></i>账号密码正确,欢迎您!</span>
+                <a href="#/reset">忘记密码?</a></div>
+
+            <div class="center-align">
+                <button class="btn-submit" ng-click="enterIn();" ng-disabled="frm.$invalid">登录</button>
+            </div>
+
+            <div class="otherLoadWay">
+                <span>其他方式登录:</span><span></span><span></span>
+                <a href="#">用户协议</a><a href="#">隐私政策</a>
+            </div>
+
+        </div>
+        </form>
+    </div>
+</div>

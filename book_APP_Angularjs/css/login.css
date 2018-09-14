@@ -1,0 +1,254 @@
+.loadList{
+    width: 88%;
+    height: 420px;
+    /*background: #fff;*/
+    border-radius: 4px;
+    position: relative;
+    margin:52px auto;
+    overflow:hidden;
+
+}
+
+.show-data{
+    width: 90%;
+    height: 60px;
+    line-height: 60px;
+    margin: auto;
+    overflow: hidden;
+}
+.show-data>a{
+    text-decoration: none;
+    display: inline-block;
+    float: right;
+    font-size: 12px;
+    color: #555;
+}
+.dv-hr{
+    width: 90%;
+    margin: auto;
+    border-bottom: 1px solid #9E6F4A;
+}
+#txtPhone,#txtPhone1,#txtPhone2{
+    min-height:24px;
+    line-height: 24px;
+    width:240px;
+    font-size:12px;
+    padding:3px;
+    color:#CC0000;
+}
+#txtPassword,#txtPassword1,#txtPassword2,#txtPassword3{
+    height:24px;
+    line-height: 24px;
+    width:240px;
+    font-size:12px;
+    padding:3px;
+    color: #CC0000;
+}
+.item-title{
+    display: inline-block;
+    width: 30%;
+    float: left;
+    color: #444;
+}
+.item-title>span{
+    color: #CC0000;
+    display: inline-block;
+    width: 20px;
+    text-align: center;
+
+}
+.item-textbox{
+    outline: none;
+    width: 70%;
+    height: 32px;
+    float: right;
+    border: none;
+    border-radius: 3px;
+    color: #444;
+    background:transparent;
+    font-size: 13px;
+    box-sizing: border-box;
+    padding-left: 15px;
+}
+.form-item:first-child{
+    margin-top: 50px;
+}
+.form-item{
+    width: 90%;
+    height: 32px;
+    line-height: 32px;
+    margin: auto;
+    margin-top: 25px;
+    overflow:hidden;
+    font-size: 14px;
+}
+#txtPhone,#txtPhone1,#txtPhone2{
+    display: block;
+    width: 90%;
+    height: 30px;
+    box-sizing: border-box;
+    margin:auto;
+    line-height: 30px;
+    text-align:left;
+    padding-left: 106px;
+    font-size: 2px;
+
+}
+#txtPassword,#txtPassword1,#txtPassword2,#txtPassword3{
+    display: block;
+    width: 90%;
+    line-height: 30px;
+    height: 30px;
+    box-sizing: border-box;
+    margin:auto;
+    text-align:left;
+    padding-left: 106px;
+    font-size: 2px;
+}
+#txtPassword3{
+    color:#16A05D;
+}
+.btn-submit{
+    width: 90%;
+    outline: none;
+    background: #AB7F57;
+    border: none;
+    color: #444;
+    border-radius: 20px;
+    height: 40px;
+    margin:auto;
+    display:block;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+
+}
+.btn-submit:active{
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.3);
+    font-size: 15px;
+}
+.otherLoadWay{
+    width: 90%;
+    margin:25px auto;
+    height: 40px;
+    position: relative;
+    user-select: none;
+    color: #666;
+    overflow:hidden;
+    font-size: 12px;
+}
+.otherLoadWay>span:first-child{
+    display: inline-block;
+    position: absolute;
+    width: 100px;
+    height: 40px;
+    line-height: 40px;
+
+}
+.otherLoadWay>span:nth-child(2){
+    display: inline-block;
+    position: absolute;
+    left: 85px;
+    width: 16px;
+    height: 15px;
+    top:50%;
+    transform: translateY(-50%);
+    background: url(../image/weixinqq.png) no-repeat;
+    background-position: -2px 0px;
+    border-radius: 3px;
+    cursor: pointer;
+}
+.otherLoadWay>span:nth-child(3){
+    display: inline-block;
+    position: absolute;
+    left: 105px;
+    top:50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 3px;
+    background: url(../image/weixinqq.png) no-repeat;
+    background-position: -23px 0px;
+    cursor: pointer;
+}
+.otherLoadWay a:nth-child(4){
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    right: 65px;
+    line-height: 40px;
+    color: #666;
+}
+.otherLoadWay a:nth-child(5){
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    line-height: 40px;
+    color: #666;
+}
+.form-item>input::placeholder{
+    font-size: 12px;
+    color: #666;
+}
+.error-info{
+    display: inline;
+    width: 50%;
+    height: 100%;
+    line-height: 60px;
+    color: #CC0000;
+    font-size: 12px;
+}
+.success-info{
+    display: inline;
+    width: 50%;
+    height: 100%;
+    line-height: 60px;
+    color: #16A05D;
+    font-size: 12px;
+}
+.success-info>i{
+    margin-right: 5px;
+}
+.error-info>i{
+    margin-right: 5px;
+}
+.loadList i{
+    margin-right: 3px;
+}
+/*******************重置密码**********************************/
+.newsbox{
+    width: 70%;
+    height: 32px;
+    overflow: hidden;
+    float: right;
+    font-size: 13px;
+    box-sizing: border-box;
+    position: relative;
+}
+.newsbox>input{
+    float: left;
+    width: 50%;
+}
+.newsbox>button{
+    position: relative;
+    top: 50%;
+    right: 2px;
+    transform: translateY(-50%);
+   display: inline-block;
+    width: 46%;
+    box-sizing: border-box;
+    float: right;
+    color: #555;
+    text-align: center;
+    height: 85%;
+    background: #AB7F57;
+    border-radius: 20px;
+    font-size: 12px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+    border: none;
+    outline: none;
+}
+.newsbox>button:active{
+    box-shadow: 0 3px 5px 0 rgba(0,0,0,.3);
+    font-size: 13px;
+}
+

@@ -1,0 +1,47 @@
+<div>
+    <div class="page-header">个人中心</div>
+    <div class="page-body page-mine-body">
+        <div class="user-header">
+            <div ng-if="isLoginSuccess">
+                <a href="#/login" class="fa fa-user-circle"></a>
+                <span>请登录</span>
+            </div>
+            <div ng-if="!isLoginSuccess">
+                <img ng-src="{{currentUserData.Header}}" alt="" ng-click="goPersonal();"/>
+                <span>欢迎您 亲爱的{{currentUserData.Name}}!</span>
+            </div>
+        </div>
+        <div class="num2" ng-click="goMyBookRoom();">
+            <i class="fa fa-shopping-cart"></i>
+            <span>我的借书架</span>
+            <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="num3" ng-click="goMyBook();">
+            <i class="fa fa-sticky-note-o"></i>
+            <span>我的借阅</span>
+            <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="num4" ng-click="goAddress();">
+            <i class="fa fa-suitcase"></i>
+            <span>管理地址</span>
+            <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="num5"  ng-click="goother();">
+            <i class="fa fa-map-marker"></i>
+            <span>软件反馈</span>
+            <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="num6"  ng-click="goother();">
+            <i class="fa fa-comment-o"></i>
+            <span>常见问题</span>
+            <i class="fa fa-angle-right"></i>
+        </div>
+        <div class="num7"  ng-click="goother();">
+            <i class="fa fa-upload"></i>
+            <span>关于软件</span>
+            <i class="fa fa-angle-right"></i>
+        </div>
+    </div>
+
+    <page-nav nav-current-index = 3></page-nav>
+</div>

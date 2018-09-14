@@ -1,0 +1,25 @@
+<div>
+    <div class="page-header">
+        <a ng-click="returnBack();" class="fa fa-mail-reply login-back"></a>
+        <span>图书列表</span>
+    </div>
+    <div class="page-no-nav-body">
+        <!-- 书项目-->
+        <div class="book-item" ng-repeat="item in list">
+            <img  alt="" ng-click="goDetail(item);" ng-src="{{item.Book.Image}}"/>
+            <div>
+                <div>《{{item.Book.Name}}》</div>
+                <div>{{item.Book.Author.Name}}</div>
+                <div>{{item.Book.PublishDate}}</div>
+                <div>{{item.Book.Publisher.Name}}</div>
+            </div>
+            <div class="isShowDv" ng-bind="returnIsShow(item);"></div>
+            <a href="#/bookdetail/{{item.Book.Id}}" class="fa fa-angle-right"></a>
+        </div>
+        <div class="load-more" ng-click="loadMoreBooks();" ng-if="btnGetMoreIsShow == 1">加载更多<i class="fa fa-caret-down"></i></div>
+        <div class="load-no-more" ng-show="listShowNoMore == 1">没有更多了<i class="fa fa-exclamation-circle"></i></div>
+        <div  ng-show="isShow" class="showDv">
+            抱歉！该栏目暂时未收录图书，敬请期待!
+        </div>
+    </div>
+</div>

@@ -1,0 +1,120 @@
+.book-item , .book-item-sec{
+    width: 90%;
+    margin: auto;
+    height: 145px;
+    box-sizing: border-box;
+    border-bottom: 1px solid #A07B54;
+    position: relative;
+}
+
+
+.book-item>img, .book-item-sec>img{
+    width: 33%;
+    height: 111px;
+    border-radius: 3px;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    box-shadow: 3px 3px 3px 3px rgba(0,0,0,0.3);
+}
+.book-item-sec>img{
+    left: 15% !important;
+}
+
+.book-item>div , .book-item-sec>div{
+    width: 55%;
+    height: 118px;
+    position: absolute;
+    left: 35%;
+    top: 50%;
+    transform: translateY(-50%);
+    box-sizing: border-box;
+    text-align: left;
+}
+.book-item>i, .book-item-sec>i{
+    color:#6E5335;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.book-item-sec>div{
+    width: 42% !important;
+}
+.book-item-sec>div{
+    left: 50% !important;
+}
+.book-item>a ,.book-item-sec>a{
+    width: 10%;
+    height: 40px;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    text-decoration: none;
+    text-align: right;
+    font-size: 18px;
+    line-height: 40px;
+    color:#555;
+}
+.book-item>div>div ,.book-item-sec>div>div{
+    width: 100%;
+    font-size: 13px;
+
+}
+.book-item>div>div:nth-child(1) ,.book-item-sec>div>div:nth-child(1){
+    height: 40px;
+    overflow: hidden;
+    line-height: 40px;
+    font-weight: bold;
+    color: #6E5335;
+}
+.book-item>div>div:not(:first-child) ,.book-item-sec>div>div:not(:first-child){
+    height: 26px;
+    line-height: 26px;
+    color: #7E5335;
+    margin-left: 8px;
+}
+.state-show{
+    color:#d1d1d1 !important;
+}
+/******************list*******************/
+.isShowDv{
+    display: none;
+}
+.showDv{
+    width: 100% !important;
+    font-size: 14px;
+    color: #333;
+    height: 48px;
+    line-height: 48px;
+    text-align: center;
+    position: relative;
+}
+#logo{
+    position: absolute;
+    top: 50%;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+    transform: translateY(-50%);
+}
+#logo-sort{
+    position: absolute;
+    top: 14%;
+    height: 20px;
+    width: 20px;
+    margin-left: 5px;
+}
+.load-more , .load-no-more{
+    width: 90%;
+    margin: auto;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+    font-size: 15px;
+    color: #444;
+}
+.load-more>i{
+    margin-left: 3px;
+}

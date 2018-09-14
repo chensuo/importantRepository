@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    /*color: #6E5335; 字体主色*/
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    overflow-y: auto;
+}
+.page-body{
+    overflow-y: auto;
+}
+.page-view{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+.page-view>div{
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.page-no-nav-body{
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background:linear-gradient(45deg, #9B6A47,#AF855B,#C0956A,#AF855B,#9B6A47);
+    border-top:1px solid #AF855B;
+    box-sizing: border-box;
+    overflow-y: auto;
+}
+/************************头部*******************************/
+.page-header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 48px;
+    background:linear-gradient(90deg, #9B6A47,#AF855B,#C0956A,#AF855B,#9B6A47);
+    line-height: 48px;
+    box-sizing: border-box;
+    font-size: 17px;
+    text-align: center;
+    color: #f1f1f1;
+    font-weight: 200;
+
+}
+.page-body{
+    position: absolute;
+    top: 48px;
+    left: 0;
+    right: 0;
+    bottom:48px;
+    background:linear-gradient(135deg, #9B6A47,#AF855B,#C0956A,#AF855B,#9B6A47);
+    border-top:1px solid #AF855B;
+    border-bottom:1px solid #8B6A11;
+    box-sizing: border-box;
+}
+.page-header{
+    padding:0 10%;
+    overflow: hidden;
+}
+.page-header>a{
+    position: absolute;
+    height: 100%;
+    line-height: 48px;
+    width: 48px;
+    text-align: center;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    text-decoration: none;
+    color: #333;
+}
+.page-header>i{
+    font-style: normal;
+    font-size: 13px;
+    display: inline-block;
+    position: absolute;
+    right: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 100%;
+    line-height: 48px;
+    width: 57px;
+    color:#333;
+
+}
+/*******************************导航*******************/
+.page-nav{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 48px;
+    line-height: 48px;
+    background-color: #AF855B;/*主色*/
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+}
+.page-nav>a{
+    flex: 1;
+    text-align: center;
+    display: inline-block;
+    color: #e1e1e1;
+    text-decoration: none;
+}
+.page-nav>a.active{
+    color: #3367D6;
+}
+.page-nav>a i{
+    font-size: 22px;
+    display: block;
+    height: 24px;
+    line-height: 32px;
+}
+.page-nav>a span{
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    font-size: 12px;
+}
+
+
+

@@ -1,0 +1,20 @@
+<div>
+    <div class="page-header">
+        <a href="#/mine" class="fa fa-mail-reply"></a>
+        <span>{{currentUserData.Name}}的空间</span>
+    </div>
+    <div class="page-no-nav-body page-personal">
+        <div>
+      <div><span>头像:</span><img ng-src="{{currentUserData.Header}}" alt=""/></div>
+      <div><span>姓名:</span><span>{{currentUserData.Name}}</span></div>
+      <div><span>手机号码:</span><span>{{currentUserData.Phone}}</span></div>
+      <div><span>借书证:</span><span>{{perCardId}}</span></div>
+        </div>
+
+        <div>
+        <div><span>地区:</span><span>{{perAddress}}</span></div>
+        <div><span>个性签名:</span><span>人丑就该多读书!</span></div>
+        </div>
+        <button class="logout" ng-click="backLogin();">注销用户</button>
+    </div>
+</div>

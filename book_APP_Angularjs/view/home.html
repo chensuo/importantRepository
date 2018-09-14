@@ -1,0 +1,34 @@
+<div>
+    <div class="page-header">
+        <span>首页</span>
+        <span class="fa fa-search home-search" ng-click="goSearch();"></span>
+    </div>
+    <div class="page-body page-home-body">
+
+        <!--ad -->
+        <div class="ad-wrapper">
+            <div class="image-wrapper">
+                <div ng-repeat="item in adList"><img ng-src="{{item.Image}}" alt="" /></div>
+            </div>
+        </div>
+
+        <!-- 栏目-->
+        <div ng-repeat="item in books">
+        <div class="new-books"><span>{{books[$index].Name}}</span><a ng-click="goList(item)" class="fa fa-angle-right"></a></div>
+
+        <!-- 书项目-->
+        <div class="newbooks-container">
+            <div ng-repeat="item in books[$index].Books">
+                <img ng-src="{{item.Book.Image}}" alt="" ng-click="goDetail(item)"/>
+                <span>《{{item.Book.Name}}》</span>
+            </div>
+        </div>
+            <div class="isShowDv" ng-bind="returnIsShowHis(item);"></div>
+        </div>
+        <div  ng-show="isShowHis" class="showDv">
+            抱歉网速有点慢!请稍等!<img src="image/11.png" alt="" id="logo"/>
+        </div>
+
+    </div>
+    <page-nav nav-current-index = 0></page-nav>
+</div>

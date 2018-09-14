@@ -1,0 +1,17 @@
+<div>
+    <div class="page-header">分类</div>
+    <div class="page-body page-sort-body">
+        <div ng-repeat="item in sortData">
+            <div ng-click="goList(item);">
+                <img class="sort-img" ng-src="{{item.Image}}" alt=""/>
+                <span>{{item.Name}}</span>
+            </div>
+            <div class="isShowDv" ng-bind="returnIsShowHis(item);"></div>
+        </div>
+        <div  ng-show="isShowHis" class="showDv">
+            抱歉网速有点慢!请稍等!<img src="image/11.png" alt="" id="logo-sort"/>
+        </div>
+    </div>
+
+    <page-nav nav-current-index = 1></page-nav>
+</div>

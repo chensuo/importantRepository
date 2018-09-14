@@ -1,0 +1,30 @@
+<div>
+    <div class="page-header">
+        <a href="#/login" class="fa fa-mail-reply login-back"></a>
+        <span>开始重置密码</span>
+    </div>
+    <div class="page-no-nav-body">
+        <form name="frm" novalidate>
+            <div class="loadList">
+                <div class="form-item">
+                    <label class="item-title">新密码<span>*</span></label>
+                    <input type="password" name="password" id="password" class="item-textbox" ng-model="form.password" required pattern="^\d{4}$" placeholder="请输入新密码" autocomplete="off" />
+                </div>
+                <span id="txtPassword" ng-show="frm.password.$dirty && frm.password.$error.pattern"><i class="fa fa-times-circle"></i>新密码为4位的非空白字符!</span>
+                <span id="txtPassword2" ng-show="frm.password.$dirty && frm.password.$error.required"><i class="fa fa-times-circle"></i>新密码不能为空!</span>
+                <span id="txtPassword1" ng-hide="frm.password.$dirty && frm.password.$error.pattern || frm.password.$dirty && frm.password.$error.required"></span>
+                <div class="dv-hr"></div>
+
+                <div class="show-data">
+                    <span class="success-info" ng-show="resetSuccess"><i class="fa fa-check-circle"></i>密码修改成功，正在跳转!</span>
+                </div>
+
+                <div class="center-align">
+                    <button class="btn-submit" ng-click="confirmReset();" ng-disabled="frm.$invalid">确定修改</button>
+                </div>
+
+            </div>
+        </form>
+
+    </div>
+</div>

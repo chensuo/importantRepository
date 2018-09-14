@@ -1,0 +1,51 @@
+<div>
+    <div class="page-header">
+        <a class="fa fa-mail-reply login-back" ng-click="returnBack();"></a>
+        <span>图书详情</span>
+    </div>
+    <div class="page-no-nav-body page-detail" >
+        <div class="detail-container" ng-hide="isShowHis">
+            <img ng-src="{{bookItem.Book.Image}}" alt=""/>
+        </div>
+        <div class="detail-title" ng-hide="isShowHis">《{{bookItem.Book.Name}}》</div>
+        <div class="detail-info" ng-hide="isShowHis">
+            <div>
+                <i>作者:</i>
+                <span>{{bookItem.Book.Author.Name}}</span>
+            </div>
+            <div>
+                <i>出版社:</i>
+                <span>{{bookItem.Book.Publisher.Name}}</span>
+            </div>
+            <div>
+                <i>出版时间:</i>
+                <span>{{bookItem.Book.PublishDate}}</span>
+            </div>
+            <div>
+                <i>可借/库存:</i>
+                <span>{{bookItem.Number}}/{{bookItem.Book.Amount}}</span>
+            </div>
+        </div>
+
+        <div class="detail-title" ng-hide="isShowHis">简介</div>
+        <div class="" ng-class="{'detail-introduce' : myBookRoomToDetail == 0 , 'detail-introduce-sec' : myBookRoomToDetail == 1}" ng-hide="isShowHis">
+            <span>{{bookItem.Book.Introduce}}</span>
+        </div>
+        <div class="isShowDv" ng-bind="returnIsShowHis(bookItem.Book.Name);"></div>
+        <div  ng-show="isShowHis" class="showDv">
+            抱歉网速有点慢!请稍等!<img src="image/11.png" alt="" id="logo"/>
+        </div>
+    </div>
+
+    <!-- 底部购物车操作-->
+    <div class="car-action" ng-if=" myBookRoomToDetail == 0">
+        <div ng-click="goMyBookRoom();"><i class="fa fa-book"></i>借书架</div>
+        <div ng-click="clickAddBook();" ng-class="{'bookNum' : colorCode == 1 , 'addbook-success' : colorCode == 2 , 'addbook-error' : colorCode == 3}">
+            <i class="fa fa-heart-o" ng-show="colorCode == 0"></i>
+            <i class="fa fa-heartbeat" ng-show="colorCode == 1"></i>
+            <i class="fa fa-heart" ng-show="colorCode == 2"></i>
+            <i class="fa fa-hand-paper-o" ng-show="colorCode == 3"></i>
+            {{addBookShow}}</div>
+    </div>
+
+</div>

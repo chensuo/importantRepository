@@ -1,0 +1,64 @@
+<div>
+    <div class="page-header">
+        <a href="#/mine" class="fa fa-mail-reply"></a>
+        <span>我的借阅</span>
+    </div>
+    <div class="page-no-nav-body">
+        <div class="history-top-nav">
+            <div ng-click="choseOrder();" ng-class="{'active' : menuCode == 1}"><i class="fa fa-sticky-note-o"></i>当前订单</div>
+            <div ng-click="choseHistory();" ng-class="{'active' : menuCode == 2}"><i class="fa fa-history"></i>借阅历史</div>
+        </div>
+        <div>
+        <!-- 当前借阅-->
+        <div class="page-order" ng-if="menuCode == 1">
+
+            <div class="book-item" ng-repeat="item in list">
+
+                <span class="title-code">
+                    <span>订单编号:&nbsp;<span class="order-code-sec">{{item.BorrowNumber}}</span></span>
+                </span>
+                <img ng-src="{{item.BookImage}}" alt="" ng-click="goDetail(item);"/>
+                <div>
+                    <div>《{{item.BookName}}》</div>
+                    <div>{{item.AuthorName}}</div>
+                    <div ng-show="!(item.State == 2) && !(item.State == 1 )">{{item.PublisherName}}</div>
+                    <div  ng-bind="orderStateShow(item.State);" class="state-show"></div>
+                </div>
+                <div class="isShowDv" ng-bind="returnIsShow(item);"></div>
+                <span class="btnOperatorDv">
+                    <button ng-click="confirmOrder(item.Id);" ng-disabled=" !(item.State == 2)" ng-class="{'btnNotActive' : !(item.State == 2)}">确认收货</button>
+                    <button  ng-click="cancelOrder(item.Id);" ng-disabled="!(item.State == 1 )" ng-class="{'btnNotActive' : !(item.State == 1 )}">取消订单</button>
+                </span>
+
+            </div>
+            <div  ng-show="isShow" class="showDv">
+                抱歉!您当前没有订单,快去下单吧!
+            </div>
+
+
+        </div>
+
+        <!-- 借阅历史-->
+        <div class="page-histroy" ng-if="menuCode == 2">
+            <div class="book-item" ng-repeat="item in listHis">
+
+                <span class="title-code">
+                    <span>订单编号:&nbsp;<span class="order-code-sec">{{item.BorrowNumber}}</span></span>
+                </span>
+                <img ng-src="{{item.BookImage}}" alt="" ng-click="goDetailSec(item);"/>
+                <div>
+                    <div>《{{item.BookName}}》</div>
+                    <div>{{item.AuthorName}}</div>
+                    <div>{{item.PublisherName}}</div>
+                    <div  ng-bind="orderStateShow(item.State);"   class="state-show"></div>
+                </div>
+                <div class="isShowDv" ng-bind="returnIsShowHis(item);"></div>
+
+            </div>
+            <div  ng-show="isShowHis" class="showDv">
+                抱歉!您当前没有订阅记录,快去下单吧!
+            </div>
+        </div>
+    </div>
+    </div>
+</div>

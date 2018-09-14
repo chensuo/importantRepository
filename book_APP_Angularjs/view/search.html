@@ -1,0 +1,18 @@
+<div>
+    <div class="page-header  page-search-header">
+        <a href="#/home" class="fa fa-mail-reply login-back"></a>
+        <div>
+        <input type="text" placeholder="请输入图书的名字/ISBN" ng-model="params.keyword" /><span class="fa fa-search" ng-click="startSearch();"></span>
+        </div>
+    </div>
+    <div class="page-no-nav-body page-search-body">
+        <div>搜索历史</div>
+        <div class="search-main-container">
+            <span><span ng-click="searchByHis(his1);">{{his1}}</span></span>
+            <span><span ng-click="searchByHis(his2);">{{his2}}</span></span>
+            <span><span ng-click="searchByHis(his3);">{{his3}}</span></span>
+            <span ng-repeat="item in keywordArr" ><span ng-click="searchByHis(item);">{{item}}</span></span>
+        </div>
+        <button class="clearHistory" ng-click="clearHistory();">清除历史记录</button>
+    </div>
+</div>

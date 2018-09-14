@@ -1,0 +1,26 @@
+<div>
+    <div class="page-header">
+        <a href="#/home" class="fa fa-mail-reply login-back"></a>
+        <span>{{books.Name}}</span>
+    </div>
+    <div class="page-no-nav-body">
+        <!-- 书项目-->
+        <div class="book-item" ng-repeat="item in books.Books">
+            <img ng-src="{{item.Book.Image}}" alt="" ng-click="goDetail(item);"/>
+            <div>
+                <div>《{{item.Book.Name}}》</div>
+                <div>{{item.Book.Author.Name}}</div>
+                <div>{{item.Book.PublishDate}}</div>
+                <div>{{item.Book.Publisher.Name}}</div>
+            </div>
+            <a href="#/bookdetail/{{item.Book.Id}}" class="fa fa-angle-right"></a>
+            <div class="isShowDv" ng-bind="returnIsShowHis(item);"></div>
+        </div>
+        <div  ng-show="isShowHis" class="showDv">
+            抱歉网速有点慢!请稍等!<img src="image/11.png" alt="" id="logo"/>
+        </div>
+        <div class="load-more" ng-click="loadMoreBooks();" ng-if="btnGetMoreIsShow == 1">加载更多<i class="fa fa-caret-down"></i></div>
+        <div class="load-no-more" ng-show="listShowNoMore == 1">没有更多了<i class="fa fa-exclamation-circle"></i></div>
+
+    </div>
+</div>
