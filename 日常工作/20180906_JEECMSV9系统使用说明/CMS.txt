@@ -1,0 +1,5 @@
+前端首页登录  
+       http://192.168.19.66:8080/
+后端管理端登录 http://192.168.19.66:8080/jeeadmin/jeecms/index.do
+管理员账号：admin
+密码：password

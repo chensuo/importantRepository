@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+
+	function Hero(name,attackPower){
+		this.name = name;
+		this.attackPower = attackPower;
+	}
+	Hero.prototype.grade = 2;
+	Hero.prototype.attack = function(){
+		console.log(this.name + '攻击了，造成了' + this.attackPower * this.grade + '的伤害.');
+	}
+
+	var hero = new Hero('李白' , 200);
+	// hero.grade = 3;
+
+	hero.attack();
+
+	console.log(hero);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="lib/css/animate.css">
+	<style>
+	div{
+		position:fixed;
+		left:0;
+		right:0;
+		top:0;
+		bottom:0;
+		background-color: rgba(0,0,0,0.3);
+		display: none;
+	}
+	a{
+		display: block;
+		width:128px;
+		height:48px;
+		line-height: 48px;
+		background-color: #f88000;
+		color:#fff;
+		text-align:center;
+	}
+	::selection{
+		color:transparent;
+	}
+	</style>
+</head>
+<body>
+	<a href="#">链接</a>
+	<button>show</button>
+	<div></div>
+	<script>
+	window.onload = function(){
+		var layer = document.querySelector('div');
+		var btn = document.querySelector('button');
+		btn.onclick = function(){
+			layer.className = 'animated slideInRight';
+			layer.style.display='block';
+		}
+
+		layer.onclick = function(){
+			layer.className = 'animated slideOutRight';
+			// layer.style.display='none';
+		}
+	}
+	</script>
+</body>
+</html>

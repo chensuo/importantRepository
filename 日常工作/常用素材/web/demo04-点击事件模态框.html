@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			font-size:16px;
+			font-family: 'Microsoft YaHei';
+			color:#333;
+		}
+		#alertDialog{
+			width:256px;
+			height:128px;
+			line-height: 128px;
+			text-align: center;
+			border:1px solid #ddd;
+			border-radius: 6px;
+			background-color:#f2f2f2;
+			overflow: hidden;
+			
+
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-left:-128px;
+			margin-top:-64px;
+
+			-webkit-transition: all 0.3s linear;
+			-o-transition: all 0.3s linear;
+			transition: all 0.3s linear;
+
+
+		}
+
+		.default{
+			-webkit-transform: scale(0);
+			-ms-transform: scale(0);
+			-o-transform: scale(0);
+			transform: scale(0);
+			
+		}
+
+		.show{
+			-webkit-transform: scale(1);
+			-ms-transform: scale(1);
+			-o-transform: scale(1);
+			transform: scale(1);
+			
+		}
+
+		button{
+			display: inline-block;
+			width:128px;
+			height:48px;
+			line-height: 48px;
+			text-align: center;
+			border:1px solid #ddd;
+			background-color: #f6f6f6;
+			border-radius: 6px;
+			font-size: 16px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<button onclick="btnShow_onclick();">CSS3方式</button>
+	<div id="alertDialog" class="default">任务正在进行中...</div>
+
+	<script>
+		function btnShow_onclick(){
+			var dialog = document.querySelector('#alertDialog');
+			dialog.className = 'show';
+			window.setTimeout(function(){
+				dialog.className = 'default';
+			} , 2000);
+		}
+	</script>
+</body>
+</html>

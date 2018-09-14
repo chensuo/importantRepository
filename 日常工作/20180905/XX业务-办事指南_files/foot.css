@@ -1,0 +1,6 @@
+@charset "utf-8";
+/*页脚*/
+.footerBox{float:left; width:100%; background:#ebebed; margin-top:30px;}
+.footerBox .footer{float:none; width:1000px; height:90px; margin:0 auto; background:url(../index/images/logo-bottom.gif) no-repeat left center;}
+.footerBox .footer p{float:left; width:400px; height:40px; font-size:14px; padding-left:175px; margin-top:25px; color:#5b5b5b;}
+.footerBox .footer img{float:right; padding:30px 0;}

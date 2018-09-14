@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>类样式</title>
+	<style type="text/css">
+		div{
+			width:256px;
+			height:256px;
+			border:1px solid #ccc;
+			margin-bottom: 12px;
+		}
+
+		.font-color{
+			color:#f00;
+		}
+
+		.font-size{
+			font-size:24px;
+		}
+
+		.bg-color{
+			background-color: #f0f0f0;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div>类样式</div>
+	<button>修改文本颜色</button>
+	<button>修改字体大小</button>
+	<button>修改背景颜色</button>
+	<hr>
+	<button>移除文本颜色</button>
+	<button>移除背景颜色</button>
+	<button>移除字体大小</button>
+	<script type="text/javascript">
+
+		var layer = document.querySelector('div');
+		var buttons = document.querySelectorAll('button');
+
+		buttons[0].onclick = function(){
+			addClass(layer , 'font-color');
+		}
+
+		buttons[1].onclick = function(){
+			// layer.className
+			addClass(layer , 'font-size');
+			
+		}
+
+		buttons[2].onclick = function(){
+			addClass(layer , 'bg-color');
+			
+		}
+
+
+		//	移除文本颜色
+		buttons[3].onclick = function(e){
+			if(layer.className){
+				var arr = layer.className.split(' ');	//class='font-size font-color bg-color'		=>	arr = ['font-size' , 'font-color' , 'bg-color'];
+				var index = arr.indexOf('font-color');	// 
+				if(index >= 0){
+					arr.splice(index , 1);				// arr = ['font-size' ,  'bg-color'];
+					layer.className = arr.join(' ');	// 'font-size bg-color'
+
+				}	
+			}
+		}
+
+
+		buttons[4].onclick = function(){
+			removeClass(layer , 'font-size');
+		}
+
+		buttons[5].onclick = function(){
+			removeClass(layer , 'bg-color');
+		}
+
+
+
+
+		/*
+			功能描述：移除类样式
+		*/
+
+		function removeClass(element , className){
+			if(element.className){
+				var arr = element.className.split(' ');
+				var index = arr.indexOf(className);
+				if(index >= 0){
+					arr.splice(index , 1);
+					element.className = arr.join(' ');
+				}
+			}
+		}
+
+		/*
+			功能描述：追加类样式
+		*/
+
+
+		function addClass(element , className){
+			if(element.className){
+				var arr = element.className.split(' ');
+
+				if(arr.indexOf(className) == -1){
+					element.className = element.className + ' ' + className;
+				}
+				
+			}
+			else{
+				element.className = className;
+			}
+		}
+	</script>
+</body>
+</html>

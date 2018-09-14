@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Hero(name , power){
+		this.name = name;
+		this.power = power;
+	}
+
+	Hero.prototype = {
+		attack:function(){
+			console.log(this.name + '开始攻击了，造成了' + this.power + '伤害.');
+		}
+	};
+
+	function Warioir(name, power , grade){
+		Hero.call(this, name , power);
+		this.grade = grade;
+	}
+	Warioir.prototype = new Hero();
+	Warioir.prototype.constructor = Warioir;
+
+
+	var w1 = new Warioir('jack' , 200 , 2);
+
+
+	w1.attack();
+
+	console.log(w1);
+	</script>
+</body>
+</html>

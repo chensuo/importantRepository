@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片懒加载</title>
+</head>
+<body>
+	<img src="images/default.png" data-src="http://img.zcool.cn/community/0336087564324406ac7259e0f4934d9.jpg" width="256">
+
+	<img src="images/default.png" data-src="http://img2.niutuku.com/desk/1208/1933/ntk-1933-20609.jpg" width="256">
+
+	<img src="images/default.png" data-src="http://g.hiphotos.baidu.com/zhidao/pic/item/d52a2834349b033b0d26344117ce36d3d439bdfb.jpg" width="256">
+
+
+
+	<script type="text/javascript">
+		var images = document.querySelectorAll('img[data-src]');
+
+		images.forEach(function(item,index){
+			item.onload = function(e){
+				var source = this.getAttribute('data-src');
+				console.log(this.src + ':' + source);
+				if(this.src != source){
+					this.src = source;
+				}
+			}
+		});
+	</script>
+</body>
+</html>

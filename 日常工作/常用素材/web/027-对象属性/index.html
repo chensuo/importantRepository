@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		
+	(function(){
+		var xhr = new XMLHttpRequest();
+
+		var ajax = {
+			get:function(url , callback){				
+				xhr.open('GET' , url , true);
+				xhr.onreadystatechange = function(){
+					if(this.readyState == 4 && this.status == 200){
+						var data = this.responseText;
+						callback(data);
+					}
+				};	
+				xhr.send(null);
+			},
+			post:function(url , param , callback){
+				
+				xhr.open('post' , url , true);
+				xhr.onreadystatechange = function(){
+					if(this.readyState == 4 && this.status == 200){
+						var data = this.responseText;
+						callback(data);
+					}
+				};	
+				xhr.send(param);
+			}
+		};
+		window.Ajax = ajax;
+	})();
+		
+
+		console.log(window.Ajax);
+
+
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+@charset "utf-8";
+@namespace "http://www.w3.org/1999/xhtml";
+@author: Qian He;
+
+a {
+	color:#111;
+	text-decoration:none;
+}
+.pages{width:100%;clear:both;display:block;height:40px;float:left;text-align: center;}
+.pages p{width:55%;margin:0 auto;}
+.pages span{width:30px; padding-right: 3px;}
+.page-item{border-radius:5px;padding:5px 8px;border:1px solid #999;color:#000;}
+.page-current,.pages span a:hover{background-color:#ec3933;color:#fff;border:1px solid #ec3933;}
+.page-num{float:left;text-align:left;display: inline-block;vertical-align: middle;font-size: 12px;color: #999;font-weight: normal;margin-left:10px;}
+.arrow-left {
+	border-color: transparent #EC3933 transparent transparent;
+	border-style: dashed solid dashed dashed;
+	border-width: 6px;
+	margin-right: 5px;
+}
+a:hover .arrow-left {
+	border-right-color: white;
+	margin-right: 5px;
+}
+.arrow-right {
+	border-color: transparent transparent transparent #EC3933;
+	border-style: dashed dashed dashed solid;
+	border-width: 6px;
+	margin-left: 5px;
+}
+a:hover .arrow-right {
+	border-left-color: white;
+	margin-left: 5px;
+}
+.arrow {
+	font-size: 0;
+	width: 0;
+	height: 0;
+	line-height: 0;
+	overflow: hidden;
+	display: inline-block;
+	vertical-align: -2px;
+}
+
+/*审批类型*/
+.choose{
+	width:100%;
+	border-collapse:collapse;
+	text-align:left;
+	/*padding:5px 0;*/
+	color:#333;
+}
+.choose a{text-decoration:none;	padding:2px 7px;line-height:35px;}
+.choose a:hover{
+	color:#fff;
+	border-radius:5px;
+	padding:2px 7px;
+	background-color:#ff5c4d;
+}
+/*事项选中时的样式*/
+.clckClass{
+	color:white;
+	border-radius:5px;
+	padding:5px 7px;
+	background-color:#ff5c4d;
+}
+/*控制首字母的样式*/
+#fristCode{
+	width:100%;
+	border-collapse:collapse;
+	text-align:left;
+	padding:2px 0;
+	color:#333;
+}
+#fristCode li{float:left;padding: 0px 3px;height: 25px;line-height: 25px;margin: 8px 5px 7px;border-radius:5px;font-size:14px;}
+#fristCode li:hover{
+	color:#fff;
+	background-color:#ff5c4d;
+}
+/*首字母选中的样式*/
+#fristCode li.fcodeClass{
+	color:white;
+	background-color:#ff5c4d;
+}
+/*关键词搜索*/
+.check{
+	color:#fff;
+	border:none;
+	background-color:#ff5c4d;
+	font-family:微软雅黑,黑体,宋体;		
+	cursor:pointer;
+	display: inline-block;
+    width: 50px;
+    height: 25px;
+    line-height: 25px;
+    vertical-align: middle;
+}
+.keyword{
+	border:1px solid #bbb;
+	background-color:#fff;
+	outline:none;
+		font-family:微软雅黑,黑体,宋体;		
+}
+
+/*办事服务列表分页*/
+.classify_ant{
+    height: 50px;
+    width: 100%;
+    color: #a4131d;
+    font-size: 13px;
+    line-height: 35px;
+	font-weight: normal;
+}

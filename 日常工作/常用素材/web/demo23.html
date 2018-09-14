@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>主页二</title>
+	<style>
+	iframe{
+		display: block;
+		position:fixed;
+		left:0px;
+		right:0px;
+		bottom:0px;
+		height:64px;
+	}
+	button{
+		width:128px;
+		height:36px;
+		line-height: 36px;
+		display: inline-block;
+		margin-right:6px;
+	}
+	</style>
+</head>
+<body>
+	<div></div>
+	<iframe src="player.html" name="playerFrame" width="100%" frameborder="1"></iframe>
+	<script src="js/player.js"></script>
+	<script>
+	var mp3 = [
+		{name:'默' , res:'mo.mp3'}, 
+		{name:'情人' , res:'qingren.mp3'}
+	];
+
+	window.onload = function(e){
+		loadMusicList();		
+	}
+
+	</script>
+</body>
+</html>

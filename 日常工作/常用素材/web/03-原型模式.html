@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>原型模式</title>
+</head>
+
+<body>
+    <script>
+    function Hero() {
+
+    }
+
+    Hero.prototype = {
+        name: '默认',
+        attackPower: 10,
+        weapon: {
+            name: '木剑',
+            power: 20
+        },
+        attack: function() {
+            console.log(this.name + '使用' + this.weapon.name + '攻击,造成了' + (this.attackPower + this.weapon.power) + '的伤害.');
+        }
+    };
+
+    var hero1 = new Hero();
+    // hero1.name = '老夫子';
+    // hero1.attack = 160;
+
+    var hero2 = new Hero();
+    hero2.name = '鲁班7号';
+    hero2.attackPower = 200;
+
+   	console.log('-------------------------');
+	hero1.attack();
+	hero2.attack();
+
+
+	console.log('-------------------------');
+	hero2.weapon.name='十字弓';
+    hero2.weapon.power = 300;
+	hero1.attack();
+	hero2.attack();
+
+	console.log('-------------------------');
+	console.log(hero1.weapon === hero2.weapon);
+	console.log(hero1.attack === hero2.attack);
+	
+	console.log("--------------------------");
+	console.log(hero1);
+	console.log(hero2);
+
+    </script>
+</body>
+
+</html>

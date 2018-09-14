@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>数组扩展方法</title>
+</head>
+<body>
+	<script type="text/javascript">
+		var students = [
+			{id:1 , name:'Jack' , age:19 , city:'苏州'},
+			{id:2 , name:'Janny' , age:57 , city:'南京'},
+			{id:3 , name:'Tommy' , age:32 , city:'徐州'},
+			{id:4 , name:'Jarry' , age:24 , city:'徐州'},
+			{id:5 , name:'Rose' , age:21 , city:'苏州'},
+			{id:6 , name:'James' , age:27 , city:'苏州'}
+		];
+
+		console.log('检查一个对象是否为数组:Array.isArray');
+		console.log(Array.isArray(students));
+
+		console.log('数组过滤:Array.filter');
+
+		var result = students.filter(function(item,index , array){
+			return item.age > 20 && item.city == '苏州';
+		});
+
+		console.log(result);
+
+	</script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			font-size:16px;
+			font-family: 'Microsoft YaHei';
+			color:#333;
+		}
+		#alertDialog{
+			width:256px;
+			height:128px;
+			line-height: 128px;
+			text-align: center;
+			border:1px solid #ddd;
+			border-radius: 6px;
+			background-color:#f2f2f2;
+			
+
+			position:absolute;
+			left:50%;
+			top:50%;
+			margin-left:-128px;
+			margin-top:-64px;
+
+			display: none;
+		}
+
+		button{
+			display: inline-block;
+			width:128px;
+			height:48px;
+			line-height: 48px;
+			text-align: center;
+			border:1px solid #ddd;
+			background-color: #f6f6f6;
+			border-radius: 6px;
+			font-size: 16px;
+		}
+
+	</style>
+
+</head>
+<body>
+	<button>Jquery方式</button>
+	<div id="alertDialog">任务正在进行中...</div>
+
+	<script src="lib/js/jquery.js"></script>
+	<script>
+		$(function(){
+			/**
+				
+			*/
+			$('button').bind('click' , function(){
+				var $dialog = $('#alertDialog');
+				$dialog.show(function() {
+					setTimeout(function(){$dialog.hide();} , 2000);
+				});
+			});
+		});
+	</script>
+</body>
+</html>

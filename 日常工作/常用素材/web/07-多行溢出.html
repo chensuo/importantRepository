@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	.box {
+		border:1px solid #ccc;
+	    width: 400px; 
+		line-height: 28px;
+	    display: -webkit-box;
+	    -webkit-line-clamp: 3;
+	    -webkit-box-orient: vertical;
+	    overflow: hidden;
+	}
+	</style>
+</head>
+<body>
+	
+	<div class="box">
+		在实际的项目中，由于文字内容的长度不确定性和页面布局的固定性，难免会出现文字内容超过div（或其他标签，下同）区域的情况，此时比较好的做法就是当文字超过限定的div宽度后自动以省略号（…）显示，这样，按照习惯，人们都会知道这儿有文字被省略了。css中有个属性叫做text-overflow:ellipsis;配合其他一些属性可以实现IE,chrome,safria浏览器下文字溢出点点点省略号显示，在加上opera浏览器的私有属性-o-text-overflow:ellipsis;就目前而言，可以实现Firefox浏览器以外的所有主流浏览器的文字溢出点点点省略号显示
+	</div>
+</body>
+</html>

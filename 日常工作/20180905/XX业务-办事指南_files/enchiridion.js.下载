@@ -1,0 +1,194 @@
+$(function(){
+	// 扫描&分享&收藏
+	$('.link-work-mobile').popover({
+		content: '<img src="img/qrcode.png">',
+		html: true,
+		placement: 'bottom',
+		trigger: 'hover'
+	});
+	// 分享
+	$('.link-work-share').popover({
+		content: function(){
+			var _html =  '<img src="img/pic-share-sina.png" alt="分享到新浪微博" title="分享到新浪微博" onclick="data_sendto('+ tsina +');return false;">' + '\n' +
+						'<img src="img/pic-share-tenxun.png" alt="分享到腾讯微博" title="分享到腾讯微博" onclick="data_sendto('+ tqq +');return false;">' + '\n' +
+						'<img src="img/pic-share-wechat.png" alt="分享到朋友圈" title="分享到朋友圈">';
+			return _html;
+		},
+		html: true,
+		placement: 'bottom'
+	});
+	// 导航标签
+	$('body').scrollspy({
+		target: '.navbar-affix'
+	});
+	var position = $('#work-basic-info').offset();
+	$('#workAffix').affix({
+		offset: {
+			top: position.top
+		}
+	});
+	
+	if($("#work-handle-placetime .work-box-content div").length==1||$("#work-handle-placetime .work-box-content div").length==0)$('#work-handle-placetime .work-box-content .toggleBtn').hide();
+	
+	$('#work-basic-info td.cell-popover > div').popover();
+	
+	// 展开/收起
+	$('.work-box').on('click','.btn-gray',function(){
+		var $toggleRow = $(this).parents('.work-box').find('.row-hidden');
+		if ($toggleRow.is(':visible')) {
+			$toggleRow.hide();
+			$(this).html('展开 <i class="fa fa-angle-double-down"></i>');
+		} else {
+			$toggleRow.show();
+			$(this).html('收起 <i class="fa fa-angle-double-up"></i>');
+		}
+	});
+	
+	// 办理流程 - 弹框查看大图
+	$('#work-handle-process').on('click','.process-imgbox .btn',function(){
+		$('#picModal .modal-title').html('办理流程图');
+		$('#picModal .modal-body img').attr('src',$(".process-imgbox p img").attr("src"));
+		$('#picModal').modal('show');
+	});
+	
+	// 结果样本
+	$('#viewSample').popover({
+		content: function(){
+			return '<img src="img/pic-work-box-sample.png" width="160">'
+		},
+		html: true,
+		trigger: 'hover'
+	});
+	
+	$(document).on('click','#viewSample',function(){
+		$('#picModal .modal-title').html('查看结果样本');
+		$('#picModal .modal-body img').attr('src','img/pic-work-box-sample.png');
+		$('#picModal').modal('show');
+	});
+});
+
+//申请材料 - 要求 - 弹框初始化
+$('#work-apply-data').on('post-body.bs.table', '.table', function(){
+	$(this).find('.link-red').popover();
+});
+//申请材料 - 要求 - 格式化
+function requireFormatter (value,row,index) {
+	if (value!=null && value.length > 0 && value!='null') {
+		return '<a tabindex="0" class="link-red" role="button" data-toggle="popover" data-trigger="focus" data-placement="left" data-content="' + value + '">查看详情</a>';
+	} else {
+		return '';
+	}
+}
+// 申请材料 - 范本表格 - 格式化
+function sampleFormatter (value,row,index) {
+	if (value) {
+		if(value.indexOf('group1')>-1){
+			return '<a class="btn btn-border" href="'+value.replace('172.18.125.23',file_server)+'">下载查看</a>';
+		}else{
+			return '';
+		}
+	} else {
+		return '';
+	}
+}
+// 申请材料 - 空白表格 - 格式化
+function emptyFormatter (value,row,index) {
+	if (value) {
+		return '<a class="btn" href="'+value.replace('172.18.125.23',file_server)+'">表格下载</a>';
+	} else {
+		return '';
+	}
+}
+var initStuffSheet=function(datas){
+	// 申请材料表格文件下载数据渲染
+	$('#tablefile').bootstrapTable({
+		columns: [
+			[
+				{
+					field: 'ST_SHEETFILENAME',
+					title: '表格名称',
+					halign: 'center'
+				},			
+				{
+					field: 'BL_SHEETCONTENT',
+					title: '空白表格',
+					align: 'center',
+					valign: 'middle',
+					formatter: emptyFormatter
+				},
+				{
+					field: 'BL_EXAMPLECONTENT',
+					title: '下载范例',
+					align: 'center',
+					valign: 'middle',
+					width: '20%',
+					formatter: sampleFormatter
+				}
+			]
+		],
+		data: datas
+	});
+}
+var initWorkTable = function(index,data){
+	$('.work-table-'+index).bootstrapTable({
+		columns: [
+			[
+				{
+					field: 'ST_STUFF_NAME',
+					title: '材料名称',
+					halign: 'center'
+				},
+				{
+					field: 'ST_ORIGINAL_NUMBER',
+					title: '原件份数',
+					align: 'center',
+					valign: 'middle',
+					width: '8%'
+				},
+				{
+					field: 'ST_COPY_NUMBER',
+					title: '复印件份数',
+					align: 'center',
+					valign: 'middle',
+					width: '8%'
+				},
+				{
+					field: 'ST_PAPER_OR_ELECTRONIC',
+					title: '纸质版/电子版',
+					align: 'center',
+					valign: 'middle',
+					width: '10%'
+				},
+				{
+					field: 'ST_ORIGIN_COMPANY',
+					title: '材料来源渠道',
+					align: 'center',
+					valign: 'middle',
+					width: '10%'
+				},
+				{
+					field: 'ST_STUFF_REQUEST',
+					title: '要求',
+					align: 'center',
+					valign: 'middle',
+					width: '9%',
+					formatter: requireFormatter
+				}
+			]
+		],
+		data: data.contant
+	})
+}
+
+var showOrganByType = function(type,name,code){
+	if(type == 'city'){
+		showOrganByCode(code,name);
+		$("#dept").show();
+	}else if(type=='other'){
+		showOrganByCode(code,name);
+		$("#dept").hide();
+	}else{
+		$("#dept").hide();
+		$("#_logoId").hide();
+	}
+}

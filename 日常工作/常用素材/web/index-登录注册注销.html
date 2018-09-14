@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.dialog-bg{
+			position:fixed;
+			left:0;
+			right:0;
+			top:0;
+			bottom:0;
+			background-color: rgba(0,0,0,0.3);
+		}
+		.dialog-bg>div{
+			width:640px;
+			height:480px;
+			background-color: #fff;
+			position:absolute;
+			left:50%;
+			top:50%;
+			transform:translate(-50% , -50%);
+		}
+	</style>
+</head>
+<body>
+	<!-- 登录、注销 -->
+	<div id="loginBefore">
+		<p>
+			用户名: <input type="text" id="txtName">
+		</p>
+		<p>
+			密码: <input type="text" id="txtPassword">
+		</p>
+
+		<button id="btnLogin">登录</button>
+		<button id="btnRegiste">注册</button>
+
+	</div>
+	<div id="loginAfter" style="display:none;">
+		<div>欢迎您，<span></span></div>
+		<a href="#" id="lnkLogout">注销</a>
+	</div>
+
+	<!-- ------------------------------------- -->
+	<div id="divRegiste" class="dialog-bg" style="display:none;">
+		<div class="dialog"></div>
+	</div>
+
+	<script src="lib/js/jquery.js"></script>
+	<script>
+	/*监听事件*/
+	$(document).ready(function(){
+		// -1- 登录事件
+		$('#btnLogin').bind('click' , function(e){
+			var name = $('#txtName').val(); 
+			var password = $('#txtPassword').val();
+
+			$.post('login.do' , {name:name , password:password} , function(data){
+				if(data == 1){
+					$('#loginBefore').css('display' , 'none');
+					$('#loginAfter').css('display' , 'block');
+					$('#loginAfter span').text(name);
+				}
+				else{
+					// 显示用户信息不正确
+					alert('用户信息不正确.');
+				}
+			});
+		});
+
+		// -2- 注销事件
+		$('#lnkLogout').bind('click' , function(e){
+			$.get('logout.do' , function(data){
+				if(data == 1){
+					// 注销成功
+					$('#loginBefore').css('display' , 'block');
+					$('#loginAfter').css('display' , 'none');
+					$('#loginAfter span').text('');
+				}	
+				else{
+
+				}			
+			})
+			return false;
+		});
+
+		// -3- 注册事件
+		$('#btnRegiste').bind('click' , function(e){
+			$('#divRegiste').css('display' , 'block');
+		});
+
+	});
+	</script>
+</body>
+</html>

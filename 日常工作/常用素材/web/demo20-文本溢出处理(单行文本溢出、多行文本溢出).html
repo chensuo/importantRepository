@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>文本溢出</title>
+	<style>
+		.single{
+			border-bottom:1px solid #ccc;
+		}
+
+		.single>div{
+			width:256px;
+			height:36px;
+			line-height: 36px;
+			background-color: #212121;
+			margin:36px 0px;
+			color:#999;
+			white-space: nowrap;
+		}
+
+		.single>div:last-child{
+			overflow: hidden;
+			-ms-text-overflow: ellipsis;
+			text-overflow: ellipsis;
+		}
+
+		.multiple>div,.multiple-js>div{
+			width:256px;
+			height:108px;
+			line-height: 36px;
+			background-color: #212121;
+			margin:36px 0px;
+			color:#999;
+		}
+
+		.multiple>div:last-child{
+			display: -webkit-box;  
+		    display: -moz-box;  
+		    overflow: hidden;  
+		    text-overflow: ellipsis;  
+		    word-break: break-all;  
+		    -webkit-box-orient: vertical;  
+		    -webkit-line-clamp:3;  
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="single">
+		<h2>单行文本溢出</h2>
+		<div>文字内容的长度不确定性和页面布局的固定性,支持文字溢出后省略号表示</div>
+		<div>文字内容的长度不确定性和页面布局的固定性,支持文字溢出后省略号表示</div>
+	</div>
+
+	<div class="multiple">
+		<h2>多行文本溢出-(webkit内核)</h2>
+		<div>文字内容的长度不确定性和页面布局的固定性,支持文字溢出后省略号表示,支持文字溢出后省略号表示,支持文字溢出后省略号表示</div>
+		<div>文字内容的长度不确定性和页面布局的固定性,支持文字溢出后省略号表示,支持文字溢出后省略号表示,支持文字溢出后省略号表示</div>
+	</div>
+</body>
+</html>

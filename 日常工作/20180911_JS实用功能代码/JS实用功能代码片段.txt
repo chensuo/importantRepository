@@ -1,0 +1,16 @@
+网址：https://zhuanlan.zhihu.com/p/23076321
+
+原生JavaScript实现字符串长度截取
+原生JavaScript获取域名主机
+原生JavaScript元素显示的通用方法
+原生JavaScript实现checkbox全选与全不选
+原生JavaScript完美判断是否为网址
+原生JavaScript获得URL中GET参数值
+原生JavaScript跨浏览器添加事件
+原生JavaScript常用的正则表达式
+原生JavaScript实现返回顶部的通用方法
+原生JavaScript实现全选通用方法
+原生JavaScript实现全部取消选择通用方法
+原生JavaScript获取单选按钮的值
+原生JavaScript获取复选框的值
+原生JavaScript判断变量是否空值

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>三角</title>
+	<style type="text/css">
+		 div{
+		 	display: inline-block;
+		 	margin-right: 36px;
+		 }
+		.arrow{
+			width:24px;
+			height:24px;
+			box-sizing: border-box;
+			border-top:2px solid #ccc;
+			border-right:2px solid #ccc;
+		}
+
+		.arrow-right{
+			transform:rotate(45deg);
+		}
+		.arrow-left{
+			transform:rotate(-135deg);
+		}
+		.arrow-up{
+			transform:rotate(-45deg);
+		}
+
+		.arrow-down{
+			transform:rotate(135deg);
+		}
+
+
+		.triangle{
+			width:0px;
+			height:0px;
+			border-width: 20px;
+		}
+
+		.triangle-right{
+			border-style: dashed dashed dashed solid;
+			border-color: transparent transparent transparent red;
+		}
+
+		.triangle-left{
+			border-style: dashed solid dashed dashed;
+			border-color: transparent red transparent transparent;
+		}
+
+		.triangle-up{
+			border-style: dashed dashed solid dashed;
+			border-color: transparent transparent red transparent;
+		}
+
+		.triangle-down{
+			border-style: solid dashed dashed dashed;
+			border-color: red transparent transparent transparent;
+		}
+
+		
+
+	</style>
+</head>
+<body>
+	<div class="arrow arrow-right"></div>
+	<div class="arrow arrow-left"></div>
+	<div class="arrow arrow-up"></div>
+	<div class="arrow arrow-down"></div>
+	<hr>
+	<div class="triangle triangle-right"></div>
+	<div class="triangle triangle-left"></div>
+	<div class="triangle triangle-up"></div>
+	<div class="triangle triangle-down"></div>
+</body>
+</html>

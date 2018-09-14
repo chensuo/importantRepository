@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>多条件筛选</title>
+	<style>
+		body{
+			font-size:14px;
+			font-family: 'Microsoft YaHei';
+		}
+		.container{
+			width:1080px;
+			margin:auto;
+		}
+		.filter-wrapper{
+			margin-bottom: 10px;
+		}
+		.filter-item{
+			padding:6px;
+		}
+		.filter-item>h4{
+			display: inline-block;
+			min-width: 96px;
+			height:24px;
+			line-height: 24px;
+			margin:6px 10px 6px 0px;
+			font-size:16px;
+
+		}
+		.filter-item>a{
+			text-decoration: none;
+			display: inline-block;
+			min-width: 96px;
+			height:28px;
+			line-height: 28px;
+			text-align: center;
+			color:#963;
+			margin-right:6px;
+		}
+
+		.filter-item>a:hover,a.selected{
+			color:#fff;
+			font-weight: bold;
+			background-color:#963;
+		}
+
+		.filter-content{
+			display:-webkit-flex;
+			display:flex;
+
+			-webkit-flex-direction: row;
+			-moz-flex-direction: row;
+			-ms-flex-direction: row;
+			-o-flex-direction: row;
+			flex-direction: row;
+
+			-webkit-flex-wrap: wrap;
+			-moz-flex-wrap: wrap;
+			-ms-flex-wrap: wrap;
+			-o-flex-wrap: wrap;
+			flex-wrap: wrap;
+			/*水平对齐*/
+			justify-content:space-between;
+		}
+
+		.content-item{
+
+			
+			width:180px;
+			margin:5px;
+			height:auto;
+			border:1px solid #ddd;
+			padding:5px;
+
+			text-align: center;
+		}
+
+		.content-item:hover{
+			border:1px solid #963;
+		}
+
+		.content-item>img{
+			display: inline-block;
+			width:80%;
+		}
+		.content-item>h3{
+			height:18px;
+			line-height: 18px;
+			text-align: center;
+			font-size:14px;
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="filter-wrapper">
+			<div class="filter-item">
+				<h4>图书类别:</h4>
+				<a href="#" class="selected">全部</a>
+				<a href="#">编程语言</a>
+				<a href="#">网页开发</a>
+				<a href="#">软件工程</a>
+			</div>
+			<div class="filter-item">
+				<h4>出版社:</h4>
+				<a href="#" class="selected">全部</a>
+				<a href="#">人民邮电</a>
+				<a href="#">机械工业</a>
+				<a href="#">清华大学</a>
+			</div>
+			<div class="filter-item">
+				<h4>图书价格:</h4>
+				<a href="#" class="selected">全部</a>
+				<a href="#">10元及以下</a>
+				<a href="#">11~50元</a>
+				<a href="#">51~100元</a>
+				<a href="#">100元以上</a>
+			</div>
+		</div>
+		<div class="filter-content">
+			<div class="content-item">
+				<img src="images/01.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/02.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/03.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/04.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/05.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/06.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/07.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/08.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/09.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/10.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/11.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+	
+			<div class="content-item">
+				<img src="images/12.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/13.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/14.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/15.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+			<div class="content-item">
+				<img src="images/16.jpg" alt="">
+				<h3>图书名称</h3>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

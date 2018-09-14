@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		.list{
+			counter-reset:section;
+		}
+		.list>p:before{
+			content:counter(section) '.';
+			counter-increment:section;
+		}
+	</style>
+</head>
+<body>
+	<div class="list">
+		<p>AAA</p>
+		<p>BBB</p>
+		<p>CCC</p>
+		<p>DDD</p>
+		<p>EEE</p>
+		<p>FFF</p>
+	</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片懒加载</title>
+	<style>
+	div{
+		width:960px;
+		margin:auto;
+		padding:10px;
+		border:1px solid #ddd;
+		overflow: hidden;
+	}
+	div>img{
+		display: block;
+		width:300px;
+		height: 300px;
+		margin-bottom: 20px;
+	}
+	</style>
+</head>
+<body>
+	<div>
+		<img class="lazy" src="images/default.png" alt="" data-original="http://image1.nphoto.net/news/image/201607/0c1df8be2db25ef2.jpg">
+		<img class="lazy" src="images/default.png" alt="" data-original="http://image1.nphoto.net/news/image/201607/4ea0cd6df6c88c9a.jpg">
+		<img class="lazy" src="images/default.png" alt="" data-original="http://image1.nphoto.net/news/image/201607/7878c3e38e2810b7.jpg">
+		<img class="lazy" src="images/default.png" alt="" data-original="http://image1.nphoto.net/news/image/201607/c3f4b19d718e7252.jpg">
+		<img class="lazy" src="images/default.png" alt="" data-original="http://image1.nphoto.net/news/image/201607/2a8d01e7357df84a.jpg">
+		<img class="lazy" src="images/default.png" alt="" data-original="http://image1.nphoto.net/news/image/201607/015f819cc6b7b8d7.jpg">
+
+	</div>
+	<script src="lib/js/jquery.js"></script>
+	<script src="lib/js/lazyload.js"></script>
+	<script>
+	$(function(){
+		$('img.lazy').lazyload();
+	});
+	</script>
+</body>
+</html>

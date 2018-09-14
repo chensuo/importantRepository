@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Jquery动画</title>
+	<style>
+		body{
+			font-size: 16px;
+			font-family: 'Microsoft YaHei';
+			color:#333;
+		}
+		button{
+			display: inline-block;
+			width:128px;
+			height:48px;
+			line-height: 48px;
+			text-align: center;
+			border:1px solid #ddd;
+			background-color: #f6f6f6;
+			border-radius: 6px;
+			cursor: pointer;
+			font-weight: bold;
+		}
+		/*提示框默认样式*/
+		#alert-dialog{
+			width:256px;
+			height:128px;
+			line-height: 128px;
+			text-align: center;
+			color:#963;
+			border:1px solid #faebcc;
+			border-radius: 12px;
+			background-color:#fcf8e3;
+			position:absolute;
+			left:50%;
+			margin-left:-128px;
+			top:-128px;
+			-webkit-box-sizing: border-box;
+			-moz-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+	</style>
+</head>
+<body>
+	<button onclick="btnAdd_onclick();">加入购物车</button>
+
+	
+	<div id="alert-dialog" class="hide">
+		加入购物车成功
+	</div>
+	<script src="lib/js/jquery.js"></script>
+	<script>
+		function btnAdd_onclick(){
+			var $dialog = $('#alert-dialog');
+			$dialog.animate({
+				top: '50%' , 'marginTop':'-64px'},
+				300, function() {
+					window.setTimeout(function(){
+						$dialog.animate({top:'-128px' , 'marginTop':'0px'} , 300);
+					} , 2000);
+					
+			});
+		}
+	</script>
+</body>
+</html>

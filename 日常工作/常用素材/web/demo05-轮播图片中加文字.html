@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		body{
+			min-width:1080px;
+		}
+		.header{
+			height:80px;
+			background-color:#333;
+		}
+
+		.image-wrapper{
+			width:100%;
+			position:relative;
+
+		}
+
+		.image-wrapper img{
+			display: block;
+			width: 100%;
+		}
+		
+
+		.image-wrapper>div{
+			display: block;
+			width:240px;
+			height:48px;
+			line-height: 48px;
+			text-align: center;
+			background: #963;
+			color:#fff;
+			font-size:24px;
+			position: absolute;
+			left:50%;
+			top:30%;
+			margin-left:-120px;
+		}
+	</style>
+</head>
+<body>
+	<div class="header"></div>
+	<div class="image-wrapper">
+			<div>文本内容</div>
+			<img src="images/starbuck.jpg" alt="">		
+	</div>
+</body>
+</html>

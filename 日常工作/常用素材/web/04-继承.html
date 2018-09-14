@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+	function Employee(name,salary){
+		this.name = name;
+		this.salary = salary;
+		this.pay = function(){
+			console.log(this.name + '的工资:' + this.salary);
+		}
+	}
+
+	// var emp1 = new Employee('jack' , 2000);
+	// emp1.pay();
+
+	function Manager(name , salary){
+		Employee.call(this, name, salary);
+	}
+
+	function Teacher(name , salary){
+		this.name = name;
+		this.salary = salary;
+	}
+
+	Teacher.prototype = Employee.prototype;
+	Teacher.prototype.constructor = Teacher;
+	//Teacher.prototype.constructor = Teacher;
+
+
+	var manager = new Manager('andy' , 3000);
+	manager.pay();
+
+	var teacher = new Teacher('tommy', 500);
+	teacher.pay();
+	</script>
+</body>
+</html>
