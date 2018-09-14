@@ -1,0 +1,99 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Microsoft Yahei;
+    font-size: 14px;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+    overflow-y: hidden;
+}
+body{
+    min-width: 700px;
+}
+.navbar{
+    min-width: 683px;
+}
+.header-a{
+    width: 130px;
+}
+.sidebar{
+    position: fixed;
+    top: 50px;
+    left: 0;
+    bottom:0;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 20px;
+    background: #222222;
+    user-select: none;
+}
+
+.sidebar a{
+    color: #9D9D9D;
+    position: relative;
+}
+.sidebar a:hover{
+    color: #23527c;
+}
+.container-fluid{
+    position: relative;
+    height: calc(100% - 50px);
+    width: 100%;
+}
+.row{
+    height: 100%;
+}
+.main{
+    padding: 0 0;
+    margin-top: 50px;
+    position: relative;
+    height: 100%;
+}
+.main-container{
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #f1f1f1;
+    /*padding-right: 20px;*/
+    user-select: none;
+}
+.first-li{
+    background: #333;
+    height: 50px;
+    color:#9D9D9D;
+    line-height: 50px;
+    box-sizing: border-box;
+    padding: 0 15px;
+    font-size: 15px;
+}
+.glyphicon-menu-right{
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    margin-top: -7px;
+}
+
+.nav-sidebar>li:not(:first-child){
+    border-bottom: 1px solid #333;
+}
+.nav-sidebar>li:not(:first-child):hover{
+    background: #f1f1f1;
+    box-sizing: border-box;
+}
+.liChosed{
+    background: #f1f1f1;
+    color: #23527c;
+}
+iframe{
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+.userNameSpan{
+    margin-left: 8px;
+}
+.btnOutLine span{
+    margin-left: 8px;
+}

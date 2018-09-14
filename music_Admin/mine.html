@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>mine</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/child.css"/>
+    <link rel="stylesheet" href="css/mine.css"/>
+</head>
+<body>
+    <div class="child-header">个人信息维护<span>Providing the user to change the password operation</span></div>
+    <form>
+        <div class="mine-container">
+                <div class="form-item">
+                    <label class="item-title" for="password">旧密码<span>*</span></label>
+                    <input type="password" name="oldPassword" id="password" class="item-textbox" />
+                </div>
+                <div class="form-item">
+                    <label class="item-title" for="password">新密码<span>*</span></label>
+                    <input type="password" name="newPassword" id="newPassword" class="item-textbox" />
+                </div>
+                <div class="form-item">
+                    <label class="item-title" class="item-title" for="confirmPassword">确认密码<span>*</span></label>
+                    <input type="password" name="confirmPassword" id="confirmPassword" class="item-textbox" />
+                </div>
+                <div class="form-item" id="last-item">
+                    <label class="item-title" for="password"><span></span></label>
+                    <button  class="btn btn-success btnSubmit">确定提交</button>
+                    <button class="btn btn-default btnReset" type="reset">重新填写</button>
+                </div>
+        </div>
+    </form>
+    <script src="lib/js/jquery.js"></script>
+    <script src="dist/jquery.validate.js"></script>
+    <script src="js/mine.js"></script>
+</body>
+</html>

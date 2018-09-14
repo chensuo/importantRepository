@@ -1,0 +1,154 @@
+body{
+    background: #f1f1f1;
+
+}
+.btn-container{
+    width: 100%;
+    height: 75px;
+    padding: 10px 20px;
+    line-height: 75px;
+    position: relative;
+    min-width: 904px;
+}
+.detai-container{
+    width: calc(100% - 40px);
+    margin:auto;
+
+}
+.detai-container:after{
+    clear:both;
+    content:'.';
+    display:block;
+}
+.btn-back-singerPage{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    margin-top: -17px;
+
+}
+.main-container{
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);
+    box-sizing: border-box;
+    border: 1px solid #e1e1e1;
+    width: 100%;
+    padding: 30px 59px;
+    min-height: 650px;
+    position: relative;
+    background: linear-gradient(90deg,#e9e9e9,#f1f1f1);
+    min-width: 904px;
+}
+
+
+.addNewSinger-container{
+    /*box-shadow: 0 1px 3px 0 rgba(0,0,0,.2);*/
+    box-sizing: border-box;
+    padding: 20px 20px;
+    /*border: 1px solid #e1e1e1;*/
+    margin: 0 auto;
+    position: absolute;
+    top: 20px;
+    left: 80px;
+    right: 80px;
+    bottom: 20px;
+}
+
+div.form-item{
+    height:36px;
+    line-height: 36px;
+    padding:6px 0px;
+    margin-top: 16px;
+}
+div.form-item .item-title{
+    display: inline-block;
+    width:96px;
+    font-size: 16px;
+    color:#666666;
+    text-align: right;
+    margin-right: 6px;
+}
+div.form-item .item-title span{
+    display: inline-block;
+    padding:0px 3px;
+    color:red;
+}
+.addNewSinger-container input[type=text]{
+    width: 300px;
+    height: 30px;
+    border-radius:5px;
+    outline: none;
+    padding: 3px 15px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+    color:#888;
+    font-size: 13px;
+}
+.addNewSinger-container input[type=file]{
+    width: 300px;
+    height: 30px;
+    display: inline-block;
+    outline: none;
+    overflow: hidden;
+}
+.singerSex{
+    width: 15px;
+    height: 15px;
+}
+.btn-save-singer{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -17px;
+}
+.operatorHeader{
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    border-radius: 5px;
+    position: absolute;
+    right: 0;
+    top: 25px;
+}
+/*.detailRemarkItem{*/
+/*position: absolute;*/
+/*top: 20px;*/
+/*right: 40px;*/
+/*width: 50%;*/
+/*}*/
+.singerRemark{
+    position: absolute;
+    display: inline-block;
+    width: calc(100% - 160px);
+}
+label{
+    font-weight: normal;
+}
+.operatorHeaderContainer{
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    width: 50%;
+    height: 51%;
+}
+#singerRegionId,#singerStar{
+    display: inline-block;
+    width: 300px;
+    outline: none;
+    border: 1px solid rgba(0,0,0,.15);
+    height: 30px;
+    line-height: 30px;
+    color:#888888;
+    padding:3px 10px;
+}
+.fileContainer{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 250px;
+}
+.btn-reset-singer{
+    position: absolute;
+    right: 120px;
+    top: 50%;
+    margin-top: -17px;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>singer</title>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/child.css"/>
+    <link rel="stylesheet" href="css/songs.css"/>
+</head>
+<body>
+    <div class="child-header">歌曲详情<span>Manipulate the details of the song</span></div>
+
+<div class="singerCategory-container">
+    <!--添加新类别按钮-->
+    <button type="button" class="btn btn-info btn-add-singerCategory btn-add-singer"><i class="glyphicon glyphicon-plus"></i> 添加新歌曲</button>
+    <button  class="btn btn-success btn-add-singerCategory btn-save-singer"><i class="glyphicon glyphicon-ok" type="submit"></i> 确定添加</button>
+    <button type="button" class="btn btn-default btn-add-singerCategory btn-back-singer"><i class="glyphicon glyphicon-chevron-left"></i> 返回上一页</button>
+    <button type="button" class="btn btn-default btn-add-singerCategory btn-reset-singer"><i class="glyphicon glyphicon-remove"></i> 重新填写</button>
+
+    <!-- 搜索框-->
+    <div class="input-group col-md-3 col-sm-3 col-xs-3">
+        <input type="text" class="form-control" placeholder="请输入关键字" / >
+            <span class="input-group-btn" id="btnSearch">
+               <button class="btn btn-info btn-search">查找</button>
+            </span>
+    </div>
+</div>
+
+<!-- 主体-->
+<div class="singerCategory-tbContainer">
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>序号</th>
+            <th>歌曲封面</th>
+            <th>歌曲名称</th>
+            <th>歌手名字</th>
+            <th>歌曲类别</th>
+            <th>时长</th>
+            <th>热度</th>
+            <th>操作</th>
+        </tr>
+        </thead>
+        <tbody class="tbMain"></tbody>
+    </table>
+    <div class="footContainer">
+        <div class="divPageFooter"></div>
+    </div>
+</div>
+
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="js/songs.js"></script>
+</body>
+</html>

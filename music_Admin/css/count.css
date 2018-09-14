@@ -1,0 +1,32 @@
+.firstChart, .secChart{
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    top: 50%;
+    margin-top: -250px;
+}
+.firstChart{
+    width: 45%;
+    height: 500px;
+    border-right:1px solid #e1e1e1;
+}
+.secChart{
+    width: 45%;
+    height: 500px;
+
+}
+.container{
+    box-sizing: border-box;
+    width: 100%;
+    min-width: 1188px;
+    height: 650px;
+    margin:auto;
+    text-align: center;
+    overflow: hidden;
+    border-bottom: 1px solid #e1e1e1;
+    border-left: 1px solid #e1e1e1;
+    border-right: 1px solid #e1e1e1;
+    position: relative;
+
+
+}

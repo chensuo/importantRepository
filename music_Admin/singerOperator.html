@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>singerOperator</title>
+    <link rel="stylesheet" href="css/child.css"/>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/singerOperator.css"/>
+</head>
+<body>
+    <div class="child-header">更新歌手信息<span>Operation of the singer's detailed information</span></div>
+    <!--<form action="post">-->
+    <div class="detai-container">
+        <div class="btn-container">
+            <button type="button" class="btn btn-default  btn-back-singerPage"><i class="glyphicon glyphicon-chevron-left"></i> 返回歌手页面</button>
+            <button  class="btn btn-success btn-add-singerCategory btn-save-singer"><i class="glyphicon glyphicon-ok" type="submit"></i> 确定更新</button>
+
+        </div>
+        <div class="main-container">
+            <div class="addNewSinger-container">
+
+                    <div class="form-item">
+                        <label class="item-title">歌手姓名<span>*</span></label>
+                        <input type="text" name="singerName" id="singerName" class="item-textbox" placeholder="请填写歌手姓名"/>
+                        <input type="hidden" name="singerId" id="singerId" class="item-textbox" />
+                    </div>
+                    <div class="form-item">
+                        <label class="item-title" >歌手分类<span>*</span></label>
+                        <select class="form-control item-textbox" name="singerRegionId" id="singerRegionId" >
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label class="item-title" >出生日期<span>*</span></label>
+                        <input type="text" name="singerBirthday" id="singerBirthday" class="item-textbox"  placeholder="日期格式：yyyy-MM-dd"/>
+                    </div>
+                    <div class="form-item">
+                        <label class="item-title" >歌手身高<span>*</span></label>
+                        <input type="text" name="singerHeight" id="singerHeight" class="item-textbox" placeholder="请填写歌手身高"/>
+                    </div>
+                    <div class="form-item">
+                        <label class="item-title" >歌手星座<span>*</span></label>
+                        <select class="form-control item-textbox" name="singerStar" id="singerStar" >
+                            <option value="白羊座">白羊座</option>
+                            <option value="金牛座">金牛座</option>
+                            <option value="双子">双子座</option>
+                            <option value="巨蟹座">巨蟹座</option>
+                            <option value="狮子座">狮子座</option>
+                            <option value="处女座">处女座</option>
+                            <option value="天秤座">天秤座</option>
+                            <option value="天蝎座">天蝎座</option>
+                            <option value="射手座">射手座</option>
+                            <option value="摩羯座">摩羯座</option>
+                            <option value="水瓶座">水瓶座</option>
+                            <option value="双鱼座">双鱼座</option>
+                        </select>
+                    </div>
+                    <div class="form-item">
+                        <label class="item-title">歌手性别<span>*</span></label>
+                        <input type="radio" name="sex" class="man" id="man" value="男" checked="true"/>男
+                        <input type="radio" name="sex" class="women" id="women" value="女" />女
+                    </div>
+                    <div class="form-item detailRemarkItem">
+                        <label class="item-title">歌手详情<span>*</span></label>
+                        <textarea class="form-control singerRemark" rows="5"  placeholder="请填写歌手详情"></textarea>
+                    </div>
+                    <div class="operatorHeaderContainer">
+                        <div class="form-item">
+                            <label class="item-title" style="visibility: hidden">歌手头像<span>*</span></label>
+                            <img src="" alt="" class="operatorHeader"/>
+                        </div>
+                        <div class="form-item fileContainer">
+                            <input type="file" name="singerHeader" id="singerHeader" class="item-textbox" />
+                        </div>
+                    </div>
+        </div>
+        </div>
+    <!--</form>-->
+
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/singerOperator.js"></script>
+    </body>
+</html>

@@ -1,0 +1,50 @@
+div.form-item{
+    height:36px;
+    line-height: 36px;
+    padding:6px 0px;
+    margin-top: 16px;
+}
+div.form-item .item-title{
+    display: inline-block;
+    width:96px;
+    font-size: 16px;
+    color:#666666;
+    text-align: right;
+    margin-right: 6px;
+}
+div.form-item .item-title span{
+    display: inline-block;
+    padding:0px 3px;
+    color:red;
+}
+.mine-container{
+    margin:50px auto;
+    border: 1px solid #e1e1e1;
+    width: 40%;
+    box-sizing: border-box;
+    padding: 20px 20px 50px 20px;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.2) ;
+    min-width: 536px;
+
+}
+.mine-container input{
+    width: 200px;
+    height: 30px;
+    border-radius:5px;
+    outline: none;
+    padding: 3px 15px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+}
+.btnSubmit{
+    margin: 5px;
+
+}
+.btnReset{
+    margin: 20px;
+}
+label.error{
+    color: #ff0000;
+    margin-left:10px;
+    font-weight: normal;
+}

@@ -1,0 +1,105 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Microsoft Yahei;
+    font-size: 14px;
+}
+html,body{
+    width: 100%;
+    height: 100%;
+}
+body{
+    background-image: url('../images/1.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    transition: background-image 0.7s linear;
+}
+.container{
+    width: 280px;
+    height: 300px;
+    position: relative;
+    top: 15%;
+    left: 50%;
+    margin-left: -140px;
+    /*background: red;*/
+    box-sizing: border-box;
+    /*border: 1px solid #f1f1f1;*/
+    border-radius: 5px;
+    user-select: none;
+}
+.load-title{
+    color: #fff;
+    font-size: 30px;
+    font-weight: bold;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.load-secTitle{
+    color: #fff;
+    margin-top: 10px;
+    font-size: 16px;
+    width: 100%;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+}
+.load-body{
+    height: 270px;
+    box-sizing: border-box;
+    width: 100%;
+    /*background: #963;*/
+}
+.load-body input{
+    padding: 0 20px;
+    height: 42px;
+    width: 100%;
+    box-sizing: border-box;
+    background: rgba(45,45,45,.15);
+    color: #fff;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.2) inset;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,.15);
+    margin-top: 25px;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+}
+.inputNotActive::placeholder{
+    color: #fff;
+}
+.load-body input:focus{
+    outline: none;
+    box-shadow: -2px 4px 6px 0px rgba(0,0,0,.2) inset;
+}
+.inputActive::placeholder{
+    color: #E10601;
+}
+.btnLoad{
+    width: 100%;
+    height: 44px;
+    background: #ef4300;
+    margin-top: 25px;
+    border-radius: 6px;
+    border: 1px solid #ff730e;
+    font-weight: 700;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 1px 2px rgba(0,0,0,.1);
+    font-size: 25px;
+    cursor: pointer;
+    outline: none;
+
+}
+.btnLoad:hover{
+    box-shadow: 0 15px 30px 0 rgba(255,255,255,.15) inset, 0 2px 7px 0 rgba(0,0,0,.2);
+}
+.btnLoad:active{
+    box-shadow: 2px 15px 30px 0 rgba(255,255,255,.45) inset, 0 2px 7px 0 rgba(0,0,0,.5);
+}
+.errorInfor{
+    color: #E10601;
+    margin-top: 25px;
+    width: 100%;
+    padding:0 20px;
+    box-sizing: border-box;
+}

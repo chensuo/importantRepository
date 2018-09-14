@@ -1,0 +1,73 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Microsoft Yahei;
+    font-size: 14px;
+}
+html,body{
+    /*height: 100%;*/
+    background-color: #f1f1f1;
+    user-select: none;
+}
+body{
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 20px;
+    background: #f1f1f1;
+}
+.child-header{
+    width: 100%;
+    height: 90px;
+    line-height: 65px;
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    border-bottom: 1px solid #d1d1d1;
+    box-sizing: border-box;
+    overflow: hidden;
+
+}
+.child-header span{
+    font-size: 16px;
+    margin-left: 10px;
+    color: #888;
+    text-overflow: ellipsis;
+    font-style: italic;
+    font-family: "Garamond";
+}
+.singerCategory-container{
+    width: 100%;
+    margin-top: 20px;
+    /*padding: 20px 0;*/
+    height: 55px;
+    /*background: red;*/
+    position: relative;
+    overflow-x: hidden;
+}
+
+.input-group{
+    position: absolute;
+    left: 20px;
+    top: 0;
+}
+.btn-add-singerCategory{
+    position: absolute;
+    right: 20px;
+    top: 0;
+}
+.singerCategory-tbContainer{
+    width: calc(100% - 40px);
+    min-height: 200px;
+    margin: auto;
+}
+.singerCategory-tbContainer table{
+    width: 100%;
+    text-align: center;
+
+}
+.singerCategory-tbContainer th{
+    text-align: center;
+    font-size: 15px;
+    color: #333;
+}
+/***************个人信息维护*******************/

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>addSinger</title>
+    <link rel="stylesheet" href="css/child.css"/>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/addSongs.css"/>
+</head>
+<body>
+<div class="child-header">添加新歌曲<span>Operation of the song's detailed information</span></div>
+<form action="">
+    <div class="detai-container">
+        <div class="btn-container">
+            <button type="button" class="btn btn-default  btn-back-singerPage"><i class="glyphicon glyphicon-chevron-left"></i> 返回歌手页面</button>
+            <button type="button" class="btn btn-success btn-add-singerCategory btn-save-singer"><i class="glyphicon glyphicon-ok" ></i> 确定添加</button>
+            <button type="reset" class="btn btn-default  btn-reset-singer"><i class="glyphicon glyphicon-remove"></i> 重新填写</button>
+
+        </div>
+        <div class="main-container">
+            <div class="addNewSinger-container">
+
+                <div class="form-item">
+                    <label class="item-title">歌曲名称<span>*</span></label>
+                    <input type="text" name="songsName" id="songsName" class="item-textbox"  placeholder="请填写歌曲名称"/>
+                    <!--<input type="hidden" name="singerId" id="singerId" class="item-textbox" />-->
+                </div>
+                <div class="form-item">
+                    <label class="item-title" >播放时长<span>*</span></label>
+                    <input type="text" name="songsDuration" id="songsDuration" class="item-textbox"  placeholder="格式为具体秒数"/>
+                </div>
+                <div class="form-item">
+                    <label class="item-title" >所属类别<span>*</span></label>
+                    <select class="form-control item-textbox" name="songsCategoryId" id="songsCategoryId" >
+                    </select>
+                </div>
+                <div class="form-item">
+                    <label class="item-title" >歌手姓名<span>*</span></label>
+                    <select class="form-control item-textbox" name="songsSingerId" id="songsSingerId" >
+                    </select>
+                </div>
+                <div class="form-item ">
+                    <label class="item-title" >歌曲资源<span>*</span></label>
+                    <input type="file" name="songsResource" id="songsResource" class="item-textbox" value="选择歌曲"  style='display:none' onchange='filepath1.value=this.value'/>
+                    <input type="textfield1" id='filepath1' palceholder="格式为音频格式">
+                    <input type=button id='filebutton1' value='选择歌曲' onclick="songsResource.click()">
+                </div>
+                <div class="form-item songsWord">
+                    <label class="item-title">歌曲歌词<span>*</span></label>
+                    <textarea class="form-control songsWord" rows="7" placeholder="请填写歌词"></textarea>
+                </div>
+
+                <div class="operatorHeaderContainer">
+                    <div class="form-item">
+                        <label class="item-title" style="visibility: hidden">歌曲封面<span>*</span></label>
+                        <img src="images/1.jpg" alt="" class="operatorHeader"/>
+                    </div>
+                    <div class="form-item fileContainer">
+                        <input type="file" name="singerHeader" id="singerHeader" class="item-textbox" />
+                    </div>
+                </div>
+            </div>
+        </div>
+</form>
+
+<script src="lib/js/jquery.js"></script>
+<script src="lib/js/bootstrap.min.js"></script>
+<script src="js/songs.js"></script>
+<script src="js/loadImg.js"></script>
+</body>
+</html>

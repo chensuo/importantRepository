@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>index</title>
+    <script src="js/location.js"></script>
+    <link rel="stylesheet" href="lib/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="lib/css/font-awesome.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+
+</head>
+<body>
+    <!-- 页眉-->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand "  href="#"><i class=" glyphicon glyphicon-music"></i>&nbsp;&nbsp;酷你音乐</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#" class="header-a"><i class="fa fa-user-circle-o"></i><span class="userNameSpan"></span>
+                      </a></li>
+                    <li class="btnOutLine"><a href="#" class="header-a"><i class="glyphicon glyphicon-off"></i><span>注销</span></a></li>
+                </ul>
+                <!--<form class="navbar-form navbar-right">-->
+                    <!--&lt;!&ndash;<input type="text" class="form-control" placeholder="Search...">&ndash;&gt;-->
+                <!--</form>-->
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- 导航-->
+            <div class="col-sm-3 col-md-2 sidebar">
+
+                <ul class="nav nav-sidebar">
+                    <li class="first-li"><i class="glyphicon glyphicon-list"></i>&nbsp;&nbsp;菜单</li>
+                    <li class=""><a href="#"><i class="glyphicon glyphicon-th-large"></i>&nbsp;&nbsp;歌手分类<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-headphones"></i>&nbsp;&nbsp;歌手详情<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-th-list"></i>&nbsp;&nbsp;歌曲分类<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-music"></i>&nbsp;&nbsp;歌曲详情<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                    <li><a href="#"><i class="fa fa-bar-chart"></i>&nbsp;&nbsp;数据统计<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                    <li><a href="#"><i class="glyphicon glyphicon-cog"></i>&nbsp;&nbsp;个人信息维护<i class="glyphicon glyphicon-menu-right"></i></a></li>
+                </ul>
+            </div>
+
+            <!-- 主体部分-->
+            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+                <div class="main-container">
+                    <iframe src="singerCategory.html" frameborder="0"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="lib/js/jquery.js"></script>
+    <script src="lib/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
