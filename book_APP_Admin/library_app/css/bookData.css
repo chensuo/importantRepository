@@ -1,0 +1,73 @@
+.page-bookData-top-container .form-control:nth-child(1),.page-bookData-top-container .form-control:nth-child(2){
+    width: 20%;
+    display: inline-block;
+}
+/*.page-bookData-top-container .form-control:nth-child(3){*/
+    /*width: 15%;*/
+/*}*/
+.page-bookData-top-container .form-control:not(:first-child){
+    margin-left: 5px;
+}
+.bookData-tbMain>tr>td>img{
+    width: 55px;
+    height: 55px;
+}
+.bookData-tb>tbody>tr>td{
+    height: 60px !important;
+    line-height: 60px !important;
+}
+.bookData-tb th:nth-child(1){
+    width: 10%;
+}
+.bookData-tb th:nth-child(2){
+    width: 15%;
+}
+.bookData-tb th:nth-child(3){
+    width: 20%;
+}
+.bookData-tb th:nth-child(4){
+    width: 15%;
+}
+.bookData-tb th:nth-child(5){
+    width: 15%;
+}
+.bookData-tb th:nth-child(6){
+    width: 25%;
+}
+.kewordInput-container{
+    left: calc(40% + 22px) !important;
+    width: 20%;
+}
+.kewordInput-container .form-control{
+    width: 100% !important;
+}
+.bookData-tb{
+    min-width: 897px;
+}
+.btnContainer>button{
+    width: 25%!important;
+    text-align: center !important;
+}
+.bookData-tbMain span{
+    overflow: hidden;
+    text-overflow : ellipsis;
+}
+.bookData-btnContainer{
+    width: 90% !important;
+}
+#dialog-cover{
+    width: 175px;
+    height: 175px;
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    border-radius: 4px;
+    transform: translateY(-50%);
+
+}
+.portCount-input{
+    width: 80% !important;
+}
+.bookData-dialog>p:nth-child(3){
+    margin-top: 50px !important;
+}

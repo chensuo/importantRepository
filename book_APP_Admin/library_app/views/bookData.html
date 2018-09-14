@@ -1,0 +1,111 @@
+<div class="page-body">
+    <div class="child-header">图书信息管理<span>Book information managementt</span></div>
+    <div class="page-main-container ">
+        <div class="page-top-container page-bookData-top-container">
+            <!-- 类别下拉框-->
+            <select class="form-control item-textbox " name="bookCategory" id="bookCategory" ng-model="bookDataForm.categoryId">
+                <option ng-repeat="item in selectCategoryList" value="{{item.Id}}">{{item.Name}}</option>
+            </select>
+            <!-- 出版社下拉框-->
+            <select class="form-control item-textbox " name="bookPublisher" id="bookPublisher" ng-model="bookDataForm.publisherId">
+                <option ng-repeat="item in selectPublisherList" value="{{item.Id}}">{{item.Name}}</option>
+            </select>
+            <!-- 关键字-->
+            <div class="input-group col-md-3 col-sm-3 col-xs-3 kewordInput-container">
+                <input type="text" class="form-control" placeholder="请输入关键字" ng-model="bookDataForm.keyword" / >
+                <span class="input-group-btn" id="btnSearch">
+                   <button class="btn btn-info btn-search " ng-click="bookDataSearch();">查找</button>
+                </span>
+            </div>
+
+            <!-- 添加新书-->
+            <button type="button" class="btn btn-info btn-add-new" ng-click="goToAdd();" ><i class="glyphicon glyphicon-plus"></i> 添加新图书</button>
+
+
+        </div>
+        <div class="page-content">
+            <!-- 表格-->
+            <table class="table table-striped bookData-tb">
+                <thead>
+                <tr>
+                    <th>序号</th>
+                    <th>封面</th>
+                    <th>名称</th>
+                    <th>作者</th>
+                    <th>出版社</th>
+                    <th>操作</th>
+                </tr>
+                </thead>
+                <tbody class="bookData-tbMain">
+                <tr ng-repeat="item in items | orderBy : 'PublishDate' : true">
+                    <!-- 9*(selPage -1) + -->
+                    <td>{{8*(selPage -1) +$index+1}}</td>
+                    <td><img ng-src="{{item.Book.Image}}" alt=""/></td>
+                    <td><nobr><span>《{{item.Book.Name}}》</span></nobr></td>
+                    <td>{{item.Book.Author.Name}}</td>
+                    <td>{{item.Book.Publisher.Name}}</td>
+                    <td>
+                        <div class="btnContainer bookData-btnContainer">
+                            <button type="button" class="btn btn-primary btn-detail" ng-click="goToDetail(item.Book.Id);" >详情</button>&nbsp;
+                            <button type="button" class="btn btn-warning btn-change" ng-click="goToChange(item.Book.Id);">修改</button>&nbsp;
+                            <button type="button" data-toggle="modal" data-target="#myModal" class="btn btn-success " ng-click="portThisBook(item.Book.Id);">入库</button>
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="divPageFooter">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="Previous()">
+                                <span>上一页</span>
+                            </a>
+                        </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+                            <a ng-click="selectPage(page)" >{{ page }}</a>
+                        </li>
+                        <li>
+                            <a ng-click="Next()">
+                                <span>下一页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form name="frm" novalidate>
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">图书入库</h4>
+                    </div>
+                    <div class="modal-body bookCategory-dialog bookData-dialog">
+                        <p><i class="glyphicon glyphicon-th-large"></i> <span>图书名称：&nbsp;</span><span>《{{bookLittleData.name}}》</span></p>
+                        <p><i class="glyphicon glyphicon-user"></i> <span>图书作者：&nbsp;</span><span>{{bookLittleData.author}}</span></p>
+                        <p><i class="glyphicon glyphicon-th-list"></i> <span>入库数量：&nbsp;</span>
+                                    <span class="add-newSort-file">
+                                        <select class="form-control item-textbox portCount-input" name="portBookNum" id="portBookNum" ng-model="portBookData.count">
+                                            <option ng-repeat="item in optionNum">{{item.num}}</option>
+                                        </select>
+                                    </span>
+                        </p>
+                        <img ng-src="{{bookLittleData.image}}" alt=""  id="dialog-cover"/>
+
+                    </div>
+                    <div class="modal-footer">
+                        <span class="registe" ng-show="portFailCode">入库失败!</span>
+                        <span class="registe registe-success" ng-show="portSuccessCode">入库成功!</span>
+                        <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal" ng-click="clickCancelAdd();">取消</button>
+                        <button type="button" class="btn btn-success btn-save" ng-click="clickPortBook();"><i class="glyphicon glyphicon-ok"></i> 确定入库</button>
+                    </div>
+                </form>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>

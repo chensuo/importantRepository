@@ -1,0 +1,37 @@
+<div class="page-body">
+    <div class="child-header">修改图书信息<span>change of the Book</span></div>
+    <div class="page-main-container">
+        <div class="page-top-container">
+            <button type="button" ng-click="returnBack();" class="btn btn-default btn-return"><i class="glyphicon glyphicon-chevron-left"></i>返回上一页</button>
+            <button ng-click="saveBookChange();" class="btn btn-success change-sort-btn-confirm"><i class="glyphicon glyphicon-ok" type="submit"></i> 确定更新</button>
+        </div>
+        <div class="page-content">
+            <div class="bookDataDetail-container">
+                <div class="bookDataDetail-title">《{{thisBookData.Book.Name}}》基本详情</div>
+                <div class="bookDataDetail-little bookDataChange-little">
+                    <div><i>图书名称:</i><span><input type="text" class="form-control" ng-model="thisBookDataBook.name"></span></span> <i>图书ISBN:</i><span><input type="text" class="form-control" ng-model="thisBookDataBook.isbn" placeholder="格式13位数字"></span></span></div>
+                    <div><i>作者:</i><span>
+                         <select class="form-control item-textbox " name="bookAuthor" id="bookAuthor"  ng-model="thisBookDataBook.authorId">
+                             <option ng-repeat="item in authorList" value="{{item.Id}}">{{item.Name}}</option>
+                         </select>
+                    </span></span> <i>出版日期:</i><span><input type="text" class="form-control" ng-model="thisBookDataBook.publishDate" placeholder="格式yyyy-MM-dd"></span></span></div>
+                    <div><i>图书类别:</i><span>
+                         <select class="form-control item-textbox " name="bookCategory" id="bookCategory"  ng-model="thisBookDataBook.categoryId">
+                             <option ng-repeat="item in bookCategoryList" value="{{item.Id}}">{{item.Name}}</option>
+                         </select>
+                    </span></span> <i>图书出版社:</i><span>
+                        <select class="form-control item-textbox " name="bookPublisher" id="bookPublisher"  ng-model="thisBookDataBook.publisherId">
+                            <option ng-repeat="item in publisherList" value="{{item.Id}}">{{item.Name}}</option>
+                        </select>
+                    </span></span></div>
+                    <img ng-src="{{thisBookDataBook.imgSrc}}" alt="" class="bookDataChange-cover"/>
+                    <button type="button" class="btn btn-default bookDataChange-btn" onclick="bookCover.click()" >更换封面</button>
+                    <input type="file" name="bookCover" id="bookCover" class="item-textbox" required style='display:none'/>
+                </div>
+                <div class="bookDataDetail-title">《{{thisBookData.Book.Name}}》简介</div>
+                <div class="bookDataDetail-introduce">
+                    <textarea class="form-control" rows="10" ng-model="thisBookDataBook.introduce">{{thisBookData.Book.Introduce}}</textarea></div>
+            </div>
+        </div>
+    </div>
+</div>

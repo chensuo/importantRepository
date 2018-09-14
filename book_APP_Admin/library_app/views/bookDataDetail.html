@@ -1,0 +1,21 @@
+<div class="page-body">
+    <div class="child-header">《{{thisBookData.Book.Name}}》详情<span>Details of the Book</span></div>
+    <div class="page-main-container">
+        <div class="page-top-container">
+            <button type="button" ng-click="returnBack();" class="btn btn-default btn-return"><i class="glyphicon glyphicon-chevron-left"></i>返回上一页</button>
+        </div>
+        <div class="page-content">
+            <div class="bookDataDetail-container">
+                <div class="bookDataDetail-title">《{{thisBookData.Book.Name}}》基本详情</div>
+                <div class="bookDataDetail-little">
+                    <div><i>书名:</i><span><nobr>《{{thisBookData.Book.Name}}》</nobr></span> <i>作者:</i><span><nobr>{{thisBookData.Book.Author.Name}}</nobr></span></div>
+                    <div><i>出版社:</i><span><nobr>{{thisBookData.Book.Publisher.Name}}</nobr></span> <i>类别:</i><span><nobr>{{thisBookData.Book.Category.Name}}</nobr></span></div>
+                    <div><i>出版日期:</i><span><nobr>{{thisBookData.Book.PublishDate}}</nobr></span> <i>可借/库存:</i><span><nobr>{{thisBookData.Number}}/{{thisBookData.Book.Amount}}</nobr></span></div>
+                    <img ng-src="{{thisBookData.Book.Image}}" alt=""/>
+                </div>
+                <div class="bookDataDetail-title">《{{thisBookData.Book.Name}}》简介</div>
+                <div class="bookDataDetail-introduce">{{thisBookData.Book.Introduce}}</div>
+            </div>
+        </div>
+    </div>
+</div>

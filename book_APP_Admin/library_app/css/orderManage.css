@@ -1,0 +1,81 @@
+.page-orderManage-top>div:not(:first-child){
+    width: 80px;
+    height: 100%;
+    text-align: center;
+    color: #b1b1b1;
+    background:#F9F9F9;
+    position: absolute;
+    box-sizing: border-box;
+    line-height: 55px;
+    top: 0;
+    cursor: pointer;
+}
+.page-orderManage-top>div:nth-child(2){
+    border-top-left-radius: 15%;
+    right: 100px;
+}
+.page-orderManage-top>div:nth-child(3){
+    border-top-right-radius: 15%;
+    right: 20px;
+}
+
+.page-orderManage-top>div.active{
+    color: #000!important;
+    font-size: 17px;
+    font-weight: 400;
+    background:#F0E0D3!important;
+}
+.page-order-content>div{
+    width: 100%;
+    background: #F0E0D3;
+    min-width: 897px;
+}
+.order-btnContainer{
+    width: 65% !important;
+    display: flex;
+    padding: 0 !important;
+}
+.order-btnContainer>button{
+    flex: 1;
+    text-align: center !important;
+    border: none !important;
+    outline: none !important;
+}
+.order-tb thead>tr>th{
+    height: 50px !important;
+    line-height: 50px !important;
+}
+.order-tb thead>tr>th:nth-child(1){
+    width: 10%;
+}
+.order-tb thead>tr>th:nth-child(2){
+    width: 15%;
+}
+.order-tb thead>tr>th:nth-child(3){
+    width: 20%;
+}
+.order-tb thead>tr>th:nth-child(4){
+    width: 10%;
+}
+.order-tb thead>tr>th:nth-child(5){
+    width: 15%;
+}
+.order-tb thead>tr>th:nth-child(6){
+    width: 10%;
+}
+.order-tb thead>tr>th:nth-child(7){
+    width: 20%;
+}
+.myModal-order-body>p{
+    height: 40px;
+    line-height: 40px;
+}
+.myModal-order-body>p>span{
+    display: inline-block;
+}
+.myModal-order-body>p>span:nth-child(2){
+    width: 100px;
+}
+.myModal-order-body>p>span:nth-child(3){
+   color: #999;
+}

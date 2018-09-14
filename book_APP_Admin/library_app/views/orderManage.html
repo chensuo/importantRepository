@@ -1,0 +1,160 @@
+<div class="page-body">
+    <div class="child-header">订单信息管理<span>Order information management</span></div>
+    <div class="page-main-container">
+        <div class="page-top-container page-orderManage-top">
+            <!-- 搜索框-->
+            <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                <input type="text" class="form-control" placeholder="请输入关键字" / >
+                <span class="input-group-btn" id="btnSearch">
+                   <button class="btn btn-info btn-search " >查找</button>
+                </span>
+            </div>
+            <div ng-click="navClickFir();" ng-class="{'active' : navCodeFir}">配送</div>
+            <div ng-click="navClickSec();" ng-class="{'active' : navCodeSec}">归还</div>
+        </div>
+        <div class="page-content page-order-content">
+            <div ng-if="navCodeFir">
+                <!-- 表格-->
+                <table class="table table-striped order-tb">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>书名</th>
+                        <th>书号</th>
+                        <th>借阅人</th>
+                        <th>手机号</th>
+                        <th>借阅状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="order-tbMain">
+                    <tr ng-repeat="item in itemsSec">
+                        <!-- 9*(selPage -1) + -->
+                        <td>{{8*(selPage -1) +$index+1}}</td>
+                        <td><nobr><span>《{{item.BookName}}》</span></nobr></td>
+                        <td>{{item.BookNumber}}</td>
+                        <td>{{item.Reader.Name}}</td>
+                        <td>{{item.Reader.Phone}}</td>
+                        <td ng-bind="orderStateShow(item.State);"></td>
+                        <td>
+                            <div class="btnContainer order-btnContainer btn">
+                                <button type="button" class="btn btn-primary btn-detail" ng-click="goToDetail(item);" data-toggle="modal" data-target="#myModal-order">详情</button>&nbsp;
+                                <button type="button"  class="btn btn-success " ng-click="goToSend(item.Id);" ng-if="item.State == 1" >配送</button>
+                                <!--<button type="button"  class="btn btn-primary " ng-click="portThisBook(item.Book.Id);">确认配送</button>-->
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="divPageFooter">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a ng-click="PreviousSec()">
+                                    <span>上一页</span>
+                                </a>
+                            </li>
+                            <li ng-repeat="item in pageListSec" ng-class="{active: isActivePageSec(item)}" >
+                                <a ng-click="selectPageSec(item)" >{{ item }}</a>
+                            </li>
+                            <li>
+                                <a ng-click="NextSec()">
+                                    <span>下一页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+
+
+
+            </div>
+            <div ng-if="navCodeSec">
+                <!-- 表格-->
+                <table class="table table-striped order-tb">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>书名</th>
+                        <th>书号</th>
+                        <th>借阅人</th>
+                        <th>手机号</th>
+                        <th>借阅状态</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="order-tbMain">
+                    <tr ng-repeat="item in itemsBook">
+                        <!-- 9*(selPage -1) + -->
+                        <td>{{8*(selPage -1) +$index+1}}</td>
+                        <td><nobr><span>《{{item.BookName}}》</span></nobr></td>
+                        <td>{{item.BookNumber}}</td>
+                        <td>{{item.Reader.Name}}</td>
+                        <td>{{item.Reader.Phone}}</td>
+                        <td ng-bind="orderStateShow(item.State);"></td>
+                        <td>
+                            <div class="btnContainer order-btnContainer btn">
+                                <button type="button" class="btn btn-primary btn-detail" ng-click="goToDetail(item);" data-toggle="modal" data-target="#myModal-order">详情</button>&nbsp;
+                                <button type="button"  class="btn btn-success " ng-click="goToBack(item.Id , item.BookNumber);" ng-if="item.State == 3" >归还</button>
+                                <!--<button type="button"  class="btn btn-primary " ng-click="portThisBook(item.Book.Id);">确认配送</button>-->
+                            </div>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <div class="divPageFooter">
+                    <nav>
+                        <ul class="pagination">
+                            <li>
+                                <a ng-click="Previous()">
+                                    <span>上一页</span>
+                                </a>
+                            </li>
+                            <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+                                <a ng-click="selectPage(page)" >{{ page }}</a>
+                            </li>
+                            <li>
+                                <a ng-click="Next()">
+                                    <span>下一页</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+
+
+    </div>
+    <div class="modal fade" tabindex="-1" role="dialog" id="myModal-order">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">订单详情</h4>
+                </div>
+                <div class="modal-body myModal-order-body">
+                    <p><i class="glyphicon glyphicon-th-large"></i> <span>图书名称:</span><span>《{{thisOrderData.BookName}}》</span></p>
+                    <p><i class="glyphicon glyphicon-barcode"></i> <span>图书书号:</span><span>{{thisOrderData.BookNumber}}</span></p>
+                    <p><i class="glyphicon glyphicon-pencil"></i> <span>作者:</span><span>{{thisOrderData.AuthorName}}</span></p>
+                    <p><i class="glyphicon glyphicon-edit"></i> <span>出版社:</span><span>{{thisOrderData.PublisherName}}</span></p>
+                    <p><i class="glyphicon glyphicon-user"></i> <span>借阅人姓名:</span><span>{{thisOrderData.Reader.Name}}</span></p>
+                    <p><i class="glyphicon glyphicon-earphone"></i> <span>借阅人手机:</span><span>{{thisOrderData.Reader.Phone}}</span></p>
+                    <p><i class="glyphicon glyphicon-list-alt"></i> <span>订单号:</span><span>{{thisOrderData.BorrowNumber}}</span></p>
+                    <p><i class="glyphicon glyphicon-time"></i> <span>订单创建时间:</span><span>{{thisOrderData.CreateTime}}</span></p>
+                    <p><i class="glyphicon glyphicon-th-list"></i> <span>借阅状态:</span><span ng-bind="orderStateShow(thisOrderData.State)"></span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" ng-click="removeSession();">确定</button>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+</div>

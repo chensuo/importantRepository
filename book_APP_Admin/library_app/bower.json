@@ -1,0 +1,20 @@
+{
+  "name": "bower init",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "devDependencies": {
+    "angular": "angularjs#^1.6.8",
+    "bootstrap": "3",
+    "angular-ui-router": "^1.0.13",
+    "jquery": "1.11.1"
+  }
+}

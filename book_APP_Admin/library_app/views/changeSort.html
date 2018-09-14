@@ -1,0 +1,58 @@
+<div class="page-body">
+    <div class="child-header">{{currentSortData.Name}}栏目详情<span>Section for details</span></div>
+    <div class="page-main-container">
+        <div class="page-top-container">
+            <button type="button" ng-click="returnBack();" class="btn btn-default btn-return"><i class="glyphicon glyphicon-chevron-left"></i>返回上一页</button>
+            <button ng-click="saveSortChange();" class="btn btn-success change-sort-btn-confirm btn-add-singerCategory btn-save-singer"><i class="glyphicon glyphicon-ok" type="submit"></i> 确定更新</button>
+        </div>
+        <div class="page-content">
+            <div class="sort-detail-container">
+                <div class="sort-detail-title">栏目基本信息</div>
+                <div>
+                    <div><i>栏目名称:</i><span><input type="text" class="change-sort-input" ng-model="changeSortData.name"/></span></div>
+                    <div><i>优先级:</i><span><input type="text" class="change-sort-input" ng-model="changeSortData.priority"/></span></div>
+                </div>
+                <div class="sort-detail-title">图书列表(<span>{{booksNum}}</span>)<button type="button" class="btn btn-info">添加</button></div>
+                <div>
+                    <div class="sort-detail-tb-container">
+                        <table class="table table-bordered sort-detail-tb">
+                            <thead>
+                            <tr>
+                                <th><input type="checkbox"/>全选</th>
+                                <th>图书名称</th>
+                                <th>作者</th>
+                                <th>出版社</th>
+                                <th>出版日期</th>
+                                <th>操作</th>
+                            </tr>
+                            </thead>
+                            <tbody class="sort-detail-tbMain">
+                            <tr ng-repeat="item in currentSortData.Books">
+                                <td><input type="checkbox"/></td>
+                                <td><nobr><img ng-src="{{item.Book.Image}}" alt=""/><span class="sort-detail-bookName">《{{item.Book.Name}}》</span></nobr></td>
+                                <td>{{item.Book.Author.Name}}</td>
+                                <td>{{item.Book.Publisher.Name}}</td>
+                                <td>{{item.Book.PublishDate}}</td>
+                                <td>
+                                    <button type="button" class="btn btn-default">移除</button>
+                                </td>
+                            </tr>
+
+                            </tbody>
+                        </table>
+                        <div class="removeAll-dv">
+                            <button type="button" class="btn btn-default">批量移除</button>
+                            <div ng-hide="pageCode">
+                                <span class="active" ng-class="{'active' : pageCodeAct == 1}" ng-click="clickPageCodeFir();">1</span>
+                                <span ng-class="{'active' : pageCodeAct == 2}" ng-hide="otherPageCode == 2" ng-click="clickPageCodeSec();">2</span>
+                                <span ng-class="{'active' : pageCodeAct == 3}" ng-hide="otherPageCode == 3" ng-click="clickPageCodeTir();">3</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

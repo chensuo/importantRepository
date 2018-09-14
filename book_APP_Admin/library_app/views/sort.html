@@ -1,0 +1,89 @@
+<div class="page-body">
+    <div class="child-header">栏目信息管理<span>Section information management</span></div>
+    <div class="page-main-container">
+        <div class="page-top-container">
+            <!--添加新类别按钮-->
+            <button type="button" class="btn btn-info btn-add-new" data-toggle="modal" data-target="#myModal"><i class="glyphicon glyphicon-plus"></i> 添加新栏目</button>
+            <!-- 模态框-->
+            <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form name="frm" novalidate>
+                            <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                <h4 class="modal-title">添加新栏目</h4>
+                            </div>
+                            <div class="modal-body">
+                                <p><i class="glyphicon glyphicon-th-large"></i> 新栏目名称：&nbsp;<input name="name" required pattern="^[\u4e00-\u9fa5]{4,10}$" placeholder="请输入4位以上汉字" type="text" class="add-newSort" ng-model="newSortData.name"/>
+                                    &nbsp; <i class="glyphicon glyphicon-th-large"></i> 优先级：&nbsp;<input name="priority" required pattern="^100$|^(\d|[1-9]\d)$" placeholder="范围0-100" type="text" class="add-newSort1" ng-model="newSortData.priority"/></p>
+                            </div>
+                            <div class="modal-footer">
+                                <span class="registe" ng-show="frm.name.$dirty && frm.name.$error.pattern || frm.priority.$dirty && frm.priority.$error.pattern" >请重新确认您输入的格式!</span>
+                                <span class="registe" ng-show="frm.name.$dirty && frm.name.$error.required || frm.priority.$dirty && frm.priority.$error.required">名称及优先级均不能为空!</span>
+                                <button type="button" class="btn btn-default btn-cancel" data-dismiss="modal" ng-click="clickCancelAdd();">取消</button>
+                                <button ng-disabled="frm.$invalid" type="button" class="btn btn-success btn-save" ng-click="clickAddNewSortData();"><i class="glyphicon glyphicon-ok"></i> 确定添加</button>
+                            </div>
+                        </form>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+            <!-- 搜索框-->
+            <div class="input-group col-md-3 col-sm-3 col-xs-3">
+                <input type="text" class="form-control" placeholder="请输入关键字" / >
+                <span class="input-group-btn" id="btnSearch">
+                   <button class="btn btn-info btn-search " >查找</button>
+                </span>
+            </div>
+        </div>
+        <div class="page-content">
+            <!-- 表格-->
+                <table class="table table-striped sort-tb">
+                    <thead>
+                    <tr>
+                        <th>序号</th>
+                        <th>栏目名称</th>
+                        <th>优先级</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody class="sort-tbMain">
+                        <tr ng-repeat="item in items | orderBy : 'Priority' : true">
+                            <td>{{$index+1}}</td>
+                            <td>{{item.Name}}</td>
+                            <td>{{item.Priority}}</td>
+                            <td>
+                                <div class="btnContainer">
+                                    <button type="button" class="btn btn-primary btn-detail" ng-click="sortToDetail(item.Id);" >详情</button>&nbsp;
+                                    <button type="button" class="btn btn-warning btn-change" ng-click="sortToChange(item.Id);">修改</button>&nbsp;
+                                    <button type="button" class="btn btn-danger btn-del" ng-click="removeThisSort(item.Id);">删除</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            <div class="divPageFooter">
+                <nav>
+                    <ul class="pagination">
+                        <li>
+                            <a ng-click="Previous()">
+                                <span>上一页</span>
+                            </a>
+                        </li>
+                        <li ng-repeat="page in pageList" ng-class="{active: isActivePage(page)}" >
+                            <a ng-click="selectPage(page)" >{{ page }}</a>
+                        </li>
+                        <li>
+                            <a ng-click="Next()">
+                                <span>下一页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+            </div>
+
+        </div>
+    </div>
+
+    </div>
+</div>

@@ -1,0 +1,71 @@
+.bookCategory-tb>thead>tr>th:nth-child(1){
+    width: 20%;
+}
+.bookCategory-tb>thead>tr>th:nth-child(2){
+    width:25%;
+}
+.bookCategory-tb>thead>tr>th:nth-child(3){
+    width: 25%;
+}
+.bookCategory-tb>thead>tr>th:nth-child(4){
+    width: 30%;
+}
+.bookCategory-tb{
+    min-width: 897px;
+}
+.bookCategory-tb img{
+    width: 50px;
+    height: 50px;
+    border-radius: 3px;
+}
+.bookCategory-tb td{
+    height: 50px !important;
+    line-height: 50px !important;
+}
+/*********添加新分类************/
+.bookCategory-dialog{
+    position: relative;
+    padding: 20px !important;
+}
+.bookCategory-dialog input[type=text]{
+    width: 260px !important;
+}
+.bookCategory-dialog>p{
+    position: relative;
+    height: 30px;
+}
+.bookCategory-dialog>p:nth-child(2) span:first-child , .bookCategory-dialog>p:nth-child(2) i{
+    line-height: 30px;
+}
+.bookCategory-dialog>p:not(:first-child){
+    margin-top: 40px;
+}
+.add-newSort-file{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 92px;
+    width: 260px;
+    display: inline-block;
+}
+p{
+     margin: 0;
+}
+.add-newSort-file>button{
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    padding: 4px 10px;
+    color: #333;
+    width: 260px;
+    outline: none !important;
+}
+.dialog-icon{
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    border-radius: 4px;
+    transform: translateY(-50%);
+}

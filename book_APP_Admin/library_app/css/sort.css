@@ -1,0 +1,66 @@
+.add-newSort , .add-newSort1{
+    width: 250px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 4px;
+    padding: 4px 10px ;
+    outline:none;
+    color:#333
+}
+.add-newSort1{
+    width: 120px;
+}
+.add-newSort::placeholder ,.add-newSort1::placeholder{
+    color:#a1a1a1;
+    font-size: 12px;
+}
+/*表格部分*/
+th,td{
+    text-align: center;
+}
+.sort-tb{
+    min-width: 897px;
+}
+.sort-tb td{
+    height: 35px;
+    color: #888888;
+}
+.table>tbody>tr>td{
+    line-height: 35px;
+    padding: 5px;
+}
+.sort-tb>thead>tr>th:nth-child(1){
+    width: 20%;
+}
+.sort-tb>thead>tr>th:nth-child(2){
+    width: 30%;
+}
+.sort-tb>thead>tr>th:nth-child(3){
+    width: 20%;
+}
+.sort-tb>thead>tr>th:nth-child(4){
+    width: 30%;
+}
+.btnContainer{
+    width: 80%;
+    margin: auto;
+    padding: 0 4%;
+    box-sizing: border-box;
+}
+.btnContainer>button{
+    width: 54px;
+}
+.registe{
+    color: #ff0000;
+    position: absolute;
+    left: 15px;
+    display: inline-block;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.registe-success{
+    color: #4CAE4C;
+}
+.modal-footer{
+    position: relative;
+}
