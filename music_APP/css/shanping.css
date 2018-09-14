@@ -1,0 +1,22 @@
+@keyframes moveShanping{
+	from{
+		top:0%;
+
+	}
+	to{
+		top: 100%;
+
+	}
+}
+.shanping{
+	position: absolute;
+	left: 0;
+	height: 100%;
+	top: 0;
+	right: 0;
+	background: url(../images/timg4.jpg) no-repeat center center;
+	background-size: 120%;
+	z-index: 25;
+	animation: moveShanping 1.5s linear 2s both;
+	
+}

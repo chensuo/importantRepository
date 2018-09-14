@@ -1,0 +1,121 @@
+.singerDetail{
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background:linear-gradient(135deg, #999,#e1e1e1,#fff,#e1e1e1,#999);
+	z-index: 21;
+	transform: translate(100%);
+	overflow-y: auto;
+	overflow-x: hidden;
+	color: #555;
+}
+.DetailTitle{
+	color: #000;
+	position: relative;
+	right: 0;
+	left: 0;
+	top: 0;
+	height: 48px;
+	background:linear-gradient(135deg, #999,#e1e1e1,#fff,#e1e1e1,#999);
+	line-height: 48px;
+	text-align: center;
+	font-size: 16px;
+}
+.fa-mail-reply{
+	display: inline-block;
+	position: absolute;
+	left: 8px;
+	font-size: 16px;
+	height: 16px;
+	width: 30px;
+	top: 50%;
+	margin-top: -8px;
+}
+.detail-header{
+	display: inline-block;
+	width: 6rem;
+	height: 6rem;
+	border-radius: 50%;
+
+}
+.detail-right{
+	display: inline-block;
+	flex: 1;
+	display: flex;
+	height: 6rem;
+	flex-direction: column;
+	justify-content: space-between;
+	box-sizing: border-box;
+	padding:15px 32px;
+
+}
+.singerDetail>div:nth-child(2){
+	display: flex;
+	width: 100%;
+	height: 7rem;
+	padding: 10px;
+	padding-top: 20px;
+	position: relative;
+	border-bottom: 1px solid #d8d8d8;
+}
+.detail-name{
+	position: absolute;
+	top: 6.8rem;
+	width: 6rem;
+	height: 25px;
+	font-size: 15px;
+	line-height: 25px;
+	text-align: center;
+	display: inline-block;
+}
+.singerDetail>div:nth-child(3){
+	width: 100%;
+	min-height: 6rem;
+	position: relative;
+	margin-top: 10px;
+}
+.detail-right>span{
+	display: block;
+	width: 100%;
+	font-size: 14px;
+}
+.detail-songs{
+	width: 100%;
+	font-size: 14px;
+	margin: 25px auto;
+}
+
+.detail-songs thead th{
+	text-align: left;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #d8d8d8;
+	color: #a1a1a1;
+	font-size: 12px
+
+}
+.detail-songs tbody td{
+	height: 40px;
+	text-align: center;
+	line-height: 40px;
+	text-overflow:ellipsis;
+	white-space: nowrap;
+}
+.detail-songs tbody td:nth-child(1){
+	width: 15%;
+}
+.detail-songs tbody td:nth-child(2){
+	width: 30%;	
+	text-align: left;
+}
+.detail-songs tbody td:nth-child(3){
+	width: 30%;
+}
+.detail-songs tbody td:nth-child(4){
+	width: 25%;
+}
+.detail-songs tbody tr:nth-child(2n+1){
+	background: #f1f1f1;
+}

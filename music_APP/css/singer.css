@@ -1,0 +1,72 @@
+.singerItem{
+	width: 98%;
+	margin: auto;
+	height: 4rem;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	border-bottom: 1px solid #e2e2e2;
+	padding-left: 10px;
+	color: #555;
+
+}
+.pageSingerHeader{
+	height: 3.6rem;
+	border-radius: 50%;
+	position: relative;
+	top: 50%;
+	margin-top: -1.8rem;
+	width:113px;
+}
+.fa-chevron-right{
+	position: relative;
+	width: 1rem;
+	font-size: 14px;
+	color: #999;
+	top: 50%;
+	margin-top: -7px;
+	right: 0;
+	height: 14px;
+	text-align: center;
+}
+.singerItmeContainer{
+	flex: 1;
+	box-sizing: border-box;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 25px;
+}
+.singerItmeContainer>span:first-child{
+	display: block;
+	height: 22px;
+	font-size: 15px;
+}
+.singerItmeContainer>span:nth-child(2){
+	color: #F0941A;
+	font-style: italic;
+}
+.singerItmeContainer>span:not(:first-child){
+	display: block;
+	height: 20px;
+	font-size: 11px;
+}
+
+.sortContainerSinger{
+	width: 100%;
+	margin:auto;
+	height: 35px;
+	line-height: 35px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+.sortContainerSinger>div{
+	text-align: center;
+	width: 20%;
+	box-sizing: border-box;
+	color: #555;
+}
+#chosedSinger{
+	color: #0070F4;
+	border-bottom: 3px solid #0070F4;
+}

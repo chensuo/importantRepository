@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+	<title>musicPhone</title>
+	<link rel="stylesheet" type="text/css" href="css/app.css">
+	<link rel="stylesheet" type="text/css" href="css/singer.css">
+	<link rel="stylesheet" type="text/css" href="css/singerDetail.css">
+	<link rel="stylesheet" type="text/css" href="lib/css/reset.css">
+	<link rel="stylesheet" type="text/css" href="css/ad.css">
+	<link rel="stylesheet" type="text/css" href="css/mine.css">
+	<link rel="stylesheet" type="text/css" href="css/shanping.css">
+	<link rel="stylesheet" type="text/css" href="lib/font-awesome-4.7.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="js/app.js"></script>
+</head>
+<body>
+	<!-- ***********************主容器 *****************-->
+	<div class="page-view">
+		<!-- *****************头部***************** -->
+		<div class="page-header">首页</div>
+
+		<!-- *****************主体***************** -->
+		<div class="page-main">
+			<!-- *****************首页***************** -->
+			<div>
+
+				<!-- ********主页轮播****** -->
+				 <div class="ad-wrapper">
+			        <div class="image-wrapper">
+			        	<div><div class="dialog"><div>激情演绎热辣新歌曲!</div><span>不容错过的绝美女声</span></div><img src="images/ad_ (1).jpg" alt=""/></div>
+			        	<div><div class="dialog"><div>天籁之战</div><span>第二季&nbsp;&nbsp;第8期</span></div><img src="images/ad_ (2).jpg" alt=""/></div>
+			        	<div><div class="dialog"><div>没钱听霉霉?</div><span>——这些精选翻唱任性听!</span></div><img src="images/ad_ (3).jpg" alt=""/></div>
+			        	<div><div class="dialog"><div>2017芭莎男士商业星力量</div><span>——巅峰人物年度盛典</span></div><img src="images/ad_ (4).jpg" alt=""/></div>
+			        	<div><div class="dialog"><div>迷幻嗓音</div><span>唤醒你的周末</span></div><img src="images/ad_ (5).jpg" alt=""/></div>
+			        	<div><div class="dialog"><div>这里都是你循环的影视bgm</div><span>——被带入的毫无痕迹</span></div><img src="images/ad_ (6).jpg" alt=""/></div>
+			        	<div><div class="dialog"><div>酷你音乐盒</div><span>音乐共享版震撼来袭</span></div><img src="images/ad_ (7).jpg" alt=""/></div>  
+			        </div>
+			        <div class="arrow-left">〈</div>
+			        <div class="arrow-right">〉</div>
+			        <div class="wrapper">
+			            <button></button>
+			            <button></button>
+			            <button></button>
+			            <button></button>
+			            <button></button>
+			            <button></button>
+			            <button></button>
+			        </div>
+			    </div>
+			    <!-- **********主页内容*********** -->
+			   
+				
+				<!-- ***********老歌回响歌单***************** -->
+				 <div class="home-title">
+					<i>老歌回响</i>
+					<span class="fa fa-angle-right"></span>
+			    </div>
+
+			   <div class="container">
+					<!-- <div class="item">
+						<div class="play"></div>
+						<img src="images/Adele.jpg">
+						<span>歌名</span>
+					</div> -->
+				</div>
+				<!-- *************歌手推荐******************** -->
+				 <div class="home-title1">
+					<i>歌手推荐</i>
+					<span class="fa fa-angle-right"></span>
+			    </div>
+
+			    <div class="container1">
+					<!-- <div class="item-singer">
+						<img src="images/Adele.jpg">
+						<div class="showoff">
+							<span>歌手名字</span>
+						</div>
+					</div> -->
+				</div>
+			</div>
+
+
+
+			<!-- *****************榜单***************** -->
+			<div>
+					<div class="sortContainer">
+						<!-- <div id="chosed">1111</div> 	
+						<div>222</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div> -->
+					</div>
+					<div class="songsShow">
+						<table class="tbSongs" cellpadding="0" cellspacing="0">
+							<thead>
+								<tr>
+									<th class="fa fa-play-circle-o"></th>
+									<th colspan="3">播放全部<span class="totalNum"></span></th>
+								</tr>
+							</thead>
+							<tbody id = "tbMain">
+								<tr>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+
+			</div>
+			<!-- *****************音乐盒***************** -->
+			<div>
+				<img src="images/Adele.jpg" class="musicBoxHeader">
+				<i class = "musicBoxSongName"></i>
+				<div class="bar">
+					<div class="startTime">00:00</div>
+					<div class="songsLongtime"><div></div></div>
+					<div class="songsControl"></div>
+					<div class="endTime">04:01</div>
+				</div>
+				<!-- 默认都是单曲循环 -->
+				<audio src="" loop="loop"></audio>
+				<div class="playerControl">
+					<span class="fa fa-backward"></span>
+					<span>
+						<span class="fa fa-pause" style="display: block;"></span>
+						<span class="fa fa-play" style="display: none;"></span>
+					</span>
+					
+					<span class="fa fa-forward"></span>	
+				</div>
+			</div>
+			<!-- *****************歌手 *****************-->
+			<div>
+				<div class="sortContainerSinger">
+						<!-- <div id="chosedSinger">1111</div> 	
+						<div>222</div>
+						<div>3</div>
+						<div>4</div>
+						<div>5</div> -->
+				</div>
+
+				<div class="singerContainer">
+					<!-- <div class="singerItem">
+						<img class="pageSingerHeader" src="images/Adele.jpg">
+						<div class="singerItmeContainer">
+							<span>名字</span> 
+							<span>热歌</span>
+							<span>你猜猜猜猜猜猜</span>				
+						</div>
+						<div class="fa fa-chevron-right"></div>
+					</div> -->
+				</div>
+				
+			</div>
+			<!-- *****************我的*****************-->
+			<div>
+				<div class="mine-title">
+					<span class="fa fa-user-circle"></span>
+				</div>
+				<div class="loadBtn">登录</div>
+				<div class="registerBtn">注册</div>
+				<div class="userInforShow" style="display: none;">
+					<span>账号</span>
+					<Span>注销</span>
+				</div>
+
+
+			</div>
+
+		</div>
+
+		<!-- ********************************导航**************** -->
+		<div class="page-nav">
+			<div id="active">
+				<i class="fa fa-home"></i>
+				<span>首页</span>
+			</div>
+
+			<div>
+				<i class="fa fa-bars"></i>
+				<span>榜单</span>
+			</div>
+
+			<div>
+				<i class="fa fa-music"></i>
+				<span>音乐盒</span>
+			</div>
+
+			<div>
+				<i class="fa fa-bars"></i>
+				<span>歌手</span>
+			</div>
+
+			<div>
+				<i class="fa fa-user-circle"></i>
+				<span>我的</span>
+			</div>
+			
+		</div>
+		
+
+
+
+
+
+
+	</div>
+	<!--*******************歌手详情页面*******************  -->
+	<div class="singerDetail">
+		<div class="DetailTitle">
+			<span class="fa fa-mail-reply"></span>
+			<span>歌手详情</span>	
+		</div>
+
+		<div class="singerDetailItem">
+			<img src="images/Adele.jpg" class="detail-header">
+			<span class="detail-name">名字</span>
+			<div class="detail-right">
+				<span>性别：</span>
+				<span>国籍：华语歌手</span>
+				<span>生日：</span>
+				<span>星座：</span>
+				<span>身高：</span>
+			</div>
+		</div>
+
+
+		<div>
+			<table class="detail-songs">
+				<thead>
+					<tr>
+						<th></th>
+						<th>热门歌曲</th>
+						<th></th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody id="tbMain1"></tbody>
+			</table>
+		</div>
+
+	</div>
+
+	<!-- *************************登陆页面**************** -->
+	<div class="loadPage">
+		<div class="DetailTitle">
+			<span class="fa fa-mail-reply"></span>
+			<span>用户登录</span>	
+		</div>
+		<div class="loadList">
+			<div><span>欢迎登录!</span></div>
+		
+				<div class="form-item">
+						<label class="item-title">手机号码<span>*</span></label>
+						<input type="text" name="phone" id="phone" class="item-textbox" placeholder="请输入手机号码" autocomplete="off" maxlength="11"/>
+				</div>
+				<span id="txtPhone"></span>
+				<div class="form-item">
+						<label class="item-title">密码<span>*</span></label>
+						<input type="password" name="password" id="password" class="item-textbox" placeholder="请输入密码" autocomplete="off"  />
+				</div>
+				<span id="txtPassword"></span>
+
+				<div class="center-align">
+					<button class="btn-submit" >登录</button>
+				</div>
+		
+			<div class="otherLoadWay">
+				<span>其他方式登录:</span><span></span>
+				<a href="#">用户协议</a><a href="#">隐私政策</a>
+			</div>
+
+	</div>
+
+		
+	</div>
+	<!-- *************************注册页面**************** -->
+	<div class="registerPage">
+		<div class="DetailTitle">
+			<span class="fa fa-mail-reply"></span>
+			<span>用户注册</span>	
+		</div>
+
+		<div class="zcList">
+			<div class="zcContainer">
+					<div class="zcform-item">
+							<label class="zcitem-title">手机号码<span>*</span></label>
+							<input type="text" name="phone" id="zcphone" class="zcitem-textbox" placeholder="请输入手机号码" autocomplete="off"  maxlength="11"/>
+					</div>
+					<span id="zctxtPhone"></span>
+
+					<div class="zcform-item">
+							<label class="zcitem-title">短信验证<span>*</span></label>
+							<div class="cnfDv">
+								<input type="text" name="phone" id="zcnew" class="zcitem-newstextbox" placeholder="请验证码" autocomplete="off" maxlength="4"/>
+								<div class="zcitem-newsgettextbox">获验证码</div>
+							</div>							
+					</div>
+					<span id="zctxtNews"></span>
+
+					<div class="zcform-item">
+							<label class="zcitem-title">密码<span>*</span></label>
+							<input type="password" name="password" id="zcpassword" class="zcitem-textbox"  placeholder="请输入密码" autocomplete="off"/>
+					</div>
+					<span id="zctxtPassword"></span>
+
+					<div class="zcform-item">
+							<label class="zcitem-title">确认密码<span>*</span></label>
+							<input type="password" name="password" id="zccnfpassword" class="zcitem-textbox"  placeholder="请再次输入密码" autocomplete="off"/>
+					</div>
+					<span id="zctxtCnfPassword"></span>
+
+					<!-- <div class="zcform-item">
+							<label class="zcitem-title"><span></span></label>
+							<input type="checkbox" name=""  class="zccheckbox"><span class="yueduxieyi">我已经认证阅读并同意<a href="#">用户协议</a>、<a href="#">隐私政策</a></span>
+					</div>
+					<span id="zctxtCheckbox"></span> -->
+					<div class="showInfor"></div>
+
+					<div class="zccenter-align">
+						<button class="zcbtn-submit" >注册</button>
+					</div>
+			</div>
+			
+				
+
+	</div>
+
+		
+</div>
+<!--******************闪屏************************  -->
+	<div class="shanping"></div>
+
+
+
+	<!-- **********************JS******************** -->
+	<script type="text/javascript" src="js/ajax.js"></script>
+	<script type="text/javascript" src="js/ad.js"></script>
+	<script type="text/javascript" src="js/home.js"></script>
+	<script type="text/javascript" src="js/songs.js"></script>
+	<script type="text/javascript" src="js/register.js"></script>
+	<script type="text/javascript" src="js/load.js"></script>
+
+	
+</body>
+</html>
