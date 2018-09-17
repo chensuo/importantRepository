@@ -1,0 +1,41 @@
+.page-guides{
+    color: #333;
+}
+.page-guides .admissibility>p , .procedure>p , .place-and-time>p , .evidence>p , .charge>p , .sample>p , .questions>p{
+    font-size: 15px;
+    margin-bottom: 10px;
+ }
+.page-guides .requirements>li{
+    font-size: 14px;
+    color: #999;
+    margin: 5px 0;
+}
+.bottom-menu>.btn{
+    border-radius: 3px !important;
+}
+.table-requirements th{
+    text-align: center;
+    color: #468847;
+    padding:8px 4px !important;
+}
+.table-requirements th:first-child{
+    width: 30%;
+}
+.table-requirements th:nth-child(2){
+     width: 12%;
+ }
+.table-requirements th:nth-child(3){
+    width: 12%;
+}
+.table-requirements th:nth-child(4){
+     width: 15%;
+ }
+.table-requirements th:nth-child(6){
+    width: 15%;
+}
+.table-requirements td{
+    vertical-align: middle !important;
+}
+.table-requirements .btn{
+    border-radius: 3px !important;
+}

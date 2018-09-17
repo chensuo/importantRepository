@@ -1,0 +1,344 @@
+// 市区街镇下拉框数据加载&渲染
+/*
+$.ajax({
+	type: 'get',
+	url: '/organ.xml',
+	dataType: 'xml',
+	cache: false,
+	success: function(xml){
+		var $sitelist = $(xml).find('node[name="上海市"]');
+		drawSiteList(1,$sitelist);
+		$('.common-filterbar-site').find('.level1,.level2').each(function(){
+			$(this).find('li:first').addClass('active');
+		});
+	}
+});*/
+function drawSiteList (level,list) {
+	var box = $('.common-filterbar-site .popover-group').filter('.level' + level);
+	box.find('.group-content').append('<ul></ul>');
+	var subbox = box.find('.group-content > ul:last');
+	list.each(function(){
+		if (level == 3){
+			subbox.append('<li>'+$(this).attr('name')+'</li>');
+		} else {
+			subbox.append('<li>'+$(this).attr('short')+'</li>');
+		}
+		var sublist = $(this).find('>node[type="quhua"]');
+		if (sublist.size()>0){
+			drawSiteList(level+1,sublist);
+		}
+	});
+}
+
+// IE兼容Placeholder属性
+var funPlaceholder = function(element) {
+	"use strict";
+    var placeholder = '';
+    if (element && !("placeholder" in document.createElement("input")) && (placeholder = element.getAttribute("placeholder"))) {
+        element.onfocus = function() {
+            if (this.value === placeholder) {
+                this.value = "";
+            }
+            this.style.color = '';
+        };
+        element.onblur = function() {
+            if (this.value === "") {
+                this.value = placeholder;
+                this.style.color = 'graytext';
+            }
+        };
+        //样式初始化
+        if (element.value === "") {
+            element.value = placeholder;
+            element.style.color = 'graytext';
+        }
+    }
+};
+
+$(document).ready(function(){
+	$("input[type='text']").each(function(){
+		funPlaceholder($(this)[0]);
+	});
+});
+
+$(function(){
+	// 绑定无障碍开关
+	$('.common-topbar-navlist .pull-right').on('click','a',function(){
+		toggleToolBar();
+	});
+	
+	// 微信二维码
+	$('.link-popover-wechat').popover({
+		content: '<img src=\"'+webRoot+'/common/img/pic-qrcode-wx.jpg">',
+		html: true,
+		placement: 'bottom',
+		trigger: 'hover'
+	});
+	
+	$('.link-popover-app').popover({
+		content: '<img src=\"'+webRoot+'/common/img/pic-qrcode-app.jpg" width="80">',
+		html: true,
+		placement: 'bottom',
+		trigger: 'hover'
+	});
+	
+	// 市级&区级&街镇 弹框展示
+	$(document).on('focus','.common-filterbar-site > span + span',function(){
+		$(this).siblings('.popover').fadeIn();
+	});
+	$(document).on('blur','.common-filterbar-site > span + span',function(){
+		var that = $(this);
+		setTimeout(function(){
+			that.siblings('.popover').hide();
+		},300);
+	});
+	// 市级&区级&街镇 切换
+	var timerb = null;
+	$(document).on('mouseover','.common-filterbar-site .level2 li',function(){
+		var index = $(this).index();
+		var that = $(this);
+		clearTimeout(timerb);
+		timerb = setTimeout(function(){
+			that.siblings().removeClass('active');
+			that.addClass('active');
+			$('.common-filterbar-site .level3').find('ul').hide();
+			$('.common-filterbar-site .level3').find('ul').eq(index).show();
+		},200);
+	});
+	$(document).on('mouseout','.common-filterbar-site .level2 li',function(){
+		clearTimeout(timerb);
+	});
+	$(document).on('click','.common-filterbar-site li',function(){
+		var siteText = $(this).text();
+		$(this).parents('.popover-group').find('li').removeClass('active');
+		$(this).addClass('active');
+		$('.common-branch-logo').html('<h2>' + siteText + '</h2>');
+		$('.common-filterbar-site .popover').hide();
+	});
+	
+	// 右侧悬浮链接收起/展开
+	$('.common-floatnav').on('click','.floatnav-control',function(){
+		if ($('.foldbox').is('.fold')){
+			$('.foldbox').removeClass('fold').animate({
+				height: '396px'
+			},300,function(){
+				$('.floatnav-control span').text('收起');
+			});
+		} else {
+			$('.foldbox').addClass('fold').animate({
+				height: '70px'
+			},300,function(){
+				$('.floatnav-control span').text('展开');
+			});
+		}
+	});
+	// 导航下拉菜单展开/收起
+	$('.common-navbar-list .popover-nav, .common-navbar-link').hover(function(){
+		$(this).delay(500).addClass('active');
+		var me = $(this).find('.popover');
+        me.queue("fx", []);
+        me.delay(500).queue(function(){
+            me.show();
+        });
+	},function(){
+		$(this).delay(500).removeClass('active');
+		var me = $(this).find('.popover');
+        me.queue("fx", []);
+        me.delay(500).queue(function(){
+            me.hide();
+        });
+	});
+	 
+	// 返回顶部按钮
+	$(window).scroll(function (){
+		if ($(document).scrollTop() > 500){
+			$('.link-floatnav-top').addClass('active');
+		} else {
+			$('.link-floatnav-top').removeClass('active');
+		}
+	});
+	$(document).on('click','.link-floatnav-top',function(){
+		$('html,body').animate({scrollTop:'0px'},500);
+	});
+	
+	   //搜索框autocomplete
+    //当键盘键被松开时发送Ajax获取数据
+    $("#text").on("keyup click", function (event) {
+        var keyword = $(this).val();
+        if (keyword == '') {
+            $('#word').hide();
+            return;
+        }
+        var enReg = /^[A-Za-z\s]*$/;
+        //拼音至少4位开始查询
+        if(enReg.test(keyword) && keyword.length<4) {
+            return;
+        }
+        $.ajax({
+            url: 'http://zwsearch.sh.gov.cn:8022/searchAutoComplete?keyword=' + keyword,
+            type: 'GET',
+            success: function (data) {
+                if (data.length > 0) {
+                    $('#word').empty().show();
+                    $.each(data, function () {
+                        if (this.length < 35) {
+                            $('#word').append('<div class="click_work">' + this + '</div>');
+                        } else {
+                            $('#word').append('<div class="click_work">' + this.substring(0, 35) + '</div>');
+                        }
+                    });
+                } else {
+                    $('#word').empty().hide();
+                }
+            },
+            error: function () {
+                $('#word').empty().show();
+            }
+        });
+    });
+
+    //点击搜索数据复制给搜索框并提交
+    $(document).on('click', function (e) {
+        var target = $(".click_work");
+
+        if (target.is(e.target)) {
+            var word = $(e.target).text();
+            $('#text').val(word);
+            $('#word').hide();
+            $('#searchBtn').trigger('click');
+        } else {
+            $('#word').hide();
+        }
+    });
+	
+});
+
+/**搜索框**/
+$("#searchBtn").on('click',function(){
+	var text= $('#text').val();
+	if(text==""){
+		$.messager.popup("请输入检索内容！");
+		return false;
+	}
+	$("#searchForm").attr("action","http://zwsearch.sh.gov.cn:8022/search");
+	$("#searchForm").submit();
+});
+/**物流查询**/
+$("#logisticsSearch button").on('click',function(){
+	var wayBillNo=$.trim($("#wayBillNo").val());
+	if(wayBillNo==""){
+		$.messager.popup("请输入运单号！");
+		return false;
+	}
+	var queryimage=$("#logisticsSearch #queryimage").val();
+	if(queryimage==""){
+		$.messager.popup("请输入验证码！");
+		return false;
+	}
+	$.ajax({
+		type 	: 'POST',
+		url  	: webRoot+'/query/vorfiyImage.do',
+		data 	: {'queryimage':queryimage,'codeType':'logisticsCode'},
+		async: false,
+		success : function(result) {
+			if(result.type == 'success'){
+				$("#logisticsSearch form").attr("action",webRoot+"/olsp/getEmsInfo.do");
+				$("#logisticsSearch form").submit();
+			}else{
+				$.messager.popup(result.msg);
+			}
+			$("#logisticsSearch img").attr("src",webRoot+'/showImage?codeType=logisticsCode&d='+new Date()*1);
+		}
+	});
+	statistics('物流查询',wayBillNo,'');
+});
+/**进度查询**/
+$("#progressSearch button").on('click',function(){
+	var suid=$("#stSuid").val();
+	var stApplicant=$("#stApplicant").val();
+	if(suid==""||stApplicant==""){
+		$.messager.popup("申请人和统一审批编码不能为空！");
+		return false;
+	}
+	var queryimage=$("#progressSearch #queryimage").val();
+	if(queryimage==""){
+		$.messager.popup("请输入验证码！");
+		return false;
+	}
+	$.ajax({
+		type 	: 'POST',
+		url  	: webRoot+'/query/vorfiyImage.do',
+		data 	: {'queryimage':queryimage,'codeType':'commonCode'},
+		async: false,
+		success : function(result) {
+			if(result.type == 'success'){
+				//$("#progressSearch form").attr("action","http://zwdt.sh.gov.cn/zwdtSW/spnetQuery/query_apply_detail.jsp");
+				//$("#progressSearch form").submit();
+				gotosearch(suid,stApplicant);
+			}else{
+				$.messager.popup(result.msg);
+			}
+			$("#progressSearch img").attr("src",webRoot+'/showImage?codeType=commonCode&d='+new Date()*1);
+		}
+	});
+	statistics('办件查询',suid,'');
+});
+
+
+var gotosearch=function(suid,stApplicant){
+	$.ajax({
+			type : "POST",
+			traditional : true,  
+			url :'http://zwdt.sh.gov.cn/zwdtSW/bsfw/queryItem.do',
+			data : {
+				"ST_WF_ID" : suid, //表示统一审批编码
+				"IdOrCode" : stApplicant //申请对象
+			},
+			dataType : 'json',
+			beforeSend: function(XMLHttpRequest) {
+            $('#lasBtn').val('信息查询中……');//显示等待消息
+            $('#lasBtn').attr('disabled','');
+        },
+		success : function(res) {
+		   if( res.message == "queryFail" ||res.message==""){
+		         // 如果失败，加自己的提示内容
+			   $.messager.popup("未查询到办件信息。。。。");
+		       }else{
+		    	   if(res.message == "quSuccessed"){
+			   //表示在新的统一受理平台查询到数据
+		    		  /*document.applyForm.action ="http://zwdt.sh.gov.cn/zwdtSW2/zwdtSW/gxhpt/applyDetail.do?tag="+res.dataInfo;*/
+		    		 var temp = document.createElement("form");
+		            temp.action ="http://zwdt.sh.gov.cn/zwdtSW/zwdtSW/gxhpt/applyDetail.do";
+		            temp.method = "post";
+		            temp.style.display = "none";
+		            var params = {
+		        				"tag":res.dataInfo
+		        		    };
+		            for (var x in params) {
+		                var opt = document.createElement("textarea");
+		                opt.name = x;
+		                opt.value = params[x];
+		                temp.appendChild(opt);
+		            }
+		            document.body.appendChild(temp);
+		            temp.submit();
+		            return temp;
+		    	   }else{
+			   //表示在旧的市网厅平台查询到数据
+		    		  document.applyForm.action = "http://zwdt.sh.gov.cn/zwdtSW/spnetQuery/query_apply_detail.jsp";
+		    	   }
+		    if (document.applyForm.elements["IdOrCode"].value == ""
+	 					|| document.applyForm.elements["IdOrCode"].value == "请输入申请对象名称") {
+	 				document.applyForm.elements["serachText"].value=document.applyForm.elements["ST_WF_ID"].value;
+	 				document.applyForm.action ="http://zwdt.sh.gov.cn/zwdtSW/search/pre.do";
+	 			}		
+	 			document.applyForm.target = "";
+	 			document.applyForm.submit();
+		       }
+		},
+		complete: function(){
+			
+		}
+		});
+	
+}
