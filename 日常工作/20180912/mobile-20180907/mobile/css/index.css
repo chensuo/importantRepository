@@ -222,12 +222,8 @@ footer a {
   display: flex;
   position: absolute;
   z-index: 500;
-  top: 44px;
   width: 100%;
   background-color: #fafafa;
-}
-#contentBox{
-  margin-top: 44px;
 }
 #discovery-nav a.on{
   color: #666;
