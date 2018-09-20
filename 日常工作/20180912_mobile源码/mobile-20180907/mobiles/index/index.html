@@ -34,26 +34,27 @@
         </div>
         <!-- 头部搜索框区域结束 -->
 
-    <div class="weui-tab">
-        <!-- 下拉刷新开始-->
-        <div class="weui-pull-to-refresh__layer">
-            <div class='weui-pull-to-refresh__arrow'></div>
-            <div class='weui-pull-to-refresh__preloader'></div>
-            <div class="down">下拉刷新</div>
-            <div class="up">释放刷新</div>
-            <div class="refresh">正在刷新</div>
-        </div>
-        <!-- 下拉刷新结束-->
+    <div class="weui-tab" style="height:100%; overflow:auto;">
+
 
 
         <!-- tab切换页区域开始 -->
         <div class="weui-tab__bd weui-tab__bd-zdy">
+            <!-- 下拉刷新开始-->
+            <div class="weui-pull-to-refresh__layer">
+                <div class='weui-pull-to-refresh__arrow'></div>
+                <div class='weui-pull-to-refresh__preloader'></div>
+                <div class="down">下拉刷新</div>
+                <div class="up">释放刷新</div>
+                <div class="refresh">正在刷新</div>
+            </div>
+            <!-- 下拉刷新结束-->
             <!-- 个人中心tab开始-->
             <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
 
                 <p class="weui-class">最近常用</p>
                 <div class="weui-grids">
-                    <a href="../channel/news.html" class="weui-grid js_grid">
+                    <a href="" class="weui-grid js_grid">
                         <div class="weui-grid__icon">
                             <img src="../../mobile/img/icon_nav_button.png" alt="">
                         </div>
@@ -105,6 +106,8 @@
         <!-- tab切换页区域结束 -->
 
 
+
+    </div>
         <!-- 底部固定区域菜单开始 -->
         <div class="weui-tabbar fixed-bottom">
             <a href="index.html" class="weui-tabbar__item">
@@ -134,7 +137,6 @@
             </a>
         </div>
         <!-- 底部固定区域菜单结束 -->
-    </div>
 
     <script src="../../mobile/js/jquery-2.1.4.js"></script>
     <script src="../../mobile/js/fastclick.js"></script>

@@ -16,34 +16,40 @@
 </head>
 
 <body ontouchstart>
-
-<div class="weui-tab">
-
-
-    <!-- 搜索框区域开始 -->
-    <div class="weui-search-bar" id="searchBar">
-        <form class="weui-search-bar__form" action="#">
-            <div class="weui-search-bar__box">
-                <i class="weui-icon-search"></i>
-                <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
-                <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
-            </div>
-            <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-                <i class="weui-icon-search"></i>
-                <span>您需要什么帮助</span>
-            </label>
-        </form>
-        <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
-    </div>
-    <!-- 搜索框区域结束 -->
+<!-- 搜索框区域开始 -->
+<div class="weui-search-bar" id="searchBar">
+    <form class="weui-search-bar__form" action="#">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+        </div>
+        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+            <i class="weui-icon-search"></i>
+            <span>您需要什么帮助</span>
+        </label>
+    </form>
+    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+</div>
+<!-- 搜索框区域结束 -->
+<div class="weui-panel__hd position_hd">发现详细列表 <a style="float:right;color:#1aad19;" href="../channel/discovery.html">返回</a></div>
 
 
+<div class="weui-tab" style="top:88px;height: 100%;overflow: auto">
 
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
         <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active discovery_content_tab">
             <div class="weui-panel weui-panel_access">
-                <div class="weui-panel__hd position_hd">发现详细列表 <a style="float:right;color:#1aad19;" href="../channel/discovery.html">返回</a></div>
+                <!-- 下拉刷新开始-->
+                <div class="weui-pull-to-refresh__layer">
+                    <div class='weui-pull-to-refresh__arrow'></div>
+                    <div class='weui-pull-to-refresh__preloader'></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新</div>
+                </div>
+                <!-- 下拉刷新结束-->
                 <div class="weui-media-box weui-media-box_text">
                     <div class="content-title">亚马逊股价首破800美元大关 </div>
                     <div class="content-inf">
@@ -130,49 +136,43 @@
             </div>
 
         </div>
-        <div id="tab2" class="weui-tab__bd-item">
-            <h1>页面二</h1>
-        </div>
-        <div id="tab3" class="weui-tab__bd-item">
-            <h1>页面三</h1>
-        </div>
-        <div id="tab4" class="weui-tab__bd-item">
-            <h1>页面四</h1>
-        </div>
+
+
     </div>
     <!-- tab切换页区域结束 -->
 
-
-    <!-- 底部固定区域菜单开始 -->
-    <div class="weui-tabbar fixed-bottom">
-        <a href="../index/index.html" class="weui-tabbar__item ">
-            <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
-            <div class="weui-tabbar__icon">
-                <img src="../../mobile/img/icon_nav_button.png" alt="">
-            </div>
-            <p class="weui-tabbar__label">个人中心</p>
-        </a>
-        <a href="../channel/discovery.html" class="weui-tabbar__item">
-            <div class="weui-tabbar__icon">
-                <img src="../../mobile/img/icon_nav_msg.png" alt="">
-            </div>
-            <p class="weui-tabbar__label">通知公告</p>
-        </a>
-        <a href="../channel/guide.html" class="weui-tabbar__item">
-            <div class="weui-tabbar__icon">
-                <img src="../../mobile/img/icon_nav_article.png" alt="">
-            </div>
-            <p class="weui-tabbar__label">指南</p>
-        </a>
-        <a href="#tab4" class="weui-tabbar__item">
-            <div class="weui-tabbar__icon">
-                <img src="../../mobile/img/icon_nav_cell.png" alt="">
-            </div>
-            <p class="weui-tabbar__label">我</p>
-        </a>
-    </div>
-    <!-- 底部固定区域菜单结束 -->
 </div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<!-- 底部固定区域菜单开始 -->
+<div class="weui-tabbar fixed-bottom">
+    <a href="../index/index.html" class="weui-tabbar__item ">
+        <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_button.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">个人中心</p>
+    </a>
+    <a href="../channel/discovery.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_msg.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">通知公告</p>
+    </a>
+    <a href="../channel/guide.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_article.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">指南</p>
+    </a>
+    <a href="#tab4" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">我</p>
+    </a>
+</div>
+<!-- 底部固定区域菜单结束 -->
 
 <script src="../../mobile/js/jquery-2.1.4.js"></script>
 <script src="../../mobile/js/fastclick.js"></script>
@@ -182,7 +182,11 @@
     });
 </script>
 <script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/pullToRefresh.js"></script>
 <script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+
+
 
 </body>
 

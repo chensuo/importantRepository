@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>mobile</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+</head>
+
+<body ontouchstart>
+
+    <div class="weui-tab">
+        <!-- 头部空白区域开始 -->
+        <header class='index-header'>
+            <h1 class="index-title">header</h1>
+        </header>
+        <!-- 头部空白区域介绍 -->
+
+
+        <!-- 搜索框区域开始 -->
+        <div class="weui-search-bar" id="searchBar">
+            <form class="weui-search-bar__form" action="#">
+                <div class="weui-search-bar__box">
+                    <i class="weui-icon-search"></i>
+                    <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+                    <a href="javascript:;" class="weui-icon-clear" id="searchClear"></a>
+                </div>
+                <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                    <i class="weui-icon-search"></i>
+                    <span>您需要什么帮助</span>
+                </label>
+            </form>
+            <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+        </div>
+        <!-- 搜索框区域结束 -->
+
+
+        <!-- tab切换页区域开始 -->
+        <div class="weui-tab__bd weui-tab__bd-zdy">
+            <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+
+                <p class="weui-class">个人中心</p>
+                    <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">基本信息</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">胸卡帐户</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">年休假</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">公积金帐号</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">红包</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">培训记录</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">企业年金</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">我的贺卡</p>
+                    </a>
+                </div>
+
+
+                <p class="weui-class">人事预约</p>
+                    <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">访客系统</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">人事服务预约</p>
+                    </a>
+
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">健康预约</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">我的预约</p>
+                    </a>
+                </div>
+
+
+                <p class="weui-class">薪酬福利</p>
+                <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">电子薪资单</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">租房补贴</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">购房补贴</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">人才补助</p>
+                    </a>
+                </div>
+
+                <p class="weui-class">人事服务</p>
+                <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">保密资格认证</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">调查问卷</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">考勤与假期</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">门禁申请</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">饮用水订购</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">证明开具</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">档案利用</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">复工申请</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">工伤理赔</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">工龄变更</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">居住证积分</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">应届生落户</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">留学生落户</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">居转户落户</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">夫妻分居落户</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">引进人才落户</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">集体户口利用</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">饮用水订购</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">饮水设备报修</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">物业报修</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">调岗</p>
+                    </a>
+                </div>
+
+                <p class="weui-class">大众生涯</p>
+                <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">入职</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">职称</p>
+                    </a>
+    
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">退休</p>
+                    </a>
+ 
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">离职</p>
+                    </a>
+                </div>
+
+                <p class="weui-class">车生活</p>
+                <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">通行证申请</p>
+                    </a>
+
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">员工优惠购车</p>
+                    </a>
+
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">阳光易手车</p>
+                    </a>
+
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">车位查询</p>
+                    </a>
+
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">余位查询</p>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+        <!-- tab切换页区域结束 -->
+
+
+        <!-- 底部固定区域菜单开始 -->
+        <div class="weui-tabbar fixed-bottom">
+            <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+                <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">个人中心</p>
+            </a>
+            <a href="#tab2" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_msg.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">通讯录</p>
+            </a>
+            <a href="#tab3" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_article.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">发现</p>
+            </a>
+            <a href="../me.html" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">我</p>
+            </a>
+        </div>
+        <!-- 底部固定区域菜单结束 -->
+    </div>
+
+    <script src="../../mobile/js/jquery-2.1.4.js"></script>
+    <script src="../../mobile/js/fastclick.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+        });
+    </script>
+    <script src="../../mobile/js/jquery-weui.js"></script>
+
+</body>
+
+</html>
