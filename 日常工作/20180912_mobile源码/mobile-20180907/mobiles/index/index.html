@@ -35,6 +35,16 @@
         <!-- 头部搜索框区域结束 -->
 
     <div class="weui-tab">
+        <!-- 下拉刷新开始-->
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
+        <!-- 下拉刷新结束-->
+
 
         <!-- tab切换页区域开始 -->
         <div class="weui-tab__bd weui-tab__bd-zdy">
@@ -104,19 +114,19 @@
                 </div>
                 <p class="weui-tabbar__label">服务</p>
             </a>
-            <a href="discovery.html" class="weui-tabbar__item">
+            <a href="../channel/discovery.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <img src="../../mobile/img/icon_nav_msg.png" alt="">
                 </div>
-                <p class="weui-tabbar__label">发现</p>
+                <p class="weui-tabbar__label">通知公告</p>
             </a>
-            <a href="guide.html" class="weui-tabbar__item">
+            <a href="../channel/guide.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <img src="../../mobile/img/icon_nav_article.png" alt="">
                 </div>
                 <p class="weui-tabbar__label">指南</p>
             </a>
-            <a href="mine.html" class="weui-tabbar__item">
+            <a href="../channel/mine.html" class="weui-tabbar__item">
                 <div class="weui-tabbar__icon">
                     <img src="../../mobile/img/icon_nav_cell.png" alt="">
                 </div>
@@ -132,11 +142,15 @@
         $(function () {
             FastClick.attach(document.body);
 
+
+
         });
 
     </script>
         <script src="../../mobile/js/jquery-weui.js"></script>
         <script src="../../mobile/js/urlJudge.js"></script>
+        <script src="../../mobile/js/pullToRefresh.js"></script>
+
 
 </body>
 

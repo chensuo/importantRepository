@@ -86,11 +86,9 @@ footer a {
   padding-bottom: 0;
 }
 .weui-panel .content-txt img{
-  width: 100%;
+  max-width: 100%;
 }
-.weui-panel .content-txt p{
-  text-indent: 2em;
-}
+
 .weui-panel .content-txt p[style*="text-align:center;"]{
   text-indent: 0em;
 }
@@ -200,7 +198,7 @@ footer a {
   height: 90px;
   width: 95px;
   text-align: center;
-  box-shadow: 2px 2px 5px #888888;
+  box-shadow: 1px 1px 6px #f1f1f1;;
 }
 .discovery_tab .weui-media-box__hd .weui-media-box__thumb {
   vertical-align: middle;
@@ -216,20 +214,24 @@ footer a {
 .discovery_tab  .item-bottom>span:nth-child(2){
   float: right;
 }
-#discovery-nav{
+#discovery-nav,#guide-nav{
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  position: absolute;
   z-index: 500;
   width: 100%;
+  position: fixed;
+  top: 44px;
+  left: 0;
   background-color: #fafafa;
 }
-#discovery-nav a.on{
-  color: #666;
+#discovery-nav a.on ,#guide-nav a.on{
+  color: #333;
   background-color: #f1f1f1;
+  box-sizing: border-box;
+  box-shadow: 1px 1px 3px #c1c1c1;
 }
-#discovery-nav a{
+#discovery-nav a , #guide-nav a{
   position: relative;
   display: block;
   -webkit-box-flex: 1;
@@ -237,10 +239,11 @@ footer a {
   flex: 1;
   padding: 13px 0;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   color: #888;
 }
+
 #contentBox .box{
   display:none;
 }
@@ -266,19 +269,19 @@ footer a {
   float: left;
   color: #999;
 }
-.discovery_content_tab .content-inf>span:nth-child(2){
+.discovery_content_tab .content-inf>a:nth-child(2){
   float: right;
   color: #999;
 }
 .discovery_content_tab .content-txt img{
-  box-shadow: 2px 2px 5px #888888;
+  box-shadow: 1px 1px 6px #f1f1f1;
   margin-bottom: 8px;
 }
 .discovery_content_tab .content-txt>p{
   color: #333;
 }
-.discovery_content_tab .weui-panel__hd{
-  font-size: 12px;
+.discovery_content_tab .weui-panel__hd , .discovery_tab .weui-panel__hd{
+  font-size: 16px;
   border-top: 1px solid #f4f4f4;
   background-color: #ffffff;
 }
@@ -287,7 +290,7 @@ footer a {
 }
 .discovery_content_tab #reads , .discovery_content_tab #ups{
   padding: 0 4px;
-  border-radius: 7px;
+  border-radius: 11px;
   background-color: #c1c1c1;
   color: #ffffff;
   margin-left: 3px;
@@ -401,6 +404,7 @@ footer a {
   float: right;
   color: #999999;
   font-weight: normal;
+  font-size: 15px;
 }
 .discovery_content_tab .comment-text-zan>span{
   padding: 0 4px;
@@ -430,6 +434,42 @@ footer a {
   background-color: #ffffff;
 }
 .discovery_content_tab .content-title{
-  font-size: 17px;
+  font-size: 20px;
 }
-
+/*头部搜索框样式修改*/
+.weui-search-bar{
+  position: fixed;
+  top:0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+}
+.weui-tab{
+  position: absolute;
+  left: 0;
+  top: 44px;
+  right: 0;
+}
+.weui-panel__bd{
+  position: absolute;
+  left: 0;
+  top: 52px;
+  right: 0;
+}
+.discovery_content_tab>.weui-panel>.weui-panel__hd:first-child{
+  position: fixed;
+  top: 44px;
+  left: 0;
+  right: 0;
+  z-index: 500;
+}
+.discovery_content_tab>.weui-panel>.weui-panel__hd:first-child:after{
+  border-bottom: 1px solid #e5e5e5;
+  right:15px;
+}
+.weui-search-bar:after{
+  border-bottom: none;
+}
+.discovery_content_tab .weui-media-box{
+  margin-top: 49px;
+}
