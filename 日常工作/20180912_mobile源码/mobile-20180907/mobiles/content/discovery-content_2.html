@@ -32,16 +32,11 @@
     <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
 </div>
 <!-- 搜索框区域结束 -->
-<div class="weui-panel__hd position_hd">
+<div class="weui-panel__hd position_hd position_hd_2">
     <div>
-        新闻详情 <a style="float:right;color:#1aad19;" href="../channel/discovery.html">返回</a>
+        <a href="../channel/discovery.html" class="left-arrow"></a> <a href="javascript:;"  class="open-popup" data-target="#discovery-content2-nav">···</a>
     </div>
-    <div id="discovery-content-nav">
-        <a href="" class="on">新闻详情</a>
-        <a href="">办理</a>
-        <a href="">反馈</a>
-        <a href="">评价</a>
-    </div>
+
 
 </div>
 
@@ -53,7 +48,7 @@
         <!-- 新闻详情tab开始-->
         <div class="discovery_content_tab active">
             <div class="weui-panel weui-panel_access">
-                <div style="height: 86px;"></div>
+                <div style="height: 48px;"></div>
                 <!-- 下拉刷新开始-->
                 <div class="weui-pull-to-refresh__layer">
                     <div class='weui-pull-to-refresh__arrow'></div>
@@ -154,7 +149,7 @@
         <!-- 办理tab开始-->
         <div class="discovery_content_tab">
             <div class="weui-panel weui-panel_access">
-                <div style="height: 86px;"></div>
+                <div style="height: 48px;"></div>
                 <!-- 下拉刷新开始-->
                 <div class="weui-pull-to-refresh__layer">
                     <div class='weui-pull-to-refresh__arrow'></div>
@@ -205,7 +200,7 @@
         <!-- 反馈tab开始-->
         <div class="discovery_content_tab">
             <div class="weui-panel weui-panel_access">
-                <div style="height: 86px;"></div>
+                <div style="height: 48px;"></div>
                 <!-- 下拉刷新开始-->
                 <div class="weui-pull-to-refresh__layer">
                     <div class='weui-pull-to-refresh__arrow'></div>
@@ -236,7 +231,7 @@
         <!-- 评价tab开始-->
         <div class="discovery_content_tab">
             <div class="weui-panel weui-panel_access">
-                <div style="height: 86px;"></div>
+                <div style="height: 48px;"></div>
                 <!-- 下拉刷新开始-->
                 <div class="weui-pull-to-refresh__layer">
                     <div class='weui-pull-to-refresh__arrow'></div>
@@ -268,10 +263,55 @@
 
     </div>
     <!-- tab切换页区域结束 -->
+</div>
+<!--<div id="discovery-content-nav">-->
+<!--<a href="" class="on">新闻详情</a>-->
+<!--<a href="">办理</a>-->
+<!--<a href="">反馈</a>-->
+<!--<a href="">评价</a>-->
+<!--</div>-->
+<!-- Popub弹出层开始-->
+<div id="discovery-content2-nav" class="weui-popup__container popup-bottom" style="z-index: 502;">
+    <div class="weui-popup__dialog"></div>
+    <div class="weui-popup__modal">
+        <!-- 弹出层的内容开始-->
+        <div class="weui-grids">
+            <a href="" class="weui-grid js_grid on close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-grid__label">新闻详情</p>
+            </a>
+            <a href="" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">办理</p>
+            </a>
+            <a href="" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">反馈</p>
+            </a>
+            <a href="" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">评价</p>
+            </a>
+        </div>
+        <!-- 弹出层的内容结束-->
+        <a class="close-popup popup-close">关闭</a>
+    </div>
+
 
 </div>
+<!-- Popub弹出层结束-->
+
 <!-- 回到顶部按钮-->
 <div class="top"></div>
+<!-- 回到顶部按钮结束-->
 <!-- 底部固定区域菜单开始 -->
 <div class="weui-tabbar fixed-bottom">
     <a href="../index/index.html" class="weui-tabbar__item ">
@@ -308,8 +348,8 @@
     $(function () {
         FastClick.attach(document.body);
 
-        /*dicovery-content页面顶部导航*/
-        $("#discovery-content-nav a").off("click").on("click",function(e){
+        /*dicovery-content_2页面popub弹出导航*/
+        $("#discovery-content2-nav a").off("click").on("click",function(e){
             var index = $(this).index();
             $(this).addClass("on").siblings().removeClass("on");
             $(".weui-tab__bd .discovery_content_tab").eq(index).addClass("active").siblings().removeClass("active");

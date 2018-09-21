@@ -8,7 +8,7 @@ $(function(){
     if(url.indexOf("index.html") >= 0){
         $($tabbarItem[0]).addClass('weui-bar__item--on');
     }
-    if(url.indexOf("discovery.html") >= 0 || url.indexOf("discovery-content.html") >= 0){
+    if(url.indexOf("discovery.html") >= 0 || url.indexOf("discovery-content.html") >= 0 || url.indexOf("discovery-content_2.html") >= 0){
         $($tabbarItem[1]).addClass('weui-bar__item--on');
     }
     if(url.indexOf("guide.html") >= 0){

@@ -25,7 +25,7 @@ $(function(){
             //do something
             setTimeout(function() {
                 $('.weui-tab').pullToRefreshDone();
-            }, 2000);
+            }, 1500);
         });
 
 });
