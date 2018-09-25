@@ -46,14 +46,13 @@
 </div>
 
 
-<div class="weui-tab" style="height: 100%;overflow: auto;">
+<div class="weui-tab">
 
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
         <!-- 新闻详情tab开始-->
         <div class="discovery_content_tab active">
             <div class="weui-panel weui-panel_access">
-                <div style="height: 86px;"></div>
                 <!-- 下拉刷新开始-->
                 <div class="weui-pull-to-refresh__layer">
                     <div class='weui-pull-to-refresh__arrow'></div>
@@ -146,7 +145,7 @@
                         <span class="weui-cell__ft"></span>
                     </a>
                 </div>
-                <div style="height: 53px;"></div>
+
             </div>
 
         </div>
@@ -268,7 +267,6 @@
 
     </div>
     <!-- tab切换页区域结束 -->
-
 </div>
 <!-- 回到顶部按钮-->
 <div class="top"></div>
@@ -313,7 +311,6 @@
             var index = $(this).index();
             $(this).addClass("on").siblings().removeClass("on");
             $(".weui-tab__bd .discovery_content_tab").eq(index).addClass("active").siblings().removeClass("active");
-            e.preventDefault();
         });
     });
 </script>

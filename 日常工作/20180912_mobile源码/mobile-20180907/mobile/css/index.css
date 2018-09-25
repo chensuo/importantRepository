@@ -287,10 +287,13 @@ footer a {
 .discovery_content_tab .weui-panel__hd , .discovery_tab .weui-panel__hd{
   font-size: 16px;
   border-top: 1px solid #f4f4f4;
-  background-color: #ffffff;
 }
 .discovery_content_tab .read-container{
-  margin-bottom: 15px;
+  margin-top: 10px;
+  padding-bottom: 14px;
+}
+.discovery_content_tab .weui-media-box{
+  padding-bottom: 0;
 }
 .discovery_content_tab #reads , .discovery_content_tab #ups{
   padding: 0 4px;
@@ -430,13 +433,7 @@ footer a {
   font-size: 14px;
   background-color: #fff;
 }
-/*页面整体背景颜色修改*/
-.discovery_content_tab .weui-panel{
-  background-color: #f7f7f7;
-}
-.discovery_content_tab .weui-media-box{
-  background-color: #ffffff;
-}
+
 .discovery_content_tab .content-title{
   font-size: 20px;
 }
@@ -449,21 +446,10 @@ footer a {
   z-index: 500;
 }
 .weui-tab{
-  position: absolute;
-  left: 0;
-  top: 44px;
-  right: 0;
-  bottom: 63px;
+  height: calc(100% - 105px);
+  overflow: auto;
 }
-.weui-panel__bd {
-  position: absolute;
-  left: 0;
-  top: 52px;
-  right: 0;
-}
-.weui-panel__bd>a:last-child{
-  margin-bottom: 53px;
-}
+
 .discovery_content_tab>.weui-panel>.weui-panel__hd:first-child{
   position: fixed;
   top: 44px;
@@ -531,12 +517,13 @@ footer a {
   -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
   box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
 }
-.weui-tab__bd .discovery_content_tab{
-  display: none;
-}
-.weui-tab__bd .discovery_content_tab.active{
-  display: block;
-}
+/*discover-content 页面需要样式(tab切换)*/
+/*.weui-tab__bd .discovery_content_tab{*/
+  /*display: none;*/
+/*}*/
+/*.weui-tab__bd .discovery_content_tab.active{*/
+  /*display: block;*/
+/*}*/
 /*discovery-content_2页面修改样式*/
 .position_hd_2{
   position: relative;
@@ -581,14 +568,11 @@ footer a {
   border-top: 1px solid #e1e1e1;
 }
 .open-popup{
-  display: inline-block;
-  height: 48px;
-  top:12px;
-  font-size:30px;
   color:#999;
   position: absolute;
   right: 2px;
-  transform: translateY(-50%);
+  font-weight: bold;
+  font-size: 16px;
 }
 .weui-popup__container--visible .weui-popup__dialog {
   opacity: 1;
@@ -605,4 +589,19 @@ footer a {
   width: 100%;
   height: 100%;
   z-index: 10;
+}
+/*详情页面 附件显示样式*/
+.list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+.attachment-name{
+ color: #008CBA;
+  font-size: 15px;
+}
+
+/*discovery-content2 iframe样式*/
+.iframe-container{
+  width: 100%;
+  height: calc(100% - 145px);
 }
