@@ -1,169 +1,161 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <link href="/${mobileRes!}/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
 
-    <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
-    <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
-    <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
-
-    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-    <meta content="${content.tagStr!}" http-equiv="keywords" />
-    <meta content="${content.description!}" http-equiv="description"/>
-    <script src="${resSys}/jquery.js" type="text/javascript"></script>
-    <script src="${resSys}/front.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        $(function() {
-            Cms.checkPerm("${base}","${content.id}");
-            Cms.collectCsi("${base}","collectCsiDiv","collect_csi","${content.id}");
-            Cms.attachment("${base}","${content.id}","${content.attachments?size}","attach");
-            Cms.viewCount("${base}","${content.id}");
-            Cms.siteFlow("${base}", location.href,
-                    document.referrer,"${site.config.flowSwitch?string}");
-        });
-    </script>
 
 </head>
 
 <body ontouchstart>
 [#include "../include/header.html"/]
 
-<div class="weui-panel__hd position_hd position_hd_2">
-    <div>
-        <a href="${content.ctgUrl!}" class="left-arrow"></a> <a href="javascript:;"  class="open-popup" data-target="#discovery-content2-nav">更多>></a>
-    </div>
-</div>
+<nav id="discovery-nav">
+    <a>通知公告</a>
+    <a>热门新闻</a>
+</nav>
 
-<!-- 主要内容区域开始-->
-<div class="weui-tab" style="height: 100%;overflow: auto;">
 
+<div class="weui-tab"  style="margin-top: 44px;">
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
-        <!-- 主要容器开始-->
-        <div class="discovery_content_tab">
-            <div class="weui-panel weui-panel_access">
-                <div style="height: 48px;"></div>
+        <!-- 发现tab开始-->
+        <div class="discovery_tab">
+            <!-- 发现页面内容-->
 
-                [#include "../include/pullToRefresh.html"/]
+            <div id="contentBox">
 
-                <!-- 详情tab开始-->
-                <div class="weui-media-box weui-media-box_text">
-                    <div class="content-title">${content.title}</div>
-                    <div class="content-inf">
-                        <span>${content.ctgName!}&nbsp;&nbsp;${content.releaseDate}</span>
-                        <a target="_blank" href="${content.originUrl!}">${content.origin!'本站原创'}</a>
-                    </div>
-                    <div class="content-txt">
+                <div class="box">
+                    <!-- 页面内容开始-->
 
-                        [#if content.typeImg??]
-                        <p style="text-align:center;">
-                            <img src=" ${content.typeImg!}">
-                        </p>
-                        [/#if]
-                        <p>${txt!}</p>
-                    <p>
-                        [#if content.attachments?size gt 0]
-                    <h4>附件</h4>
-                    <ul class="list-unstyled">
-                        [#list content.attachments as attach]
-                        <li><a href="${attach.path}" id="attach${attach_index}" class="attachment-name">${attach.name}</a></li>
+                    <div class="weui-panel__bd">
+
+                        [#include "../include/pullToRefresh.html"/]
+
+                        [@cms_content_list channelId='123' orderBy='4'  titLen='30' descLen='70' append='...' channelOption='1' dateFormat='yyyy-MM-dd']
+
+                        [#list tag_list as a]
+                        <a href="${a.url}?id=${wx_user}" class="weui-media-box weui-media-box_appmsg">
+                            [#if a.typeImg??]
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="${a.typeImg!}">
+                            </div>
+                            [/#if]
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">
+                                    [#if a.topLevel>0]<span class="stick">置顶</span> [/#if]
+                                    [@text_cut s=a.title len=titLen append=append/]
+                                </h4>
+                                [#if a.description??]
+                                <p class="weui-media-box__desc">
+                                    [@text_cut s=a.description len='70' append=append/]
+                                </p>
+                                [#else]
+                                <p class="weui-media-box__desc">
+                                    暂无摘要
+                                </p>
+                                [/#if]
+                                <div class="item-bottom">
+                                    <span>
+                                          <span>阅读 ${a.views!}</span>&nbsp;
+                                          <span>评论 ${a.commentsCount!}</span>
+                                    </span>
+                                    <span>${a.releaseDate?string(dateFormat)}</span>
+                                </div>
+                            </div>
+                        </a>
                         [/#list]
-                    </ul>
-                    [/#if]
-                    </p>
+                        [/@cms_content_list]
                     </div>
-                    <div class="weui-panel__hd read-container">
-                        <div class="read">
-                            <a onclick="">阅读<span id="reads">${content.views!}</span></a>
-                        </div>
-                        <div class="zan">
-                            <a onclick="">赞<span id="ups">${content.ups!}</span></a>
-                        </div>
-                    </div>
-            </div>
-            <!-- 详情tab结束-->
-            </div>
+                </div>
 
+                <!-- 热门新闻开始-->
+                <div class="box">
+                    <!-- 页面内容开始-->
+                    <div class="weui-panel__bd">
+
+                        [#include "../include/pullToRefresh.html"/]
+
+                        [@cms_content_list channelId='75' orderBy='4'  titLen='15' descLen='70' append='...' channelOption='1' dateFormat='yyyy-MM-dd']
+                        [#list tag_list as a]
+                        <a href="${a.url}" class="weui-media-box weui-media-box_appmsg">
+                            [#if a.typeImg??]
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="${a.typeImg!}">
+                            </div>
+                            [/#if]
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">
+                                    [#if a.topLevel>0]<span class="stick">置顶</span> [/#if]
+                                    [@text_cut s=a.title len=titLen append=append/]
+                                </h4>
+                                [#if a.description??]
+                                <p class="weui-media-box__desc">
+                                    [@text_cut s=a.description len='70' append=append/]
+                                </p>
+                                [#else]
+                                <p class="weui-media-box__desc">
+                                    暂无摘要
+                                </p>
+                                [/#if]
+
+                                <div class="item-bottom">
+                                    <span>
+                                          <span>阅读 ${a.views!}</span>&nbsp;
+                                          <span>评论 ${a.commentsCount!}</span>
+                                    </span>
+                                    <span>${a.releaseDate?string(dateFormat)}</span>
+                                </div>
+                            </div>
+                        </a>
+                        [/#list]
+                        [/@cms_content_list]
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- 发现页面内容结束-->
         </div>
-        <!-- 主要容器结束-->
+
+
     </div>
     <!-- tab切换页区域结束 -->
-    <div style="height: 53px;"></div>
 </div>
-<!-- 主要内容区域结束-->
-
-    <!-- 其余tab-iframe开始-->
-    <iframe frameborder="0" width="100%" name="iframe-container" class="iframe-container">
-    </iframe>
-    <!-- 其余tab-iframe结束-->
-
-    <!-- Popub弹出层开始-->
-    <div id="discovery-content2-nav" class="weui-popup__container popup-bottom" style="z-index: 502;">
-        <div class="weui-popup__dialog"></div>
-        <div class="weui-popup__modal">
-            <!-- 弹出层的内容开始-->
-            <div class="weui-grids">
-                <a href="" class="weui-grid js_grid on close-popup">
-                    <div class="weui-grid__icon">
-                        <img src="/${mobileRes}/img/icon_nav_button.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">新闻详情</p>
-                </a>
-                <a href="http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=4028962c655f321401655f37c4e40002&username=65522" target="iframe-container" class="weui-grid js_grid close-popup">
-                    <div class="weui-grid__icon">
-                        <img src="/${mobileRes}/img/icon_nav_cell.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">办理</p>
-                </a>
-                <a href="http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=4028862865f0f1170165f145d166001b&username=65522&service_no=5004&faceback_type=3" target="iframe-container" class="weui-grid js_grid close-popup">
-                    <div class="weui-grid__icon">
-                        <img src="/${mobileRes}/img/icon_nav_cell.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">投诉</p>
-                </a>
-                <a href="http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=4028862865f0f1170165f145d166001b&username=65522&service_no=5004&faceback_type=2"  target="iframe-container" class="weui-grid js_grid close-popup">
-                    <div class="weui-grid__icon">
-                        <img src="/${mobileRes}/img/icon_nav_cell.png" alt="">
-                    </div>
-                    <p class="weui-grid__label">咨询</p>
-                </a>
-            </div>
-            <!-- 弹出层的内容结束-->
-            <a class="close-popup popup-close">关闭</a>
-        </div>
-    </div>
-    <!-- Popub弹出层结束-->
-
-    <!-- 回到顶部按钮-->
-    <div class="top"></div>
-
-    <!-- 底部固定区域菜单开始 -->
-    [#include "../include/tabbar.html"/]
-
-    <script src="/${mobileRes!}/js/fastclick.js"></script>
-    <script>
-        $(function () {
-            FastClick.attach(document.body);
-
-            /*dicovery-content_2页面popub弹出导航*/
-            $("#discovery-content2-nav a").off("click").on("click",function(e){
-                var index = $(this).index();
-                $(this).addClass("on").siblings().removeClass("on");
-            });
-            /*弹出框弹出内容*/
-            $(".weui-grids a:not(:first-child)").bind("click" , function(){
-                $(".weui-tab").css("display","none");
-            });
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<!-- 回到顶部按钮结束-->
+<!-- 底部固定区域菜单开始 -->
+[#include "../include/tabbar.html"/]
 
 
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        /*dicovery页面顶部导航*/
+        $("#discovery-nav a").off("click").on("click",function(e){
+            var index = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+            $("#contentBox .box").eq(index).addClass("active").siblings().removeClass("active");
         });
-    </script>
-    <script src="/${mobileRes!}/js/jquery-weui.js"></script>
-    <script src="/${mobileRes!}/js/urlJudge.js"></script>
-    <script src="/${mobileRes!}/js/back-to-top.js"></script>
-    <script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+
+    });
+
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/urlJudge.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/lastUrlJudge.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+
+
+
 </body>
 
 </html>
