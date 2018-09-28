@@ -3,11 +3,11 @@ $(function(){
 	var topMain=$(".head").height();
 	$('.weui-tab').scroll(function(){
 		if ($('.weui-tab').scrollTop()>topMain){
-			$(".top").slideDown(500);
+			$(".top").fadeIn(400,"swing");
 		}
 		else{
-			$(".top").slideUp(500);
+			$(".top").fadeOut(400,"swing");
 		}
 	});
-	$(".top").click(function(){$(".weui-tab").animate({scrollTop:0},500)});
+	$(".top").click(function(){$(".weui-tab").animate({scrollTop:0},400)});
 });

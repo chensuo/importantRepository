@@ -2,6 +2,7 @@ body, html {
   height: 100%;
   -webkit-tap-highlight-color: transparent;
   overflow-y: hidden;
+  overflow-x:hidden;
 }
 .index-title {
   text-align: center;
@@ -453,7 +454,8 @@ footer a {
 }
 .weui-tab{
   height: calc(100% - 105px);
-  overflow: auto;
+  overflow-x: hidden;
+  -webkit-overflow-scrolling: touch;
 }
 
 .discovery_content_tab>.weui-panel>.weui-panel__hd:first-child{
@@ -510,12 +512,12 @@ footer a {
 
 /*回到顶部按钮样式*/
 .top {
-  width: 35px;
-  height: 35px;
+  width: 40px;
+  height: 40px;
   background: rgba(255, 255, 255, 0.8) url(../img/top.svg) no-repeat;
-  background-size: 35px 35px;
+  background-size: 40px 40px;
   position: fixed;
-  right: 15px;
+  right: 18px;
   bottom: 100px;
   z-index: 501;
   display: none;
