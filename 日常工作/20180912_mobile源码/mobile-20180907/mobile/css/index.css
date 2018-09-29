@@ -584,7 +584,7 @@ footer a {
   font-size: 15px;
   border-top: 1px solid #e1e1e1;
 }
-.open-popup{
+.open-popup , .return-back{
   color:#999;
   position: absolute;
   right: 2px;
@@ -615,4 +615,12 @@ footer a {
 .attachment-name{
  color: #008CBA;
   font-size: 15px;
+}
+/*搜索结果页面*/
+.search-result-pd{
+  width: 100%;
+  height: 30px;
+  padding: 0 15px;
+  font-size: 18px;
+  color: #555555;
 }
