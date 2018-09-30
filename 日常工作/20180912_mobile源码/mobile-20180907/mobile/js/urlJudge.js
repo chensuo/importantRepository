@@ -18,6 +18,10 @@ $(function(){
         $($tabbarItem[3]).addClass('weui-bar__item--on');
         return false;
     }
+    if(url.indexOf("search_result.html") >= 0){
+        $tabbarItem.removeClass('weui-bar__item--on');
+        return false;
+    }
     $($tabbarItem[0]).addClass('weui-bar__item--on');
 });
 

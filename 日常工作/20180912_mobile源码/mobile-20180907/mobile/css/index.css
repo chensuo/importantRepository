@@ -45,11 +45,11 @@ footer a {
   text-decoration: none;
 }
 
-
-
-
-
-.fixed-bottom {position: fixed;}
+.fixed-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
 .weui-tab__bd-zdy{
   height: auto;
 
@@ -456,6 +456,8 @@ footer a {
   height: calc(100% - 105px);
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
+  width: 100%;
+  position: absolute;
 }
 
 .discovery_content_tab>.weui-panel>.weui-panel__hd:first-child{
@@ -619,8 +621,13 @@ footer a {
 /*搜索结果页面*/
 .search-result-pd{
   width: 100%;
-  height: 30px;
+  height: 50px;
   padding: 0 15px;
   font-size: 18px;
+  line-height: 50px;
   color: #555555;
+}
+.search-result-pd>span{
+  color: #333;
+  font-weight: 400;
 }
