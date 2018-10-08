@@ -26,6 +26,9 @@
            <div style="height: 53px"></div>
             <!-- 搜索结果提示开始-->
             <div class="search-result-pd">
+                  <a href="javascript:void(0)" class="left-arrow-container">
+                        <span class="left-arrow"></span>
+                    </a>
                 您搜索共有<span>${tag_list?size}</span>个结果
             </div>
             <!-- 搜索结果提示结束-->
@@ -67,6 +70,17 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
+
+      $(".left-arrow-container").bind("click" , function(){
+            var lastPageUrl = document.referrer;
+            if(lastPageUrl.indexOf("index") >= 0){
+               window.location.replace(document.referrer);
+                $(this).attr("href" , "javascript: window.location.replace(document.referrer)");
+            }
+            else{
+               $(this).attr("href" , "${base}?id=${wx_user}");
+            }
+        });
  });
 
 </script>

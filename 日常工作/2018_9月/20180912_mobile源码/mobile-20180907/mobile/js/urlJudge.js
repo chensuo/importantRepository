@@ -24,5 +24,3 @@ $(function(){
     }
     $($tabbarItem[0]).addClass('weui-bar__item--on');
 });
-
-

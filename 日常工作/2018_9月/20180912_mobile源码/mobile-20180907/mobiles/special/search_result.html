@@ -44,12 +44,16 @@
             <div class="weui-pannel__bd">
                 <!-- 搜索结果提示开始-->
                 <div class="search-result-pd">
+                    <a href="javascript:void(0)" class="left-arrow-container">
+                        <span class="left-arrow"></span>
+                    </a>
                     您搜索共有<span>n</span>个结果
+                    <!--<a href="" style="float: right;color: #1aad19;font-size: 15px;">返回</a>-->
                 </div>
                 <!-- 搜索结果提示结束-->
 
                 <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                <a href="../content/discovery-content_2.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
                     <!--<div class="weui-media-box__hd" style="display: none;">-->
                         <!--<img class="weui-media-box__thumb" src="">-->
                     <!--</div>-->
@@ -220,13 +224,7 @@
 
             </div>
 
-
-
-
         </div>
-
-
-
 
     </div>
 <!-- 回到顶部按钮-->
@@ -266,6 +264,26 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
+
+//        $('#searchInput').bind('input #searchInput',function(e){
+//            var len = $(this).val().length;
+//            if(len > 0){
+//                console.log("应该出现搜索按钮");
+//            }
+//            else{
+//                console.log("按钮消失");
+//            }
+//        })
+        //布置在Jeecms上时有所修改
+        $(".left-arrow-container").bind("click" , function(){
+            var lastPageUrl = document.referrer;
+            if(lastPageUrl.indexOf("discovery-content") >= 0){
+                location.href = "../index/index.html";
+            }
+            else{
+               window.location.replace(document.referrer);
+            }
+        });
 
     });
 </script>
