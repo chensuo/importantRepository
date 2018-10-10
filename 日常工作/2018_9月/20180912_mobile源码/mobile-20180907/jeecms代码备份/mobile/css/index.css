@@ -456,8 +456,6 @@ footer a {
   height: calc(100% - 105px);
   overflow-x: hidden;
   -webkit-overflow-scrolling: touch;
-  width: 100%;
-  position: absolute;
 }
 
 .discovery_content_tab>.weui-panel>.weui-panel__hd:first-child{
@@ -533,10 +531,10 @@ footer a {
 
 /*discover-content 页面需要样式(tab切换)*/
 /*.weui-tab__bd .discovery_content_tab{*/
-  /*display: none;*/
+/*display: none;*/
 /*}*/
 /*.weui-tab__bd .discovery_content_tab.active{*/
-  /*display: block;*/
+/*display: block;*/
 /*}*/
 /*discovery-content_2页面修改样式*/
 .position_hd_2{
@@ -553,13 +551,15 @@ footer a {
   transform: rotate(-135deg);
   position: absolute;
   left: 2px;
-  margin-top: 5px;
+  top: 5px;
 }
 .left-arrow-container{
   display: inline-block;
   width: 30px;
   height: 30px;
-  position: relative;
+  position: absolute;
+  left: 0;
+  top: 30%;
 }
 /*弹出层 样式*/
 #discovery-content2-nav .weui-grid{
@@ -615,7 +615,7 @@ footer a {
   list-style: none;
 }
 .attachment-name{
- color: #008CBA;
+  color: #008CBA;
   font-size: 15px;
 }
 /*搜索结果页面*/
@@ -625,7 +625,7 @@ footer a {
   font-size: 18px;
   line-height: 50px;
   color: #555555;
-  overflow: hidden;
+  overflow-x: hidden;
   position: relative;
 }
 .search-result-pd>span{
@@ -633,7 +633,6 @@ footer a {
   font-weight: 400;
 }
 .search-result-pd>a{
-  position: absolute;
   left: 15px;
   top: 28%;
 }

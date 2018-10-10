@@ -40,11 +40,11 @@
     <!--位置栏结束-->
     <div class="weui-tab" style="margin-top:0;height:calc(100% - 53px);">
             <div  class="discovery_tab">
-                <div style="height: 53px"></div>
+                <div style="height: 44px"></div>
             <div class="weui-pannel__bd">
                 <!-- 搜索结果提示开始-->
                 <div class="search-result-pd">
-                    <a href="javascript:void(0)" class="left-arrow-container">
+                    <a href="javascript:void(0)" class="left-arrow-container search-result-return">
                         <span class="left-arrow"></span>
                     </a>
                     您搜索共有<span>n</span>个结果
@@ -274,7 +274,7 @@
 //                console.log("按钮消失");
 //            }
 //        })
-        //布置在Jeecms上时有所修改
+        //布置在Jeecms时有所修改
         $(".left-arrow-container").bind("click" , function(){
             var lastPageUrl = document.referrer;
             if(lastPageUrl.indexOf("discovery-content") >= 0){
