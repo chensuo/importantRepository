@@ -1,0 +1,1 @@
+自主学习，主要学习javascript中的有用的 Array 和 Object 方法。
