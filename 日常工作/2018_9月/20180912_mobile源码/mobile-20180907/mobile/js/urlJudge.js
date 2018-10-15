@@ -14,7 +14,7 @@ $(function(){
         $($tabbarItem[2]).addClass('weui-bar__item--on');
         return false;
     }
-    if(url.indexOf("mine.html") >= 0){
+    if(url.indexOf("mine.html") >= 0 || url.indexOf("myfavorite.html") >= 0){
         $($tabbarItem[3]).addClass('weui-bar__item--on');
         return false;
     }
