@@ -24,7 +24,7 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobiles/index/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="25.5">
+            <state vertical-scroll-proportion="0.0">
               <caret line="341" column="47" selection-start-line="341" selection-start-column="47" selection-end-line="341" selection-end-column="47" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -37,8 +37,8 @@
       <file leaf-file-name="myfavorite.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobiles/channel/myfavorite.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.515625">
-              <caret line="255" column="41" selection-start-line="255" selection-start-column="41" selection-end-line="255" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.2578125">
+              <caret line="295" column="19" selection-start-line="295" selection-start-column="19" selection-end-line="295" selection-end-column="19" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -50,8 +50,8 @@
       <file leaf-file-name="index.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobile/css/index.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.142857">
-              <caret line="666" column="21" selection-start-line="666" selection-start-column="21" selection-end-line="666" selection-end-column="21" />
+            <state vertical-scroll-proportion="-16.257143">
+              <caret line="651" column="12" selection-start-line="651" selection-start-column="12" selection-end-line="651" selection-end-column="12" />
               <folding />
             </state>
           </provider>
@@ -60,8 +60,8 @@
       <file leaf-file-name="discovery-content_2.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobiles/content/discovery-content_2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.46875">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="67" />
+            <state vertical-scroll-proportion="-6.1875">
+              <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -75,7 +75,7 @@
       <file leaf-file-name="search_result.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobiles/special/search_result.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-27.84375">
+            <state vertical-scroll-proportion="-10.59375">
               <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="51" />
               <folding>
                 <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -150,14 +150,14 @@
         <option value="$PROJECT_DIR$/mobiles/channel/guide.html" />
         <option value="$PROJECT_DIR$/mobile/js/back-to-top.js" />
         <option value="$PROJECT_DIR$/mobiles/special/search_result.html" />
-        <option value="$PROJECT_DIR$/mobiles/content/discovery-content_2.html" />
         <option value="$PROJECT_DIR$/mobiles/index/index.html" />
         <option value="$PROJECT_DIR$/jeecms代码备份/mobile/css/index.css" />
         <option value="$PROJECT_DIR$/mobile/css/indextest.css" />
-        <option value="$PROJECT_DIR$/mobiles/special/test.html" />
         <option value="$PROJECT_DIR$/mobile/js/urlJudge.js" />
-        <option value="$PROJECT_DIR$/mobile/css/index.css" />
+        <option value="$PROJECT_DIR$/mobiles/special/test.html" />
         <option value="$PROJECT_DIR$/mobiles/channel/myfavorite.html" />
+        <option value="$PROJECT_DIR$/mobiles/content/discovery-content_2.html" />
+        <option value="$PROJECT_DIR$/mobile/css/index.css" />
       </list>
     </option>
   </component>
@@ -352,8 +352,8 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -431,18 +431,18 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.05961755" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -764,7 +764,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70125">
           <caret line="17" column="3" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -772,15 +771,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4225">
           <caret line="619" column="23" selection-start-line="619" selection-start-column="23" selection-end-line="619" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/mobiles/special/test.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.18359375">
-          <caret line="9" column="30" selection-start-line="9" selection-start-column="30" selection-end-line="9" selection-end-column="30" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -788,34 +778,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.4225">
           <caret line="630" column="23" selection-start-line="630" selection-start-column="23" selection-end-line="630" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/js/urlJudge.js">
+    <entry file="file://$PROJECT_DIR$/mobiles/index/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
-          <folding />
+          <caret line="341" column="47" selection-start-line="341" selection-start-column="47" selection-end-line="341" selection-end-column="47" />
+          <folding>
+            <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobiles/content/discovery-content_2.html">
+    <entry file="file://$PROJECT_DIR$/mobiles/special/test.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.46875">
-          <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="67" />
-          <folding>
-            <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#a#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
+        <state vertical-scroll-proportion="0.64453125">
+          <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mobiles/special/search_result.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-27.84375">
+        <state vertical-scroll-proportion="-10.59375">
           <caret line="290" column="0" selection-start-line="290" selection-start-column="0" selection-end-line="290" selection-end-column="51" />
           <folding>
             <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
@@ -841,29 +827,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobile/css/index.css">
+    <entry file="file://$PROJECT_DIR$/mobile/js/urlJudge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.142857">
-          <caret line="666" column="21" selection-start-line="666" selection-start-column="21" selection-end-line="666" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="35" selection-start-line="17" selection-start-column="35" selection-end-line="17" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/mobiles/index/index.html">
+    <entry file="file://$PROJECT_DIR$/mobiles/content/discovery-content_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="25.5">
-          <caret line="341" column="47" selection-start-line="341" selection-start-column="47" selection-end-line="341" selection-end-column="47" />
+        <state vertical-scroll-proportion="-6.1875">
+          <caret line="105" column="16" selection-start-line="105" selection-start-column="16" selection-end-line="105" selection-end-column="16" />
           <folding>
             <element signature="n#style#0;n#label#0;n#form#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#p#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#3;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#a#0;n#div#5;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/mobile/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.257143">
+          <caret line="651" column="12" selection-start-line="651" selection-start-column="12" selection-end-line="651" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/mobiles/channel/myfavorite.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.515625">
-          <caret line="255" column="41" selection-start-line="255" selection-start-column="41" selection-end-line="255" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.2578125">
+          <caret line="295" column="19" selection-start-line="295" selection-start-column="19" selection-end-line="295" selection-end-column="19" />
           <folding>
             <element signature="n#style#0;n#div#2;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#span#0;n#a#0;n#div#4;n#body#0;n#html#0;n#!!top" expanded="true" />
