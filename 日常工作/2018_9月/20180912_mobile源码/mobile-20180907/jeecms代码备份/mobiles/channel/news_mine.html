@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>mobile</title>
+     <title>HRSSC</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -32,9 +32,11 @@
             <img src="/${mobileRes!}/img/Micro_09.png" />我要反馈<i class="fa fa-angle-right"></i></a></dd>
         <dd></dd>
 
+        <dd><a href="${base}/member/collection_list.jspx?id=${wx_user!}">
+                <img src="/${mobileRes!}/img/Micro_01.png" />我的收藏<i class="fa fa-angle-right"></i></a></dd>
         [@cms_channel_list parentId="133" target="1"]
          [#list tag_list as c]
-		 [#if c.priority gt 30]
+		 [#if c.priority gt 40]
             <dd><a href="${c.url}?id=${wx_user!}">
                 <img src="/${mobileRes!}/img/Micro_01.png" />${c.name}<i class="fa fa-angle-right"></i></a></dd>
 		 [/#if]

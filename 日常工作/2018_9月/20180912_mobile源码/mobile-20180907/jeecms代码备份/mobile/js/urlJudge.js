@@ -12,7 +12,7 @@ $(function(){
         $($tabbarItem[2]).addClass('weui-bar__item--on');
          return false;
     }
-   if(url.indexOf("wd") >= 0){
+   if(url.indexOf("wd") >= 0 || url.indexOf("collection_list.jspx") >= 0){
         $($tabbarItem[3]).addClass('weui-bar__item--on');
        return false;
     }
