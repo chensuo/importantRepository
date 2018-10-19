@@ -25,7 +25,7 @@
 </div>
 <!-- 栏目位置开始-->
 <div class="search-result-pd myfavorite-pd">
-    <a href="${base}/wd/index.jhtml?id=${wx_user!}" class="left-arrow-container search-result-return">
+    <a href="${base}/wd/index.jhtml?id=${wx_user}" class="left-arrow-container search-result-return">
         <span class="left-arrow"></span>
     </a>
     我的收藏
@@ -52,7 +52,7 @@
                 <!-- 一个单位开始-->
                 <div class="weui-media-box__bd">
                     <h4 class="weui-media-box__title myfavorite_box-title">${c.title}</h4>
-                    <div class="collect-dv" onclick="Cms.cmsCollect('${base}','${c.id}',0)" id="cancelSpan"  style="cursor: pointer;"> 
+                    <div class="collect-dv" onclick="Cms.cmsCollect('${base}','${c.id}',0); window.alert = function(){ return false; };" id="cancelSpan"  style="cursor: pointer;"> 
                         <img src="/${mobileRes!}/img/cancel_collect.png" alt=""/>
                         取消收藏
                     </div>
@@ -77,9 +77,12 @@
                 </div>
             </a>
        [/#list]
+             <div class="nocollect-info-dv">
+                抱歉，您暂无收藏！
+            </div>
        [#else]
              <!-- 暂无收藏提示-->
-            <div class="nocollect-info-dv">
+            <div class="nocollect-info-dv" style="display:block;">
                 抱歉，您暂无收藏！
             </div>
        [/#if]
@@ -102,7 +105,7 @@
     $(function () {
         FastClick.attach(document.body);
 
-        /*我的收藏页面取消收藏*/
+      /*我的收藏页面取消收藏*/
         $(".collect-dv").bind('click' , function(e){
             if(e.preventDefault){
                 e.preventDefault();
@@ -110,6 +113,10 @@
                 window.event.returnValue == false;
             }
             $(this).parents(".weui-media-box").remove();
+            var count=$('.collect-dv').length;
+            if(count==0){
+                $(".nocollect-info-dv").css("display","block");
+            }
         });
     });
 </script>

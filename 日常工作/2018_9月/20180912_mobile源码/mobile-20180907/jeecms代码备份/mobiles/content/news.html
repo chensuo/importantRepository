@@ -61,7 +61,7 @@
                     <div class="content-title">${content.title}</div>
                     <div class="content-inf">
                         <span>${content.ctgName!}&nbsp;&nbsp;${content.releaseDate}</span>
-                        <a target="_blank" href="${content.originUrl!}">${content.origin!'本站原创'}</a>
+                        <a onclick="">阅读<span id="reads">${content.views!}</span></a>
                     </div>
                     <div class="content-txt">
 
@@ -84,13 +84,27 @@
                     </div>
                     <div class="weui-panel__hd read-container">
                         <div class="read">
-                            <a onclick="">阅读<span id="reads">${content.views!}</span></a>
+                            <a onclick="" style="color: #E84C44;">赞<span id="ups">${content.ups!}</span></a>
                         </div>
                         <div class="zan">
-                            <a onclick="">赞<span id="ups">${content.ups!}</span></a>
-                          [#if user??]
-                           <div  class="collect fr" id="collectCsiDiv"><a>收藏</a></div >
-                           [/#if]
+                     
+                         <div id="cancelSpan" class="collect-dv" style="display:none; cursor: pointer;font-size: 16px;width:100%;"> <img src="/${mobileRes}/img/cancel_collect.png" alt="" style="width: 16px;"/> 取消收藏</div>
+                         <div id="comfirmSpan" class="collect-dv" style="display:none; cursor: pointer;font-size: 16px;width:100%;"><img src="/${mobileRes}/img/collect.png" alt="" style="width: 16px;"/> 收藏</div>
+                       [#if user??]
+                         <script type="text/javascript">
+                         $(function() {
+                                Cms.collectexist("${base}","${content.id}","cancelSpan","comfirmSpan");
+                                $("#comfirmSpan").click(function(){
+                             	   Cms.collect("${base}","${content.id}",1,"cancelSpan","comfirmSpan");
+                                     window.alert = function(){ return false; }
+                                });
+                                $("#cancelSpan").click(function(){
+                             	   Cms.collect("${base}","${content.id}",0,"cancelSpan","comfirmSpan");
+                                      window.alert = function(){ return false; }
+                                });
+                         });
+                         </script>
+                    [/#if]
                         </div>
          
 

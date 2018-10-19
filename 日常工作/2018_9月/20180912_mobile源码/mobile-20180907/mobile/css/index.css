@@ -126,6 +126,11 @@ footer a {
 }
 .weui-panel__hd .read{
   text-align: left;
+  background: url(../img/cancel_collect.png) no-repeat;
+  background-size: 16px;
+  background-position: 0 5px;
+  box-sizing: border-box;
+  text-indent: 21px;
 }
 .weui-panel__hd .zan{
   text-align:  right;
@@ -518,7 +523,7 @@ footer a {
   background-size: 40px 40px;
   position: fixed;
   right: 18px;
-  bottom: 100px;
+  bottom: 125px;
   z-index: 501;
   display: none;
   border-radius: 50%;
@@ -668,6 +673,7 @@ footer a {
   border-top: 1px solid #EEEEEE;
   margin: auto;
   padding: 12px 15px;
+  display: none;
 }
 
 /*******登录*******/

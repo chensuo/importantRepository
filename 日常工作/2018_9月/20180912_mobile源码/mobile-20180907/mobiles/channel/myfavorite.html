@@ -181,7 +181,6 @@
                         <img src="../../mobile/img/cancel_collect.png" alt=""/>
                         取消收藏
                     </div>
-
                     <p class="weui-media-box__desc">
                         由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
                         由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
@@ -307,6 +306,10 @@
                 window.event.returnValue == false;
             }
             $(this).parents(".weui-media-box").remove();
+            var count=$('.collect-dv').length;
+            if(count==0){
+                $(".nocollect-info-dv").css("display","block");
+            }
         });
     });
 </script>
