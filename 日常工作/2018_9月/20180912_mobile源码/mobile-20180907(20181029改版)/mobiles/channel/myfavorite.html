@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>HRSSC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../mobile/css/font-awesome.css">
+    <link rel="stylesheet" href="../../mobile/css/sub.css" />
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+</head>
+
+<body aria-atomic="False" style="background: #F8F8F8">
+<!-- 栏目位置开始-->
+<div class="search-result-pd myfavorite-pd">
+    我的收藏
+</div>
+<!-- 栏目位置结束-->
+<div class="weui-tab mine-weui-tab" style="height: calc(100% - 90px);">
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd mine-weui-pannel__bd">
+
+            <!-- 我的收藏单位项目-->
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+
+            <!-- 暂无收藏提示-->
+            <div class="nocollect-info-dv">
+                抱歉，您暂无收藏！
+            </div>
+        </div>
+        <div class="mine-shadow-dv">
+            <div></div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        /*我的收藏页面取消收藏*/
+        $(".collect-dv").bind('click' , function(e){
+            if(e.preventDefault){
+                e.preventDefault();
+            }else{
+                window.event.returnValue == false;
+            }
+            $(this).parents(".weui-media-box").remove();
+            var count=$('.collect-dv').length;
+            if(count==0){
+                $(".nocollect-info-dv").css("display","block");
+            }
+        });
+    });
+</script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+</body>
+</html>
