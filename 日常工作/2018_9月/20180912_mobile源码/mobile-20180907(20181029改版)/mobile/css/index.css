@@ -236,8 +236,8 @@ footer a {
   margin-left: 35px;
 }
 #discovery-nav a.on{
-  color: #FFE05A;
-  border-bottom: 2px solid #FFDD49;
+  color: #3D9BFA;
+  border-bottom: 2px solid #3D9BFA;
 
 }
 #guide-nav a.on{
@@ -295,18 +295,18 @@ footer a {
 }
 .discovery_content_tab .content-inf>span:nth-child(1){
   float: left;
-  color: #999;
+  color: #BFBFBF;
 }
 .discovery_content_tab .content-inf>a:nth-child(2){
   float: right;
-  color: #999;
+  color: #BFBFBF;
 }
 .discovery_content_tab .content-txt img{
   box-shadow: 1px 1px 6px #f1f1f1;
   margin-bottom: 8px;
 }
 .discovery_content_tab .content-txt>p{
-  color: #333;
+  color: #A6A6A6;
 }
 .discovery_content_tab .weui-panel__hd , .discovery_tab .weui-panel__hd{
   font-size: 16px;
@@ -317,7 +317,7 @@ footer a {
   padding-bottom: 14px;
 }
 .discovery_content_tab .weui-media-box{
-  padding-bottom: 0;
+  padding-bottom: 30px;
 }
 .discovery_content_tab #reads , .discovery_content_tab #ups{
   padding: 0 4px;
@@ -466,7 +466,10 @@ footer a {
 }
 
 .discovery_content_tab .content-title{
-  font-size: 20px;
+  font-size: 16px;
+  font-weight: bold;
+  width: 70%;
+  color: #000;
 }
 /*底部样式修改*/
 .weui-tabbar__label{
@@ -485,6 +488,7 @@ footer a {
   top:4%;
   border-radius: 13px;
   box-shadow: 0 1px 5px 0 rgba(0,0,0,.15);
+  background: #fff;
 }
 .search-input-container input::-webkit-input-placeholder{
   color:#A4A4A8;
@@ -583,6 +587,22 @@ footer a {
 .position_hd:after{
   border-bottom: none;
 }
+.article-footer-operation{
+  width: 100%;
+  padding: 15px;
+  border-top: 1px solid #E5E5E5;
+}
+.article-footer-operation>a{
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: #000;
+}
+.article-footer-operation>a>img{
+  height: 19px;
+  margin-left: 10px;
+}
 
 /*回到顶部按钮样式*/
 .top {
@@ -621,18 +641,40 @@ footer a {
   border-right: 2px solid;
   width: 10px;
   height: 10px;
-  border-color: #999999;
+  border-color: #D9D9D9;
   transform: rotate(-135deg);
   position: absolute;
   left: 2px;
   top: 5px;
 }
+
 .left-arrow-container{
   display: inline-block;
   width: 30px;
   height: 30px;
   position: absolute;
   left: 0;
+  top: 30%;
+}
+.right-arrow{
+  display: inline-block;
+  border-top: 2px solid;
+  border-right: 2px solid;
+  width: 10px;
+  height: 10px;
+  border-color: #D9D9D9;
+  transform: rotate(45deg);
+  position: absolute;
+  right: 2px;
+  top: calc(49% - 8px);
+}
+
+.right-arrow-container{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 0;
   top: 30%;
 }
 /*弹出层 样式*/
@@ -728,11 +770,14 @@ footer a {
 .myfavorite-item{
   width: calc(100% - 30px);
   margin: auto;
-  padding: 13px 0;
+  padding: 10px 0;
   border-top: 1px solid #EFEFEF;
-  font-size: 17px;
+  font-size: 15px;
   color: #555555;
   display: block;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
 }
 .mine-shadow-dv{
   width: 100%;
@@ -751,9 +796,9 @@ footer a {
 .collect-dv{
   position: absolute;
   right: 15px;
-  top: 11px;
+  top: 13px;
   font-size: 14px;
-  color: #E84C44;
+  color: #FE2828;
   text-align: right;
   height: 30px;
   line-height: 30px;
@@ -768,8 +813,9 @@ footer a {
   text-align: center;
   border-top: 1px solid #EEEEEE;
   margin: auto;
-  padding: 12px 15px;
+  padding: 20px 15px;
   display: none;
+  background: #ffffff;
 }
 
 /*******登录*******/
@@ -797,3 +843,150 @@ footer a {
 .register{padding-bottom:20px;}
 .fpw-box{padding-top:20px; font-szie:16px;}
 .header{font-weight:600;height:44px;width:100%;text-align:center;font-size:20px;color:#444;line-height:44px;border-bottom:1px solid #e7e7e7;box-sizing:border-box;background-color:#fff;display:block;clear:both}.header-back{width:20px;height:20px;margin-top:11px;display:inline-block;float:left;margin-left:16px;background:url(../images/header-back.png) no-repeat;background-size:auto 20px}#content-share h1{width:100%;height:28px;line-height:28px;font-size:14px;position:relative;z-index:2;text-align:center}.to-register{line-height:20px;border:1px solid #e7e7e7;display:inline-block;font-size:15px;padding:2px 6px;margin-right:16px;margin-top:8px;font-weight:normal}a{text-decoration:none;color:#3d4245;background:0}.header .header-icon-right{position:absolute;top:0;right:0;height:44px;overflow:hidden}.header .header-icon-left{position:absolute;top:0;left:0;height:44px;overflow:hidden}.viewport,body{margin:0;padding:0;color:#3d4245;background-color:#fff;font-size:14px;word-wrap:break-word;outline:0;min-width:320px;-webkit-tap-highlight-color:rgba(255,255,255,0)}.login-submit{width:100%;padding:12px 0;line-height:18px;border-radius:5px;-moz-border-radius:5px;-o-border-radius:5px;-webkit-border-radius:5px;color:#fff;background:#ef3838;font-size:16px;border:0}#content-share{margin-top:20px}.login-share{padding:0 16px}#content-share h1 span{padding:0 6px;background-color:#fff;position:relative;z-index:2}#content-share h1:before{width:100%;height:1px;content:"";position:absolute;background-color:#e7e7e7;left:0;bottom:14px;z-index:1}
+/*我的页面样式*/
+.mine-container{
+  width: 100%;
+  height: calc(100% - 55px);
+  background:#F8F8F8 url(../img/beijingdise.png) no-repeat center top;
+  background-size: 100%;
+  position: relative;
+}
+.content-container{
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 90px;
+  bottom: 45px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 0;
+}
+.item-container{
+  width: 93%;
+  height: 28%;
+  margin:auto;
+  border-radius: 8px;
+  background: #FFFFFF;
+  box-shadow: 0 1px 15px 2px rgba(0,0,0,.15);
+  position: relative;
+  overflow: hidden;
+}
+.user-header-container{
+  float: left;
+  width: 39%;
+  position: relative;
+  height: 100%;
+}
+.user-header{
+  height: 65%;
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50% , -50%);
+  border-radius: 50%;
+}
+.user-info-container{
+  height: 55%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 39%;
+  right: 5%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.user-info-container>div{
+  height: 40%;
+}
+.user-info-container>div:first-child{
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: bold;
+}
+.item-container:not(:first-child){
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+.item-list{
+  width: 100%;
+  height: 49%;
+  display: flex;
+  align-items:center;
+  position: relative;
+  overflow: hidden;
+}
+.item-list>img:first-child{
+  height: 21px;
+}
+.item-list>img:last-child{
+  height: 14px;
+  position: absolute;
+  right: 0;
+}
+.item-list>i{
+  display: inline-block;
+  font-style: normal;
+  color: #999;
+  font-weight: 500;
+  font-size: 13px;
+  position: absolute;
+  right: 8%;
+}
+.item-list>i>em{
+  display: inline-block;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #ff0000;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.item-list>span{
+  font-size: 16px;
+  margin-left: 15px;
+  font-weight: 500;
+}
+.item-list:last-child{
+  border-top: 1px solid #E5E5E5;
+}
+/*我的代办样式*/
+.mine-weui-pannel__bd>a>span{
+  display: inline-block;
+  width: 40%;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.mine-weui-pannel__bd>a>i{
+  font-style: normal;
+  color: #FE2828;
+}
+.todo-item,.apply-item{
+  width: calc(100% - 30px);
+  margin: auto;
+  padding: 10px 0;
+  border-top: 1px solid #EFEFEF;
+  font-size: 15px;
+  color: #555555;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  position: relative;
+}
+.mine-weui-pannel__bd>a>em{
+  font-style: normal;
+  color: #A9A9A9;
+  font-size: 13px;
+  float: right;
+  position: absolute;
+  right: 0;
+}
+/*我的申请页面样式*/
+.apply-item>span{
+  width: 70% !important;
+}

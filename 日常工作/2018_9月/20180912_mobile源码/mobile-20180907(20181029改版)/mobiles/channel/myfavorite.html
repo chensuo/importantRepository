@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>HRSSC</title>
+    <title>SSC共享服务中心</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -18,16 +18,16 @@
     我的收藏
 </div>
 <!-- 栏目位置结束-->
-<div class="weui-tab mine-weui-tab" style="height: calc(100% - 90px);">
+<div class="weui-tab mine-weui-tab" style="height: calc(100% - 50px);">
     <div  class="discovery_tab">
         <div class="weui-pannel__bd mine-weui-pannel__bd">
 
             <!-- 我的收藏单位项目-->
+            <a href="../content/discovery-content_2.html" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123</a>
             <a href="" class="myfavorite-item">123</a>
             <a href="" class="myfavorite-item">123</a>
-            <a href="" class="myfavorite-item">123</a>
-            <a href="" class="myfavorite-item">123</a>
-            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123123</a>
             <a href="" class="myfavorite-item">123</a>
             <a href="" class="myfavorite-item">123</a>
             <a href="" class="myfavorite-item">123</a>
@@ -60,6 +60,7 @@
         <div class="mine-shadow-dv">
             <div></div>
         </div>
+        <div style="height: 35px"></div>
 
     </div>
 
@@ -73,19 +74,6 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
-        /*我的收藏页面取消收藏*/
-        $(".collect-dv").bind('click' , function(e){
-            if(e.preventDefault){
-                e.preventDefault();
-            }else{
-                window.event.returnValue == false;
-            }
-            $(this).parents(".weui-media-box").remove();
-            var count=$('.collect-dv').length;
-            if(count==0){
-                $(".nocollect-info-dv").css("display","block");
-            }
-        });
     });
 </script>
 <script src="../../mobile/js/jquery-weui.js"></script>

@@ -1,4 +1,4 @@
-/** 
+﻿/** 
 * jQuery WeUI V1.2.1 
 * By 言川
 * http://lihongxun945.github.io/jquery-weui/
@@ -831,7 +831,7 @@ body {
   position: relative;
 }
 .weui-tabbar__item.weui-bar__item--on .weui-tabbar__label {
-  color: #FFE05A;
+  color:#3D9BFA;
 }
 .weui-navbar__item {
   color: #888;
