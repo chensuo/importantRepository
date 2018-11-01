@@ -13,22 +13,18 @@
 </head>
 <body ontouchstart>
 
-<!-- 搜索框区域开始 -->
-<div class="weui-search-bar" id="searchBar">
-    <form class="weui-search-bar__form" action="#">
-        <div class="weui-search-bar__box">
+<!-- 头部搜索框区域开始 -->
+<div class="weui-search-bar search-result-bar" id="searchBar">
+    <div class="search-input-container searchresult-input-container">
+        <form action="../special/search_result.html">
             <i class="weui-icon-search"></i>
-            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
-            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
-        </div>
-        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
-            <i class="weui-icon-search"></i>
-            <span>您需要什么帮助</span>
-        </label>
-    </form>
-    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+            <input type="search"  placeholder="您有什么问题" required="" name="q" value="" autocomplete="off">
+        </form>
+    </div>
+    <button class="searchresult-submit">搜&nbsp;索</button>
+
 </div>
-    <!-- 搜索框区域结束 -->
+<!-- 头部搜索框区域结束 -->
     <!--位置栏开始-->
     <!--<div class="weui-panel__hd position_hd position_hd_2">-->
         <!--<div>-->
@@ -38,226 +34,57 @@
         <!--</div>-->
     <!--</div>-->
     <!--位置栏结束-->
-    <div class="weui-tab" style="margin-top:0;height:calc(100% - 53px);">
+    <div class="weui-tab" style="margin-top:0;height:100%;background: #f8f8f8;">
             <div  class="discovery_tab">
                 <div style="height: 44px"></div>
-            <div class="weui-pannel__bd">
-                <!-- 搜索结果提示开始-->
-                <div class="search-result-pd">
-                    <a href="javascript:void(0)" class="left-arrow-container search-result-return">
-                        <span class="left-arrow"></span>
-                    </a>
-                    您搜索共有<span>n</span>个结果
-                    <!--<a href="" style="float: right;color: #1aad19;font-size: 15px;">返回</a>-->
+                <!-- 应用栏搜索-->
+                <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;">
+                    <!-- 位置栏-->
+                    <div class="search-result-pd">应用</div>
+                    <a href="" class="myfavorite-item" style="font-size: 16px;">应用名称</a>
                 </div>
-                <!-- 搜索结果提示结束-->
 
-                <!-- 无图话题-->
-                <a href="../content/discovery-content_2.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
+                <!-- 帮助栏搜索 -->
+                <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;margin-top:30px">
+                    <!-- 位置栏-->
+                    <div class="search-result-pd">帮助</div>
+                    <!-- 无图话题-->
+                    <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                        <!--<div class="weui-media-box__hd" style="display: none;">-->
                         <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">亚马逊股价首破</h4>
+                        <!--</div>-->
+                        <!-- 一个单位开始-->
+                        <div class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">亚马逊股价首破</h4>
 
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
+                            <p class="weui-media-box__desc">
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            </p>
+                            <div class="item-bottom">
                            <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
+                                  <span>版块</span>
+                                  <span style="margin-left: 30px;">阅读 10</span>
                             </span>
-                            <span>18/10/10</span>
+                                <span>18/10/10</span>
+                            </div>
                         </div>
-                    </div>
-                </a>
-                <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
-                    <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">亚马逊股价首破</h4>
-
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
-                           <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
-                            </span>
-                            <span>18/10/10</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
-                    <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">亚马逊股价首破</h4>
-
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
-                           <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
-                            </span>
-                            <span>18/10/10</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
-                    <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">亚马逊股价首破</h4>
-
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
-                           <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
-                            </span>
-                            <span>18/10/10</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
-                    <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">亚马逊股价首破</h4>
-
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
-                           <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
-                            </span>
-                            <span>18/10/10</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
-                    <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">亚马逊股价首破</h4>
-
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
-                           <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
-                            </span>
-                            <span>18/10/10</span>
-                        </div>
-                    </div>
-                </a>
-                <!-- 无图话题-->
-                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
-                    <!--<div class="weui-media-box__hd" style="display: none;">-->
-                    <!--<img class="weui-media-box__thumb" src="">-->
-                    <!--</div>-->
-                    <!-- 一个单位开始-->
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title" style="color: #4CA9E3;">最后一个</h4>
-
-                        <p class="weui-media-box__desc">
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
-                        </p>
-                        <div class="item-bottom">
-                           <span>
-                                  <span>版块</span>&nbsp;
-                                  <span>阅读 10</span>
-                            </span>
-                            <span>18/10/10</span>
-                        </div>
-                    </div>
-                </a>
+                    </a>
 
 
-            </div>
+                </div>
 
+        </div>
+        <div class="mine-shadow-dv" style="height: 30px;">
+            <div></div>
         </div>
 
     </div>
 <!-- 回到顶部按钮-->
 <div class="top"></div>
-<!-- 底部固定区域菜单开始 -->
-<div class="weui-tabbar fixed-bottom">
-    <a href="../index/index.html" class="weui-tabbar__item ">
-        <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/icon_nav_button.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">服务</p>
-    </a>
-    <a href="../channel/discovery.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/icon_nav_msg.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">通知公告</p>
-    </a>
-    <a href="../channel/guide.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/icon_nav_article.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">指南</p>
-    </a>
-    <a href="../channel/mine.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/icon_nav_cell.png" alt="">
-        </div>
-        <p class="weui-tabbar__label">我</p>
-    </a>
-</div>
-<!-- 底部固定区域菜单结束 -->
+
 <script src="../../mobile/js/jquery-2.1.4.js"></script>
 <script src="../../mobile/js/fastclick.js"></script>
 <script>
@@ -283,6 +110,10 @@
                window.location.replace(document.referrer);
             }
         });
+        //提交搜索
+        $('.searchresult-submit').bind('click' , function(){
+            $("form").submit();
+        })
 
     });
 </script>

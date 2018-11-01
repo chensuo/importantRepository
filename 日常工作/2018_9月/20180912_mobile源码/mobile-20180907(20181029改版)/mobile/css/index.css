@@ -119,7 +119,6 @@ footer a {
   text-align: right;
 }
 
-
 .weui-panel__hd .read,.weui-panel__hd .zan{
   width:49%;
   display: inline-block;
@@ -159,13 +158,11 @@ footer a {
 }
 .discovery_tab .weui-media-box{
   padding: 12px 15px;
+  background: #fff;
 }
 .discovery_tab .weui-media-box:before{
   right: 15px;
   border-top: 1px solid #D9D9D9;
-}
-.discovery_tab .weui-media-box:first-child:before{
-  border-top: none;
 }
 .discovery_tab .weui-media-box__bd .item-bottom {
   padding-top: 8px;
@@ -287,7 +284,6 @@ footer a {
   border-bottom: none;
 }
 .discovery_content_tab .weui-media-box:before{
-  border-top: 1px solid #D9D9D9;
   right: 12px;
 }
 .discovery_content_tab .content-inf{
@@ -307,6 +303,9 @@ footer a {
 }
 .discovery_content_tab .content-txt>p{
   color: #A6A6A6;
+}
+.discovery_content_tab .content-txt>p>strong{
+  color: #333;
 }
 .discovery_content_tab .weui-panel__hd , .discovery_tab .weui-panel__hd{
   font-size: 16px;
@@ -591,6 +590,11 @@ footer a {
   width: 100%;
   padding: 15px;
   border-top: 1px solid #E5E5E5;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  box-sizing: border-box;
+  background: #ffffff;
 }
 .article-footer-operation>a{
   display: flex;
@@ -725,6 +729,12 @@ footer a {
   height: 100%;
   z-index: 10;
 }
+.weui-media-box:before{
+  border-top: none;
+}
+.article-content-tab .weui-pull-to-refresh__layer{
+  background: #F8F8F8;
+}
 /*详情页面 附件显示样式*/
 .list-unstyled {
   padding-left: 0;
@@ -737,12 +747,13 @@ footer a {
 /*搜索结果页面*/
 .search-result-pd{
   height: 50px;
-  padding: 0 15px 0 35px;
+  padding: 0 15px;
   font-size: 18px;
   line-height: 50px;
-  color: #555555;
+  color: #333;
   overflow-x: hidden;
   position: relative;
+  font-weight: bold;
 }
 .search-result-pd>span{
   color: #333;
@@ -751,6 +762,27 @@ footer a {
 .search-result-pd>a{
   left: 15px;
   top: 28%;
+}
+.search-result-bar{
+  background: #fff;
+}
+.searchresult-input-container{
+  background: #F5F5F5;
+  box-shadow: none;
+  margin: 0 0;
+  width: 80%;
+}
+.searchresult-submit{
+  background:transparent;
+  border: none;
+  position: absolute;
+  right: 18px;
+  height: 25px;
+  line-height: 25px;
+  color: #3D9BFA;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
 }
 /*myfavorite我的收藏页面*/
 .myfavorite-pd{
@@ -762,6 +794,7 @@ footer a {
   font-weight: bold;
   box-sizing: border-box;
   border-top: 1px solid #EFEFEF;
+  overflow: hidden;
 }
 .mine-weui-pannel__bd{
   background: #ffffff;
@@ -932,7 +965,7 @@ footer a {
   font-weight: 500;
   font-size: 13px;
   position: absolute;
-  right: 8%;
+  right: 25px;
 }
 .item-list>i>em{
   display: inline-block;

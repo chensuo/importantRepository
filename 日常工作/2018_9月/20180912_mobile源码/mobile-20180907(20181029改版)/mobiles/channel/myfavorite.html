@@ -13,13 +13,23 @@
 </head>
 
 <body aria-atomic="False" style="background: #F8F8F8">
-<!-- 栏目位置开始-->
-<div class="search-result-pd myfavorite-pd">
-    我的收藏
-</div>
+
 <!-- 栏目位置结束-->
-<div class="weui-tab mine-weui-tab" style="height: calc(100% - 50px);">
+<div class="weui-tab mine-weui-tab" style="height: calc(100% + 50px);">
     <div  class="discovery_tab">
+        <!-- 下拉刷新开始-->
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
+        <!-- 下拉刷新结束-->
+        <!-- 栏目位置开始-->
+        <div class="search-result-pd myfavorite-pd">
+            我的收藏
+        </div>
         <div class="weui-pannel__bd mine-weui-pannel__bd">
 
             <!-- 我的收藏单位项目-->
@@ -77,6 +87,7 @@
     });
 </script>
 <script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/pullToRefresh.js"></script>
 <script src="../../mobile/js/urlJudge.js"></script>
 <script src="../../mobile/js/back-to-top.js"></script>
 </body>
