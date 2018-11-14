@@ -10,15 +10,33 @@
     <link rel="stylesheet" href="../../mobile/css/weui.css">
     <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
     <link rel="stylesheet" href="../../mobile/css/index.css">
+    <script src="../../mobile/js/jquery-2.1.4.js"></script>
+    <script src="../../mobile/js/vue.min.js"></script>
 </head>
 <body ontouchstart>
 
 <!-- 头部搜索框区域开始 -->
 <div class="weui-search-bar search-result-bar" id="searchBar">
     <div class="search-input-container searchresult-input-container">
-        <form action="../special/search_result.html">
+        <form action="../special/search_result.html" onsubmit="nospace();">
             <i class="weui-icon-search"></i>
             <input type="search"  placeholder="您有什么问题" required="" name="q" value="" autocomplete="off">
+            <script>
+                function nospace(){
+                    if(isNull($("input[name=q]").val())){
+                        $("input[name=q]").val("");
+                    }
+                    else{
+                        $("input[name=q]").val($("input[name=q]").val().replace(/[ ]/g,""));
+                    }
+                }
+                function isNull( str ){
+                    if ( str == "" ) return true;
+                    var regu = "^[ ]+$";
+                    var re = new RegExp(regu);
+                    return re.test(str);
+                }
+            </script>
         </form>
     </div>
     <button class="searchresult-submit">搜&nbsp;索</button>
@@ -34,21 +52,18 @@
         <!--</div>-->
     <!--</div>-->
     <!--位置栏结束-->
-    <div class="weui-tab" style="margin-top:0;height:100%;background: #f8f8f8;">
+    <div class="weui-tab" style="margin-top:0;height:100%;">
             <div  class="discovery_tab">
                 <div style="height: 44px"></div>
                 <!-- 应用栏搜索-->
                 <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;">
                     <!-- 位置栏-->
                     <div class="search-result-pd">应用</div>
-                    <a href="" class="myfavorite-item" style="font-size: 16px;">应用名称</a>
+                    <a href="" class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none">
+                        <img src="../../mobile/img/youhuigouche.png" alt=""/>应用名称
+                    </a>
                 </div>
-
                 <!-- 帮助栏搜索 -->
-                <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;margin-top:30px">
-                    <!-- 位置栏-->
-                    <div class="search-result-pd">帮助</div>
-                    <!-- 无图话题-->
                     <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
                         <!--<div class="weui-media-box__hd" style="display: none;">-->
                         <!--<img class="weui-media-box__thumb" src="">-->
@@ -66,40 +81,97 @@
                             <div class="item-bottom">
                            <span>
                                   <span>版块</span>
-                                  <span style="margin-left: 30px;">阅读 10</span>
+                                  <span style="margin-left: 30px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
                             </span>
-                                <span>18/10/10</span>
+                                <span>2018-10-10</span>
                             </div>
                         </div>
                     </a>
+                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                    <!--<div class="weui-media-box__hd" style="display: none;">-->
+                    <!--<img class="weui-media-box__thumb" src="">-->
+                    <!--</div>-->
+                    <!-- 一个单位开始-->
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">亚马逊股价首破</h4>
 
-
+                        <p class="weui-media-box__desc">
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                        </p>
+                        <div class="item-bottom">
+                           <span>
+                                  <span>版块</span>
+                                  <span style="margin-left: 30px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
+                            </span>
+                            <span>2018-10-10</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="search-footer-operation">
+                    没有找到帮助内容，请尝试修改一下关键字重新搜索吧
+                    <a href="">还需要继续咨询?戳这里<img src="../../mobile/img/cuo.png" alt=""/></a>
                 </div>
 
-        </div>
-        <div class="mine-shadow-dv" style="height: 30px;">
-            <div></div>
+                <!-- 搜索历史标签-->
+                <div id="keyWordsList">
+                    <a  v-for="item in keyWordsList" :href="'search_result.html?q='+item" v-cloak style="margin-left: 5px;display: inline-block;background: #996633">{{item}}</a>
+                </div>
+
+
         </div>
 
     </div>
 <!-- 回到顶部按钮-->
 <div class="top"></div>
 
-<script src="../../mobile/js/jquery-2.1.4.js"></script>
 <script src="../../mobile/js/fastclick.js"></script>
 <script>
     $(function () {
         FastClick.attach(document.body);
 
-//        $('#searchInput').bind('input #searchInput',function(e){
-//            var len = $(this).val().length;
-//            if(len > 0){
-//                console.log("应该出现搜索按钮");
+        //应用搜索测试
+//        var testData = {
+//            "workNo":"20265",
+//            "keyWord":"优惠购车",
+//            "password":"ssc@hr1109"
+//        };
+//
+//        $.ajax({
+//            type:"POST",
+//            url:"http://desyb2.do1.net.cn/wehr-dz/open/communicateOpenAction!searchApplicationByUser.action",
+//            data:{workNo:"20265" , keyWord:"优惠购车" , password:"ssc@hr1109"},
+//            dataType:"json",
+//            success:function(data){
+//                console.log(data);
+//            },
+//            error:function(XMLHttpRequest, textStatus, errorThrown){
+//               console.log("XMLHttpRequest.status:"+XMLHttpRequest.status);
+//               console.log("XMLHttpRequest.readyState:"+XMLHttpRequest.readyState);
+//               console.log("textStatus:"+textStatus);
 //            }
-//            else{
-//                console.log("按钮消失");
-//            }
-//        })
+//        });
+
+
+        /*自动生成已搜索的内容*/
+        var keyWordsList = [];
+        var currentKeyWord =GetRequest().q;
+        if(localStorage.getItem("currentList")){
+            keyWordsList = JSON.parse(localStorage.getItem("currentList"));
+        }
+        if(!( keyWordsList.indexOf(currentKeyWord) >= 0) && currentKeyWord){
+           keyWordsList.push(currentKeyWord);
+            localStorage.setItem("currentList" , JSON.stringify(keyWordsList));
+        }
+        new Vue({
+            el: '#keyWordsList',
+            data: {keyWordsList: keyWordsList}
+        });
+
+
+
         //布置在Jeecms时有所修改
         $(".left-arrow-container").bind("click" , function(){
             var lastPageUrl = document.referrer;
@@ -112,8 +184,29 @@
         });
         //提交搜索
         $('.searchresult-submit').bind('click' , function(){
+            if(!$("input[name=q]").val()){
+                return false;
+            };
             $("form").submit();
-        })
+        });
+
+//alert("有问题，显示不了1   2之间的空格");
+        function GetRequest() {
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                console.log(strs);
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            console.log(theRequest);
+            return theRequest;
+        }
+
+
 
     });
 </script>

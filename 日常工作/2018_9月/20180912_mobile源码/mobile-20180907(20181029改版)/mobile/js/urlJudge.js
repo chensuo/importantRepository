@@ -6,6 +6,7 @@ $(function(){
     var  url = window.location.pathname;
     var $tabbarItem = $('.weui-tabbar__item');
 
+    //
     if(url.indexOf("discovery.html") >= 0){
         $($tabbarItem[1]).addClass('weui-bar__item--on');
         $($tabbarItem[1]).find("img").attr("src" , "../../mobile/img/dibu_sscbaike_xuanzhong.png");
