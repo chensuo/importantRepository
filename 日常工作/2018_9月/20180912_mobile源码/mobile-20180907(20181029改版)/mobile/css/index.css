@@ -74,6 +74,10 @@ footer a {
   font-size: 12px;
   color: #b7b7b7;
 }
+.item-bottom>span>span:first-child{
+  display: inline-block;
+  min-width: 116px;
+}
 
 
 
@@ -1134,7 +1138,7 @@ footer a {
   white-space: nowrap;
 }
 .todo-item>span{
-  width: 39%;
+  width: 37%;
 }
 .todo-item>i{
   min-width: 27%;

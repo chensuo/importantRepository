@@ -81,7 +81,7 @@
                             <div class="item-bottom">
                            <span>
                                   <span>版块</span>
-                                  <span style="margin-left: 30px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
+                                  <span style="margin-left: 10px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
                             </span>
                                 <span>2018-10-10</span>
                             </div>
@@ -104,7 +104,7 @@
                         <div class="item-bottom">
                            <span>
                                   <span>版块</span>
-                                  <span style="margin-left: 30px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
+                                  <span style="margin-left: 10px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
                             </span>
                             <span>2018-10-10</span>
                         </div>
@@ -120,7 +120,6 @@
                     <a  v-for="item in keyWordsList" :href="'search_result.html?q='+item" v-cloak style="margin-left: 5px;display: inline-block;background: #996633">{{item}}</a>
                 </div>
 
-
         </div>
 
     </div>
@@ -128,10 +127,10 @@
 <div class="top"></div>
 
 <script src="../../mobile/js/fastclick.js"></script>
+<script src="../../mobile/js/global.js"></script>
 <script>
     $(function () {
         FastClick.attach(document.body);
-
         //应用搜索测试
 //        var testData = {
 //            "workNo":"20265",
@@ -190,7 +189,6 @@
             $("form").submit();
         });
 
-//alert("有问题，显示不了1   2之间的空格");
         function GetRequest() {
             var url = location.search; //获取url中"?"符后的字串
             var theRequest = new Object();
@@ -202,7 +200,6 @@
                     theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);
                 }
             }
-            console.log(theRequest);
             return theRequest;
         }
 
