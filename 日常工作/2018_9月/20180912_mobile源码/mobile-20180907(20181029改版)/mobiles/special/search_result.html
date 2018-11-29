@@ -56,11 +56,11 @@
             <div  class="discovery_tab">
                 <div style="height: 44px"></div>
                 <!-- 应用栏搜索-->
-                <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;">
+                <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;" id="applicationList">
                     <!-- 位置栏-->
                     <div class="search-result-pd">应用</div>
-                    <a href="" class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none">
-                        <img src="../../mobile/img/youhuigouche.png" alt=""/>应用名称
+                    <a v-for="item in applicationList" :href="item.applicationURL" v-cloak class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none">
+                        <img :src="item.applicationimgUrl" alt=""/>{{item.applicationName}}
                     </a>
                 </div>
                 <!-- 帮助栏搜索 -->
@@ -116,32 +116,45 @@
                 </div>
 
                 <!-- 搜索历史标签-->
-                <div id="keyWordsList">
-                    <a  v-for="item in keyWordsList" :href="'search_result.html?q='+item" v-cloak style="margin-left: 5px;display: inline-block;background: #996633">{{item}}</a>
+                <div style="padding: 0 7px" id="keyWordsList">
+                    <a v-for="item in keyWordsList" :href="'search_result.html?q='+item" v-cloak style="padding: 8px 0;margin-left: 10px;display: inline-block;">
+                        <span style="font-size:15px;background: #996633;padding: 2px 5px;border-radius: 3px">{{item}}</span>
+                    </a>
                 </div>
 
         </div>
-
     </div>
 <!-- 回到顶部按钮-->
 <div class="top"></div>
-
+<script type="text/javascript">
+    function handleResponse(data){
+        console.log(data);
+    }
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+        var script = document.createElement("script");
+        script.src = "http://www.broadtext.com.cn/ssc/api/front/work?id=20265&callback=handleResponse";
+        document.body.insertBefore(script, document.body.firstChild);
+    };
+</script>
 <script src="../../mobile/js/fastclick.js"></script>
 <script src="../../mobile/js/global.js"></script>
+
 <script>
     $(function () {
         FastClick.attach(document.body);
         //应用搜索测试
 //        var testData = {
 //            "workNo":"20265",
-//            "keyWord":"优惠购车",
+//            "keyWord":"电子",
 //            "password":"ssc@hr1109"
 //        };
 //
 //        $.ajax({
 //            type:"POST",
 //            url:"http://desyb2.do1.net.cn/wehr-dz/open/communicateOpenAction!searchApplicationByUser.action",
-//            data:{workNo:"20265" , keyWord:"优惠购车" , password:"ssc@hr1109"},
+//            data:{workNo:"20265" , keyWord:"电子" , password:"ssc@hr1109"},
 //            dataType:"json",
 //            success:function(data){
 //                console.log(data);
@@ -152,6 +165,21 @@
 //               console.log("textStatus:"+textStatus);
 //            }
 //        });
+
+        /*应用搜索*/
+        var applicationList = [];
+        var appData = {"resCode":"0","resMsg":"查询成功","applicationList":[{"applicationId":"123456","applicationimgUrl":"../../mobile/img/youhuigouche.png","applicationName":"电子薪资","applicationURL":"http://www.baidu.com"},{"applicationId":"123456","applicationimgUrl":"../../mobile/img/icon_wait.png","applicationName":"员工购车","applicationURL":"http://www.broadtext.com.cn"}]};
+        console.log(appData);
+        //0表示获取数据成功；失败则list为空
+        if(appData.resCode == "0"){
+            applicationList = appData.applicationList;
+        }
+        console.log(applicationList);
+        new Vue({
+            el: '#applicationList',
+            data: {applicationList: applicationList}
+        });
+
 
         /*自动生成已搜索的内容*/
         var keyWordsList = [];
@@ -185,6 +213,38 @@
             };
             $("form").submit();
         });
+//        /*咨询入口的权限获取*/
+//        $.get("http://www.broadtext.com.cn/ssc/api/front/work", function(data){
+//            alert("进入");
+//            if(data.code == 200){
+//                alert(data.code);
+//                if(data.body == 1){
+//                    $(".article-footer-operation").remove();
+//                }
+//                else{
+//                    $(".article-footer-operation").css("display", "block");
+//                }
+//            }
+//        });
+
+
+//        $.ajax({
+//            async : true,
+//            url : "http://www.broadtext.com.cn/ssc/api/front/work?id=20265",
+//            type : "GET",
+//            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+//            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+//            jsonpCallback: 'handleResponse', //设置回调函数名
+//            data : {
+//                q : "javascript",
+//                count : 1
+//            },
+//            success: function(response, status, xhr){
+//                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+//                console.log(response);
+//            }
+//        });
+
 
         function GetRequest(){
             var url = location.search; //获取url中"?"符后的字串
@@ -198,7 +258,7 @@
             }
             return theRequest;
         }
-
+        $("input[type=search]").val(currentKeyWord);
     });
 </script>
 <script src="../../mobile/js/jquery-weui.js"></script>
@@ -206,5 +266,4 @@
 <script src="../../mobile/js/back-to-top.js"></script>
 
 </body>
-
 </html>

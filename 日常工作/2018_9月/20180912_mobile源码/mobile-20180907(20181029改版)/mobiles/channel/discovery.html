@@ -33,7 +33,7 @@
     <a>常见问题</a>
     <a>业务指南</a>
 </nav>
-<div class="weui-tab"  style="margin-top: 46px;height: calc(100% - 100px);">
+<div class="weui-tab"  style="margin-top: 46px;height: calc(100% - 101px);">
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
 
@@ -570,30 +570,58 @@
 <div class="top"></div>
 <!-- 回到顶部按钮结束-->
 <!-- 底部固定区域菜单开始 -->
-<div class="weui-tabbar fixed-bottom">
+<div class="weui-tabbar fixed-bottom" id="tabs">
     <a href="../index/index.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/dibu_fuwu_weixuanzhong.png" alt="">
+        <div class="tabbar-inactive">
+            <div class="weui-tabbar__icon">
+                <img src="../../mobile/img/dibu_fuwu_weixuanzhong.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">服务中心</p>
         </div>
-        <p class="weui-tabbar__label">服 务</p>
+        <div class="tabbar-active" style="display:none;">
+            <div class="weui-tabbar__icon">
+                <img src="../../mobile/img/dibu_fuwu_xuanzhong.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">服务中心</p>
+        </div>
+
     </a>
     <a href="../channel/discovery.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/dibu_sscbaike_weixuanzhong.png" alt="">
+        <div class="tabbar-inactive">
+            <div class="weui-tabbar__icon">
+                <img src="../../mobile/img/dibu_sscbaike_weixuanzhong.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">服务百科</p>
         </div>
-        <p class="weui-tabbar__label">SSC百科</p>
+        <div class="tabbar-active" style="display:none;">
+            <div class="weui-tabbar__icon">
+                <img src="../../mobile/img/dibu_sscbaike_xuanzhong.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">服务百科</p>
+        </div>
     </a>
     <a href="../channel/mine.html" class="weui-tabbar__item">
-        <div class="weui-tabbar__icon">
-            <img src="../../mobile/img/dibu_wode_weixuanzhong.png" alt="">
+        <div class="tabbar-inactive">
+            <div class="weui-tabbar__icon">
+                <img src="../../mobile/img/dibu_wode_weixuanzhong.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我的</p>
         </div>
-        <p class="weui-tabbar__label">我 的</p>
+        <div class="tabbar-active" style="display:none;">
+            <div class="weui-tabbar__icon">
+                <img src="../../mobile/img/dibu_wode_xuanzhong.png" alt="">
+            </div>
+            <p class="weui-tabbar__label">我的</p>
+        </div>
     </a>
 </div>
+
 <!-- 底部固定区域菜单结束 -->
 
 <script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/vue.min.js"></script>
 <script src="../../mobile/js/fastclick.js"></script>
+<script src="../../mobile/js/global.js"></script>
 <script>
     $(function () {
         FastClick.attach(document.body);

@@ -1,23 +1,24 @@
-<div class="w96" style="min-height:500px;">
-    [#if q??]
-        [@cms_lucene_list q=q channelId=channelId descLen='100' append='...' count='4' sysPage='1'  ]
-        <div class="search_msg">
-            您搜索的<span class="red">“${q!}”</span>， 共有 <span class="red">${tag_list?size} 条</span> 查询结果，[@process_time/]
-        </div>
-            [#list tag_list as s]
-                <dl class="list3">
-                    <dt>
-                        <span>
-                         [<a href="${s.ctgUrl}" target="_blank">${s.ctgName}</a>]
-                        </span>
-                        <a href="${s.url}" title="${s.title}" target="_blank">${s.title}</a>
-                    </dt>
-                    <dd class="zy">[@text_cut s=s.description len=descLen append=append/]</dd>
-                    <dd>来源： <a href="${s.originUrl!}" target="_blank">${s.origin!'本站原创'}</a>   
-                        浏览次数：${s.views}次    发布时间： ${s.releaseDate}
-                    </dd>
-                </dl>
-            [/#list]
-        [/@cms_lucene_list]
-    [/#if]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JSONP实现跨域2</title>
+</head>
+<body>
+<div id="mydiv">
+    <button id="btn">点击</button>
 </div>
+</body>
+<script type="text/javascript">
+    function handleResponse(response){
+        console.log(response);
+    }
+</script>
+<script type="text/javascript">
+    window.onload = function() {
+            var script = document.createElement("script");
+            script.src = "https://api.douban.com/v2/book/search?q=javascript&count=1&callback=handleResponse";
+            document.body.insertBefore(script, document.body.firstChild);
+    };
+</script>
+</html>

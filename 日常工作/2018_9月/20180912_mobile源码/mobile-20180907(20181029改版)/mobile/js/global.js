@@ -8,5 +8,6 @@ $(function(){
 
     //cms页面之间 跳转链接前缀
     document.lnkUrl = '/ssc/';
+
 });
 
