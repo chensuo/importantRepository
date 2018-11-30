@@ -213,7 +213,7 @@ footer a {
   display: -webkit-box;
   display: -webkit-flex;
   display: flex;
-  z-index: 500;
+  z-index: 505;
   width: 100%;
   position: fixed;
   top: 50px;
@@ -287,7 +287,12 @@ footer a {
   -webkit-tap-highlight-color: rgba(0,0,0,0);
   color: #888;
 }
-
+.weui-tab.active{
+  display: block;
+}
+.weui-tab.inactive{
+  display: block;
+}
 #contentBox .box{
   display:none;
 }
@@ -583,12 +588,13 @@ footer a {
   height: 50px;
   left: 0;
   right: 0;
-  z-index: 500;
+  z-index: 505;
   background-color: #F8F8F8;
 }
 .weui-tab{
   height: calc(100% - 100px);
   overflow-x: hidden;
+  background: #ffffff;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -663,6 +669,20 @@ footer a {
 
 /*回到顶部按钮样式*/
 .top {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.8) url(../img/top.svg) no-repeat;
+  background-size: 40px 40px;
+  position: fixed;
+  right: 18px;
+  bottom: 125px;
+  z-index: 501;
+  display: none;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
+}
+.top-sec {
   width: 40px;
   height: 40px;
   background: rgba(255, 255, 255, 0.8) url(../img/top.svg) no-repeat;
