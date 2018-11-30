@@ -32,3 +32,4 @@ $(function(){
     //$($tabbarItem[0]).find("img").attr("src" , "../../mobile/img/dibu_fuwu_xuanzhong.png");
 
 });
+
