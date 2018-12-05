@@ -498,8 +498,8 @@ footer a {
 /*底部样式修改*/
 .weui-tabbar__label{
   color: #767676;
-  font-size: 13px;
-  line-height: 1.5;
+  font-size: 12px;
+  line-height: 1.4;
 }
 .weui-tabbar__item{
   padding: 0;
@@ -515,8 +515,8 @@ footer a {
   border-top: none;
 }
 .weui-tabbar__icon{
-  width: 25px;
-  height: 25px;
+  width: 24px;
+  height: 24px;
 }
 .weui-tabbar__icon img{
   width: 100%;
@@ -594,7 +594,6 @@ footer a {
 .weui-tab{
   height: calc(100% - 100px);
   overflow-x: hidden;
-  background: #ffffff;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -668,21 +667,7 @@ footer a {
 }
 
 /*回到顶部按钮样式*/
-.top {
-  width: 40px;
-  height: 40px;
-  background: rgba(255, 255, 255, 0.8) url(../img/top.svg) no-repeat;
-  background-size: 40px 40px;
-  position: fixed;
-  right: 18px;
-  bottom: 125px;
-  z-index: 501;
-  display: none;
-  border-radius: 50%;
-  -webkit-box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
-  box-shadow: 0 0 7px rgba(0, 0, 0, 0.2);
-}
-.top-sec {
+.top,.top-sec{
   width: 40px;
   height: 40px;
   background: rgba(255, 255, 255, 0.8) url(../img/top.svg) no-repeat;
@@ -1012,10 +997,11 @@ footer a {
 }
 .collect-dv>img{
   margin-bottom: 0!important;
+  box-shadow: none!important;
 }
 .collect-dv>span{
   margin-left: 8px;
-  color: rgb(191, 191, 191)
+  color: rgb(191, 191, 191);
 }
 .nocollect-info-dv,.nocollect-info-dv-sec{
   color: #555555;
@@ -1045,19 +1031,6 @@ footer a {
 .nocollect-info-dv>img,.nocollect-info-dv-sec>img{
   width: 40%;
 }
-/*.myfavorite-pd:after{*/
-  /*content: " ";*/
-  /*position: absolute;*/
-  /*left: 15px;*/
-  /*bottom: 0px;*/
-  /*right: 15px;*/
-  /*border-bottom: 1px solid #c1c1c1;*/
-  /*color: #d9d9d9;*/
-  /*-webkit-transform-origin: 0 100%;*/
-  /*transform-origin: 0 100%;*/
-  /*-webkit-transform: scaleY(0.5);*/
-  /*transform: scaleY(0.5);*/
-/*}*/
 
 /*******登录*******/
 .header-back{width:20px; height:20px; margin-top:11px; display:inline-block; float:left; margin-left:16px; background:url(../images/header-back.png) no-repeat; background-size:auto 20px;}
@@ -1178,8 +1151,8 @@ footer a {
   font-size: 14px;
   position: absolute;
   right: 20px;
-  height: 18px;
-  width: 18px;
+  height: 20px;
+  width: 20px;
   text-align: center;
   line-height: 20px;
   background: #FF4141;
@@ -1453,4 +1426,44 @@ footer a {
   border-top: 1px solid #EFEFEF;
   background: #ffffff;
   width: calc(100% - 30px);
+}
+/*详情页面收藏dialog*/
+.collect-success-dialog{
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  z-index: 502;
+  display: none;
+}
+.collect-success-container{
+  width: 87%;
+  background: #ffffff;
+  border-radius: 3px;
+  position: absolute;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  box-sizing: border-box;
+}
+.collect-success-container>h3{
+  text-align: center;
+  margin-top: 10px;
+  font-size: 17px;
+}
+.collect-success-container>p{
+  text-align: center;
+  color: #888888;
+  padding: 8px 15px;
+  font-size: 15px;
+}
+.collect-success-container>div{
+  height: 45px;
+  line-height: 45px;
+  font-size: 16px;
+  color: #5BB9FF;
+  text-align: center;
+  border-top: 1px solid #EFEFEF;
 }

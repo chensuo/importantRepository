@@ -34,7 +34,7 @@
     <a>业务指南</a>
 </nav>
 <!--常见问题-->
-<div class="weui-tab"  style="margin-top: 46px;height: calc(100% - 101px);">
+<div class="weui-tab"  style="background: #ffffff;margin-top: 46px;height: calc(100% - 101px);">
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
         <div class="discovery_tab">
@@ -403,12 +403,17 @@
                         </a>
                         <div class="no-more-info">没有更多了</div>
                     </div>
+            <!-- 正在加载-->
+            <!--<div class="weui-loadmore">-->
+                <!--<i class="weui-loading"></i>-->
+                <!--<span class="weui-loadmore__tips">正在加载</span>-->
+            <!--</div>-->
         </div>
     </div>
 </div>
 
 <!--业务指南-->
-<div class="weui-tab weui-tab-sec"  style="display:none;margin-top: 46px;height: calc(100% - 101px);">
+<div class="weui-tab weui-tab-sec"  style="background: #ffffff;display:none;margin-top: 46px;height: calc(100% - 101px);">
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
         <div class="discovery_tab">
@@ -627,6 +632,7 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
+//        $('.weui-tab').infinite(100);
 
         /*dicovery页面顶部导航*/
         $("#discovery-nav a").off("click").on("click",function(e){
