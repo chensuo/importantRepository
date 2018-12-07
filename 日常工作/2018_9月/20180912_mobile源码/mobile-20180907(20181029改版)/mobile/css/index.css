@@ -1,8 +1,8 @@
 body, html {
   height: 100%;
   -webkit-tap-highlight-color: transparent;
+  overflow-x: hidden;
   overflow-y: hidden;
-  overflow-x:hidden;
   font-size: 15px;
 }
 .index-title {
@@ -594,7 +594,14 @@ footer a {
 .weui-tab{
   height: calc(100% - 100px);
   overflow-x: hidden;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+}
+/*.weui-tab:after{*/
+  /*min-height: calc(100% + 1px);*/
+/*}*/
+.weui-tab__bd{
+  min-height: calc(100% + 1px);
 }
 
 .discovery_content_tab>.weui-panel>.weui-panel__hd:first-child{
@@ -927,7 +934,7 @@ footer a {
 }
 .mine-weui-pannel__bd{
   background: #ffffff;
-  padding-bottom: 10px;
+  /*padding-bottom: 10px;*/
 }
 .myfavorite-item{
   width: calc(100% - 30px);

@@ -56,13 +56,14 @@
             <div  class="discovery_tab">
                 <div style="height: 44px"></div>
                 <!-- 应用栏搜索-->
-                <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;" id="applicationList">
+                <div class="weui-pannel__bd" style="background: #ffffff;border-bottom: 1px solid #EFEFEF;" id="applicationList" v-if="applicationList.length>0">
                     <!-- 位置栏-->
                     <div class="search-result-pd">应用</div>
                     <a v-for="item in applicationList" :href="item.applicationURL" v-cloak class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none">
                         <img :src="item.applicationimgUrl" alt=""/>{{item.applicationName}}
                     </a>
                 </div>
+                <div class="search-result-pd">SSC百科</div>
                 <!-- 帮助栏搜索 -->
                     <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
                         <!--<div class="weui-media-box__hd" style="display: none;">-->
@@ -127,18 +128,6 @@
     </div>
 <!-- 回到顶部按钮-->
 <div class="top"></div>
-<script type="text/javascript">
-    function handleResponse(data){
-        console.log(data);
-    }
-</script>
-<script type="text/javascript">
-    window.onload = function() {
-        var script = document.createElement("script");
-        script.src = "http://www.broadtext.com.cn/ssc/api/front/work?id=20265&callback=handleResponse";
-        document.body.insertBefore(script, document.body.firstChild);
-    };
-</script>
 <script src="../../mobile/js/fastclick.js"></script>
 <script src="../../mobile/js/global.js"></script>
 
@@ -166,10 +155,10 @@
 //               console.log("textStatus:"+textStatus);
 //            }
 //        });
-
         /*应用搜索*/
         var applicationList = [];
         var appData = {"resCode":"0","resMsg":"查询成功","applicationList":[{"applicationId":"123456","applicationimgUrl":"../../mobile/img/youhuigouche.png","applicationName":"电子薪资","applicationURL":"http://www.baidu.com"},{"applicationId":"123456","applicationimgUrl":"../../mobile/img/icon_wait.png","applicationName":"员工购车","applicationURL":"http://www.broadtext.com.cn"}]};
+//        var appData = "";
         console.log(appData);
         //0表示获取数据成功；失败则list为空
         if(appData.resCode == "0"){
