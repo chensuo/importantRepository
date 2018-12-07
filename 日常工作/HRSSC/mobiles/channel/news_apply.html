@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SSC共享服务中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <link href="/${mobileRes!}/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
+    <script src="/${mobileRes!}/js/vue.min.js"></script>
+</head>
+<body ontouchstart>
+<div class="weui-tab mine-weui-tab" style="height: calc(100% + 50px);">
+    [#include "../include/pullToRefresh.html"/]
+    <div  class="discovery_tab">
+        <!--进行中的申请 -->
+        <div class="weui-pannel__bd mine-weui-pannel__bd" id="applyUncomplated">
+            <div class="myfavorite-pd">
+                <img src="/${mobileRes!}/img/icon_wait.png" alt=""/>进行中的申请
+            </div>
+            <a v-for="(u,i) in applyUncomplated" :href="'${base}/sqjd/index.jhtml?processInstanceId='+u.processInstanceId" v-cloak class="apply-item"><span v-if="u.form_no">{{u.form_no}}</span><span v-else>暂无工单号</span><i v-cloak>{{ u.processInstanceName }}</i><em>{{u.startTime}}</em></a>
+            <div class="nocollect-info-dv" style="display: block" v-if="applyUncomplated.length == 0">
+                <img src="/${mobileRes!}/img/apply_jinxingzhong.png" alt=""/>
+            </div>
+            <div v-else class="no-more-info">没有更多了</div>
+        </div>
+        <!--已完成的申请 -->
+        <div class="weui-pannel__bd mine-weui-pannel__bd" id="applyComplated" style="border-top: 1px solid #EFEFEF;">
+            <div class="myfavorite-pd">
+                <img src="/${mobileRes!}/img/icon_finished.png" alt=""/>已完成的申请
+            </div>
+            <a v-for="(u,i) in applyComplated" :href="'${base}/sqjd/index.jhtml?processInstanceId='+u.processInstanceId" v-cloak class="apply-item"><span v-if="u.form_no">{{u.form_no}}</span><span v-else>暂无工单号</span><i v-cloak>{{ u.processInstanceName }}</i><em>{{u.endTime}}</em></a>
+
+            <div class="nocollect-info-dv" style="display: block;" v-if="applyComplated.length == 0">
+                <img src="/${mobileRes!}/img/apply_wancheng.png" alt=""/>
+            </div>
+            <div v-else class="no-more-info">没有更多了</div>
+        </div>
+    </div>
+</div>
+<div class="top"></div>
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $.ajaxSetup({ async: false });
+    $(function () {
+        FastClick.attach(document.body);
+
+        //获取token
+        var userId = ${user.username};
+        $.get(document.tokenUrl +　"api/front/token?loginId=" +  userId, function(data){
+            if(data.code == 200){
+                getApplyList(data.body.token);
+            }
+        });
+
+        function getApplyList(token){
+            var applyComplated = [];
+            var applyUncomplated = [];
+            $.get(document.showUrl +　"service/task/myapplylist?username=" + token, function(data){
+                if(data.source){
+                    for(var i = 0;i < data.data.length;i++){
+                        data.data[i].startTime = data.data[i].startTime.split(" ")[0];
+                        if(data.data[i].status == "0"){
+                            //已经完成的申请
+                            applyComplated.push(data.data[i]);
+                        }
+                        if(data.data[i].status == "1"){
+                            //未完成的申请
+                            applyUncomplated.push(data.data[i]);
+                        }
+                    }
+                }
+
+            } );
+            new Vue({
+                el: '#applyComplated',
+                data: {
+                    applyComplated:applyComplated
+                }
+            });
+
+            new Vue({
+                el: '#applyUncomplated',
+                data: {
+                    applyUncomplated:applyUncomplated
+                }
+            });
+        }
+    });
+
+
+
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+</body>
+
+</html>

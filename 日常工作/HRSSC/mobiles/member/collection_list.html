@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/${mobileRes!}/css/font-awesome.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/sub.css" />
+    <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
+    <script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+    <script src="${resSys}/front.js" type="text/javascript"></script>
+</head>
+<body aria-atomic="False">
+
+<div class="weui-tab" style="height: calc(100% + 50px);">
+    [#include "../include/pullToRefresh.html"/]
+    <div class="myfavorite-pd">
+        <img src="/${mobileRes!}/img/wode_shouchang.png" alt=""/>我的收藏
+    </div>
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd mine-weui-pannel__bd">
+
+            [#if pagination.list?size gt 0]
+            [#list pagination.list as c]
+            <a href="${c.url!}?id=${user.id}" class="myfavorite-item">${c.title}</a>
+            [/#list]
+            <div class="no-more-info">没有更多了</div>
+            [#else]
+            <!-- 暂无收藏提示-->
+            <div class="nocollect-info-dv-sec" style="display:block;">
+                <img src="/${mobileRes!}/img/myfavourite.png" alt=""/>
+            </div>
+            [/#if]
+        </div>
+    </div>
+
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+    });
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/urlJudge.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+</body>
+</html>

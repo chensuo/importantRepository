@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <link href="/${mobileRes!}/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
+
+
+</head>
+
+<body ontouchstart>
+[#include "../include/header.html"/]
+
+<nav id="discovery-nav">
+    <a>常见问题</a>
+    <a>业务指南</a>
+</nav>
+<div class="shadow-dv">
+    <div></div>
+</div>
+
+
+<div class="weui-tab"  style="margin-top: 61px;height: calc(100% - 115px);">
+    <!-- tab切换页区域开始 -->
+    <div class="weui-tab__bd weui-tab__bd-zdy">
+        <!-- 发现tab开始-->
+        <div class="discovery_tab">
+            <!-- 发现页面内容-->
+
+            <div id="contentBox">
+
+                <div class="box">
+                    <!-- 页面内容开始-->
+
+                    <div class="weui-panel__bd">
+
+                        [#include "../include/pullToRefresh.html"/]
+
+                        [@cms_content_list channelId='97' orderBy='4'  titLen='30' descLen='70' append='...' channelOption='1' dateFormat='yyyy-MM-dd']
+
+                        [#list tag_list as a]
+                        <a href="${a.url}?id=${wx_user}" class="weui-media-box weui-media-box_appmsg">
+                            [#if a.typeImg??]
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="${a.typeImg!}">
+                            </div>
+                            [/#if]
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">
+                                    [#if a.topLevel>0]<span class="stick">置顶</span> [/#if]
+                                    [@text_cut s=a.title len=titLen append=append/]
+                                </h4>
+                                [#if a.description??]
+                                <p class="weui-media-box__desc">
+                                    [@text_cut s=a.description len='70' append=append/]
+                                </p>
+                                [#else]
+                                <p class="weui-media-box__desc">
+                                    暂无摘要
+                                </p>
+                                [/#if]
+                                <div class="item-bottom">
+                                    <span>
+                                          <span>阅读${a.views!}</span>
+                                    </span>
+                                    <span>${a.releaseDate?string(dateFormat)}</span>
+                                </div>
+                            </div>
+                        </a>
+                        [/#list]
+                        [/@cms_content_list]
+                    </div>
+                </div>
+
+                <!-- 热门新闻开始-->
+                <div class="box">
+                    <!-- 页面内容开始-->
+                    <div class="weui-panel__bd">
+
+                        [#include "../include/pullToRefresh.html"/]
+
+                        [@cms_content_list channelId='98' orderBy='4'  titLen='15' descLen='70' append='...' channelOption='1' dateFormat='yyyy-MM-dd']
+                        [#list tag_list as a]
+                        <a href="${a.url}" class="weui-media-box weui-media-box_appmsg">
+                            [#if a.typeImg??]
+                            <div class="weui-media-box__hd">
+                                <img class="weui-media-box__thumb" src="${a.typeImg!}">
+                            </div>
+                            [/#if]
+                            <div class="weui-media-box__bd">
+                                <h4 class="weui-media-box__title">
+                                    [#if a.topLevel>0]<span class="stick">置顶</span> [/#if]
+                                    [@text_cut s=a.title len=titLen append=append/]
+                                </h4>
+                                [#if a.description??]
+                                <p class="weui-media-box__desc">
+                                    [@text_cut s=a.description len='70' append=append/]
+                                </p>
+                                [#else]
+                                <p class="weui-media-box__desc">
+                                    暂无摘要
+                                </p>
+                                [/#if]
+
+                                <div class="item-bottom">
+                                    <span>
+                                          <span>阅读${a.views!}</span>&nbsp;
+                                    </span>
+                                    <span>${a.releaseDate?string(dateFormat)}</span>
+                                </div>
+                            </div>
+                        </a>
+                        [/#list]
+                        [/@cms_content_list]
+
+                    </div>
+
+                </div>
+            </div>
+            <!-- 发现页面内容结束-->
+        </div>
+
+
+    </div>
+    <!-- tab切换页区域结束 -->
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<!-- 回到顶部按钮结束-->
+<!-- 底部固定区域菜单开始 -->
+[#include "../include/tabbar.html"/]
+
+
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        /*dicovery页面顶部导航*/
+        $("#discovery-nav a").off("click").on("click",function(e){
+            var index = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+            $("#contentBox .box").eq(index).addClass("active").siblings().removeClass("active");
+        });
+
+    });
+
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/lastUrlJudge.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+
+
+
+</body>
+
+</html>

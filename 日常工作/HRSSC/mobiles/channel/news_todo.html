@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SSC共享服务中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <link href="/${mobileRes!}/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
+    <script src="/${mobileRes!}/js/vue.min.js"></script>
+</head>
+<body ontouchstart>
+<div class="weui-tab mine-weui-tab" style="height: calc(100% + 50px);">
+    [#include "../include/pullToRefresh.html"/]
+    <div class="myfavorite-pd">
+        <img src="/${mobileRes!}/img/wode_daiban.png" alt=""/>我的待办
+    </div>
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd mine-weui-pannel__bd" id="list">
+            <!-- 我的待办单位项目-->
+            <a class="todo-item" v-for="item in dt" :href="lnkUrl + item.url" >
+                <span v-cloak>{{ item.taskTitle }}</span>
+                <i v-cloak>{{ item.taskName }}</i>
+                <em v-cloak>{{ item.startTime }}</em>
+            </a>
+            <div v-if="dt.length>0" class="no-more-info">没有更多了</div>
+            <!-- 暂无待办提示-->
+            <div class="nocollect-info-dv-sec">
+                <img src="/${mobileRes!}/img/todo.png" alt=""/>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $.ajaxSetup({ async: false });
+    $(function () {
+        FastClick.attach(document.body);
+        //获取token
+        var userId = ${user.username};
+        $.get(document.tokenUrl + "api/front/token?loginId=" + userId , function(data){
+            if(data.code == 200){
+                getTodoList(data.body.token);
+            }
+        });
+        function getTodoList(token){
+            var dt = [];
+            $.get(document.showUrl +　"service/task/mytodotasklist?username=" + token, function(data){
+                for(var i = 0 ; i <　data.data.length; i++){
+                    data.data[i].startTime = data.data[i].startTime.split(" ")[0];
+                }
+                if(data.source){
+                    dt = data.data;
+                    if(data.data.length==0){
+                        $(".nocollect-info-dv-sec").css("display","block");
+                    }
+                }
+                else{
+                    $(".nocollect-info-dv-sec").css("display","block");
+                }
+            } );
+            new Vue({
+                el: '#list',
+                data: {
+                    dt:dt ,
+                    lnkUrl:document.showUrl
+                }
+            });
+        }
+
+    });
+
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+</body>
+
+</html>
