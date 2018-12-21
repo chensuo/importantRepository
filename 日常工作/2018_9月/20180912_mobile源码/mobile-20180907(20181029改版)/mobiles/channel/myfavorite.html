@@ -59,17 +59,21 @@
             <a href="" class="myfavorite-item">123</a>
             <a href="" class="myfavorite-item">123</a>
             <a href="" class="myfavorite-item">123</a>
-            <a href="" class="myfavorite-item">123</a>
-            <a href="" class="myfavorite-item">123</a>
-            <a href="" class="myfavorite-item">123</a>
+            <!--<a href="" class="myfavorite-item">123</a>-->
+            <!--<a href="" class="myfavorite-item">123</a>-->
+            <!--<a href="" class="myfavorite-item">123</a>-->
 
-            <div class="no-more-info" style="background: #f5f5f5;width: 100%">没有更多</div>
+            <!--<div class="no-more-info" style="background: #f5f5f5;width: 100%">没有更多</div>-->
 
             <!-- 暂无收藏提示-->
             <!--<div class="nocollect-info-dv-sec" style="display:block;">-->
                 <!--<img src="../../mobile/img/myfavourite.png" alt=""/>-->
             <!--</div>-->
         </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
     </div>
     </div>
 </div>
@@ -82,6 +86,47 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
+        var userId = 20265;
+        var first = 0;
+        var count = 10;
+        var loading = false;
+//        loadlistOne();
+        $(".weui-tab").infinite(50).on("infinite", function () {
+            if (loading) return;
+            loading = true;
+            console.log("开始加载");
+            $('.weui-loadmore').show();
+            setTimeout(function () {
+                loadlistOne();
+                loading = false;
+                console.log("加载完成");
+            }, 500);   //模拟延迟
+        });
+        function loadlistOne() {
+//            var html = "<div class=\"weui-pull-to-refresh__layer\">"
+//                       +"<div class='weui-pull-to-refresh__arrow'></div>"
+//                    +"<div class='weui-pull-to-refresh__preloader'></div>"
+//                    +"<div class=\"down\">下拉刷新</div>"
+//                    +"<div class=\"up\">释放刷新</div>"
+//                    +"<div class=\"refresh\">正在刷新</div>"
+//                    +"</div>";
+            $(".weui-pannel__bd").append(getData());
+        }
+
+        function getData(){
+            var html = "";
+            html += '<a href="" class="myfavorite-item">新增1</a>';
+            html += '<a href="" class="myfavorite-item">新增2</a>';
+            html += '<a href="" class="myfavorite-item">新增3</a>';
+            html += '<a href="" class="myfavorite-item">新增4</a>';
+            html += '<a href="" class="myfavorite-item">新增5</a>';
+            html += '<a href="" class="myfavorite-item">新增6</a>';
+            html += '<a href="" class="myfavorite-item">新增7</a>';
+            html += '<a href="" class="myfavorite-item">新增8</a>';
+            html += '<a href="" class="myfavorite-item">新增9</a>';
+            html += '<a href="" class="myfavorite-item">新增10</a>';
+            return html;
+        }
     });
 </script>
 <script src="../../mobile/js/jquery-weui.js"></script>

@@ -392,8 +392,8 @@
         var first = 0;
         var count = 10;
         var loading = false;
-        loadlistOne();
-        $(".weui-tab-one").infinite(40).on("infinite", function () {
+//        loadlistOne();
+        $(".weui-tab-one").infinite(0).on("infinite", function () {
             if (loading) return;
             loading = true;
             console.log("开始加载");
@@ -402,8 +402,7 @@
                 loadlistOne();
                 loading = false;
                 console.log("加载完成");
-                $('.weui-loadmore').hide();
-            }, 1500);   //模拟延迟
+            }, 500);   //模拟延迟
         });
         function loadlistOne() {
 //            var html = "<div class=\"weui-pull-to-refresh__layer\">"
@@ -413,30 +412,11 @@
 //                    +"<div class=\"up\">释放刷新</div>"
 //                    +"<div class=\"refresh\">正在刷新</div>"
 //                    +"</div>";
-            var html = "";
-                    html = getData();
-                    $(".weui-panel_bd_one").append(html);
+            $(".weui-panel_bd_one").append(getData());
         }
 
         function getData(){
             var html = "";
-                html += '<a href=\"\" class=\"weui-media-box weui-media-box_appmsg\">';
-
-                    html += '<div class=\"weui-media-box__hd\">';
-                    html += '<img class=\"weui-media-box__thumb\" src=\"\">';
-                    html += '</div>';
-                html += '<div class="weui-media-box__bd">';
-                html += '<h4 class="weui-media-box__title">标题</h4>';
-                html += '<p class=\"weui-media-box__desc\">暂无摘要</p>';
-                html += '<div class=\"item-bottom\">';
-                html += '<span>';
-                html += '<span class=\"read-span\"><img src=\"/${mobileRes!}/img/icon_yuedu.png\" alt=\"\"/>'+222+'</span>';
-                html += '</span>';
-                html += '<span>'+"2018-10-10"+'</span>';
-                    html += '<span class="stick">置顶</span>';
-                html += '</div>';
-                html += '</div>';
-                html += '</a>';
             html += '<a href=\"\" class=\"weui-media-box weui-media-box_appmsg\">';
 
             html += '<div class=\"weui-media-box__hd\">';
@@ -471,59 +451,21 @@
             html += '</div>';
             html += '</div>';
             html += '</a>';
-            html += '<a href=\"\" class=\"weui-media-box weui-media-box_appmsg\">';
 
-            html += '<div class=\"weui-media-box__hd\">';
-            html += '<img class=\"weui-media-box__thumb\" src=\"\">';
-            html += '</div>';
-            html += '<div class="weui-media-box__bd">';
-            html += '<h4 class="weui-media-box__title">标题</h4>';
-            html += '<p class=\"weui-media-box__desc\">暂无摘要</p>';
-            html += '<div class=\"item-bottom\">';
-            html += '<span>';
-            html += '<span class=\"read-span\"><img src=\"/${mobileRes!}/img/icon_yuedu.png\" alt=\"\"/>'+222+'</span>';
-            html += '</span>';
-            html += '<span>'+"2018-10-10"+'</span>';
-            html += '<span class="stick">置顶</span>';
-            html += '</div>';
-            html += '</div>';
-            html += '</a>';
-            html += '<a href=\"\" class=\"weui-media-box weui-media-box_appmsg\">';
-
-            html += '<div class=\"weui-media-box__hd\">';
-            html += '<img class=\"weui-media-box__thumb\" src=\"\">';
-            html += '</div>';
-            html += '<div class="weui-media-box__bd">';
-            html += '<h4 class="weui-media-box__title">标题</h4>';
-            html += '<p class=\"weui-media-box__desc\">暂无摘要</p>';
-            html += '<div class=\"item-bottom\">';
-            html += '<span>';
-            html += '<span class=\"read-span\"><img src=\"/${mobileRes!}/img/icon_yuedu.png\" alt=\"\"/>'+222+'</span>';
-            html += '</span>';
-            html += '<span>'+"2018-10-10"+'</span>';
-            html += '<span class="stick">置顶</span>';
-            html += '</div>';
-            html += '</div>';
-            html += '</a>';
-            html += '<a href=\"\" class=\"weui-media-box weui-media-box_appmsg\">';
-
-            html += '<div class=\"weui-media-box__hd\">';
-            html += '<img class=\"weui-media-box__thumb\" src=\"\">';
-            html += '</div>';
-            html += '<div class="weui-media-box__bd">';
-            html += '<h4 class="weui-media-box__title">标题</h4>';
-            html += '<p class=\"weui-media-box__desc\">暂无摘要</p>';
-            html += '<div class=\"item-bottom\">';
-            html += '<span>';
-            html += '<span class=\"read-span\"><img src=\"/${mobileRes!}/img/icon_yuedu.png\" alt=\"\"/>'+222+'</span>';
-            html += '</span>';
-            html += '<span>'+"2018-10-10"+'</span>';
-            html += '<span class="stick">置顶</span>';
-            html += '</div>';
-            html += '</div>';
-            html += '</a>';
             return html;
         }
+
+//        if(localStorage.getItem("navIndex")){
+//            var navIndex = localStorage.getItem("navIndex");
+//            console.log($($("#discovery-nav a")[navIndex]));
+//            $("#discovery-nav a").removeClass("on");
+//            $($("#discovery-nav>a")[navIndex]).addClass("on");
+//            $(".weui-tab").css("display","none").css("zIndex","0");
+//            $($(".weui-tab")[navIndex]).css("display","block").css("zIndex","502");
+//            $(".top-container>div").css("zIndex","501");
+//            $($(".top-container>div")[navIndex]).css("zIndex","503");
+//        }
+//        $("#discovery-nav a").removeClass("on");
 
         /*dicovery页面顶部导航*/
         $("#discovery-nav a").off("click").on("click",function(e){
@@ -533,7 +475,9 @@
             $($(".weui-tab")[index]).css("display","block").css("zIndex","502");
             $(".top-container>div").css("zIndex","501");
             $($(".top-container>div")[index]).css("zIndex","503");
+//            localStorage.setItem("navIndex" , index);
             e.preventDefault();
+
         });
     });
     $(function(){

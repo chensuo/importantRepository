@@ -15,7 +15,7 @@
     <a class="on"><i>进行中 (2)</i><span></span></a>
     <a><i>已完成</i><span></span></a>
 </nav>
-<div class="weui-tab mine-weui-tab" style="margin-top: 11px;height: calc(100% - 11px);">
+<div class="weui-tab weui-tab-one mine-weui-tab" style="margin-top: 11px;height: calc(100% - 11px);">
     <div  style="min-height: calc(100% + 1px);">
         <!-- 下拉刷新开始-->
         <div class="weui-pull-to-refresh__layer">
@@ -28,7 +28,7 @@
         <!-- 下拉刷新结束-->
         <div  class="discovery_tab">
             <!--进行中的申请 -->
-            <div class="weui-pannel__bd" style="background: #F5F5F5;">
+            <div class="weui-pannel__bd weui-panel_bd_one" style="background: #F5F5F5;">
                 <!-- 栏目位置开始-->
                 <!--<div class="myfavorite-pd">-->
                     <!--<img src="../../mobile/img/icon_wait.png" alt=""/>进行中的申请-->
@@ -97,6 +97,10 @@
                     <!--<img src="../../mobile/img/apply_jinxingzhong.png" alt=""/>-->
                 <!--</div>-->
             </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
 
         </div>
      </div>
@@ -114,7 +118,7 @@
         <!-- 下拉刷新结束-->
         <div  class="discovery_tab">
             <!--进行中的申请 -->
-            <div class="weui-pannel__bd" style="background: #F5F5F5;">
+            <div class="weui-pannel__bd weui-panel_bd_sec" style="background: #F5F5F5;">
                 <!-- 我的申请单位项目-->
                 <a href="applyHistory.html" class="apply-item">
                     <div>我的申请名称我的申请名称我的申请名称我的申请名称我的申请名称我的申请名称</div>
@@ -163,6 +167,10 @@
                     <!--<img src="../../mobile/img/apply_jinxingzhong.png" alt=""/>-->
                 <!--</div>-->
             </div>
+            <div class="weui-loadmore weui-loadmore-sec">
+                <i class="weui-loading weui-loading-sec"></i>
+                <span class="weui-loadmore__tips weui-loadmore__tips-sec">正在加载</span>
+            </div>
         </div>
     </div>
 
@@ -188,6 +196,79 @@
             $($(".top-container>div")[index]).css("zIndex","503");
             e.preventDefault();
         });
+
+        var userId = 20265;
+        var first = 0;
+        var count = 10;
+        var loading = false;
+        var loadingSec = false;
+        loadlistOne();
+        loadlistSec();
+        $(".weui-tab-one").infinite(40).on("infinite", function () {
+            if (loading) return;
+            loading = true;
+            console.log("开始加载");
+            $('.weui-loadmore').show();
+            setTimeout(function () {
+                loadlistOne();
+                loading = false;
+                console.log("加载完成");
+            }, 500);   //模拟延迟
+        });
+        $(".weui-tab-sec").infinite(40).on("infinite", function () {
+            if (loadingSec) return;
+            loadingSec = true;
+            console.log("开始加载2");
+            $('.weui-loadmore-sec').show();
+            setTimeout(function () {
+                loadlistSec();
+                loadingSec = false;
+                console.log("加载完成2");
+            }, 500);   //模拟延迟
+        });
+        function loadlistOne() {
+//            var html = "<div class=\"weui-pull-to-refresh__layer\">"
+//                       +"<div class='weui-pull-to-refresh__arrow'></div>"
+//                    +"<div class='weui-pull-to-refresh__preloader'></div>"
+//                    +"<div class=\"down\">下拉刷新</div>"
+//                    +"<div class=\"up\">释放刷新</div>"
+//                    +"<div class=\"refresh\">正在刷新</div>"
+//                    +"</div>";
+            var html = "";
+            $(".weui-panel_bd_one").append(getData());
+        }
+        function loadlistSec() {
+//            var html = "<div class=\"weui-pull-to-refresh__layer\">"
+//                       +"<div class='weui-pull-to-refresh__arrow'></div>"
+//                    +"<div class='weui-pull-to-refresh__preloader'></div>"
+//                    +"<div class=\"down\">下拉刷新</div>"
+//                    +"<div class=\"up\">释放刷新</div>"
+//                    +"<div class=\"refresh\">正在刷新</div>"
+//                    +"</div>";
+            $(".weui-panel_bd_sec").append(getData());
+        }
+
+        function getData(){
+            var html = "";
+            html += '<a href="applyHistory.html" class="apply-item">';
+            html += '<div>新增1</div>';
+            html += '<div></div>';
+            html += '<div>申请单号：100198</div>';
+            html += '<div>申请时间：2018-10-10</div>';
+            html += '<img src="../../mobile/img/wode_jiantou.png" alt="">';
+            html += '<i></i>';
+            html += '</a>';
+
+            html += '<a href="applyHistory.html" class="apply-item">';
+            html += '<div>新增2</div>';
+            html += '<div></div>';
+            html += '<div>申请单号：100198</div>';
+            html += '<div>申请时间：2018-10-10</div>';
+            html += '<img src="../../mobile/img/wode_jiantou.png" alt="">';
+            html += '<i></i>';
+            html += '</a>';
+            return html;
+        }
 
     });
     $(function(){

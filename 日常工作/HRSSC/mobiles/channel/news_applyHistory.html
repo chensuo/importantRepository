@@ -27,14 +27,13 @@
             <div id="history"  v-cloak>
                 <div v-for="(item,index) in history" class="applyHistory-item-container">
                     <div v-if="item.activityName != '结束'" class="applyHistory-left-border"></div>
-                    <!--<img v-if="item.status=='已通过'" src="/${mobileRes!}/img/finished" alt=""/>-->
                     <img src="/${mobileRes!}/img/finished.png" alt=""/>
                     <div class="item-content">
-                        <span v-if="item.assignee">{{item.assignee}}</span><em>{{item.activityName}}</em>
-                        <i :class="{unpass:item.state=='已拒绝'}">{{item.state}}</i>
+                        <span v-if="item.department">{{item.department}}</span><em>{{item.activityName}}</em>
+                        <i :class="{unpass:item.statecode=='3'}">{{item.state}}</i>
                     </div>
                     <div class="applyHistory-time">{{item.endTime}}</div>
-                    <div class="applyHistory-remark" v-if="item.approveMsg">{{item.approveMsg}}</div>
+                    <div class="applyHistory-remark" v-if="item.approveMsg&&item.statecode!='8'&&item.statecode!='9'">{{item.approveMsg}}</div>
                 </div>
             </div>
             <!--审批处理中项目（当前项目,区别：i无class）-->
@@ -43,11 +42,11 @@
                     <div v-if="index != execute.length-1" class="applyHistory-left-border"></div>
                     <img src="/${mobileRes!}/img/unstart.png" alt=""/>
                     <div class="item-content">
-                        <span v-if="item.assignee">{{item.assignee}}</span><em>{{item.activityName}}</em>
-                        <i :class="{unpass:item.state=='已拒绝'}">{{item.state}}</i>
+                        <span v-if="item.department">{{item.department}}</span><em>{{item.activityName}}</em>
+                        <i :class="{unpass:item.statecode=='3'}">{{item.state}}</i>
                     </div>
                     <div class="applyHistory-time" v-if="item.state != '处理中'">{{item.endTime}}</div>
-                    <div class="applyHistory-remark" v-if="item.approveMsg">{{item.approveMsg}}</div>
+                    <div class="applyHistory-remark" v-if="item.approveMsg&&item.statecode!='8'&&item.statecode!='9'">{{item.approveMsg}}</div>
                 </div>
             </div>
         </div>
@@ -68,16 +67,15 @@
         getApplyHisory(processInstanceId);
 
         function getApplyHisory(processInstanceId){
-            var history = {};
-            var execute = {};
+            var history = [];
+            var execute = [];
             var url = '';
             $.get(document.showUrl + "service/task/taskhistory?" + processInstanceId, function(data){
                 if(data.source){
-                    console.log(data);
                     history = data.data.task.history;
                     for(var i=0;i<history.length;i++){
-                        if(history[0]){
-                            history[0].activityName = "开始";
+                        if(history[i].activityName == "start"){
+                            history[i].activityName = "开始";
                         }
                         if(history[i].activityName == "end"){
                             history[i].activityName = "结束";

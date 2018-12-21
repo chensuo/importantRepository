@@ -7,8 +7,6 @@ $(function(){
     $.get(document.lnkUrl + "api/front/tabs", function(data){
         if(data.code == 200){
             tabbars = data.body;
-            //tabbars[1].TAB_URL = "https://hrwechat-qas.csvw.com/ssc";
-            //tabbars[2].TAB_URL = "https://hrwechat-qas.csvw.com/ssc/wd/index.jhtml";
             tabbars.sort(compare('TAB_SORT'));
             for(var i=0;i<tabbars.length;i++){
                 urlList.push(tabbars[i].TAB_URL);
@@ -17,26 +15,8 @@ $(function(){
                 el: '#tabs',
                 data: {tabbars: tabbars}
             });
-            //if(url.indexOf("/ssc/contentwd/index.jhtml") >= 0){
-            //    url = "/ssc/contentwd/index.jhtml";
-            //    for(var i=0;i<urlList.length;i++){
-            //        if(urlList[i].indexOf(url) >=0){
-            //            $($("#tabs>a")[i]).find(".tabbar-inactive").remove();
-            //            $($("#tabs>a")[i]).find(".tabbar-active").css("display" , "block");
-            //        }
-            //    }
-            //}
-            //if(url.indexOf("/ssc/contentbk/index.jhtml") >= 0){
-            //    url = "/ssc/contentbk/index.jhtml";
-            //    for(var i=0;i<urlList.length;i++){
-            //        if(urlList[i].indexOf(url) >=0){
-            //            $($("#tabs>a")[i]).find(".tabbar-inactive").remove();
-            //            $($("#tabs>a")[i]).find(".tabbar-active").css("display" , "block");
-            //        }
-            //    }
-            //}
-            if(url.indexOf("/ssc/wd/index.jhtml") >= 0){
-                url = "/ssc/wd/index.jhtml";
+            if(url.indexOf("/ssc/contentwd/index.jhtml") >= 0){
+                url = "/ssc/contentwd/index.jhtml";
                 for(var i=0;i<urlList.length;i++){
                     if(urlList[i].indexOf(url) >=0){
                         $($("#tabs>a")[i]).find(".tabbar-inactive").remove();
@@ -44,9 +24,14 @@ $(function(){
                     }
                 }
             }
-            else{
-                $($("#tabs>a")[1]).find(".tabbar-inactive").remove();
-                $($("#tabs>a")[1]).find(".tabbar-active").css("display" , "block");
+            if(url.indexOf("/ssc/contentbk/index.jhtml") >= 0){
+                url = "/ssc/contentbk/index.jhtml";
+                for(var i=0;i<urlList.length;i++){
+                    if(urlList[i].indexOf(url) >=0){
+                        $($("#tabs>a")[i]).find(".tabbar-inactive").remove();
+                        $($("#tabs>a")[i]).find(".tabbar-active").css("display" , "block");
+                    }
+                }
             }
         }
     });

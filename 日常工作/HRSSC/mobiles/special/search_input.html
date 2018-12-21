@@ -91,11 +91,18 @@
 
             /*应用搜索*/
             var applicationList = [];
-            var appData = ${apps};
+            var appData = "";
             //0表示获取数据成功；失败则list为空
-            if(appData.resCode == "0"){
-                applicationList = appData.applicationList;
+            if(${apps} == null){
+                appData = "";
             }
+            else{
+                appData = ${apps};
+                if(appData.resCode == "0"){
+                    applicationList = appData.applicationList;
+                }
+            }
+
             new Vue({
                 el: '#applicationList',
                 data: {applicationList: applicationList}

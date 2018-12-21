@@ -13,30 +13,31 @@
     <script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
     <script src="${resSys}/front.js" type="text/javascript"></script>
 </head>
-<body aria-atomic="False">
+<body aria-atomic="False" style="background: #f5f5f5;">
 
 <div class="weui-tab" style="height: calc(100% + 50px);">
-    [#include "../include/pullToRefresh.html"/]
-    <div class="myfavorite-pd">
-        <img src="/${mobileRes!}/img/wode_shouchang.png" alt=""/>我的收藏
-    </div>
-    <div  class="discovery_tab">
-        <div class="weui-pannel__bd mine-weui-pannel__bd">
+    <div  style="min-height: calc(100% + 1px);">
+        [#include "../include/pullToRefresh.html"/]
+        <div class="myfavorite-pd">
+            <img src="/${mobileRes!}/img/wode_shouchang.png" alt=""/>我的收藏
+        </div>
+        <div  class="discovery_tab">
+            <div class="weui-pannel__bd mine-weui-pannel__bd">
 
-            [#if pagination.list?size gt 0]
-            [#list pagination.list as c]
-            <a href="${c.url!}?id=${user.id}" class="myfavorite-item">${c.title}</a>
-            [/#list]
-            <div class="no-more-info">没有更多了</div>
-            [#else]
-            <!-- 暂无收藏提示-->
-            <div class="nocollect-info-dv-sec" style="display:block;">
-                <img src="/${mobileRes!}/img/myfavourite.png" alt=""/>
+                [#if pagination.list?size gt 0]
+                [#list pagination.list as c]
+                <a href="${c.url!}?id=${user.id}" class="myfavorite-item">${c.title}</a>
+                [/#list]
+                <div class="no-more-info" style="background: #f5f5f5;width: 100%">没有更多</div>
+                [#else]
+                <!-- 暂无收藏提示-->
+                <div class="nocollect-info-dv-sec" style="display:block;">
+                    <img src="/${mobileRes!}/img/myfavourite.png" alt=""/>
+                </div>
+                [/#if]
             </div>
-            [/#if]
         </div>
     </div>
-
 </div>
 <!-- 回到顶部按钮-->
 <div class="top"></div>

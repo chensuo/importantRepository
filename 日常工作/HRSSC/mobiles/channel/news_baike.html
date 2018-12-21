@@ -9,110 +9,43 @@
     <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
     <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
 
-
 </head>
 
 <body ontouchstart >
 [#include "../include/header.html"/]
 
 <nav id="discovery-nav">
-    <a>常见问题</a>
-    <a>业务指南</a>
+    <a class="on">常见问题<span></span></a>
+    <a>业务指南<span></span></a>
 </nav>
 
-<div class="weui-tab"  style="background: #ffffff;margin-top: 47px;height: calc(100% - 101px);">
+<div class="weui-tab weui-tab-one"  style="background: #ffffff;margin-top: 60px;height: calc(100% - 115px);">
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
         <div class="discovery_tab">
             <!-- 常见问题开始-->
-            <div class="weui-panel__bd">
-
+            <div class="weui-panel__bd weui-panel__bd-one" style="overflow: auto;height: 100%;">
                 [#include "../include/pullToRefresh.html"/]
-
-                [@cms_content_list channelId='97' orderBy='4'  titLen='30' s_sscCompany='${user.attr.sscCompany}' o_sscCompany='like'
-                s_sscLine='${user.attr.sscLine}' o_sscLine='like' descLen='70' append='...' channelOption='1' dateFormat='yyyy-MM-dd']
-
-                [#list tag_list as a]
-                <a href="${a.url}?id=${wx_user}" class="weui-media-box weui-media-box_appmsg">
-                    [#if a.typeImg??]
-                    <div class="weui-media-box__hd">
-                        <img class="weui-media-box__thumb" src="${a.typeImg!}">
-                    </div>
-                    [/#if]
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title">
-                            [#if a.topLevel>0]<span class="stick">置顶</span> [/#if]
-                            [@text_cut s=a.title len=titLen append=append/]
-                        </h4>
-                        [#if a.description??]
-                        <p class="weui-media-box__desc">
-                            [@text_cut s=a.description len='70' append=append/]
-                        </p>
-                        [#else]
-                        <p class="weui-media-box__desc">
-                            暂无摘要
-                        </p>
-                        [/#if]
-                        <div class="item-bottom">
-                                    <span>
-                                          <span class="read-span"><img src="/${mobileRes!}/img/icon_yuedu.png" alt=""/> ${a.views!}</span>
-                                    </span>
-                            <span>${a.releaseDate?string(dateFormat)}</span>
-                        </div>
-                    </div>
-                </a>
-                [/#list]
-                [/@cms_content_list]
-                <div class="no-more-info">没有更多了</div>
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
             </div>
         </div>
     </div>
 </div>
 
-<div class="weui-tab weui-tab-sec"  style="background: #ffffff;display:none;margin-top: 47px;height: calc(100% - 101px);">
+<div class="weui-tab weui-tab-sec"  style="background: #ffffff;display:none;margin-top: 60px;height: calc(100% - 115px);">
     <!-- tab切换页区域开始 -->
     <div class="weui-tab__bd weui-tab__bd-zdy">
         <div class="discovery_tab">
             <!-- 业务指南开始-->
-            <div class="weui-panel__bd">
-
+            <div class="weui-panel__bd weui-panel__bd-sec">
                 [#include "../include/pullToRefresh.html"/]
-
-                [@cms_content_list channelId='98' orderBy='4'  titLen='15' s_sscCompany='${user.attr.sscCompany}' o_sscCompany='like'
-                s_sscLine='${user.attr.sscLine}' o_sscLine='like' descLen='70' append='...' channelOption='1' dateFormat='yyyy-MM-dd']
-                [#list tag_list as a]
-                <a href="${a.url}" class="weui-media-box weui-media-box_appmsg">
-                    [#if a.typeImg??]
-                    <div class="weui-media-box__hd">
-                        <img class="weui-media-box__thumb" src="${a.typeImg!}">
-                    </div>
-                    [/#if]
-                    <div class="weui-media-box__bd">
-                        <h4 class="weui-media-box__title">
-                            [#if a.topLevel>0]<span class="stick">置顶</span> [/#if]
-                            [@text_cut s=a.title len=titLen append=append/]
-                        </h4>
-                        [#if a.description??]
-                        <p class="weui-media-box__desc">
-                            [@text_cut s=a.description len='70' append=append/]
-                        </p>
-                        [#else]
-                        <p class="weui-media-box__desc">
-                            暂无摘要
-                        </p>
-                        [/#if]
-
-                        <div class="item-bottom">
-                                    <span>
-                                          <span class="read-span"><img src="/${mobileRes!}/img/icon_yuedu.png" alt=""/> ${a.views!}</span>&nbsp;
-                                    </span>
-                            <span>${a.releaseDate?string(dateFormat)}</span>
-                        </div>
-                    </div>
-                </a>
-                [/#list]
-                [/@cms_content_list]
-                <div class="no-more-info">没有更多了</div>
+            </div>
+            <div class="weui-loadmore weui-loadmore-sec">
+                <i class="weui-loading weui-loading-sec"></i>
+                <span class="weui-loadmore__tips weui-loadmore__tips-sec">正在加载</span>
             </div>
         </div>
     </div>
@@ -144,6 +77,164 @@
             $($(".top-container>div")[index]).css("zIndex","503");
             e.preventDefault();
         });
+
+        /*滚动加载*/
+
+        var userId = ${user.username};
+        var first = 0;
+        var firstSec = 0;
+        var count = 10;
+        var countSec = 10;
+        var loading = false;
+        var loadingSec = false;
+        var clickCount = 0;
+        var hasNoMore = 0;
+        var hasNoMoreSec = 0;
+        $("#discovery-nav>a:nth-child(2)").bind("click" , function(){
+            if(clickCount==0){
+                loadlistSec();
+            }
+            clickCount = 1;
+        });
+        loadlistOne();
+        $(".weui-tab-one").infinite(40).on("infinite", function () {
+            if (loading) return;
+            loading = true;
+            first = first+count;
+            $('.weui-loadmore').show();
+            setTimeout(function () {
+                loadlistOne();
+                loading = false;
+            }, 500);
+        });
+        $(".weui-tab-sec").infinite(40).on("infinite", function () {
+            if (loadingSec) return;
+            loadingSec = true;
+            firstSec = firstSec+countSec;
+            $('.weui-loadmore-sec').show();
+            setTimeout(function () {
+                loadlistSec();
+                loadingSec = false;
+            }, 500);
+        });
+        function loadlistOne() {
+            $.ajax({
+                type: "GET",
+                url: document.tokenUrl + "api/front/content/list?channelIds=97&userid="+userId+"&first="+first+"&count="+count,
+                dataType: "json",
+                error: function (request) {
+                    $(".weui-loadmore").hide();
+                    $(".weui-panel__bd-one").append("<div class=\"no-more-info\">加载失败</div>");
+                    loading = true;
+                },
+                success: function (data) {
+                    if (data.body.length>0) {
+                        $(".weui-panel__bd-one").append(getData(data));
+                        if(data.body.length<count){
+                            $(".weui-panel__bd-one").append("<div class=\"no-more-info\">没有更多</div>");
+                            hasNoMore = 1;
+                            $(".weui-tab-one").destroyInfinite();
+                            setTimeout(function () {
+                                loading = true;
+                            },1100);
+                        }
+                    }
+                    else{
+                        if(hasNoMore == 1){
+                            $(".weui-tab-one").destroyInfinite();
+                            setTimeout(function () {
+                                loading = true;
+                            },1100);
+                        }
+                        else{
+                            $(".weui-panel__bd-one").append("<div class=\"no-more-info\">没有更多</div>");
+                            $(".weui-tab-one").destroyInfinite();
+                            setTimeout(function () {
+                                loading = true;
+                            },1100);
+                        }
+
+                    }
+                    $(".weui-loadmore").hide();
+                }
+            });
+        }
+        function loadlistSec() {
+            $.ajax({
+                type: "GET",
+                url: document.tokenUrl + "api/front/content/list?channelIds=98&userid="+userId+"&first="+firstSec+"&count="+countSec,
+                dataType: "json",
+                error: function (request) {
+                    $(".weui-loadmore-sec").hide();
+                    $(".weui-panel__bd-sec").append("<div class=\"no-more-info\">加载失败</div>");
+                    loadingSec = true;
+                },
+                success: function (data) {
+                    if (data.body.length>0) {
+                        $(".weui-panel__bd-sec").append(getData(data));
+                        if(data.body.length<countSec){
+                            $(".weui-panel__bd-sec").append("<div class=\"no-more-info\">没有更多</div>");
+                            hasNoMoreSec = 1;
+                            $(".weui-tab-sec").destroyInfinite();
+                            setTimeout(function () {
+                                loadingSec = true;
+                            },1100);
+                        }
+                    }
+                    else{
+                        if(hasNoMoreSec == 1){
+                            $(".weui-tab-sec").destroyInfinite();
+                            setTimeout(function () {
+                                loadingSec = true;
+                            },1100);
+                        }
+                        else{
+                            $(".weui-panel__bd-sec").append("<div class=\"no-more-info\">没有更多</div>");
+                            $(".weui-tab-sec").destroyInfinite();
+                            setTimeout(function () {
+                                loadingSec = true;
+                            },1100);
+                        }
+
+                    }
+                    $(".weui-loadmore-sec").hide();
+                }
+            });
+        }
+
+        function getData(data){
+            var html = "";
+            for (var i = 0; i < data.body.length; i++) {
+                html += '<a href='+data.body[i].url+' class="weui-media-box weui-media-box_appmsg">';
+                if(data.body[i].typeImg){
+                    html += '<div class="weui-media-box__hd">';
+                    html += '<img class="weui-media-box__thumb" src="'+data.body[i].typeImg+'">';
+                    html += '</div>';
+                }
+                html += '<div class="weui-media-box__bd">';
+                html += '<h4 class="weui-media-box__title">'+data.body[i].title+'</h4>';
+                if(data.body[i].description){
+                    html += '<p class="weui-media-box__desc">'+data.body[i].description+'</p>';
+                }
+                if(!data.body[i].description){
+                    html += '<p class="weui-media-box__desc">暂无摘要</p>';
+                }
+                html += '<div class="item-bottom">';
+                html += '<span>';
+                html += '<span class="read-span"><img src="/${mobileRes!}/img/icon_yuedu.png" alt=""/>'+data.body[i].views+'</span>';
+                html += '</span>';
+                html += '<span>'+data.body[i].releaseDate.split(" ")[0]+'</span>';
+                if(data.body[i].topLevel>0){
+                    html += '<span class="stick">置顶</span>';
+                }
+                html += '</div>';
+                html += '</div>';
+                html += '</a>';
+            }
+            return html;
+        }
+
+
     });
     $(function(){
         /*back-to-top sec*/
