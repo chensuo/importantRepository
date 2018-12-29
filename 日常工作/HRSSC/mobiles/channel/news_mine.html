@@ -5,10 +5,23 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
     <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
     <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
     <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
     <script src="/${mobileRes!}/js/vue.min.js"></script>
+
 </head>
 <body aria-atomic="False">
 <div class="mine-container" id="lnkUrl">
@@ -19,7 +32,7 @@
             </div>
             <div class="user-info-container">
                 <div>${user.realname}</div>
-                <div>春风十里不如你</div>
+                <div>Hello，2019!</div>
             </div>
             <div class="user-companyinfo-container">
                 <div>

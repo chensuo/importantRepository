@@ -5,11 +5,21 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
 
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
     <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
     <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
     <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
-
     <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
     <meta content="${content.tagStr!}" http-equiv="keywords" />
     <meta content="${content.description!}" http-equiv="description"/>
@@ -128,9 +138,9 @@
         $(".collect-success-container>div").bind("click" , function(){
             $(".collect-success-dialog").fadeOut(250,"swing");
         });
-
     });
 </script>
+
 <script src="/${mobileRes!}/js/jquery-weui.js"></script>
 <script src="/${mobileRes!}/js/back-to-top.js"></script>
 <script src="/${mobileRes!}/js/pullToRefresh.js"></script>

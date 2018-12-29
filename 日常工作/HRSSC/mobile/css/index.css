@@ -357,10 +357,11 @@ footer a {
   margin-bottom: 8px;
 }
 .discovery_content_tab .content-txt>p{
-  color: #A6A6A6;
+  color: #A5A5A5;
+  font-size: 16px;
 }
 .discovery_content_tab .content-txt>p>strong{
-  color: #333;
+  color: #A5A5A5;
 }
 .discovery_content_tab .weui-panel__hd , .discovery_tab .weui-panel__hd{
   font-size: 16px;
