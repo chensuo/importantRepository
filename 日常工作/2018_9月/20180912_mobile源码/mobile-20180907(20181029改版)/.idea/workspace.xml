@@ -24,8 +24,8 @@
       <file leaf-file-name="discovery_2.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/mobiles/channel/discovery_2.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.41284403">
-              <caret line="462" column="48" selection-start-line="462" selection-start-column="48" selection-end-line="462" selection-end-column="48" />
+            <state vertical-scroll-proportion="0.0">
+              <caret line="462" column="69" selection-start-line="462" selection-start-column="69" selection-end-line="462" selection-end-column="69" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
@@ -47,7 +47,7 @@
       <file leaf-file-name="news_baike原本.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/mobiles/channel/news_baike原本.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="15.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
               <folding />
             </state>
@@ -234,8 +234,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -378,6 +376,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -842,7 +842,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mobiles/channel/news_baike原本.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="15.0">
+        <state vertical-scroll-proportion="0.0">
           <caret line="111" column="20" selection-start-line="111" selection-start-column="20" selection-end-line="111" selection-end-column="20" />
           <folding />
         </state>
@@ -850,8 +850,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/mobiles/channel/discovery_2.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.41284403">
-          <caret line="462" column="48" selection-start-line="462" selection-start-column="48" selection-end-line="462" selection-end-column="48" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="462" column="69" selection-start-line="462" selection-start-column="69" selection-end-line="462" selection-end-column="69" />
           <folding>
             <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
