@@ -353,7 +353,6 @@ footer a {
   color: #BFBFBF;
 }
 .discovery_content_tab .content-txt img{
-  box-shadow: 1px 1px 6px #f1f1f1;
   margin-bottom: 8px;
 }
 .discovery_content_tab .content-txt>p{
@@ -1540,4 +1539,7 @@ footer a {
   margin: 0 auto;
   padding: 20px 0;
   border-top: 1px solid #EFEFEF;
+}
+.weui-photo-browser-modal{
+  z-index: 666;
 }
