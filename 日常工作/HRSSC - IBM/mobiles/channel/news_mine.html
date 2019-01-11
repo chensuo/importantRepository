@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
+    <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
+    <script src="/${mobileRes!}/js/vue.min.js"></script>
+
+</head>
+<body aria-atomic="False">
+<div class="mine-container" id="lnkUrl">
+        <div class="item-container"  id="userInfo">
+            <div class="user-header-container">
+                <img class="user-header" alt="" src="${user.userImg}"/>
+                <!--<img v-else class="user-header" alt="" src="/${mobileRes!}/img/default_header.jpg"/>-->
+            </div>
+            <div class="user-info-container">
+                <div>${user.realname}</div>
+                <div>Hello，2019!</div>
+            </div>
+            <div class="user-companyinfo-container">
+                <div>
+                    <img src="/${mobileRes!}/img/icon_jobnumber.png" alt=""/>
+                    <div>${user.username}</div>
+                </div>
+                <div>
+                    <img src="/${mobileRes!}/img/icon_apartment.png" alt=""/>
+                    <div>${user.attr.sscDepartment}</div>
+                </div>
+            </div>
+        </div>
+        <div class="item-container">
+            <a :href="lnkUrl+'contentwdsq/index.jhtml'" class="item-list">
+                <img src="/${mobileRes!}/img/wode_shengqing.png" alt=""/>
+                <span>我的申请</span>
+                <i id="applyCount" v-if="applyCount>0" v-cloak>{{applyCount}}</i>
+                <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+            </a>
+            <a :href="lnkUrl+'contentwddb/index.jhtml'" class="item-list">
+                <img src="/${mobileRes!}/img/wode_daiban.png" alt=""/>
+                <span>我的待办</span>
+                <i id="todoCount" v-if="todoCount>0" v-cloak>{{todoCount}}</i>
+                <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+            </a>
+            <a href="${base}/member/collection_list.jspx?id=${user.id}" class="item-list">
+                <img src="/${mobileRes!}/img/wode_shouchang.png" alt=""/>
+                <span>我的收藏</span>
+                <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+            </a>
+            <!--<a href="" class="item-list">-->
+            <!--<img src="/${mobileRes!}/img/wode_zaixianfuwu.png" alt=""/>-->
+            <!--<span>在线服务</span>-->
+            <!--<img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>-->
+            <!--</a>-->
+        </div>
+</div>
+<!-- 底部固定区域菜单开始 -->
+[#include "../include/tabbar.html"/]
+
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $.ajaxSetup({ async: false });
+    $(function () {
+        FastClick.attach(document.body);
+
+        var applyCount = 0;
+        var todoCount = 0;
+
+        if(!$(".user-header").attr("src")){
+            $(".user-header").attr("src" , "/${mobileRes!}/img/default_header.jpg");
+        };
+
+        //token加密进入
+        var userId = ${user.username};
+        $.get(document.tokenUrl + "api/front/token?loginId=" + userId , function(data){
+            if(data.code == 200){
+                getApplyCount(data.body.token);
+                getTodoCount(data.body.token);
+            }
+        });
+
+
+        function getApplyCount(token){
+            $.get(document.showUrl + "service/task/myapplycount?username=" + token, function(data){
+                if(data.source){
+                    applyCount = data.data;
+
+                }
+            } );
+            new Vue({
+                el: '#applyCount',
+                data: {applyCount: applyCount}
+            });
+        }
+        function getTodoCount(token){
+            $.get(document.showUrl +　"service/task/mytodotaskcount?username=" + token, function(data){
+                if(data.source){
+                    todoCount = data.data;
+                }
+            } );
+            new Vue({
+                el: '#todoCount',
+                data: {todoCount: todoCount}
+            });
+        }
+        new Vue({
+            el: '#lnkUrl',
+            data: {lnkUrl: document.lnkUrl}
+        });
+
+    });
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/urlJudge.js"></script>
+</body>
+</html>

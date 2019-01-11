@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="/${mobileRes!}/css/font-awesome.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/sub.css" />
+    <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
+    <script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+    <script src="${resSys}/front.js" type="text/javascript"></script>
+</head>
+
+<body aria-atomic="False">
+<div class="inContent">
+    <div class="StylistT">
+        <img src="/${mobileRes!}/img/Styl_01.png" />
+        <h1>姓名：${user.username!}</h1>
+        <h2>工号：XXXXX</h2>
+        <h2>部门：XXXXX</h2>
+    </div>
+</div>
+<!-- 栏目位置开始-->
+<div class="myfavorite-pd">
+    <a href="${base}/wd/index.jhtml?id=${wx_user}" class="left-arrow-container search-result-return">
+        <span class="left-arrow"></span>
+    </a>
+    我的收藏
+</div>
+<!-- 栏目位置结束-->
+<div class="weui-tab" style="height: calc(100% - 178px);">
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd">
+
+            <!-- 下拉刷新开始-->
+            <div class="weui-pull-to-refresh__layer">
+                <div class='weui-pull-to-refresh__arrow'></div>
+                <div class='weui-pull-to-refresh__preloader'></div>
+                <div class="down">下拉刷新</div>
+                <div class="up">释放刷新</div>
+                <div class="refresh">正在刷新</div>
+            </div>
+            <!-- 下拉刷新结束-->
+
+            [#if pagination.list?size gt 0]
+            [#list pagination.list as c]
+            <!-- 无图话题-->
+            <a href="${c.url!}?id=${wx_user!}" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                <!-- 一个单位开始-->
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title myfavorite_box-title">${c.title}</h4>
+                    <div class="collect-dv" onclick="Cms.cmsCollect('${base}','${c.id}',0)" id="cancelSpan"  style="cursor: pointer;">
+                        <img src="/${mobileRes!}/img/cancel_collect.png" alt=""/>
+                        取消收藏
+                    </div>
+                    [#if c.description??]
+                    <p class="weui-media-box__desc">
+                        [@text_cut s=c.description len='70' append=append/]
+                    </p>
+                    [#else]
+                    <p class="weui-media-box__desc">
+                        暂无摘要
+                    </p>
+                    [/#if]
+
+
+                    <div class="item-bottom">
+                           <span>
+                                  <span>${c.ctgName}</span>&nbsp;
+                                  <span>阅读  ${c.views!}</span>
+                            </span>
+                        <span>${c.releaseDate?string('yyyy-MM-dd')}</span>
+                    </div>
+                </div>
+            </a>
+            [/#list]
+            [#else]
+            <!-- 暂无收藏提示-->
+            <div class="nocollect-info-dv">
+                抱歉，您暂无收藏！
+            </div>
+            [/#if]
+
+
+        </div>
+
+    </div>
+
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<!-- 底部固定区域菜单开始 -->
+[#include "../include/tabbar.html"/]
+
+
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+        /*我的收藏页面取消收藏*/
+        $(".collect-dv").bind('click' , function(e){
+            if(e.preventDefault){
+                e.preventDefault();
+            }else{
+                window.event.returnValue == false;
+            }
+            $(this).parents(".weui-media-box").remove();
+        });
+    });
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+</body>
+</html>

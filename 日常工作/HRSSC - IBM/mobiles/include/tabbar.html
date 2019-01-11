@@ -1,0 +1,18 @@
+<!-- 底部固定区域菜单开始 -->
+<div class="weui-tabbar fixed-bottom" id="tabs">
+    <a v-for="item in tabbars" :href="item.TAB_URL" class="weui-tabbar__item" v-cloak>
+        <div class="tabbar-inactive">
+            <div class="weui-tabbar__icon">
+                <img :src="item.TAB_UNCLICK_IMG" alt="">
+            </div>
+            <p class="weui-tabbar__label">{{item.TAB_NAME}}</p>
+        </div>
+        <div class="tabbar-active">
+            <div class="weui-tabbar__icon">
+                <img :src="item.TAB_CLICK_IMG" alt="">
+            </div>
+            <p class="weui-tabbar__label">{{item.TAB_NAME}}</p>
+        </div>
+    </a>
+</div>
+<!-- 底部固定区域菜单结束 -->

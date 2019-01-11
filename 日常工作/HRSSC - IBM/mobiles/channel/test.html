@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery实现JSONP</title>
+</head>
+<body>
+<div id="mydiv">
+    <button id="btn">点击</button>
+</div>
+</body>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript">
+    $(function(){
+        function handleResponse(response){
+            123;
+        }
+        $("#btn").click(function(){
+
+            $.ajax({
+                async : true,
+                url : "https://api.douban.com/v2/book/search",
+                type : "GET",
+                dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+                jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+                jsonpCallback: 'handleResponse', //设置回调函数名
+                data : {
+                    q : "javascript"
+                },
+                success: function(response, status, xhr){
+                    console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+                    console.log(response);
+                }
+            });
+        });
+    });
+</script>
+</html>
+<!-- 头部搜索框区域开始 -->
+<!--<div class="weui-search-bar" id="searchBar">-->
+<!--<div class="search-input-container" style="height:30px; line-height:30px;">-->
+<!--<form action="${base}/search.jspx" onsubmit="nospace();">-->
+<!--<i class="weui-icon-search" style="transform:translateY(-3px)"></i>-->
+<!--<input type="search" name="q" value="${oldq!}" maxlength="50"   placeholder="您有什么问题" required="" autocomplete="off" style="font-size:18px;text-indent:1em; line-height:30px;">-->
+<!--<script>-->
+<!--function nospace(){-->
+<!--if(isNull($("input[name=q]").val())){-->
+<!--$("input[name=q]").val("");-->
+<!--}-->
+<!--}-->
+<!--function isNull( str ){-->
+<!--if ( str == "" ) return true;-->
+<!--var regu = "^[ ]+$";-->
+<!--var re = new RegExp(regu);-->
+<!--return re.test(str);-->
+<!--}-->
+<!--</script>-->
+<!--</form>-->
+<!--</div>-->
+
+<!--</div>-->
+
+s_sscCompany='${user.attr.sscCompany}' o_sscCompany='like'
+s_sscLine='${user.attr.sscLine}' o_sscLine='like'
+s_sscGroup='${user.attr.sscGroup}' o_sscGroup='like'
+s_sscSubGroup='${user.attr.sscSubGroup}' o_sscSubGroup='like'
+
+alert(window.location.href);
+<a v-for="item in appList" :href="item.applicationURL" class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none" v-cloak>
+    <img :src="item.applicationIcon" alt=""/>{{item.applicationName}}
+</a>
+/${mobileRes}/img/youhuigouche.png
+/*判断当前"通知公告"页面是否是由详情页面返回的(适用jeecms布置后效果,模板无效果)*/
+//当前通知公告页面是从"业务指南"的某一详情返回的,页面显示"业务指南"列表内容；
+//当前通知公告页面是从"常见问题"的某一详情返回或者是从其他页面进入的,页面显示"常见问题"列表内容；
+/*下拉刷新*/
+// 下拉刷新触发时执行的操作放这里。
+//结束刷新
+//do something
+
+
+
+/*根据url判断当前页面tabbar选中情况(发布于JEECMS时，需要更改indexOf里字符串)*/
+
+//服务页面选中
+//if(url.indexOf("tzgg/") >= 0 || url.indexOf("xw/") >= 0){
+//    $($tabbarItem[1]).addClass('weui-bar__item--on');
+//    $($tabbarItem[1]).find("img").attr("src" , "/cms/r/cms/www/mobile/img/dibu_fuwu_xuanzhong.png");
+//    return false;
+//}
+//我的页面判断选中
+
+//百科页面选中
+
+
+//            var workNo = ${user.username};
+//            var keyWord = $("input[name=q]").val();
+//            var password = "ssc@hr1109";
+//            var appList = [];
+//            $.ajax({
+//                type:"POST",
+//                url:"http://desyb2.do1.net.cn/wehr-dz/open/communicateOpenAction!searchApplicationByUser.action",
+//                data:{workNo:workNo,keyWord:keyWord,password:password},
+//                dataType:"json",
+//                success:function(data){
+//                    if(data.resCode == 0){
+//                        appList = data.applicationList;
+//                    }
+//                },
+//                error:function(){
+//                }
+//            });
+//            new Vue({
+//                el: '#appList',
+//                data: {appList: appList}
+//            });
+
+
+
+{TAB_CLICK_IMG: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADa0lEQVRoQ+1ZTWgTQRT+XjaVKhH0UKHFgxcvelChXqxIRSh4EE+lB6WeOrNN9CLoQagGz1IP/jQzIaKgCKEH9SCIRQXxolBExItoQUUPEbwYZZuQJ1uauOnf7jRNsgvNYQ+Z9/N98+a9eTNDiPiPIo4f6wTaHcFaBLTWRwGkmXkvgA3tBubjf5aIpkql0tAcgUwmc4yIHgKRWVIFIhoQQrylbDa7vVKpvAOwNeSzXoXHAI5IKZ+7f5BS6hqA0wbgpwLI9gLYEkDOWISIngohBqqKLoEZADuCWpJS+lYupdRLAAeD2jSRI6JzQogrXgKOSdKGgMCQECLvJfAdQHfQWQgBgZQQ4maNgNb6DjMPR4UAgEdSyuNeAruZeTroMmp3BACUK5VK3+jo6Ou5KuR+tNZJZr4RJAohIODCnInFYodGRka+1SqKUioF4BKArpWIhISAC3E6Ho/315XEdDod7+rq6iaijuVIJJPJz36RyuVyPY7jdPrJrXbcsqy/UsoftSW0WkNh0KtFYHx8fGNnZ6fvrCWTyV9+wHO53GbHceJ+cqbjiURidnh4uOjVqybxCWa+FaQShSAHPjFz2rbtu3VLaGJiYl8sFnsSlSQmopNCiHt1SeyeCZj5cUSq0B/LsvYsasyUUq8AHFiOhHcJMbPbjvcKId545ZvZzHn9MHN2KQJjAC77EchkMruISLldJzM/A3DGtu0Prl6rCAD4v5FVASulRgHUmqWFRIrF4qZEInGBmc8vSPoyM+tyuXyxo6PjQbPa6QV4Zo0jAOAjgJ0r5MlPABUA20zL5Crkl4zAijmwCidNU1mUA0GqUNPQmBuur0JB9wFzP83RqNsHtNaBd+LmwDGy6u7EY7Zt36/biYP2Qkau1liYmUupVOr3ol5ojf201FxdGc3n81ahUOhZ6TzQUnTLOLMsqyyE+EpEbHwiCwOBeQzvHcfpmyMwf5y8HiJwflDcy7h+KeUX0lob3Ur4WW7BeJmI9rsXu3NVSCl1G8CpFjheExdENCmEGKwacwkY3cytCYrGjEgppfYSMLobbcx349rMPGjb9qSXgNHtdOMQGrZwVkp51UvA9H2gYQSNGCCiF0KIwzUCkX+hcZlE+o2sGoqIvVKW3Kem2itlI2uy3bq+713tBujnf52A3ww1ezzyEfgHH59fUkqHuP4AAAAASUVORK5CYII=",
+TAB_NAME: "ta的",
+TAB_SORT: 0,
+TAB_UNCLICK_IMG: "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAADa0lEQVRoQ+1ZTWgTQRT+XjaVKhH0UKHFgxcvelChXqxIRSh4EE+lB6WeOrNN9CLoQagGz1IP/jQzIaKgCKEH9SCIRQXxolBExItoQUUPEbwYZZuQJ1uauOnf7jRNsgvNYQ+Z9/N98+a9eTNDiPiPIo4f6wTaHcFaBLTWRwGkmXkvgA3tBubjf5aIpkql0tAcgUwmc4yIHgKRWVIFIhoQQrylbDa7vVKpvAOwNeSzXoXHAI5IKZ+7f5BS6hqA0wbgpwLI9gLYEkDOWISIngohBqqKLoEZADuCWpJS+lYupdRLAAeD2jSRI6JzQogrXgKOSdKGgMCQECLvJfAdQHfQWQgBgZQQ4maNgNb6DjMPR4UAgEdSyuNeAruZeTroMmp3BACUK5VK3+jo6Ou5KuR+tNZJZr4RJAohIODCnInFYodGRka+1SqKUioF4BKArpWIhISAC3E6Ho/315XEdDod7+rq6iaijuVIJJPJz36RyuVyPY7jdPrJrXbcsqy/UsoftSW0WkNh0KtFYHx8fGNnZ6fvrCWTyV9+wHO53GbHceJ+cqbjiURidnh4uOjVqybxCWa+FaQShSAHPjFz2rbtu3VLaGJiYl8sFnsSlSQmopNCiHt1SeyeCZj5cUSq0B/LsvYsasyUUq8AHFiOhHcJMbPbjvcKId545ZvZzHn9MHN2KQJjAC77EchkMruISLldJzM/A3DGtu0Prl6rCAD4v5FVASulRgHUmqWFRIrF4qZEInGBmc8vSPoyM+tyuXyxo6PjQbPa6QV4Zo0jAOAjgJ0r5MlPABUA20zL5Crkl4zAijmwCidNU1mUA0GqUNPQmBuur0JB9wFzP83RqNsHtNaBd+LmwDGy6u7EY7Zt36/biYP2Qkau1liYmUupVOr3ol5ojf201FxdGc3n81ahUOhZ6TzQUnTLOLMsqyyE+EpEbHwiCwOBeQzvHcfpmyMwf5y8HiJwflDcy7h+KeUX0lob3Ur4WW7BeJmI9rsXu3NVSCl1G8CpFjheExdENCmEGKwacwkY3cytCYrGjEgppfYSMLobbcx349rMPGjb9qSXgNHtdOMQGrZwVkp51UvA9H2gYQSNGCCiF0KIwzUCkX+hcZlE+o2sGoqIvVKW3Kem2itlI2uy3bq+713tBujnf52A3ww1ezzyEfgHH59fUkqHuP4AAAAASUVORK5CYII=",
+TAB_URL: "http://www.b123"}
+
+$(".article-footer-operation>a").attr("href" , document.showUrl+"form.do?method=view&formId=402893a566cede940166d2824de20012&businessTypes="+${channel.keywords!});
