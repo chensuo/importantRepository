@@ -1,7 +1,7 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
-    <title>SSC共享服务中心</title>
+    <title>我的收藏</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -28,9 +28,9 @@
         </div>
         <!-- 下拉刷新结束-->
         <!-- 栏目位置开始-->
-        <div class="myfavorite-pd">
-            <img src="../../mobile/img/wode_shouchang.png" alt=""/>我的收藏
-        </div>
+        <!--<div class="myfavorite-pd">-->
+            <!--<img src="../../mobile/img/wode_shouchang.png" alt=""/>我的收藏-->
+        <!--</div>-->
         <div class="weui-pannel__bd mine-weui-pannel__bd">
 
             <!-- 我的收藏单位项目-->
@@ -86,6 +86,7 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
+        $($(".myfavorite-item")[0]).css("borderTop","none");
         var userId = 20265;
         var first = 0;
         var count = 10;
