@@ -1401,23 +1401,24 @@ footer a {
   display: none;
 }
 .return-info-container{
-  position: absolute;
+  position: relative;
   width: 90%;
-  height: 65%;
+  min-height: 65%;
   z-index: 503;
   background: #fff;
   top: 46%;
   left: 50%;
   transform: translate(-50%,-50%);
   border-radius: 8px;
-  display: flex;
-  flex-direction:column;
-  justify-content:space-between;
+  /*display: flex;*/
+  /*flex-direction:column;*/
+  /*justify-content:space-between;*/
 }
 .return-info-container>span{
   border-top: 1px solid #EFEFEF;
   display: block;
-  flex: 1;
+  /*flex: 1;*/
+  height: 60px;
   font-size: 15px;
   color:#3D9BFA;
   position: relative;
@@ -1435,7 +1436,7 @@ footer a {
   border-bottom-right-radius: 8px;
 }
 .sorry-info-show{
-  height: 41%;
+  height: 220px;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   color: #3d4245;

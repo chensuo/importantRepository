@@ -567,6 +567,7 @@ footer a {
   height: 54px;
   align-items: center;
   z-index: 999;
+  border-top: 1px solid #e6e6e6;
 }
 /*头部搜索框样式修改*/
 .search-input-container{
@@ -1179,7 +1180,7 @@ footer a {
   overflow: hidden;
 }
 .item-list>img:first-child{
-  height: 21px;
+  width: 26px;
 }
 .item-list>img:last-child{
   height: 14px;

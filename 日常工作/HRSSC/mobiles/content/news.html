@@ -53,11 +53,13 @@
 
                 <!-- 详情tab开始-->
                 <div class="weui-media-box weui-media-box_text" style="background: #fff">
+                    [#if channel.path!='contentsys']
                     <div class="content-title">${content.title}</div>
                     <div class="content-inf">
                         <span>${content.ctgName!}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${content.releaseDate?string('yyyy-MM-dd')}</span>
                         <span class="read-span"><img src="/${mobileRes!}/img/icon_yuedu.png" alt=""/> ${content.views!}</span>
                     </div>
+                    [/#if]
                     <div class="content-txt">
                         <p>${txt!}</p>
                         <p>
@@ -70,6 +72,7 @@
                             </ul>
                             [/#if]
                         </p>
+                        [#if channel.path!='contentsys']
                         <div class="zan">
                             <div id="cancelSpan" onclick="" class="collect-dv" style="font-size: 14px;display: none">
                                 <img src="/${mobileRes!}/img/icon_collection_selected.png" alt="" style="width: 20px;"/>
@@ -95,11 +98,14 @@
                             </script>
                             [/#if]
                         </div>
+                        [/#if]
                     </div>
                 </div>
+                [#if channel.path!='contentsys']
                 <div class="article-footer-operation" style="display: none;">
-                    <a href="form.do?method=view&formId=402893a566cede940166d2824de20012&businessTypes=${channel.keywords!}">还需要继续咨询?戳这里<img src="/${mobileRes}/img/cuo.png" alt=""/></a>
+                    <a href="form.do?method=view&code=HRSCC_ZXGD&businessTypes=${channel.keywords!}">还需要继续咨询?戳这里<img src="/${mobileRes}/img/cuo.png" alt=""/></a>
                 </div>
+                [/#if]
             </div>
 
         </div>

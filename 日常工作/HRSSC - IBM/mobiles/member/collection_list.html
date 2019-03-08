@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>SSC共享服务中心</title>
+    <title>我的收藏</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
@@ -31,9 +31,6 @@
 <div class="weui-tab" style="height: calc(100% + 50px);">
     <div  style="min-height: calc(100% + 1px);">
         [#include "../include/pullToRefresh.html"/]
-        <div class="myfavorite-pd">
-            <img src="/${mobileRes!}/img/wode_shouchang.png" alt=""/>我的收藏
-        </div>
         <div  class="discovery_tab">
             <div class="weui-pannel__bd mine-weui-pannel__bd">
 
@@ -60,6 +57,7 @@
 <script>
     $(function () {
         FastClick.attach(document.body);
+        $($(".myfavorite-item")[0]).css("borderTop","none");
     });
 </script>
 <script src="/${mobileRes!}/js/jquery-weui.js"></script>

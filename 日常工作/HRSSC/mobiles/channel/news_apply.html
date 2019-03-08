@@ -34,11 +34,11 @@
         <div  class="discovery_tab">
             <!--进行中的申请 -->
             <div class="weui-pannel__bd" id="applyUncomplated" style="background: #F5F5F5;">
-                <a v-for="(u,i) in applyUncomplated" :href="'${base}/contentsqjd/index.jhtml?processInstanceId='+u.processInstanceId" v-cloak class="apply-item">
+                <a v-for="(u,i) in applyUncomplated" :href="'${base}/contentsqjd/index.jhtml?processInstanceId='+u.processPiid" v-cloak class="apply-item">
                     <div>{{ u.processInstanceName }}</div>
                     <div></div>
-                    <div>申请单号：{{u.form_no}}</div>
-                    <div>申请时间：{{u.startTime}}</div>
+                    <div>申请单号：{{u.formNo}}</div>
+                    <div>申请时间：{{u.processStartDate}}</div>
                     <img src="/${mobileRes!}/img/wode_jiantou.png" alt="">
                     <i></i>
                 </a>
@@ -56,11 +56,11 @@
         <div  class="discovery_tab">
             <!--已完成的申请 -->
             <div class="weui-pannel__bd" id="applyComplated" style="background: #F5F5F5;">
-                <a v-for="(u,i) in applyComplated" :href="'${base}/contentsqjd/index.jhtml?processInstanceId='+u.processInstanceId" v-cloak class="apply-item">
+                <a v-for="(u,i) in applyComplated" :href="'${base}/contentsqjd/index.jhtml?processInstanceId='+u.processPiid" v-cloak class="apply-item">
                     <div>{{ u.processInstanceName }}</div>
                     <div></div>
-                    <div>申请单号：{{u.form_no}}</div>
-                    <div>申请时间：{{u.startTime}}</div>
+                    <div>申请单号：{{u.formNo}}</div>
+                    <div>申请时间：{{u.processStartDate}}</div>
                     <img src="/${mobileRes!}/img/wode_jiantou.png" alt="">
                     <i></i>
                 </a>
@@ -119,12 +119,12 @@
             $.get(document.showUrl +　"service/task/myapplylist?username=" + token, function(data){
                 if(data.source){
                     for(var i = 0;i < data.data.length;i++){
-                        data.data[i].startTime = data.data[i].startTime.split(" ")[0];
-                        if(data.data[i].status == "0"){
+                        data.data[i].processStartDate = data.data[i].processStartDate.split(" ")[0];
+                        if(data.data[i].processState == "0"){
                             //已经完成的申请
                             applyComplated.push(data.data[i]);
                         }
-                        if(data.data[i].status == "1"){
+                        if(data.data[i].processState == "1"){
                             //未完成的申请
                             applyUncomplated.push(data.data[i]);
                         }

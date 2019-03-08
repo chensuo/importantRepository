@@ -54,10 +54,10 @@
                     <div v-if="index != execute.length-1" class="applyHistory-left-border"></div>
                     <img src="/${mobileRes!}/img/unstart.png" alt=""/>
                     <div class="item-content">
-                        <span v-if="item.department">{{item.department}}</span><em>{{item.activityName}}</em>
+                        <span v-if="item.department&&item.state == '处理中'">{{item.department}}</span><em>{{item.activityName}}</em>
                         <i>{{item.state}}</i>
                     </div>
-                    <div class="applyHistory-time" v-if="item.state != '处理中'">{{item.endTime}}</div>
+                    <!--<div class="applyHistory-time" v-if="item.state != '处理中'">{{item.endTime}}</div>-->
                     <!--<div class="applyHistory-remark" v-if="item.approveMsg&&item.statecode!='8'&&item.statecode!='9'">{{item.approveMsg}}</div>-->
                 </div>
             </div>

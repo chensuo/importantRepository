@@ -69,7 +69,9 @@
             var dt = [];
             $.get(document.showUrl +　"service/task/mytodotasklist?username=" + token, function(data){
                 for(var i = 0 ; i <　data.data.length; i++){
-                    data.data[i].startTime = data.data[i].startTime.split(" ")[0];
+                    if(data.data[i].startTime){
+                        data.data[i].startTime = data.data[i].startTime.split(" ")[0];
+                    }
                 }
                 if(data.source){
                     dt = data.data;
