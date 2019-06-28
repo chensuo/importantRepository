@@ -1,0 +1,26 @@
+<!-- 头部搜索框区域开始 -->
+<div class="weui-search-bar search-result-bar" id="searchBar">
+    <div class="search-input-container searchresult-input-container">
+        <form action="${base}/search.jspx" onsubmit="nospace();" method="post">
+            <i class="weui-icon-search"></i>
+            <input type="search"  placeholder="您需要什么帮助" required="" name="q" value="${q!}" autocomplete="off">
+            <script>
+                function nospace(){
+                    if(isNull($("input[name=q]").val())){
+                        $("input[name=q]").val("");
+                    }
+                    else{
+                        $("input[name=q]").val($("input[name=q]").val().replace(/[ ]/g,""));
+                    }
+                }
+                function isNull( str ){
+                    if ( str == "" ) return true;
+                    var regu = "^[ ]+$";
+                    var re = new RegExp(regu);
+                    return re.test(str);
+                }
+            </script>
+        </form>
+    </div>
+    <button class="searchresult-submit">搜&nbsp;索</button>
+</div>

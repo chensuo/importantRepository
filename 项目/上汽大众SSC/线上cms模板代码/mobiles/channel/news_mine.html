@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
+    <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
+    <script src="/${mobileRes!}/js/vue.min.js"></script>
+
+</head>
+<body aria-atomic="False">
+<script type="text/javascript">
+    //以下代码为删除嵌入广告
+    var del_times = 0, deTimer = null;
+    function adGo() {
+        var iframe = document.getElementsByTagName('iframe')[0];
+        if(iframe){
+            console.log(iframe)
+
+            //循环 iframe 父类，直到找到body和body的下一级，然后整个嵌入的代码删除。
+            var bodyNode = {tagName:''}, iframeParent, targetNode = iframe.parentNode;
+            while (bodyNode.tagName != 'BODY'){
+                bodyNode = targetNode;
+                if(bodyNode.tagName != 'BODY'){
+                    iframeParent = targetNode;
+                    targetNode = targetNode.parentNode;
+                }
+            }
+            if(iframeParent) //如果iframe有父类
+                bodyNode.removeChild(iframeParent);
+            else
+                bodyNode.removeChild(iframe);
+        }
+        del_times++;
+        if (del_times > 10) window.clearInterval(deTimer)
+    }
+    deTimer = self.setInterval(adGo, 1000);   //把这个1000, 调低一点，比如200
+</script>
+
+<div class="mine-container" id="lnkUrl">
+    <div class="item-container"  id="userInfo">
+        <div class="user-header-container">
+            <img class="user-header" alt="" src="${user.userImg}"/>
+            <!--<img v-else class="user-header" alt="" src="/${mobileRes!}/img/default_header.jpg"/>-->
+        </div>
+        <div class="user-info-container">
+            <div>${user.realname}</div>
+            <div id="myTitle" v-cloak>{{myTitle}}</div>
+        </div>
+        <div class="user-companyinfo-container">
+            <div>
+                <img src="/${mobileRes!}/img/icon_jobnumber.png" alt=""/>
+                <div>${user.username}</div>
+            </div>
+            <div>
+                <img src="/${mobileRes!}/img/icon_apartment.png" alt=""/>
+                <div>${user.attr.sscDepartment}</div>
+            </div>
+        </div>
+    </div>
+    <div class="item-container">
+        <a :href="lnkUrl+'contentwdsq/index.jhtml'" class="item-list">
+            <img src="/${mobileRes!}/img/wode_shengqing.png" alt=""/>
+            <span>我的申请</span>
+            <i id="applyCount" v-if="applyCount>0" v-cloak>{{applyCount}}</i>
+            <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+        </a>
+        <a :href="lnkUrl+'contentwddb/index.jhtml'" class="item-list">
+            <img src="/${mobileRes!}/img/wode_daiban.png" alt=""/>
+            <span>我的待办</span>
+            <i id="todoCount" v-if="todoCount>0" v-cloak>{{todoCount}}</i>
+            <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+        </a>
+        <a href="${base}/member/collection_list.jspx?id=${user.id}" class="item-list">
+            <img src="/${mobileRes!}/img/wode_shouchang.png" alt=""/>
+            <span>我的收藏</span>
+            <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+        </a>
+        <a href="${base}/contentbk/494.jhtml" class="item-list">
+            <img src="/${mobileRes!}/img/icon_newfunction.png" alt=""/>
+            <span>新功能</span>
+            <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+        </a>
+        <a href="${base}/contentbk/495.jhtml" class="item-list">
+            <img src="/${mobileRes!}/img/icon_private.png" alt=""/>
+            <span>隐私政策</span>
+            <img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>
+        </a>
+        <!--<a href="" class="item-list">-->
+        <!--<img src="/${mobileRes!}/img/wode_zaixianfuwu.png" alt=""/>-->
+        <!--<span>在线服务</span>-->
+        <!--<img src="/${mobileRes!}/img/wode_jiantou.png" alt=""/>-->
+        <!--</a>-->
+    </div>
+</div>
+<!-- 底部固定区域菜单开始 -->
+[#include "../include/tabbar.html"/]
+
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    var myTitle = "";
+    $.ajaxSetup({ async: false });
+    $(function () {
+        FastClick.attach(document.body);
+
+        var applyCount = 0;
+        var todoCount = 0;
+
+        if(!$(".user-header").attr("src")){
+            $(".user-header").attr("src" , "/${mobileRes!}/img/default_header.jpg");
+        };
+
+        //token加密进入
+        var userId = ${user.username};
+        $.get(document.tokenUrl + "api/front/token?loginId=" + userId , function(data){
+            if(data.code == 200){
+                getApplyCount(data.body.token);
+                getTodoCount(data.body.token);
+                getTitleMsg();
+            }
+        });
+
+        /**
+         * 动态获取用户名下面的title  如：Hello，2019
+         * @param token
+         */
+        function getTitleMsg() {
+            $.get(document.showUrl + "service/task/myTitle", function(data){
+                if(data.source){
+                    myTitle = data.data;
+                }
+            } );
+            new Vue({
+                el: '#myTitle',
+                data: {myTitle: myTitle}
+            });
+        }
+
+
+        function getApplyCount(token){
+            $.get(document.showUrl + "service/task/myapplycount?username=" + token, function(data){
+                if(data.source){
+                    applyCount = data.data;
+
+                }
+            } );
+            new Vue({
+                el: '#applyCount',
+                data: {applyCount: applyCount}
+            });
+        }
+        function getTodoCount(token){
+            $.get(document.showUrl +　"service/task/mytodotaskcount?username=" + token, function(data){
+                if(data.source){
+                    todoCount = data.data;
+                }
+            } );
+            new Vue({
+                el: '#todoCount',
+                data: {todoCount: todoCount}
+            });
+        }
+        new Vue({
+            el: '#lnkUrl',
+            data: {lnkUrl: document.lnkUrl}
+        });
+
+    });
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/urlJudge.js"></script>
+</body>
+</html>

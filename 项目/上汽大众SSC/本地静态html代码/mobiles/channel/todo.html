@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>我的待办</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <link href="../../mobile/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="../../mobile/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="../../mobile/css/index.css" rel="stylesheet" type="text/css"/>
+</head>
+<body ontouchstart style="background: #F5F5F5;">
+
+<!-- 栏目位置结束-->
+<div class="weui-tab mine-weui-tab" style="height: calc(100% + 50px);">
+    <div  style="min-height: calc(100% + 1px);">
+        <!-- 下拉刷新开始-->
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
+        <!-- 下拉刷新结束-->
+        <!-- 栏目位置开始-->
+        <!--<div class="myfavorite-pd">-->
+            <!--<img src="../../mobile/img/wode_daiban.png" alt=""/>我的代办-->
+        <!--</div>-->
+        <div  class="discovery_tab">
+            <div class="weui-pannel__bd mine-weui-pannel__bd" id="list">
+                <!-- 我的代办单位项目-->
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态我的代办状态我的代办状态我的代办状态我的代办状态</div>
+                    <div></div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态我的代办状态我的代办状态我的代办状态我的代办状态</div>
+                    <div></div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态我的代办状态我的代办状态我的代办状态我的代办状态</div>
+                    <div></div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态我的代办状态我的代办状态我的代办状态我的代办状态</div>
+                    <div></div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态我的代办状态我的代办状态我的代办状态我的代办状态</div>
+                    <div></div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态我的代办状态我的代办状态我的代办状态我的代办状态</div>
+                    <div>申请单号：100198</div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态</div>
+                    <div>申请单号：100198</div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态</div>
+                    <div>申请单号：100198</div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+                <a href="" class="todo-item">
+                    <div>我的代办名称</div>
+                    <div>我的代办状态</div>
+                    <div>申请单号：100198</div>
+                    <div>申请时间：2018-10-10</div>
+                    <img src="../../mobile/img/wode_jiantou.png" alt="">
+                    <i></i>
+                </a>
+
+                <div class="no-more-info" style="border-top: none;background: none">没有更多</div>
+                <!-- 暂无代办提示-->
+                <!--<div class="nocollect-info-dv-sec" style="display: block;top: 49px">-->
+                    <!--<img src="../../mobile/img/todo.png" alt=""/>-->
+                <!--</div>-->
+            </div>
+            <!-- 正在加载-->
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        var userId = 20265;
+        var first = 0;
+        var count = 10;
+        var loading = false;
+//        loadlistOne();
+        $(".weui-tab").infinite(50).on("infinite", function () {
+            if (loading) return;
+            loading = true;
+            console.log("开始加载");
+            $('.weui-loadmore').show();
+            setTimeout(function () {
+                loadlistOne();
+                loading = false;
+                console.log("加载完成");
+            }, 500);   //模拟延迟
+        });
+        function loadlistOne() {
+//            var html = "<div class=\"weui-pull-to-refresh__layer\">"
+//                       +"<div class='weui-pull-to-refresh__arrow'></div>"
+//                    +"<div class='weui-pull-to-refresh__preloader'></div>"
+//                    +"<div class=\"down\">下拉刷新</div>"
+//                    +"<div class=\"up\">释放刷新</div>"
+//                    +"<div class=\"refresh\">正在刷新</div>"
+//                    +"</div>";
+            $(".weui-pannel__bd").append(getData());
+        }
+
+        function getData(){
+            var html = "";
+            html += '<a href="" class="todo-item">';
+            html += '<div>新增1</div>';
+            html += '<div>新增1</div>';
+            html += '<div>申请单号：100198</div>';
+            html += '<div>申请时间：2018-10-10</div>';
+            html += '<img src="../../mobile/img/wode_jiantou.png" alt="">';
+            html += '<i></i>';
+            html += '</a>';
+
+            html += '<a href="" class="todo-item">';
+            html += '<div>新增2</div>';
+            html += '<div>新增2</div>';
+            html += '<div>申请单号：100198</div>';
+            html += '<div>申请时间：2018-10-10</div>';
+            html += '<img src="../../mobile/img/wode_jiantou.png" alt="">';
+            html += '<i></i>';
+            html += '</a>';
+            return html;
+        }
+
+    });
+</script>
+<script src="../../mobile/js/pullToRefresh.js"></script>
+<script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>mobile</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+
+
+</head>
+
+<body ontouchstart>
+
+    <div class="weui-tab">
+
+
+
+        <!-- tab切换页区域开始 -->
+        <div class="weui-tab__bd weui-tab__bd-zdy">
+            <!-- 个人中心tab开始，拥有header和搜索框-->
+            <div id="tab1" class="weui-tab__bd-item weui-tab__bd-item--active">
+                <!-- 头部空白区域开始 -->
+                <header class='index-header'>
+                    <h1 class="index-title">header</h1>
+                </header>
+                <!-- 头部空白区域介绍 -->
+
+
+                <!-- 搜索框区域开始 -->
+                <div class="weui-search-bar" id="searchBar">
+                    <form class="weui-search-bar__form" action="#">
+                        <div class="weui-search-bar__box">
+                            <i class="weui-icon-search"></i>
+                            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+                            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                        </div>
+                        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                            <i class="weui-icon-search"></i>
+                            <span>您需要什么帮助</span>
+                        </label>
+                    </form>
+                    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+                </div>
+                <!-- 搜索框区域结束 -->
+                <p class="weui-class">最近常用</p>
+                <div class="weui-grids">
+                    <a href="../channel/news.html" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_button.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            新闻
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            电子薪资
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            账户
+                        </p>
+                    </a>
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            年休假
+                        </p>
+                    </a>
+                </div>
+                <p class="weui-class">个人中心</p>
+                <div class="weui-grids">
+                    <a href="" class="weui-grid js_grid">
+                        <div class="weui-grid__icon">
+                            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                        </div>
+                        <p class="weui-grid__label">
+                            账户
+                        </p>
+                    </a>
+                </div>
+
+            </div>
+
+            <!-- 通讯录tab开始 拥有header和搜索框-->
+            <div id="tab2" class="weui-tab__bd-item">
+                <!-- 头部空白区域开始 -->
+                <header class='index-header'>
+                    <h1 class="index-title">header</h1>
+                </header>
+                <!-- 头部空白区域介绍 -->
+
+
+                <!-- 搜索框区域开始 -->
+                <div class="weui-search-bar" id="searchBar">
+                    <form class="weui-search-bar__form" action="#">
+                        <div class="weui-search-bar__box">
+                            <i class="weui-icon-search"></i>
+                            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+                            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                        </div>
+                        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                            <i class="weui-icon-search"></i>
+                            <span>您需要什么帮助</span>
+                        </label>
+                    </form>
+                    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+                </div>
+                <!-- 搜索框区域结束 -->
+
+                <h1>页面二</h1>
+            </div>
+
+            <!-- 发现tab开始，没有header，但是有搜索框-->
+            <div id="tab3" class="weui-tab__bd-item discovery_tab">
+                <!-- 搜索框区域开始 -->
+                <div class="weui-search-bar" id="searchBar">
+                    <form class="weui-search-bar__form" action="#">
+                        <div class="weui-search-bar__box">
+                            <i class="weui-icon-search"></i>
+                            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+                            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                        </div>
+                        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                            <i class="weui-icon-search"></i>
+                            <span>您需要什么帮助</span>
+                        </label>
+                    </form>
+                    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+                </div>
+                <!-- 搜索框区域结束 -->
+
+                <!-- 发现页面内容-->
+                <nav id="discovery-nav">
+                    <a class="on">通知公告</a>
+                    <a>热门新闻</a>
+                </nav>
+                <div id="contentBox">
+                    <div class="box active">
+                        <!-- 页面内容开始-->
+                        <div class="weui-panel__hd ">
+                            通知公告
+                        </div>
+                        <div class="weui-panel__bd">
+                            <!-- 有图话题-->
+                            <a href="../content/discovery-content.html" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd">
+                                    <img class="weui-media-box__thumb" src="../../mobile/img/swiper-3.jpg">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">亚马逊股价首破800美元大关 市值稳居全球上市公司第四</h4>
+                                    <p class="weui-media-box__desc">
+                                        亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。
+                                    </p>
+                                    <div class="item-bottom">
+                                    <span>
+                                           <span>阅读 10</span>&nbsp;
+                                          <span>评论 10</span>
+                                    </span>
+                                        <span>18/10/10</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- 有图话题-->
+                            <a href="../content/discovery-content.html" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd">
+                                    <img class="weui-media-box__thumb" src="../../mobile/img/swiper-3.jpg">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">亚马逊股价首破800美元大关 市值稳居全球上市公司第四</h4>
+                                    <p class="weui-media-box__desc">
+                                        亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。
+                                    </p>
+                                    <div class="item-bottom">
+                                    <span>
+                                            <span>阅读 10</span>&nbsp;
+                                          <span>评论 10</span>
+                                    </span>
+                                        <span>18/10/10</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <!-- 有图话题-->
+                            <a href="../content/discovery-content.html" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd">
+                                    <img class="weui-media-box__thumb" src="../../mobile/img/swiper-3.jpg">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">亚马逊股价首破800美元大关 市值稳居全球上市公司第四</h4>
+                                    <p class="weui-media-box__desc">
+                                        亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。
+                                    </p>
+                                    <div class="item-bottom">
+                                    <span>
+                                          <span>阅读 10</span>&nbsp;
+                                          <span>评论 10</span>
+                                    </span>
+                                        <span>18/10/10</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                            <!-- 无图话题-->
+                            <a href="../content/discovery-content.html" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd" style="display: none;">
+                                    <img class="weui-media-box__thumb" src="">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">亚马逊股价首破</h4>
+                                    <p class="weui-media-box__desc">
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                    </p>
+                                    <div class="item-bottom">
+                                    <span>
+                                          <span>阅读 10</span>&nbsp;
+                                          <span>评论 10</span>
+                                    </span>
+                                        <span>18/10/10</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                    <!-- 热门新闻-->
+                    <div class="box">
+                        <!-- 页面内容开始-->
+                        <div class="weui-panel__hd ">
+                            热门新闻
+                        </div>
+                        <div class="weui-panel__bd">
+                            <!-- 有图话题-->
+                            <a href="../content/discovery-content.html" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd">
+                                    <img class="weui-media-box__thumb" src="../../mobile/img/swiper-3.jpg">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">亚马逊股价首破800美元大关 市值稳居全球上市公司第四</h4>
+                                    <p class="weui-media-box__desc">
+                                        亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。
+                                    </p>
+                                    <div class="item-bottom">
+                                    <span>
+                                           <span>阅读 10</span>&nbsp;
+                                          <span>评论 10</span>
+                                    </span>
+                                        <span>18/10/10</span>
+                                    </div>
+                                </div>
+                            </a>
+
+
+
+                            <!-- 无图话题-->
+                            <a href="../content/discovery-content.html" class="weui-media-box weui-media-box_appmsg">
+                                <div class="weui-media-box__hd" style="display: none;">
+                                    <img class="weui-media-box__thumb" src="">
+                                </div>
+                                <div class="weui-media-box__bd">
+                                    <h4 class="weui-media-box__title">亚马逊股价首破</h4>
+                                    <p class="weui-media-box__desc">
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                        由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                    </p>
+                                    <div class="item-bottom">
+                                    <span>
+                                          <span>阅读 10</span>&nbsp;
+                                          <span>评论 10</span>
+                                    </span>
+                                        <span>18/10/10</span>
+                                    </div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- 发现页面内容结束-->
+            </div>
+
+            <!-- 我tab4开始，有header和搜索框-->
+            <div id="tab4" class="weui-tab__bd-item">
+                <!-- 头部空白区域开始 -->
+                <header class='index-header'>
+                    <h1 class="index-title">header</h1>
+                </header>
+                <!-- 头部空白区域介绍 -->
+
+
+                <!-- 搜索框区域开始 -->
+                <div class="weui-search-bar" id="searchBar">
+                    <form class="weui-search-bar__form" action="#">
+                        <div class="weui-search-bar__box">
+                            <i class="weui-icon-search"></i>
+                            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+                            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+                        </div>
+                        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+                            <i class="weui-icon-search"></i>
+                            <span>您需要什么帮助</span>
+                        </label>
+                    </form>
+                    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+                </div>
+                <!-- 搜索框区域结束 -->
+                <h1>页面四</h1>
+            </div>
+        </div>
+        <!-- tab切换页区域结束 -->
+
+
+        <!-- 底部固定区域菜单开始 -->
+        <div class="weui-tabbar fixed-bottom">
+            <a href="#tab1" class="weui-tabbar__item weui-bar__item--on">
+                <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">个人中心</p>
+            </a>
+            <a href="#tab2" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_msg.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">通讯录</p>
+            </a>
+            <a href="#tab3" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_article.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">发现</p>
+            </a>
+            <a href="#tab4" class="weui-tabbar__item">
+                <div class="weui-tabbar__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-tabbar__label">我</p>
+            </a>
+        </div>
+        <!-- 底部固定区域菜单结束 -->
+    </div>
+
+    <script src="../../mobile/js/jquery-2.1.4.js"></script>
+    <script src="../../mobile/js/fastclick.js"></script>
+    <script>
+        $(function () {
+            FastClick.attach(document.body);
+
+            /*dicovery页面顶部导航*/
+            $("#discovery-nav a").off("click").on("click",function(e){
+                var index = $(this).index();
+                $(this).addClass("on").siblings().removeClass("on");
+                $("#contentBox .box").eq(index).addClass("active").siblings().removeClass("active");
+                e.preventDefault();
+            });
+        });
+
+    </script>
+    <script src="../../mobile/js/jquery-weui.js"></script>
+
+    <script>
+
+
+
+    </script>
+</body>
+
+</html>

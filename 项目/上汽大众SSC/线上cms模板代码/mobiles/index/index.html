@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
+    <link href="/${mobileRes!}/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
+
+</head>
+
+<body ontouchstart >
+[#include "../include/header.html"/]
+
+<nav id="discovery-nav">
+    <a class="on">常见问题<span></span></a>
+    <a>业务指南<span></span></a>
+</nav>
+
+<div class="weui-tab weui-tab-one"  style="background: #ffffff;margin-top: 60px;height: calc(100% - 115px);">
+    <!-- tab切换页区域开始 -->
+    <div class="weui-tab__bd weui-tab__bd-zdy">
+        <div class="discovery_tab">
+            <!-- 常见问题开始-->
+            <div class="weui-panel__bd weui-panel__bd-one" style="overflow: auto;height: 100%;">
+                [#include "../include/pullToRefresh.html"/]
+            </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="weui-tab weui-tab-sec"  style="background: #ffffff;display:none;margin-top: 60px;height: calc(100% - 115px);">
+    <!-- tab切换页区域开始 -->
+    <div class="weui-tab__bd weui-tab__bd-zdy">
+        <div class="discovery_tab">
+            <!-- 业务指南开始-->
+            <div class="weui-panel__bd weui-panel__bd-sec">
+                [#include "../include/pullToRefresh.html"/]
+            </div>
+            <div class="weui-loadmore weui-loadmore-sec">
+                <i class="weui-loading weui-loading-sec"></i>
+                <span class="weui-loadmore__tips weui-loadmore__tips-sec">正在加载</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 回到顶部按钮-->
+<div class="top-container">
+    <div class="top"></div>
+    <div class="top-sec"></div>
+</div>
+<!-- 回到顶部按钮结束-->
+<!-- 底部固定区域菜单开始 -->
+[#include "../include/tabbar.html"/]
+
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script src="/${mobileRes!}/js/vue.min.js"></script>
+<script src="/${mobileRes!}/js/urlJudge.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        /*dicovery页面顶部导航*/
+        $("#discovery-nav a").off("click").on("click",function(e){
+            var index = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+            $(".weui-tab").css("display","none").css("zIndex","0");
+            $($(".weui-tab")[index]).css("display","block").css("zIndex","502");
+            $(".top-container>div").css("zIndex","501");
+            $($(".top-container>div")[index]).css("zIndex","503");
+            e.preventDefault();
+        });
+
+        /*滚动加载*/
+
+        var userId = ${user.username};
+        var first = 0;
+        var firstSec = 0;
+        var count = 10;
+        var countSec = 10;
+        var loading = false;
+        var loadingSec = false;
+        var clickCount = 0;
+        var hasNoMore = 0;
+        var hasNoMoreSec = 0;
+        $("#discovery-nav>a:nth-child(2)").bind("click" , function(){
+            if(clickCount==0){
+                loadlistSec();
+            }
+            clickCount = 1;
+        });
+        loadlistOne();
+        $(".weui-tab-one").infinite(40).on("infinite", function () {
+            if (loading) return;
+            loading = true;
+            first = first+count;
+            $('.weui-loadmore').show();
+            setTimeout(function () {
+                loadlistOne();
+                loading = false;
+            }, 500);
+        });
+        $(".weui-tab-sec").infinite(40).on("infinite", function () {
+            if (loadingSec) return;
+            loadingSec = true;
+            firstSec = firstSec+countSec;
+            $('.weui-loadmore-sec').show();
+            setTimeout(function () {
+                loadlistSec();
+                loadingSec = false;
+            }, 500);
+        });
+        function loadlistOne() {
+            $.ajax({
+                type: "GET",
+                url: document.tokenUrl + "api/front/content/list?channelIds=97&userid="+userId+"&first="+first+"&count="+count,
+                dataType: "json",
+                error: function (request) {
+                    $(".weui-loadmore").hide();
+                    $(".weui-panel__bd-one").append("<div class=\"no-more-info\">加载失败</div>");
+                    loading = true;
+                },
+                success: function (data) {
+                    if (data.body.length>0) {
+                        $(".weui-panel__bd-one").append(getData(data));
+                        if(data.body.length<count){
+                            $(".weui-panel__bd-one").append("<div class=\"no-more-info\">没有更多</div>");
+                            hasNoMore = 1;
+                            $(".weui-tab-one").destroyInfinite();
+                            setTimeout(function () {
+                                loading = true;
+                            },1100);
+                        }
+                    }
+                    else{
+                        if(hasNoMore == 1){
+                            $(".weui-tab-one").destroyInfinite();
+                            setTimeout(function () {
+                                loading = true;
+                            },1100);
+                        }
+                        else{
+                            $(".weui-panel__bd-one").append("<div class=\"no-more-info\">没有更多</div>");
+                            $(".weui-tab-one").destroyInfinite();
+                            setTimeout(function () {
+                                loading = true;
+                            },1100);
+                        }
+
+                    }
+                    $(".weui-loadmore").hide();
+                }
+            });
+        }
+        function loadlistSec() {
+            $.ajax({
+                type: "GET",
+                url: document.tokenUrl + "api/front/content/list?channelIds=98&userid="+userId+"&first="+firstSec+"&count="+countSec,
+                dataType: "json",
+                error: function (request) {
+                    $(".weui-loadmore-sec").hide();
+                    $(".weui-panel__bd-sec").append("<div class=\"no-more-info\">加载失败</div>");
+                    loadingSec = true;
+                },
+                success: function (data) {
+                    if (data.body.length>0) {
+                        $(".weui-panel__bd-sec").append(getData(data));
+                        if(data.body.length<countSec){
+                            $(".weui-panel__bd-sec").append("<div class=\"no-more-info\">没有更多</div>");
+                            hasNoMoreSec = 1;
+                            $(".weui-tab-sec").destroyInfinite();
+                            setTimeout(function () {
+                                loadingSec = true;
+                            },1100);
+                        }
+                    }
+                    else{
+                        if(hasNoMoreSec == 1){
+                            $(".weui-tab-sec").destroyInfinite();
+                            setTimeout(function () {
+                                loadingSec = true;
+                            },1100);
+                        }
+                        else{
+                            $(".weui-panel__bd-sec").append("<div class=\"no-more-info\">没有更多</div>");
+                            $(".weui-tab-sec").destroyInfinite();
+                            setTimeout(function () {
+                                loadingSec = true;
+                            },1100);
+                        }
+
+                    }
+                    $(".weui-loadmore-sec").hide();
+                }
+            });
+        }
+
+        function getData(data){
+            var html = "";
+            for (var i = 0; i < data.body.length; i++) {
+                html += '<a href='+data.body[i].url+' class="weui-media-box weui-media-box_appmsg">';
+                if(data.body[i].typeImg){
+                    html += '<div class="weui-media-box__hd">';
+                    html += '<img class="weui-media-box__thumb" src="'+data.body[i].typeImg+'">';
+                    html += '</div>';
+                }
+                html += '<div class="weui-media-box__bd">';
+                html += '<h4 class="weui-media-box__title">'+data.body[i].title+'</h4>';
+                if(data.body[i].description){
+                    html += '<p class="weui-media-box__desc">'+data.body[i].description+'</p>';
+                }
+                if(!data.body[i].description){
+                    html += '<p class="weui-media-box__desc">暂无摘要</p>';
+                }
+                html += '<div class="item-bottom">';
+                html += '<span>';
+                html += '<span class="read-span"><img src="/${mobileRes!}/img/icon_yuedu.png" alt=""/>'+data.body[i].views+'</span>';
+                html += '</span>';
+                html += '<span>'+data.body[i].releaseDate.split(" ")[0]+'</span>';
+                if(data.body[i].topLevel>0){
+                    html += '<span class="stick">置顶</span>';
+                }
+                html += '</div>';
+                html += '</div>';
+                html += '</a>';
+            }
+            return html;
+        }
+
+
+    });
+    $(function(){
+        /*back-to-top sec*/
+        var topMain=$(".head").height();
+        $('.weui-tab-sec').scroll(function(){
+            if ($('.weui-tab-sec').scrollTop()>topMain){
+                $(".top-sec").fadeIn(400,"swing");
+            }
+            else{
+                $(".top-sec").fadeOut(400,"swing");
+            }
+        });
+        $(".top-sec").click(function(){$(".weui-tab-sec").animate({scrollTop:0},400)});
+    });
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/lastUrlJudge.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HRSSC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+
+</head>
+
+<body ontouchstart>
+<!-- 搜索框区域开始 -->
+<div class="weui-search-bar" id="searchBar">
+    <form class="weui-search-bar__form" action="#">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+        </div>
+        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+            <i class="weui-icon-search"></i>
+            <span>您需要什么帮助</span>
+        </label>
+    </form>
+    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+</div>
+<!-- 搜索框区域结束 -->
+<div class="weui-panel__hd position_hd position_hd_2">
+    <div>
+        <a href="javascript:window.location.replace(document.referrer);" class="left-arrow-container">
+            <span class="left-arrow"></span>
+        </a>
+        <a href="javascript:;"  class="open-popup" data-target="#discovery-content2-nav">更多 >></a>
+    </div>
+</div>
+
+<!-- 主要内容区域开始-->
+<div class="weui-tab">
+
+    <!-- tab切换页区域开始 -->
+    <div class="weui-tab__bd weui-tab__bd-zdy" >
+        <!-- 主要容器开始-->
+        <div class="discovery_content_tab">
+            <div class="weui-panel weui-panel_access">
+                <!-- 下拉刷新开始-->
+                <div class="weui-pull-to-refresh__layer">
+                    <div class='weui-pull-to-refresh__arrow'></div>
+                    <div class='weui-pull-to-refresh__preloader'></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新</div>
+                </div>
+                <!-- 下拉刷新结束-->
+                <!-- 详情tab开始-->
+                <div class="weui-media-box weui-media-box_text">
+                    <div class="content-title">亚马逊股价首破800美元大关 </div>
+                    <div class="content-inf">
+                        <span>版块&nbsp;&nbsp;2016-09-23&nbsp;&nbsp;09:23:39</span>
+                        <a href="">信息来源</a>
+                    </div>
+                    <div class="content-txt">
+                        <p style="text-align:center;">
+                            <img src="../../mobile/img/swiper-1.jpg" title="138679618.jpg" alt="138679618.jpg"
+                                 data-bd-imgshare-binded="1">
+                        </p>
+                        <p>亚马逊季度利润连续三个财季创下新纪录。随之而来的是，亚马逊股价也打破了记录。</p>
+                        <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                            的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p>
+                        <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                            的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p>
+                        <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                            的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p> <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                        的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p>
+                        <p>
+                        <h4>附件</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="" id="" class="attachment-name">附件名称</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <!-- 阅读数量和点赞数量-->
+                    <div class="weui-panel__hd read-container">
+                        <div class="read">
+                            <a onclick="">阅读<span id="reads">3564</span></a>
+                        </div>
+                        <div class="zan">
+                            <a onclick="">赞<span id="ups">19</span></a>
+                        </div>
+                    </div>
+                </div>
+                <!-- 详情tab结束-->
+            </div>
+
+        </div>
+        <!-- 主要容器结束-->
+    </div>
+    <!-- tab切换页区域结束 -->
+</div>
+<!-- 主要内容区域结束-->
+<!-- 其余tab-iframe开始-->
+<div style="width:100%; height: 100%;-webkit-overflow-scrolling:touch;overflow:auto; padding: 0;margin: 0;">
+    <iframe width="100%" height="100%" frameborder="0" name="iframe-container" class="iframe-container"></iframe>
+</div>
+<!-- 其余tab-iframe结束-->
+
+<!-- Popub弹出层开始-->
+<div id="discovery-content2-nav" class="weui-popup__container popup-bottom" style="z-index: 502;">
+    <div class="weui-popup__dialog"></div>
+    <div class="weui-popup__modal">
+        <!-- 弹出层的内容开始-->
+        <div class="weui-grids">
+            <a href="javascript:void(0);" class="weui-grid js_grid on close-popup first-weui-guid">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-grid__label">新闻详情</p>
+            </a>
+            <a href="http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=4028962c655f321401655f37c4e40002&username=65522" target="iframe-container" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">办理</p>
+            </a>
+            <a href="http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=40289601660fc8e901660ff5a33e0005&username=65522&service_no=5004&feedback_type=3" target="iframe-container" class="weui-grid js_grid close-popup" target="iframe-container" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">反馈</p>
+            </a>
+            <a href="http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=40289601660fc8e901660ff5a33e0005&username=65522&service_no=5004&feedback_type=2" target="iframe-container" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">评价</p>
+            </a>
+        </div>
+        <!-- 弹出层的内容结束-->
+        <a class="close-popup popup-close">关闭</a>
+    </div>
+
+
+</div>
+<!-- Popub弹出层结束-->
+
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<!-- 回到顶部按钮结束-->
+<!-- 底部固定区域菜单开始 -->
+<div class="weui-tabbar fixed-bottom">
+    <a href="../index/index.html" class="weui-tabbar__item ">
+        <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_button.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">个人中心</p>
+    </a>
+    <a href="../channel/discovery.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_msg.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">通知公告</p>
+    </a>
+    <a href="../channel/guide.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_article.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">指南</p>
+    </a>
+    <a href="../channel/mine.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">我</p>
+    </a>
+</div>
+<!-- 底部固定区域菜单结束 -->
+
+<script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+        /*返回上一页面*/
+
+
+        /*dicovery-content_2页面popub弹出导航*/
+        $("#discovery-content2-nav a").off("click").on("click",function(e){
+            var index = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+//            $(".weui-tab__bd .discovery_content_tab").eq(index).addClass("active").siblings().removeClass("active");
+        });
+
+        /*弹出框弹出内容*/
+        $(".weui-grids a:not(:first-child)").bind("click" , function(){
+            $(".weui-tab").css("display","none");
+        });
+
+
+    });
+</script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/pullToRefresh.js"></script>
+<script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>SSC共享服务中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
+    <link rel="stylesheet" href="/${mobileRes}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes}/css/index.css">
+    <script src="/${mobileRes}/js/jquery-2.1.4.js"></script>
+    <script src="/${mobileRes}/js/vue.min.js"></script>
+
+</head>
+<body ontouchstart>
+
+[#include "../include/header_search.html"/]
+
+<div class="weui-tab" style="margin-top:0;height:100%;">
+
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd">
+            <div style="height: 44px"></div>
+            <!-- 应用栏搜索-->
+            <div class="weui-pannel__bd" style="background: #ffffff;padding-bottom: 10px;" id="applicationList">
+                <!-- 位置栏-->
+                <div class="search-result-pd">应用</div>
+                <a v-for="item in applicationList" :href="item.applicationURL" v-cloak class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none">
+                    <img :src="item.applicationImgUrl" alt=""/>{{item.applicationName}}
+                </a>
+            </div>
+            [#if q??]
+            [@cms_lucene_list q=q channelId=channelId s_sscCompany='${user.attr.sscCompany}' o_sscCompany='like'
+            s_sscGroup='${user.attr.sscGroup}' o_sscGroup='like' s_sscSubGroup='${user.attr.sscSubGroup}' o_sscSubGroup='like'
+            s_sscLine='${user.attr.sscLine}' o_sscLine='like' descLen='100' append='...'  dateFormat='yyyy-MM-dd' sysPage='1' ]
+            [#list tag_list as s]
+            <a href="${s.url}" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                <!-- 一个单位开始-->
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title">${s.title?replace('${q!}', "${q!}")}</h4>
+
+                    <p class="weui-media-box__desc">
+                        [#if s.description??]
+                        [@text_cut s=s.description?replace('${q!?html}', "<span style='color: red;'>${q!?html}</span>") len=descLen append=append/]
+                        [#else]
+                        暂无摘要！
+                        [/#if]
+                    </p>
+                    <div class="item-bottom">
+                           <span>
+                                  <span>${s.ctgName}</span>
+                                  <span style="margin-left: 10px;" class="read-span"><img src="/${mobileRes}/img/icon_yuedu.png" alt=""/> ${s.views!}</span>
+                            </span>
+                        <span>${s.releaseDate?string(dateFormat)}</span>
+                    </div>
+                </div>
+            </a>
+            [/#list]
+
+            [#if tag_list?size==0]
+            <div class="search-footer-operation" >
+                没有找到帮助内容，请尝试修改一下关键字重新搜索吧
+                <a href="form.do?method=view&formId=402893a566cede940166d2824de20012">还需要继续咨询?戳这里<img src="/${mobileRes}/img/cuo.png" alt=""/></a>
+            </div>
+            [#else]
+            <div class="no-more-info">没有更多了</div>
+            [/#if]
+        </div>
+        [/@cms_lucene_list ]
+        [/#if]
+    </div>
+    <!-- 回到顶部按钮-->
+    <div class="top"></div>
+
+    <script src="/${mobileRes}/js/fastclick.js"></script>
+    <script src="/${mobileRes}/js/global.js"></script>
+    <script>
+        $.ajaxSetup({ async: false });
+        $(function () {
+            FastClick.attach(document.body);
+            $(".search-footer-operation>a").attr("href" , document.showUrl+$(".search-footer-operation>a").attr("href"));
+            //提交搜索
+            $('.searchresult-submit').bind('click' , function(){
+                if(!$("input[name=q]").val()){
+                    return false;
+                };
+                $("form").submit();
+            });
+
+            /*咨询入口的权限获取*/
+//            var userId = ${user.username};
+//            $.get(document.lnkUrl + "api/front/work?id="+userId, function(data){
+//                if(data.code == 200){
+//                    if(data.body == 0){
+//                        $(".search-footer-operation>a").remove();
+//                    }
+//                    else{
+//                        $(".search-footer-operation>a").css("display", "inline-block");
+//                    }
+//                }
+//            });
+
+        });
+
+    </script>
+    <script>
+        $(function () {
+            /*应用搜索*/
+            var applicationList = [];
+            var appData = "";
+            //0表示获取数据成功；失败则list为空
+            if(${apps!}){
+                appData = ${apps};
+                if(appData.resCode == "0"){
+                    applicationList = appData.applicationList;
+                }
+            }
+
+            new Vue({
+                el: '#applicationList',
+                data: {applicationList: applicationList}
+            });
+
+
+
+        });
+    </script>
+    <script src="/${mobileRes}/js/jquery-weui.js"></script>
+    <script src="/${mobileRes}/js/back-to-top.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>HRSSC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="/${mobileRes}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes}/css/index.css">
+
+</head>
+<body ontouchstart>
+
+<!-- 搜索框区域开始 -->
+[#include "../include/header.html"/]
+<!-- 搜索框区域结束 -->
+<!--位置栏开始-->
+<div class="weui-panel__hd position_hd position_hd_2">
+    <div>
+        <a href="javascript:window.location.replace(document.referrer);" class="left-arrow-container">
+            <span class="left-arrow"></span>
+        </a>
+    </div>
+</div>
+<!--位置栏结束-->
+<div class="weui-tab" style="margin-top:-100px;height: calc(100% - 48px);">
+    [#if q??]
+    [@cms_lucene_list q=q channelId=channelId descLen='100' append='...'  dateFormat='yyyy-MM-dd' sysPage='1' ]
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd">
+            <div style="height: 100px;"></div>
+            <!-- 搜索结果提示开始-->
+            <div class="search-result-pd">
+                您搜索共有<span>${tag_list?size}</span>个结果
+            </div>
+            <!-- 搜索结果提示结束-->
+
+            [#list tag_list as s]
+            <!-- 无图话题-->
+            <a href="${s.url}" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                <!-- 一个单位开始-->
+                <div class="weui-media-box__bd">
+                    <h4 class="weui-media-box__title" style="color: #4CA9E3;">${s.title?replace('${q!}', "${q!}")}</h4>
+
+                    <p class="weui-media-box__desc">
+                        [@text_cut s=s.description len=descLen append=append/]
+                    </p>
+                    <div class="item-bottom">
+                           <span>
+                                  <span>${s.ctgName}</span>&nbsp;
+                                  <span>阅读 ${s.views!}</span>
+                            </span>
+                        <span>${s.releaseDate?string(dateFormat)}</span>
+                    </div>
+                </div>
+            </a>
+            [/#list]
+
+        </div>
+
+    </div>
+    [/@cms_lucene_list ]
+    [/#if]
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+[#include "../include/tabbar.html"/]
+
+<script src="/${mobileRes}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes}/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+    });
+</script>
+<script src="/${mobileRes}/js/jquery-weui.js"></script>
+<script src="/${mobileRes}/js/urlJudge.js"></script>
+<script src="/${mobileRes}/js/back-to-top.js"></script>
+
+
+
+</body>
+
+</html>

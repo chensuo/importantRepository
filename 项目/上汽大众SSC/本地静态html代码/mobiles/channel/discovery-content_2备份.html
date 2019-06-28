@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>HRSSC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+
+</head>
+
+<body ontouchstart>
+<!-- 搜索框区域开始 -->
+<div class="weui-search-bar" id="searchBar">
+    <form class="weui-search-bar__form" action="#">
+        <div class="weui-search-bar__box">
+            <i class="weui-icon-search"></i>
+            <input type="search" class="weui-search-bar__input" id="searchInput" placeholder="您需要什么帮助" required="">
+            <a href="javascript:" class="weui-icon-clear" id="searchClear"></a>
+        </div>
+        <label class="weui-search-bar__label" id="searchText" style="transform-origin: 0px 0px 0px; opacity: 1; transform: scale(1, 1);">
+            <i class="weui-icon-search"></i>
+            <span>您需要什么帮助</span>
+        </label>
+    </form>
+    <a href="javascript:;" class="weui-search-bar__cancel-btn" id="searchCancel">取消</a>
+</div>
+<!-- 搜索框区域结束 -->
+<div class="weui-panel__hd position_hd position_hd_2">
+    <div>
+        <a href="../channel/discovery.html" class="left-arrow"></a> <a href="javascript:;"  class="open-popup" data-target="#discovery-content2-nav">更多 >></a>
+    </div>
+</div>
+
+<!-- 主要内容区域开始-->
+<div class="weui-tab">
+
+    <!-- tab切换页区域开始 -->
+    <div class="weui-tab__bd weui-tab__bd-zdy">
+        <!-- 新闻详情tab开始-->
+        <div class="discovery_content_tab active">
+            <div class="weui-panel weui-panel_access">
+                <div style="height: 48px;"></div>
+                <!-- 下拉刷新开始-->
+                <div class="weui-pull-to-refresh__layer">
+                    <div class='weui-pull-to-refresh__arrow'></div>
+                    <div class='weui-pull-to-refresh__preloader'></div>
+                    <div class="down">下拉刷新</div>
+                    <div class="up">释放刷新</div>
+                    <div class="refresh">正在刷新</div>
+                </div>
+                <!-- 下拉刷新结束-->
+                <div class="weui-media-box weui-media-box_text"  >
+                    <div class="content-title">亚马逊股价首破800美元大关 </div>
+                    <div class="content-inf">
+                        <span>版块&nbsp;&nbsp;2016-09-23&nbsp;&nbsp;09:23:39</span>
+                        <a href="">信息来源</a>
+                    </div>
+                    <div class="content-txt">
+                        <p style="text-align:center;">
+                            <img src="../../mobile/img/swiper-1.jpg" title="138679618.jpg" alt="138679618.jpg"
+                                 data-bd-imgshare-binded="1">
+                        </p>
+                        <p>亚马逊季度利润连续三个财季创下新纪录。随之而来的是，亚马逊股价也打破了记录。</p>
+                        <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                            的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p>
+                        <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                            的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p>
+                        <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                            的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p> <p>亚马逊的股价在纽约当地时间周四上午首次突破每股800美元大关。亚马逊以3860亿美元
+                        的市值稳居全球上市公司第四的位置，仅次于苹果、谷歌(微博)母公司Alphabet和微软。</p>
+                        <p>
+                        <h4>附件</h4>
+                        <ul class="list-unstyled">
+                            <li><a href="" id="" class="attachment-name">附件名称</a></li>
+                        </ul>
+                        </p>
+                    </div>
+                    <!-- 阅读数量和点赞数量-->
+                    <div class="weui-panel__hd read-container">
+                        <div class="read">
+                            <a onclick="">阅读<span id="reads">3564</span></a>
+                        </div>
+                        <div class="zan">
+                            <a onclick="">赞<span id="ups">19</span></a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <!--<div class="weui-cells weui-cells_form comment-container">-->
+                <!--<div class="weui-cell">-->
+                <!--<div class="weui-cell__bd">-->
+                <!--<textarea class="weui-textarea" placeholder="请输入评论..." rows="3"></textarea>-->
+                <!--<div class="weui-textarea-counter"><span>0</span>/200</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="weui-cells weui-cells_form">-->
+                <!--<div class="weui-cell weui-cell_vcode">-->
+                <!--<div class="weui-cell__hd"><label class="weui-label">验证码:</label></div>-->
+                <!--<div class="weui-cell__bd">-->
+                <!--<input class="weui-input" type="text" placeholder="请输入验证码">-->
+                <!--</div>-->
+                <!--<div class="weui-cell__ft">-->
+                <!--<img class="weui-vcode-img" src="../../mobile/img/vcode.jpg">-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--<div class="weui-cells__title">-->
+                <!--<a href="javascript:;" class="weui-btn weui-btn_primary">提交评论</a>-->
+                <!--</div>-->
+
+                <!--<div class="weui-panel__ft">-->
+                <!--<div id="commentListContainer">-->
+                <!--<div class="content-comment-list">-->
+                <!--<h1>评论列表<span>2条评论</span></h1>-->
+                <!--&lt;!&ndash; 一条评论信息&ndash;&gt;-->
+                <!--<div class="item">-->
+                <!--<div class="comment-userInfo">-->
+                <!--<img src="../../mobile/img/pic_160.png" alt=""/>-->
+                <!--<div>评论人姓名<a class="comment-text-zan" onclick="">赞<span class="comment-text-up">2445</span></a></div>-->
+                <!--<span>2018-09-13 17:00:00</span>-->
+                <!--</div>-->
+                <!--<div class="comment-content-container">-->
+                <!--<div>评论内容评论内容评论内容</div>-->
+                <!--</div>-->
+                <!--</div>-->
+                <!--&lt;!&ndash; 一条评论信息&ndash;&gt;-->
+                <!--<div class="item">-->
+                <!--<div class="comment-userInfo">-->
+                <!--<img src="../../mobile/img/pic_160.png" alt=""/>-->
+                <!--<div>评论人姓名<a class="comment-text-zan" onclick="">赞<span class="comment-text-up">2445</span></a></div>-->
+                <!--<span>2018-09-13 17:00:00</span>-->
+                <!--</div>-->
+                <!--<div class="comment-content-container">-->
+                <!--<div>第二条评论第二条评论第二条评论第二条评论第二条评论第二条评论第二条评论</div>-->
+                <!--</div>-->
+                <!--</div>-->
+
+                <!--</div>-->
+                <!--</div>-->
+                <!--<a href="javascript:void(0);" class="weui-cell weui-cell_access weui-cell_link">-->
+                <!--<div class="weui-cell__bd">更多精彩评论</div>-->
+                <!--<span class="weui-cell__ft"></span>-->
+                <!--</a>-->
+                <!--</div>-->
+            </div>
+
+        </div>
+        <!-- 新闻详情tab结束-->
+        <!--&lt;!&ndash; 办理tab开始&ndash;&gt;-->
+        <!--<div class="discovery_content_tab">-->
+        <!--<div class="weui-panel weui-panel_access">-->
+        <!--<div style="height: 48px;"></div>-->
+        <!--&lt;!&ndash; 下拉刷新开始&ndash;&gt;-->
+        <!--<div class="weui-pull-to-refresh__layer">-->
+        <!--<div class='weui-pull-to-refresh__arrow'></div>-->
+        <!--<div class='weui-pull-to-refresh__preloader'></div>-->
+        <!--<div class="down">下拉刷新</div>-->
+        <!--<div class="up">释放刷新</div>-->
+        <!--<div class="refresh">正在刷新</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 下拉刷新结束&ndash;&gt;-->
+        <!--<div class="weui-media-box weui-media-box_text">-->
+        <!--<div class="content-title">亚马逊股价首破800美元大关 </div>-->
+        <!--<div class="content-inf">-->
+        <!--<span>版块&nbsp;&nbsp;2016-09-23&nbsp;&nbsp;09:23:39</span>-->
+        <!--<a href="">信息来源</a>-->
+        <!--</div>-->
+        <!--<div class="content-txt">-->
+        <!--<p style="text-align:center;">-->
+        <!--<img src="../../mobile/img/swiper-1.jpg" title="138679618.jpg" alt="138679618.jpg"-->
+        <!--data-bd-imgshare-binded="1">-->
+        <!--</p>-->
+        <!--<p><h2>办理页面内容</h2></p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--<p>这里为了拉长页面出现滚动条</p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div style="height: 53px;"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 办理tab结束&ndash;&gt;-->
+        <!--&lt;!&ndash; 反馈tab开始&ndash;&gt;-->
+        <!--<div class="discovery_content_tab">-->
+        <!--<div class="weui-panel weui-panel_access">-->
+        <!--<div style="height: 48px;"></div>-->
+        <!--&lt;!&ndash; 下拉刷新开始&ndash;&gt;-->
+        <!--<div class="weui-pull-to-refresh__layer">-->
+        <!--<div class='weui-pull-to-refresh__arrow'></div>-->
+        <!--<div class='weui-pull-to-refresh__preloader'></div>-->
+        <!--<div class="down">下拉刷新</div>-->
+        <!--<div class="up">释放刷新</div>-->
+        <!--<div class="refresh">正在刷新</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 下拉刷新结束&ndash;&gt;-->
+        <!--<div class="weui-media-box weui-media-box_text">-->
+        <!--<div class="content-title">亚马逊股价首破800美元大关 </div>-->
+        <!--<div class="content-inf">-->
+        <!--<span>版块&nbsp;&nbsp;2016-09-23&nbsp;&nbsp;09:23:39</span>-->
+        <!--<a href="">信息来源</a>-->
+        <!--</div>-->
+        <!--<div class="content-txt">-->
+        <!--<p style="text-align:center;">-->
+        <!--<img src="../../mobile/img/swiper-1.jpg" title="138679618.jpg" alt="138679618.jpg"-->
+        <!--data-bd-imgshare-binded="1">-->
+        <!--</p>-->
+        <!--<p><h2>反馈页面内容</h2></p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div style="height: 53px;"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 反馈tab结束&ndash;&gt;-->
+        <!--&lt;!&ndash; 评价tab开始&ndash;&gt;-->
+        <!--<div class="discovery_content_tab">-->
+        <!--<div class="weui-panel weui-panel_access">-->
+        <!--<div style="height: 48px;"></div>-->
+        <!--&lt;!&ndash; 下拉刷新开始&ndash;&gt;-->
+        <!--<div class="weui-pull-to-refresh__layer">-->
+        <!--<div class='weui-pull-to-refresh__arrow'></div>-->
+        <!--<div class='weui-pull-to-refresh__preloader'></div>-->
+        <!--<div class="down">下拉刷新</div>-->
+        <!--<div class="up">释放刷新</div>-->
+        <!--<div class="refresh">正在刷新</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 下拉刷新结束&ndash;&gt;-->
+        <!--<div class="weui-media-box weui-media-box_text">-->
+        <!--<div class="content-title">亚马逊股价首破800美元大关 </div>-->
+        <!--<div class="content-inf">-->
+        <!--<span>版块&nbsp;&nbsp;2016-09-23&nbsp;&nbsp;09:23:39</span>-->
+        <!--<a href="">信息来源</a>-->
+        <!--</div>-->
+        <!--<div class="content-txt">-->
+        <!--<p style="text-align:center;">-->
+        <!--<img src="../../mobile/img/swiper-1.jpg" title="138679618.jpg" alt="138679618.jpg"-->
+        <!--data-bd-imgshare-binded="1">-->
+        <!--</p>-->
+        <!--<p><h2>评价页面内容</h2></p>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--<div style="height: 53px;"></div>-->
+        <!--</div>-->
+        <!--</div>-->
+        <!--&lt;!&ndash; 评价tab结束&ndash;&gt;-->
+
+    </div>
+    <!-- tab切换页区域结束 -->
+    <div style="height: 53px;"></div>
+</div>
+<!-- 主要内容区域结束-->
+
+<!-- Popub弹出层开始-->
+<div id="discovery-content2-nav" class="weui-popup__container popup-bottom" style="z-index: 502;">
+    <div class="weui-popup__dialog"></div>
+    <div class="weui-popup__modal">
+        <!-- 弹出层的内容开始-->
+        <div class="weui-grids">
+            <a href="" class="weui-grid js_grid on close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_button.png" alt="">
+                </div>
+                <p class="weui-grid__label">新闻详情</p>
+            </a>
+            <a href="" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">办理</p>
+            </a>
+            <a href="" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">反馈</p>
+            </a>
+            <a href="" class="weui-grid js_grid close-popup">
+                <div class="weui-grid__icon">
+                    <img src="../../mobile/img/icon_nav_cell.png" alt="">
+                </div>
+                <p class="weui-grid__label">评价</p>
+            </a>
+        </div>
+        <!-- 弹出层的内容结束-->
+        <a class="close-popup popup-close">关闭</a>
+    </div>
+
+
+</div>
+<!-- Popub弹出层结束-->
+
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<!-- 回到顶部按钮结束-->
+<!-- 底部固定区域菜单开始 -->
+<div class="weui-tabbar fixed-bottom">
+    <a href="../index/index.html" class="weui-tabbar__item ">
+        <span class="weui-badge" style="position: absolute;top: -.4em;right: 1em;">8</span>
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_button.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">个人中心</p>
+    </a>
+    <a href="../channel/discovery.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_msg.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">通知公告</p>
+    </a>
+    <a href="../channel/guide.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_article.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">指南</p>
+    </a>
+    <a href="../channel/mine.html" class="weui-tabbar__item">
+        <div class="weui-tabbar__icon">
+            <img src="../../mobile/img/icon_nav_cell.png" alt="">
+        </div>
+        <p class="weui-tabbar__label">我</p>
+    </a>
+</div>
+<!-- 底部固定区域菜单结束 -->
+
+<script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+
+        /*dicovery-content_2页面popub弹出导航*/
+        $("#discovery-content2-nav a").off("click").on("click",function(e){
+            var index = $(this).index();
+            $(this).addClass("on").siblings().removeClass("on");
+            $(".weui-tab__bd .discovery_content_tab").eq(index).addClass("active").siblings().removeClass("active");
+        });
+
+        /*弹出框弹出内容*/
+        //$(".weui-tab__bd").empty().load('http://www.broadtext.com.cn/csp/tSFormTemplateController.do?method=goView&type=SubmitAndInitiate&id=4028962c655f321401655f37c4e40002&username=65522');
+
+
+
+    });
+</script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/pullToRefresh.js"></script>
+<script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+
+
+
+</body>
+
+</html>

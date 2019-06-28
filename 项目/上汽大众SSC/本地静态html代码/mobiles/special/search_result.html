@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <title>HRSSC</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="description" content="Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.
+">
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+    <script src="../../mobile/js/jquery-2.1.4.js"></script>
+    <script src="../../mobile/js/vue.min.js"></script>
+</head>
+<body ontouchstart>
+
+<!-- 头部搜索框区域开始 -->
+<div class="weui-search-bar search-result-bar" id="searchBar">
+    <div class="search-input-container searchresult-input-container">
+        <form action="../special/search_result.html" onsubmit="nospace();">
+            <i class="weui-icon-search"></i>
+            <input type="search"  placeholder="您有什么问题" required="" name="q" value="" autocomplete="off">
+            <script>
+                function nospace(){
+                    if(isNull($("input[name=q]").val())){
+                        $("input[name=q]").val("");
+                    }
+                    else{
+                        $("input[name=q]").val($("input[name=q]").val().replace(/[ ]/g,""));
+                    }
+                }
+                function isNull( str ){
+                    if ( str == "" ) return true;
+                    var regu = "^[ ]+$";
+                    var re = new RegExp(regu);
+                    return re.test(str);
+                }
+            </script>
+        </form>
+    </div>
+    <button class="searchresult-submit">搜&nbsp;索</button>
+
+</div>
+<!-- 头部搜索框区域结束 -->
+    <!--位置栏开始-->
+    <!--<div class="weui-panel__hd position_hd position_hd_2">-->
+        <!--<div>-->
+            <!--<a href="javascript:window.location.replace(document.referrer);" class="left-arrow-container">-->
+                <!--<span class="left-arrow"></span>-->
+            <!--</a>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--位置栏结束-->
+    <div class="weui-tab" style="margin-top:0;height:100%;">
+            <div  class="discovery_tab">
+                <div style="height: 44px"></div>
+                <!-- 应用栏搜索-->
+                <div class="weui-pannel__bd" style="background: #ffffff;border-bottom: 1px solid #EFEFEF;" id="applicationList" v-if="applicationList.length>0">
+                    <!-- 位置栏-->
+                    <div class="search-result-pd">应用</div>
+                    <a v-for="item in applicationList" :href="item.applicationURL" v-cloak class="myfavorite-item search-item" style="font-size: 16px;border-bottom: none">
+                        <img :src="item.applicationimgUrl" alt=""/>{{item.applicationName}}
+                    </a>
+                </div>
+                <div class="search-result-pd">SSC百科</div>
+                <!-- 帮助栏搜索 -->
+                    <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                        <!--<div class="weui-media-box__hd" style="display: none;">-->
+                        <!--<img class="weui-media-box__thumb" src="">-->
+                        <!--</div>-->
+                        <!-- 一个单位开始-->
+                        <div class="weui-media-box__bd">
+                            <h4 class="weui-media-box__title">亚马逊股价首破</h4>
+
+                            <p class="weui-media-box__desc">
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                                由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            </p>
+                            <div class="item-bottom">
+                           <span>
+                                  <span>版块</span>
+                                  <span style="margin-left: 10px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
+                            </span>
+                                <span>2018-10-10</span>
+                            </div>
+                        </div>
+                    </a>
+                <a href="../content/discovery-content.html" class="search-result-box weui-media-box  weui-media-box_appmsg">
+                    <!--<div class="weui-media-box__hd" style="display: none;">-->
+                    <!--<img class="weui-media-box__thumb" src="">-->
+                    <!--</div>-->
+                    <!-- 一个单位开始-->
+                    <div class="weui-media-box__bd">
+                        <h4 class="weui-media-box__title">亚马逊股价首破</h4>
+
+                        <p class="weui-media-box__desc">
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                            由各种物质组成的巨型球状天体，叫做星球。星球有一定的形状，有自己的运行轨道。
+                        </p>
+                        <div class="item-bottom">
+                           <span>
+                                  <span>版块</span>
+                                  <span style="margin-left: 10px;" class="read-span"><img src="../../mobile/img/icon_yuedu.png" alt=""/> 10</span>
+                            </span>
+                            <span>2018-10-10</span>
+                        </div>
+                    </div>
+                </a>
+                <div class="no-more-info">没有更多了</div>
+                <div class="search-footer-operation">
+                    没有找到帮助内容，请尝试修改一下关键字重新搜索吧
+                    <a href="">还需要继续咨询?戳这里<img src="../../mobile/img/cuo.png" alt=""/></a>
+                </div>
+
+                <!-- 搜索历史标签-->
+                <div style="padding: 0 7px" id="keyWordsList">
+                    <a v-for="item in keyWordsList" :href="'search_result.html?q='+item" v-cloak style="padding: 8px 0;margin-left: 10px;display: inline-block;">
+                        <span style="font-size:15px;background: #996633;padding: 2px 5px;border-radius: 3px">{{item}}</span>
+                    </a>
+                </div>
+
+        </div>
+    </div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<script src="../../mobile/js/fastclick.js"></script>
+<script src="../../mobile/js/global.js"></script>
+
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        //应用搜索测试
+//        var testData = {
+//            "workNo":"20265",
+//            "keyWord":"电子",
+//            "password":"ssc@hr1109"
+//        };
+//
+//        $.ajax({
+//            type:"POST",
+//            url:"http://desyb2.do1.net.cn/wehr-dz/open/communicateOpenAction!searchApplicationByUser.action",
+//            data:{workNo:"20265" , keyWord:"电子" , password:"ssc@hr1109"},
+//            dataType:"json",
+//            success:function(data){
+//                console.log(data);
+//            },
+//            error:function(XMLHttpRequest, textStatus, errorThrown){
+//               console.log("XMLHttpRequest.status:"+XMLHttpRequest.status);
+//               console.log("XMLHttpRequest.readyState:"+XMLHttpRequest.readyState);
+//               console.log("textStatus:"+textStatus);
+//            }
+//        });
+        /*应用搜索*/
+        var applicationList = [];
+        var appData = {"resCode":"0","resMsg":"查询成功","applicationList":[{"applicationId":"123456","applicationimgUrl":"../../mobile/img/youhuigouche.png","applicationName":"电子薪资","applicationURL":"http://www.baidu.com"},{"applicationId":"123456","applicationimgUrl":"../../mobile/img/icon_wait.png","applicationName":"员工购车","applicationURL":"http://www.broadtext.com.cn"}]};
+//        var appData = "";
+        console.log(appData);
+        //0表示获取数据成功；失败则list为空
+        if(appData.resCode == "0"){
+            applicationList = appData.applicationList;
+        }
+        console.log(applicationList);
+        new Vue({
+            el: '#applicationList',
+            data: {applicationList: applicationList}
+        });
+
+
+        /*自动生成已搜索的内容*/
+        var keyWordsList = [];
+        var currentKeyWord = GetRequest().q;
+        if(localStorage.getItem("currentList")){
+            keyWordsList = JSON.parse(localStorage.getItem("currentList"));
+        }
+        if(!( keyWordsList.indexOf(currentKeyWord) >= 0) && currentKeyWord){
+           keyWordsList.push(currentKeyWord);
+            localStorage.setItem("currentList" , JSON.stringify(keyWordsList));
+        }
+        new Vue({
+            el: '#keyWordsList',
+            data: {keyWordsList: keyWordsList}
+        });
+
+        //布置在Jeecms时有所修改
+        $(".left-arrow-container").bind("click" , function(){
+            var lastPageUrl = document.referrer;
+            if(lastPageUrl.indexOf("discovery-content") >= 0){
+                location.href = "../index/index.html";
+            }
+            else{
+               window.location.replace(document.referrer);
+            }
+        });
+        //提交搜索
+        $('.searchresult-submit').bind('click' , function(){
+            if(!$("input[name=q]").val()){
+                return false;
+            };
+            $("form").submit();
+        });
+//        /*咨询入口的权限获取*/
+//        $.get("http://www.broadtext.com.cn/ssc/api/front/work", function(data){
+//            alert("进入");
+//            if(data.code == 200){
+//                alert(data.code);
+//                if(data.body == 1){
+//                    $(".article-footer-operation").remove();
+//                }
+//                else{
+//                    $(".article-footer-operation").css("display", "block");
+//                }
+//            }
+//        });
+
+
+//        $.ajax({
+//            async : true,
+//            url : "http://www.broadtext.com.cn/ssc/api/front/work?id=20265",
+//            type : "GET",
+//            dataType : "jsonp", // 返回的数据类型，设置为JSONP方式
+//            jsonp : 'callback', //指定一个查询参数名称来覆盖默认的 jsonp 回调参数名 callback
+//            jsonpCallback: 'handleResponse', //设置回调函数名
+//            data : {
+//                q : "javascript",
+//                count : 1
+//            },
+//            success: function(response, status, xhr){
+//                console.log('状态为：' + status + ',状态是：' + xhr.statusText);
+//                console.log(response);
+//            }
+//        });
+
+
+        function GetRequest(){
+            var url = location.search; //获取url中"?"符后的字串
+            var theRequest = new Object();
+            if (url.indexOf("?") != -1) {
+                var str = url.substr(1);
+                strs = str.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    theRequest[strs[i].split("=")[0]]=decodeURIComponent(strs[i].split("=")[1]);
+                }
+            }
+            return theRequest;
+        }
+        $("input[type=search]").val(currentKeyWord);
+    });
+</script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+
+</body>
+</html>

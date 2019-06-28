@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+</head>
+<body>
+<ul class="dispose-img">
+    <li>
+        <a href="javascript:;" class="pb1">
+            <img src="http://photocdn.sohu.com/20170323/Img484425339.jpeg" />
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;" class="pb1">
+            <img src="https://tse1-mm.cn.bing.net/th?id=OET.3f3251afaad44ed59697c3aaf26949f6&w=135&h=272&c=7&rs=1&qlt=90&o=4&pid=1.9" />
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;" class="pb1">
+            <img src="https://tse1-mm.cn.bing.net/th?id=OET.b50be09f93264dffad23b7e76f9d1d46&w=135&h=272&c=7&rs=1&qlt=90&o=4&pid=1.9" />
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;" class="pb1">
+            <img src="https://tse1-mm.cn.bing.net/th?id=OET.c09214c12f1a4b7289ac9e8fe2e1a294&w=135&h=272&c=7&rs=1&qlt=90&o=4&pid=1.9" />
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;" class="pb1">
+            <img src="http://photocdn.sohu.com/20170323/Img484425339.jpeg" />
+        </a>
+    </li>
+</ul>
+</body>
+<script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/swiper.min.js" charset="utf-8"></script>
+<script>
+    window.onload = function() {
+        var pb1 = $.photoBrowser({
+            items: [
+                "http://photocdn.sohu.com/20170323/Img484425339.jpeg",
+                "https://tse1-mm.cn.bing.net/th?id=OET.3f3251afaad44ed59697c3aaf26949f6&w=135&h=272&c=7&rs=1&qlt=90&o=4&pid=1.9",
+                "https://tse1-mm.cn.bing.net/th?id=OET.b50be09f93264dffad23b7e76f9d1d46&w=135&h=272&c=7&rs=1&qlt=90&o=4&pid=1.9",
+                "https://tse1-mm.cn.bing.net/th?id=OET.c09214c12f1a4b7289ac9e8fe2e1a294&w=135&h=272&c=7&rs=1&qlt=90&o=4&pid=1.9",
+                "http://photocdn.sohu.com/20170323/Img484425339.jpeg"
+            ]
+        });
+        $(".pb1").click(function () {
+            pb1.open();
+        });
+    }
+</script>
+</html>

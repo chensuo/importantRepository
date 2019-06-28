@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SSC共享服务中心</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
+    <link rel="stylesheet" href="/${mobileRes!}/css/weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/jquery-weui.css">
+    <link rel="stylesheet" href="/${mobileRes!}/css/index.css">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+    <meta content="${content.tagStr!}" http-equiv="keywords" />
+    <meta content="${content.description!}" http-equiv="description"/>
+    <script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+    <script src="${resSys}/jqueryUI/jquery-ui.js" type="text/javascript"></script>
+    <script src="${resSys}/front.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            Cms.checkPerm("${base}","${content.id}");
+            Cms.collectCsi("${base}","collectCsiDiv","collect_csi","${content.id}");
+            Cms.attachment("${base}","${content.id}","${content.attachments?size}","attach");
+            Cms.viewCount("${base}","${content.id}");
+            Cms.siteFlow("${base}", location.href,
+                    document.referrer,"${site.config.flowSwitch?string}");
+        });
+    </script>
+
+</head>
+
+<body ontouchstart style="background: #F5F5F5;">
+
+<!-- 主要内容区域开始-->
+<div class="weui-tab" style="height: calc(100% + 55px);">
+
+    <!-- tab切换页区域开始 -->
+    <div class="weui-tab__bd weui-tab__bd-zdy">
+        <!-- 主要容器开始-->
+        <div class="discovery_content_tab article-content-tab">
+            <div class="weui-panel weui-panel_access" style="background: #F5F5F5">
+                [#include "../include/pullToRefresh.html"/]
+
+                <!-- 详情tab开始-->
+                <div class="weui-media-box weui-media-box_text" style="background: #fff">
+                    [#if channel.path!='contentsys']
+                    <div class="content-title">${content.title}</div>
+                    <div class="content-inf">
+                        <span>${content.ctgName!}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;${content.releaseDate?string('yyyy-MM-dd')}</span>
+                        <span class="read-span"><img src="/${mobileRes!}/img/icon_yuedu.png" alt=""/> ${content.views!}</span>
+                    </div>
+                    [/#if]
+                    <div class="content-txt">
+                        <p>${txt!}</p>
+                        <p>
+                            [#if content.attachments?size gt 0]
+                        <h4>附件</h4>
+                        <ul class="list-unstyled">
+                            [#list content.attachments as attach]
+                            <li><a href="${attach.path}" id="attach${attach_index}" class="attachment-name">${attach.name}</a></li>
+                            [/#list]
+                        </ul>
+                        [/#if]
+                        </p>
+                        [#if channel.path!='contentsys']
+                        <div class="zan">
+                            <div id="cancelSpan" onclick="" class="collect-dv" style="font-size: 14px;display: none">
+                                <img src="/${mobileRes!}/img/icon_collection_selected.png" alt="" style="width: 20px;"/>
+                                <span>取消收藏</span>
+                            </div>
+                            <div  id="comfirmSpan" onclick="" class="collect-dv collect-dv-success" style="font-size: 14px;display:none;">
+                                <img src="/${mobileRes!}/img/icon_collection.png" alt="" style="width: 20px;"/>
+                                <span>收藏</span>
+                            </div>
+                            [#if user??]
+                            <script type="text/javascript">
+                                $(function() {
+                                    Cms.collectexist("${base}","${content.id}","cancelSpan","comfirmSpan","${user.id}");
+                                    $("#comfirmSpan").click(function(){
+                                        Cms.collect("${base}","${content.id}",1,"cancelSpan","comfirmSpan","${user.id}");$(".collect-success-dialog").fadeIn(350,"swing");
+                                        window.alert = function(){ return false;}
+                                    });
+                                    $("#cancelSpan").click(function(){
+                                        Cms.collect("${base}","${content.id}",0,"cancelSpan","comfirmSpan","${user.id}");
+                                        window.alert = function(){ return false; }
+                                    });
+                                });
+                            </script>
+                            [/#if]
+                        </div>
+                        [/#if]
+                    </div>
+                </div>
+                [#if channel.path!='contentsys']
+                <div class="article-footer-operation" style="display: none;">
+                    <a href="form.do?method=view&formId=402893a566cede940166d2824de20012&businessTypes=${channel.keywords!}">还需要继续咨询?戳这里<img src="/${mobileRes}/img/cuo.png" alt=""/></a>
+                </div>
+                [/#if]
+            </div>
+
+        </div>
+    </div>
+</div>
+<!--收藏成功dialog-->
+<div class="collect-success-dialog">
+    <div class="collect-success-container">
+        <h3>提示</h3>
+        <p>收藏成功，可在[我的]-[我的收藏]处查询个人收藏记录</p>
+        <div>确认</div>
+    </div>
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/swiper.min.js" charset="utf-8"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        $(".article-footer-operation>a").attr("href" , document.showUrl+$(".article-footer-operation>a").attr("href"));
+        var userId = ${user.username};
+        /*咨询入口的权限获取*/
+        $.get(document.lnkUrl + "api/front/work?id="+userId, function(data){
+            if(data.code == 200){
+                if(data.body == 0){
+                    $(".article-footer-operation").remove();
+                }
+                else{
+                    $(".article-footer-operation").css("display", "block");
+                }
+            }
+        });
+        /*点击收藏dialog“确定”，关闭dialog*/
+        $(".collect-success-container>div").bind("click" , function(){
+            $(".collect-success-dialog").fadeOut(250,"swing");
+        });
+    });
+    /*图片阅读器*/
+    window.onload = function() {
+        var imgs = $(".content-txt>p img");
+        var imgList = [];
+        for(var i=0;i<imgs.length;i++){
+            imgList.push(imgs[i].src);
+        }
+        imgs.click(function(){
+            var thisIndex = imgList.indexOf($(this)[0].src);
+            showBigImg(imgList , thisIndex);
+        });
+
+        function showBigImg(imgList,index) {
+            $.photoBrowser({
+                items: imgList,
+                initIndex: index,
+                onSlideChange: function(index) {
+                },
+                onOpen: function() {
+                },
+                onClose: function() {
+                }
+            }).open();
+        }
+    }
+</script>
+
+
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,138 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>我的收藏</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="../../mobile/css/font-awesome.css">
+    <link rel="stylesheet" href="../../mobile/css/sub.css" />
+    <link rel="stylesheet" href="../../mobile/css/weui.css">
+    <link rel="stylesheet" href="../../mobile/css/jquery-weui.css">
+    <link rel="stylesheet" href="../../mobile/css/index.css">
+</head>
+
+<body aria-atomic="False" style="background: #f5f5f5;">
+
+<!-- 栏目位置结束-->
+<div class="weui-tab mine-weui-tab" style="height: calc(100% + 50px);">
+    <div  style="min-height: calc(100% + 1px);">
+        <div  class="discovery_tab">
+        <!-- 下拉刷新开始-->
+        <div class="weui-pull-to-refresh__layer">
+            <div class='weui-pull-to-refresh__arrow'></div>
+            <div class='weui-pull-to-refresh__preloader'></div>
+            <div class="down">下拉刷新</div>
+            <div class="up">释放刷新</div>
+            <div class="refresh">正在刷新</div>
+        </div>
+        <!-- 下拉刷新结束-->
+        <!-- 栏目位置开始-->
+        <!--<div class="myfavorite-pd">-->
+            <!--<img src="../../mobile/img/wode_shouchang.png" alt=""/>我的收藏-->
+        <!--</div>-->
+        <div class="weui-pannel__bd mine-weui-pannel__bd">
+
+            <!-- 我的收藏单位项目-->
+            <a href="../content/discovery-content_2.html" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <a href="" class="myfavorite-item">123</a>
+            <!--<a href="" class="myfavorite-item">123</a>-->
+            <!--<a href="" class="myfavorite-item">123</a>-->
+            <!--<a href="" class="myfavorite-item">123</a>-->
+
+            <!--<div class="no-more-info" style="background: #f5f5f5;width: 100%">没有更多</div>-->
+
+            <!-- 暂无收藏提示-->
+            <!--<div class="nocollect-info-dv-sec" style="display:block;">-->
+                <!--<img src="../../mobile/img/myfavourite.png" alt=""/>-->
+            <!--</div>-->
+        </div>
+            <div class="weui-loadmore">
+                <i class="weui-loading"></i>
+                <span class="weui-loadmore__tips">正在加载</span>
+            </div>
+    </div>
+    </div>
+</div>
+
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<script src="../../mobile/js/jquery-2.1.4.js"></script>
+<script src="../../mobile/js/fastclick.js"></script>
+<script>
+    $(function () {
+        FastClick.attach(document.body);
+        $($(".myfavorite-item")[0]).css("borderTop","none");
+        var userId = 20265;
+        var first = 0;
+        var count = 10;
+        var loading = false;
+//        loadlistOne();
+        $(".weui-tab").infinite(50).on("infinite", function () {
+            if (loading) return;
+            loading = true;
+            console.log("开始加载");
+            $('.weui-loadmore').show();
+            setTimeout(function () {
+                loadlistOne();
+                loading = false;
+                console.log("加载完成");
+            }, 500);   //模拟延迟
+        });
+        function loadlistOne() {
+//            var html = "<div class=\"weui-pull-to-refresh__layer\">"
+//                       +"<div class='weui-pull-to-refresh__arrow'></div>"
+//                    +"<div class='weui-pull-to-refresh__preloader'></div>"
+//                    +"<div class=\"down\">下拉刷新</div>"
+//                    +"<div class=\"up\">释放刷新</div>"
+//                    +"<div class=\"refresh\">正在刷新</div>"
+//                    +"</div>";
+            $(".weui-pannel__bd").append(getData());
+        }
+
+        function getData(){
+            var html = "";
+            html += '<a href="" class="myfavorite-item">新增1</a>';
+            html += '<a href="" class="myfavorite-item">新增2</a>';
+            html += '<a href="" class="myfavorite-item">新增3</a>';
+            html += '<a href="" class="myfavorite-item">新增4</a>';
+            html += '<a href="" class="myfavorite-item">新增5</a>';
+            html += '<a href="" class="myfavorite-item">新增6</a>';
+            html += '<a href="" class="myfavorite-item">新增7</a>';
+            html += '<a href="" class="myfavorite-item">新增8</a>';
+            html += '<a href="" class="myfavorite-item">新增9</a>';
+            html += '<a href="" class="myfavorite-item">新增10</a>';
+            return html;
+        }
+    });
+</script>
+<script src="../../mobile/js/jquery-weui.js"></script>
+<script src="../../mobile/js/pullToRefresh.js"></script>
+<script src="../../mobile/js/urlJudge.js"></script>
+<script src="../../mobile/js/back-to-top.js"></script>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>SSC共享服务中心</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,minimal-ui">
+    <script type="text/javascript">
+        /*隐藏微信端右上角...*/
+        function hiddenShareLink(){
+            WeixinJSBridge.call('hideOptionMenu');
+        }
+
+        if(document.addEventListener){
+            document.addEventListener('WeixinJSBridgeReady', hiddenShareLink, false);
+        }else if(document.attachEvent){
+            document.attachEvent('WeixinJSBridgeReady' , hiddenShareLink); document.attachEvent('onWeixinJSBridgeReady' , hiddenShareLink);
+        }
+    </script>
+    <link href="/${mobileRes!}/css/weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/jquery-weui.css" rel="stylesheet" type="text/css"/>
+    <link href="/${mobileRes!}/css/index.css" rel="stylesheet" type="text/css"/>
+    <script src="/${mobileRes!}/js/vue.min.js"></script>
+</head>
+<body ontouchstart>
+
+<!-- 栏目位置结束-->
+<div class="weui-tab mine-weui-tab" style="height: calc(100% + 50px);" >
+
+    [#include "../include/pullToRefresh.html"/]
+    <!-- 栏目位置开始-->
+    <div class="myfavorite-pd applyHistory-pd" id="url">
+        <img src="/${mobileRes!}/img/wode_shengqing.png" alt=""/>申请进度<a :href="lnkUrl + url">查看表单详情</a>
+    </div>
+    <div  class="discovery_tab">
+        <div class="weui-pannel__bd mine-weui-pannel__bd applyHistory-bd">
+            <!--审批通过项目(包括开始，区别：i的class=finished)-->
+            <div id="history"  v-cloak>
+                <div v-for="(item,index) in history" class="applyHistory-item-container">
+                    <div v-if="item.activityName != '结束'" class="applyHistory-left-border"></div>
+                    <img src="/${mobileRes!}/img/finished.png" alt=""/>
+                    <div class="item-content">
+                        <span v-if="item.department">{{item.department}}</span><em>{{item.activityName}}</em>
+                        <i :class="{unpass:item.statecode=='3'}">{{item.state}}</i>
+                    </div>
+                    <div class="applyHistory-time">{{item.endTime}}</div>
+                    <div class="applyHistory-remark" v-if="item.approveMsg&&item.statecode!='8'&&item.statecode!='9'">{{item.approveMsg}}</div>
+                </div>
+            </div>
+            <!--审批处理中项目（当前项目,区别：i无class）-->
+            <div id="execute" v-cloak>
+                <div v-for="(item,index) in execute" class="applyHistory-item-container">
+                    <div v-if="index != execute.length-1" class="applyHistory-left-border"></div>
+                    <img src="/${mobileRes!}/img/unstart.png" alt=""/>
+                    <div class="item-content">
+                        <span v-if="item.department">{{item.department}}</span><em>{{item.activityName}}</em>
+                        <i>{{item.state}}</i>
+                    </div>
+                    <div class="applyHistory-time" v-if="item.state != '处理中'">{{item.endTime}}</div>
+                    <!--<div class="applyHistory-remark" v-if="item.approveMsg&&item.statecode!='8'&&item.statecode!='9'">{{item.approveMsg}}</div>-->
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 回到顶部按钮-->
+<div class="top"></div>
+
+<script src="/${mobileRes!}/js/jquery-2.1.4.js"></script>
+<script src="/${mobileRes!}/js/fastclick.js"></script>
+<script src="/${mobileRes!}/js/global.js"></script>
+<script>
+    $.ajaxSetup({ async: false });
+    $(function () {
+        FastClick.attach(document.body);
+        var processInstanceId = get_get();
+
+        getApplyHisory(processInstanceId);
+
+        function getApplyHisory(processInstanceId){
+            var history = [];
+            var execute = [];
+            var url = '';
+            $.get(document.showUrl + "service/task/taskhistory?" + processInstanceId, function(data){
+                if(data.source){
+                    history = data.data.task.history;
+                    for(var i=0;i<history.length;i++){
+                        if(history[i].activityName == "start"){
+                            history[i].activityName = "开始";
+                        }
+                        if(history[i].activityName == "end"){
+                            history[i].activityName = "结束";
+                        }
+                    }
+
+                    execute = data.data.task.execute;
+                    url = data.data.url;
+                }
+            } );
+            new Vue({
+                el: '#url',
+                data: {
+                    url:url,
+                    lnkUrl:document.showUrl
+                }
+            });
+            new Vue({
+                el: '#history',
+                data: {
+                    history:history
+                }
+            });
+            new Vue({
+                el: '#execute',
+                data: {
+                    execute:execute
+                }
+            });
+        }
+
+        function get_get(){
+            querystr = window.location.href.split("?")
+            if(querystr[1]){
+                GETs = querystr[1].split("&")
+                GET =new Array()
+                for(i=0;i<GETs.length;i++){
+                    tmp_arr = GETs[i].split("=")
+                    key=tmp_arr[0]
+                    GET[key] = tmp_arr[1]
+                }
+            }
+            return querystr[1];
+        }
+    });
+</script>
+<script src="/${mobileRes!}/js/jquery-weui.js"></script>
+<script src="/${mobileRes!}/js/pullToRefresh.js"></script>
+<script src="/${mobileRes!}/js/back-to-top.js"></script>
+</body>
+
+</html>
